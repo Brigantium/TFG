@@ -1,0 +1,756 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  spanish,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage[papersize={210mm,297mm},lmargin=2.5cm,rmargin=2.5cm,top=3.5cm,bottom=3.5cm]{geometry}
+
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parskip}{1mm}
+\usepackage{scrextend}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd}
+\usepackage{pdfsync}
+\usepackage{latexsym,xcolor,graphicx}
+\usepackage[nottoc]{tocbibind}
+\usepackage[utf8]{inputenc}					
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-lcroman,es-noquoting]{babel}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{appendix}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}\setlist{nosep,after=\vspace{1mm},before=\vspace{0mm}}
+\usepackage{graphicx,epstopdf}
+\usepackage{tcolorbox}
+\usepackage{amssymb,cancel}
+\usepackage{amsfonts,amsmath,color}
+\usepackage{amsthm,mathrsfs}
+\usepackage{enumitem,multicol,bbding}
+\usepackage[mathscr]{euscript}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{csquotes}
+\usepackage{etoolbox}
+\usepackage{scrextend}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{2mm}%
+  \setlength{\belowdisplayskip}{2mm}%
+  \setlength{\abovedisplayshortskip}{1mm}%
+  \setlength{\belowdisplayshortskip}{1mm}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\usepackage[style=ieee]{biblatex}
+%\usepackage{biblatex}
+\addbibresource{referencias.bib}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\bfseries\huge}
+{\filleft\huge\chaptertitlename~\thechapter}
+{0.5cm}
+{\titlerule\filright}
+[\titlerule]
+\titlespacing*{\chapter}{0pt}{-1.5cm}{2cm}
+\titlespacing*{\section}{0pt}{0.25cm}{0.25cm}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+% Cabeceira
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter. #1}}{}}% Formato para o capítulo: N. Nome
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}% Formato para a sección: N.M. Nome
+\fancyhead[LO]{\rightmark}% Nas páxinas impares, parte esquerda do encabezado, aparecerá o nome do capítulo
+\fancyhead[RE]{\leftmark}% Nas páxinas pares, parte dereita do encabezado, aparecerá o nombre da sección
+\fancyhead[RO,LE]{\textbf{\thepage}} % Números de páxina nas esquinas dos encabezados
+
+\renewcommand{\quote}{\list{}{\rightmargin=\leftmargin\topsep=0pt}\item\relax}
+
+\newcommand{\portada}[3]{
+\thispagestyle{empty}
+\definecolor{azulUSC}{RGB}{13,38,120}
+\includegraphics[width=13cm]{logomath}
+\vspace*{2cm}
+\centerline{{\Large\bf  Trabajo Fin de Grado}}
+\vspace{2.6cm}
+{\center{\Huge\bfseries\color{azulUSC} #1}\par}		
+\vspace{1cm}
+{\Large
+\centerline{#2}		
+\vspace{6.4cm}
+\centerline{\sf #3}        
+\vspace{1.25cm}
+\centerline{\sf UNIVERSIDADE DE SANTIAGO DE COMPOSTELA}
+}
+\enlargethispage{1cm}
+\clearpage
+}
+
+\newcommand{\primeira}[3]{
+\thispagestyle{empty}
+\enlargethispage{1cm}
+\begin{center}\Large
+{\sf GRADO DE MATEM\'ATICAS}\\
+\bigskip
+{\bfseries Trabajo Fin de Grado}\\
+\vspace{4cm}
+{\bfseries\Huge #1}\\		
+\vspace{1.2cm}
+{#2}		\par		     
+\end{center}
+\vspace{6.5cm}
+\begin{center}
+\Large
+{#3}	\par			    
+\vspace{1cm}
+{\sf UNIVERSIDADE DE SANTIAGO DE COMPOSTELA}
+\end{center}}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{algorithm}[theorem]{Algoritmo}
+\newtheorem{axiom}[theorem]{Axioma}
+\newtheorem{case}[theorem]{Caso}
+\newtheorem{conclusion}[theorem]{Conclusión}
+\newtheorem{condition}[theorem]{Condición}
+\newtheorem{conjetura}[theorem]{Conjetura}				
+\newtheorem{criterion}[theorem]{Criterio}
+\newtheorem{ejercicio}[theorem]{Ejercicio}	
+			
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{ejemplo}[theorem]{Ejemplo}				
+\newtheorem{agradecimientos}[theorem]{Agradecimientos}	
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{notation}[theorem]{Notación}
+\newtheorem{problem}[theorem]{Problema}
+\newtheorem{solution}[theorem]{Solución}
+
+\newtheorem*{remark*}{Observación}
+\newtheorem*{remarkimp*}{Observación importante}
+
+
+\addto\captionsspanish{
+	\renewcommand{\contentsname}{\'Indice} 
+	\renewcommand\appendixname{Anexo}
+	\renewcommand\appendixpagename{Anexos}
+}
+
+
+%PAQUETES E COMANDOS EXTRA
+\theoremstyle{definition}
+\newtheoremstyle{exampstyle}
+{2mm} % Space above
+{-2mm} % Space below
+{} % Body font
+{} % Indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{exampstyle}
+\newtheorem{innercustomgeneric}{\customgenericname}
+\providecommand{\customgenericname}{}
+\newcommand{\newcustomtheorem}[2]{%
+  \newenvironment{#1}[1]
+  {%
+   \renewcommand\customgenericname{#2}%
+   \renewcommand\theinnercustomgeneric{##1}%
+   \innercustomgeneric
+  }
+  {\endinnercustomgeneric}
+}
+\newcustomtheorem{cdefinition}{Definición}
+
+\AfterEndEnvironment{cdefinition}{\noindent\ignorespaces}
+
+\def\N{\ensuremath{\mathbb{N}}} %-- la N de los naturales
+\def\R{\ensuremath{\mathbb{R}}} %-- La R de los reales.
+\def\C{\ensuremath{\mathbb{C}}} %-- La C de los complejos.
+\def\Q{\ensuremath{\mathbb{Q}}}
+\def\K{\ensuremath{\mathbb{K}}}
+
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{plain}
+\@ifundefined{c@chapter}{\newfloat{remark}{h}{lorem}}{\newfloat{remark}{h}{lorem}[chapter]}
+\floatname{remark}{Observación}
+\newcommand*\listofremarks{\listof{remark}{List of Observacións}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposición}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Demostración}}
+\newtheorem*{remark}{Observación}
+\newtheorem*{solution}{Solución}
+\newtheorem{refremark}{Observación}[chapter]
+\newtheorem{refsolution}{Solución}[chapter]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Bases de Schauder en espacios de Banach},
+  pdfauthor={Iker Rodriguez Rodriguez},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Bases de Schauder en espacios de Banach}
+\author{Iker Rodriguez Rodriguez}
+\date{2026-06-01}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Prefacio}\label{prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
+
+En lo que sigue se expondrá una versión revisada del Trabajo Fin de
+Grado presentado en Julio de 2025 en la Facultad de Matemáticas.
+
+\bookmarksetup{startatroot}
+
+\chapter*{Resumen}\label{resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+
+\markboth{Resumen}{Resumen}
+
+Estudiaremos los conceptos básicos de las bases de Schauder,
+circunscritas en el ámbito del Análisis Funcional. Veremos algunas de
+sus propiedades, tipos y utilidades en la caracterización de atributos
+de los espacios, centrándonos sobre todo en la reflexividad y en la
+estructura interna de los espacios, dando especial importancia a los
+espacios de sucesiones como \(c_0\) y los \(\ell_p\), destacando en
+especial a \(\ell_1\) entre estos últimos. También daremos algunas notas
+relacionadas con la existencia y unicidad de bases de Schauder e
+intentaremos mostrar como estas bases son una extensión natural de las
+bases de Hamel en espacios finitos y una generalización de las bases de
+Hilbert a espacios de Banach más genéricos.
+
+\vspace*{3.5cm}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Abstract}\label{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\markboth{Abstract}{Abstract}
+
+We will study the basic concepts of Schauder basis, mainly related to
+the Functional Analysis. We will see some of their properties, types and
+utilities in characterization of spaces attributes, focusing on
+reflexivity and the internal structure of spaces, giving special treat
+to the spaces of sequences like \(c_0\) and \(\ell_p\), laying emphasis
+on \(\ell_1\) among latter. Furthermore, we will give some notes related
+to existence and uniqueness of Schauder basis and try to show how this
+basis are a natural extension of Hamel basis of finite spaces as well as
+a generalization of Hilbert basis to more generic Banach spaces.
+
+\clearpage
+
+\thispagestyle{empty}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Introducción}\label{introducciuxf3n}
+\addcontentsline{toc}{chapter}{Introducción}
+
+\markboth{Introducción}{Introducción}
+
+\newline
+
+Desde el inicio de la matemática moderna, con Descartes, hemos tenido el
+objetivo de asignar a los objetos de nuestro estudio una secuencia de
+cifras con las que poder simplificar dichos objetos y embeberlos en el
+mundo de los números, tratándolos así con todo el poder teórico de las
+matemáticas. Dio inicio esta tentativa con las primeras coordenadas
+\textit{cartesianas} ---así designadas en honor a su promotor--- que
+movilizaron el motor de la producción matemática haciéndolo más
+fructífero en los últimos \(500\) años que en los previos \(3\,300\) que
+hay desde las primeras ternas pitagóricas mesopotámicas conocidas.
+
+Es con esa filosofía en mente que surge la idea de realizar tal
+tentativa no ya con objetos físicos o con coordenadas finitas, sino con
+el poder del infinito. El objetivo es ahora el estudio de objetos mucho
+más abstractos: las funciones ---lo cual trajo consigo el problema de
+las inifitas dimensiones---.
+
+Al principio, el estudio se reducía a las funciones de
+\(\mathcal{C}^\infty\) o infinitamente diferenciables ---las conocidas
+como series de Taylor, 1715, que fallaron en generar todo el espacio y
+se reducían a las funciones analíticas---. Con el tiempo, la idea fue
+madurando y se quiso ampliar el domino de validez a todas las funciones
+continuas, aún cuando no se tenía muy claro qué era una función continua
+todavía ---de aquí surgieron las series de Fourier, conocidas ya a
+principios del siglo XIX y que resultarían en una base no para las
+funciones continuas con la norma de la convergencia uniforme, sino para
+el espacio \(L^2\) con la norma \emph{euclidiana}
+\(\|\!\cdot\!\|_2\)---.
+
+Con el final del siglo XIX y la llegada del XX comenzaron a darse los
+mayores avances en este campo. Hilbert, Schmidt y Riesz---entre muchos
+otros--- comenzaron el estudio del espacio de las funciones de cuadrado
+integrable y consiguieron extraer ciertas nociones geométricas muy
+similares a las de los espacios euclidianos de dimensión finita, como
+por ejemplo la ortogonalidad. El concepto creció y se estableció la
+abstracción de los espacios de Hilbert ---término acuñado por von
+Neumann---, cuyo principal cometido y éxito es generalizar los espacios
+euclidianos a dimensión infinita respetando la existencia de sistemas
+ortonormales que generan la totalidad del espacio. Surgió así el estudio
+sistemático de la noción de base en dimensión infinita.
+
+De forma paralela, Haar construyó un sistema ---el conocido como sistema
+de Haar--- de funciones que sirven de base no sólo para el espacio
+\(L^2\), que ya tenía una base dada por las series de Fourier que además
+funcionaba por ser este un espacio de Hilbert, sino de todos los
+espacios \(L^p\), con \(1\leq p<\infty\) que no son Hilbertianos. Poco
+después, Georg Faber demostró la existencia de una base para el espacio
+de las funciones continuas con la norma uniforme.
+
+Todo este impulso histórico se cristalizó en la tesis de \(1923\) de un
+joven matemático polaco, Juliusz Schauder. Él dio rigor y formalismo a
+la idea de una generalización de todo lo anterior introduciendo el
+concepto hoy en día conocido, en su honor, como
+\emph{bases de Schauder}: un avance más en el entendimiento de la
+estructura de los espacios de funciones inspirado en el objetivo de
+Descartes de simplificar el estudio de cualquier ente a un sistema de
+coordenadas coherente del que se puedan extraer conclusiones.
+
+Es por querer dar valor a esta idea tan matemática que en el presente
+Trabajo Fin de Grado queremos dar un repaso a algunos de los resultados
+que las bases de Schauder han ayudado a probar y comprender.
+
+En el primer capítulo nos centraremos en la definición de lo que es una
+base de Schauder y caracterizaremos su existencia; también incluiremos
+algunos comentarios sobre el problema de la existencia de base para un
+espacio de Banach.
+
+En el Capítulo 2 estudiaremos la relación entre las bases de Schauder y
+el espacio dual, demostrando el primer gran resultado del trabajo: la
+caracterización de aquellos espacios de Banach que son reflexivos y
+admiten base de Schauder.
+
+En el Capítulo 3 estudiaremos las conocidas como sucesiones básicas, que
+no son más que bases de Schauder del espacio ---quizás menor que el
+total--- que generan. También hablaremos sobre la noción equivalencia
+para bases de Schauder.
+
+En el Capítulo 4 estudiaremos aquellas bases de Schauder que son
+incondicionales; es decir, es indiferente el orden que consideremos a la
+hora de estudiar la convergencia de la serie que define a cada vector
+del espacio. Caracterizaremos los espacios de Banach reflexivos con base
+incondicional.
+
+En el Capítulo 5 daremos por finalizada nuestra tentativa empleando la
+teoría de las bases de Schauder desarrollada a lo largo del trabajo para
+estudiar la estructura interna de los espacios de sucesiones \(\ell_p\)
+con \(1\leq p<\infty\), con el objetivo de dar a entender como de
+distintos son entre sí.
+
+A mayores, queremos dejar patente que las bases de Schauder no son en
+absoluto una construcción artificiosa, sino que generalizan muy
+naturalmente a las bases de Hamel de los espacios de dimensión finita.
+Es por ello que iremos comparando sus propiedades en algunos capítulos
+para dejar claro el origen algebraico que tiene detrás esta idea y que
+tan bien resume la filosofía del Análisis Funcional de fusionar
+conceptos algebraicos con nociones topológicas para el estudio de las
+funciones.
+
+\begin{flushright}
+    Santiago de Compostela, julio de 2025.
+\end{flushright}
+
+\bookmarksetup{startatroot}
+
+\chapter{Bases de Schauder}\label{bases-de-schauder}
+
+En este capítulo presentaremos algunos conceptos básicos: introduciremos
+la noción de base de Schauder para un espacio vectorial normado,
+caracterizaremos su construcción y existencia y más adelante, ya en la
+segunda sección del capítulo, veremos que la hipótesis de completitud es
+fundamental para obtener los resultados más importantes de este Trabajo
+Fin de Grado.
+
+También hablaremos, aunque de manera más superficial, del \emph{problema
+de existencia de base de Schauder} para espacios de Banach separables.
+
+\section{Bases de Schauder en espacios vectoriales
+normados.}\label{bases-de-schauder-en-espacios-vectoriales-normados.}
+
+Es bien conocido que todo espacio vectorial tiene base de Hamel. Es
+decir, en todo espacio vectorial podemos encontrar un conjunto de
+vectores linealmente independientes cuyas combinaciones lineales
+(¡finitas!) generan el espacio. Además, todas las bases de Hamel de un
+mismo espacio vectorial tienen algo en común: su cardinal. Por tanto, es
+posible definir la \textbf{\emph{dimensión}} de cualquier espacio
+vectorial.
+
+No obstante, en el caso de dimensión infinita, la exigencia de finitud
+de las combinaciones lineales provoca que las bases de Hamel pierdan
+gran parte de su utilidad. Más exactamente (véase {[}1{]}, pág. 48):
+
+\begin{theorem}[]\protect\hypertarget{thm-first}{}\label{thm-first}
+
+Ningún espacio vectorial de dimensión infinita admite base de Hamel
+numerable.
+
+\end{theorem}
+
+Evidentemente, la no numerabilidad de una base es un gran inconveniente,
+pues reduce enormemente la capacidad de trabajar con éstas: con una base
+nosotros queremos reducir el número de elementos que necesitamos conocer
+de un espacio para poder trabajar con él, pero si dicha base es no
+numerable entonces es necesario conocer casi tantos elementos como tiene
+el espacio, lo cual hace redundante el sentido de una base.
+
+Para superar la problemática anteriormente mencionada podemos buscar
+ayuda en la topología y emplear el concepto de convergencia para
+generalizar las combinaciones lineales finitas a sumas infinitas, es
+decir, a series.
+
+Sea \((X,\|\!\cdot\!\|)\) un espacio vectorial normado.
+
+\begin{definition}[Base de
+Schauder]\protect\hypertarget{def-bs}{}\label{def-bs}
+
+~
+
+\hspace*{1mm}
+
+Se dice que una sucesión \((e_i)_i\subset X\) es una \textbf{\emph{base
+de Schauder de \(X\)}} si para cada vector \(x\in X\) existe una única
+sucesión de escalares \((a_i)_i\) de modo que\\
+\[
+x=\sum_{i=1}^{\infty}{a_ie_i},
+\]
+
+es decir, cumpliendo que\\
+\[
+\lim_{n\rightarrow\infty}\big\|x-\sum_{i=1}^{n}{a_ie_i}\big\|=0.
+\]
+
+\end{definition}
+
+La anterior definición ya nos deja entrever esa similitud de las bases
+de Schauder con las de Hamel: un conjunto de vectores---linealmente
+independientes--- que generan el espacio y nos permiten asignar de forma
+única unos coeficientes a todos los elementos de dicho espacio. Hasta
+aquí tenemos la filosofía algebraica del Análisis Funcional.
+
+El lector podrá notar ahora los beneficios de introducir una perspectiva
+analítica, o más bien topológica, al poder reducir el tamaño de las
+bases. Donde antes teníamos bases no numerables para espacios de
+dimensión infinita, ahora tenemos una sucesión numerable que genera todo
+el espacio manteniendo la unicidad de los coeficientes (que tienen
+entonces derecho a ser denominados \textbf{\emph{coordenadas}}). Parece
+que vamos por buen camino en el cumplimiento de nuestro objetivo.
+
+Veamos ahora una caracterización de estas bases que nos será muy útil
+tanto para demostrar que una sucesión es, en efecto, base de Schauder
+como para construirlas.
+
+\begin{definition}[Proyecciones canónicas de una base de
+Schauder]\protect\hypertarget{def-ProyeccionesCanonicas}{}\label{def-ProyeccionesCanonicas}
+
+~
+
+\hspace{1mm}
+
+Si \((e_i)_i\) es una base de Schauder de \(X\), la sucesión de
+\emph{proyecciones canónicas} asociada a \((e_i)_i\) es la sucesión de
+operadores \((P_n)_n\subset\mathcal{B}(X)\) dada, para cada
+\(n\in\mathbb{N}\), por
+\begin{equation}\protect\phantomsection\label{eq-ProyCanon}{
+    P_n\colon x=\sum_{i=1}^\infty a_ie_i\in X\longmapsto P_nx=\sum_{i=1}^n a_ie_i\in X.
+}\end{equation}
+
+\end{definition}
+
+Sea \((X,\|\!\cdot\!\|)\) un espacio vectorial normado con base de
+Schauder \((e_i)_i\).
+
+\begin{proposition}[Caracterización de las proyecciones
+canónicas]\protect\hypertarget{prp-proyeciones}{}\label{prp-proyeciones}
+
+~
+
+\hspace*{1mm}
+
+La sucesión de proyecciones canónicas asociada a \((e_i)_i\) satisface
+las siguientes propiedades:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  para cada \(n\in\mathbb{N}\), \(P_n(X)\) es un espacio vectorial de
+  dimensión \(n\);
+\item
+  para cualesquiera \(n,\,m\in\mathbb{N}\),
+  \(P_nP_m=P_mP_n=P_{\min\{n,m\}}\);
+\item
+  para cada \(x\in X\), \(\|P_nx-x\|\to 0\) cuando \(n\to\infty\).
+\end{enumerate}
+
+Además, dada una sucesión de operadores \((P_n)_n\subset\mathcal{B}(X)\)
+satisfaciendo \((a)\), \((b)\) y \((c)\), existe una base de Schauder de
+\(X\) que tiene a \((P_n)_n\) como sucesión de proyecciones canónicas
+asociada.
+
+\end{proposition}
+
+Antes de ver la demostración de la Proposición
+Proposición~\ref{prp-proyeciones} conviene recordar que se dice que un
+operador \(P\in\mathcal{B}(X)\) es una \textbf{\emph{proyección}}
+(lineal y continua) si \(P^2\equiv PP=P\). En tal caso, \(I-P\) también
+es una proyección. Además, \(P(X)={\rm ker}\,(I-P)\), luego \(P\)
+restringido a \(P(X)\) es la identidad. Análogamente,
+\({\rm ker}\,P=(I-P)(X)\). Es evidente que si \(P\) es una proyección no
+trivial (\(P\neq 0\) y \(P\neq I\)), entonces \(\|P\|\geq 1\) y
+\(\|I-P\|\geq 1\).
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-BST}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Marián. Fabian, Petr. Habala, Petr. Hájek, Vicente.
+Montesinos, y Václav. Zizler, \emph{Banach Space Theory: The Basis for
+Linear and Nonlinear Analysis}. Springer, 2011.}
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

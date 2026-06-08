@@ -1,0 +1,44 @@
+project:
+  type: book
+
+lang: es
+
+book:
+  title: "Bases de Schauder en espacios de Banach"
+  author: "Iker Rodriguez Rodriguez"
+  date: "Junio 2026"
+  chapters:
+    - index.qmd
+    - resumen.qmd
+    - introduccion.qmd
+    - 01_Conceptos.qmd
+    - Bibliografia.qmd
+
+bibliography: referencias.bib
+csl: ieee.csl
+
+
+crossref:
+  custom:
+    - key: obs
+      kind: float
+      reference-prefix: "Observación"
+      caption-prefix: "Observación"
+      latex-env: remark
+  eq-prefix: ""
+
+language: 
+  crossref-prp-prefix: ""
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: estilos.css
+  pdf:
+    documentclass: scrreprt
+    include-in-header: 0_preambulo.tex
+
+
+

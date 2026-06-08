@@ -1,0 +1,183 @@
+\usepackage[papersize={210mm,297mm},lmargin=2.5cm,rmargin=2.5cm,top=3.5cm,bottom=3.5cm]{geometry}
+
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parskip}{1mm}
+
+\usepackage{scrextend}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd}
+\usepackage{pdfsync}
+\usepackage{latexsym,xcolor,graphicx}
+\usepackage[nottoc]{tocbibind}
+\usepackage[utf8]{inputenc}					
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-lcroman,es-noquoting]{babel}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{appendix}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}\setlist{nosep,after=\vspace{1mm},before=\vspace{0mm}}
+\usepackage{graphicx,epstopdf}
+\usepackage{tcolorbox}
+\usepackage{amssymb,cancel}
+\usepackage{amsfonts,amsmath,color}
+\usepackage{amsthm,mathrsfs}
+\usepackage{enumitem,multicol,bbding}
+\usepackage[mathscr]{euscript}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{csquotes}
+\usepackage{etoolbox}
+\usepackage{scrextend}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{2mm}%
+  \setlength{\belowdisplayskip}{2mm}%
+  \setlength{\abovedisplayshortskip}{1mm}%
+  \setlength{\belowdisplayshortskip}{1mm}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\usepackage[style=ieee]{biblatex}
+%\usepackage{biblatex}
+\addbibresource{referencias.bib}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\bfseries\huge}
+{\filleft\huge\chaptertitlename~\thechapter}
+{0.5cm}
+{\titlerule\filright}
+[\titlerule]
+\titlespacing*{\chapter}{0pt}{-1.5cm}{2cm}
+\titlespacing*{\section}{0pt}{0.25cm}{0.25cm}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+% Cabeceira
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter. #1}}{}}% Formato para o capítulo: N. Nome
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}% Formato para a sección: N.M. Nome
+\fancyhead[LO]{\rightmark}% Nas páxinas impares, parte esquerda do encabezado, aparecerá o nome do capítulo
+\fancyhead[RE]{\leftmark}% Nas páxinas pares, parte dereita do encabezado, aparecerá o nombre da sección
+\fancyhead[RO,LE]{\textbf{\thepage}} % Números de páxina nas esquinas dos encabezados
+
+\renewcommand{\quote}{\list{}{\rightmargin=\leftmargin\topsep=0pt}\item\relax}
+
+\newcommand{\portada}[3]{
+\thispagestyle{empty}
+\definecolor{azulUSC}{RGB}{13,38,120}
+\includegraphics[width=13cm]{logomath}
+\vspace*{2cm}
+\centerline{{\Large\bf  Trabajo Fin de Grado}}
+\vspace{2.6cm}
+{\center{\Huge\bfseries\color{azulUSC} #1}\par}		
+\vspace{1cm}
+{\Large
+\centerline{#2}		
+\vspace{6.4cm}
+\centerline{\sf #3}        
+\vspace{1.25cm}
+\centerline{\sf UNIVERSIDADE DE SANTIAGO DE COMPOSTELA}
+}
+\enlargethispage{1cm}
+\clearpage
+}
+
+\newcommand{\primeira}[3]{
+\thispagestyle{empty}
+\enlargethispage{1cm}
+\begin{center}\Large
+{\sf GRADO DE MATEM\'ATICAS}\\
+\bigskip
+{\bfseries Trabajo Fin de Grado}\\
+\vspace{4cm}
+{\bfseries\Huge #1}\\		
+\vspace{1.2cm}
+{#2}		\par		     
+\end{center}
+\vspace{6.5cm}
+\begin{center}
+\Large
+{#3}	\par			    
+\vspace{1cm}
+{\sf UNIVERSIDADE DE SANTIAGO DE COMPOSTELA}
+\end{center}}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{algorithm}[theorem]{Algoritmo}
+\newtheorem{axiom}[theorem]{Axioma}
+\newtheorem{case}[theorem]{Caso}
+\newtheorem{conclusion}[theorem]{Conclusión}
+\newtheorem{condition}[theorem]{Condición}
+\newtheorem{conjetura}[theorem]{Conjetura}				
+\newtheorem{criterion}[theorem]{Criterio}
+\newtheorem{ejercicio}[theorem]{Ejercicio}	
+			
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{ejemplo}[theorem]{Ejemplo}				
+\newtheorem{agradecimientos}[theorem]{Agradecimientos}	
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{notation}[theorem]{Notación}
+\newtheorem{problem}[theorem]{Problema}
+\newtheorem{solution}[theorem]{Solución}
+
+\newtheorem*{remark*}{Observación}
+\newtheorem*{remarkimp*}{Observación importante}
+
+
+\addto\captionsspanish{
+	\renewcommand{\contentsname}{\'Indice} 
+	\renewcommand\appendixname{Anexo}
+	\renewcommand\appendixpagename{Anexos}
+}
+
+
+%PAQUETES E COMANDOS EXTRA
+\theoremstyle{definition}
+\newtheoremstyle{exampstyle}
+{2mm} % Space above
+{-2mm} % Space below
+{} % Body font
+{} % Indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{exampstyle}
+\newtheorem{innercustomgeneric}{\customgenericname}
+\providecommand{\customgenericname}{}
+\newcommand{\newcustomtheorem}[2]{%
+  \newenvironment{#1}[1]
+  {%
+   \renewcommand\customgenericname{#2}%
+   \renewcommand\theinnercustomgeneric{##1}%
+   \innercustomgeneric
+  }
+  {\endinnercustomgeneric}
+}
+\newcustomtheorem{cdefinition}{Definición}
+
+\AfterEndEnvironment{cdefinition}{\noindent\ignorespaces}
+
+\def\N{\ensuremath{\mathbb{N}}} %-- la N de los naturales
+\def\R{\ensuremath{\mathbb{R}}} %-- La R de los reales.
+\def\C{\ensuremath{\mathbb{C}}} %-- La C de los complejos.
+\def\Q{\ensuremath{\mathbb{Q}}}
+\def\K{\ensuremath{\mathbb{K}}}
+
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}

@@ -1,0 +1,3 @@
+# Prefacio {.unnumbered}
+
+En lo que sigue se expondrá una versión revisada del Trabajo Fin de Grado presentado en Julio de 2025 en la Facultad de Matemáticas. 

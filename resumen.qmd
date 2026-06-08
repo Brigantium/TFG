@@ -1,0 +1,15 @@
+# Resumen {.unnumbered}
+
+Estudiaremos los conceptos básicos de las bases de Schauder, circunscritas en el ámbito del Análisis Funcional. Veremos algunas de sus propiedades, tipos y utilidades en la caracterización de atributos de los espacios, centrándonos sobre todo en la reflexividad y en la estructura interna de los espacios, dando especial importancia a los espacios de sucesiones como $c_0$ y los $\ell_p$, destacando en especial a $\ell_1$ entre estos últimos. También daremos algunas notas relacionadas con la existencia y unicidad de bases de Schauder e intentaremos mostrar como estas bases son una extensión natural de las bases de Hamel en espacios finitos y una generalización de las bases de Hilbert a espacios de Banach más genéricos.
+
+\vspace*{3.5cm}
+
+<!-- {\let\clearpage\relax\chapter*{Abstract}} -->
+
+# Abstract {.unnumbered}
+
+We will study the basic concepts of Schauder basis, mainly related to the Functional Analysis. We will see some of their properties, types and utilities in characterization of spaces attributes, focusing on reflexivity and the internal structure of spaces, giving special treat to the spaces of sequences like $c_0$ and $\ell_p$, laying emphasis on $\ell_1$ among latter. Furthermore, we will give some notes related to existence and uniqueness of Schauder basis and try to show how this basis are a natural extension of Hamel basis of finite spaces as well as a generalization  of Hilbert basis to more generic Banach spaces.
+
+\clearpage
+
+\thispagestyle{empty}

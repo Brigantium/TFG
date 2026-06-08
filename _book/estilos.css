@@ -1,0 +1,36 @@
+/* --- ESTILO PLAIN (Texto en cursiva) --- */
+/* Aplica a Teoremas, Lemas, Proposiciones, Corolarios, Algoritmos, etc. */
+.theorem, .lemma, .proposition, .corollary, .theorem-alg, .theorem-axm, .theorem-cas, .theorem-con, .theorem-cond, .theorem-crit {
+  font-style: italic;
+}
+
+/* Forzar que los títulos NO estén en cursiva */
+.theorem-title {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* --- ESTILO DEFINITION y REMARK (Texto normal/recto) --- */
+/* Quarto por defecto los deja rectos, pero aseguramos que no hereden la cursiva */
+.definition, .theorem-exm, .theorem-exr, .theorem-agr, .theorem-rem, .theorem-not, .theorem-prob, .theorem-sol {
+  font-style: normal !important;
+}
+
+
+/* 1. Si la demostración termina en un párrafo normal */
+.proof > p:last-child::after,
+/* 2. Si la demostración termina en una lista, lo añade solo al último ítem */
+.proof > ul:last-child > li:last-child::after,
+.proof > ol:last-child > li:last-child::after {
+  content: "\25A1"; /* Cuadrado blanco (□) */
+  float: right;
+  margin-top: 0.2em;
+  font-style: normal;
+}
+
+/* Limpieza de flotado para que no rompa el diseño del documento */
+.proof::after {
+  content: "";
+  display: table;
+  clear: both;
+}
