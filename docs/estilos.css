@@ -34,3 +34,20 @@
   display: table;
   clear: both;
 }
+
+
+
+/* Selecciona el contenedor de la observación personalizada */
+.quarto-layout-panel .quarto-float-obs,
+div[id^="obs-"] {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en vertical */
+}
+
+/* Fuerza a que el título (caption) se coloque en primer lugar (arriba) */
+div[id^="obs-"] figcaption {
+  order: -1; 
+  margin-top: 0;
+  margin-bottom: 0.5em; /* Añade un espacio entre el título y el cuerpo */
+  font-weight: bold;    /* Ponemos el título en negrita para que parezca un teorema */
+}

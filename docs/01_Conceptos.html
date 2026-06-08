@@ -92,6 +92,14 @@ div.csl-indent {
     "search-label": "Buscar"
   }
 }</script>
+</head><body class="nav-sidebar floating quarto-light">\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+\def\N{\ensuremath{\mathbb{N}}} %-- la N de los naturales
+\def\R{\ensuremath{\mathbb{R}}} %-- La R de los reales.
+\def\C{\ensuremath{\mathbb{C}}} %-- La C de los complejos.
+\def\Q{\ensuremath{\mathbb{Q}}}
+\def\K{\ensuremath{\mathbb{K}}}
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -124,9 +132,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="estilos.css">
-</head>
 
-<body class="nav-sidebar floating quarto-light">
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -281,10 +289,10 @@ x=\sum_{i=1}^{\infty}{a_ie_i},
 </ol>
 <p>Además, dada una sucesión de operadores <span class="math inline">\((P_n)_n\subset\mathcal{B}(X)\)</span> satisfaciendo <span class="math inline">\((a)\)</span>, <span class="math inline">\((b)\)</span> y <span class="math inline">\((c)\)</span>, existe una base de Schauder de <span class="math inline">\(X\)</span> que tiene a <span class="math inline">\((P_n)_n\)</span> como sucesión de proyecciones canónicas asociada.</p>
 </div>
-<div class="obs">
-<p><em>Observación</em> : Antes de ver la demostración de la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a> conviene recordar que se dice que un operador <span class="math inline">\(P\in\mathcal{B}(X)\)</span> es una <em>proyección</em> (lineal y continua) si <span class="math inline">\(P^2\equiv PP=P\)</span>. En tal caso, <span class="math inline">\(I-P\)</span> también es una proyección. Además, <span class="math inline">\(P(X)={\rm ker}\,(I-P)\)</span>, luego <span class="math inline">\(P\)</span> restringido a <span class="math inline">\(P(X)\)</span> es la identidad. Análogamente, <span class="math inline">\({\rm ker}\,P=(I-P)(X)\)</span>. Es evidente que si <span class="math inline">\(P\)</span> es una proyección no trivial (<span class="math inline">\(P\neq 0\)</span> y <span class="math inline">\(P\neq I\)</span>), entonces <span class="math inline">\(\|P\|\geq 1\)</span> y <span class="math inline">\(\|I-P\|\geq 1\)</span>.</p>
+<div id="cnj-1" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Observación 1.1</strong></span> Antes de ver la demostración de la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a> conviene recordar que se dice que un operador <span class="math inline">\(P\in\mathcal{B}(X)\)</span> es una <em>proyección</em> (lineal y continua) si <span class="math inline">\(P^2\equiv PP=P\)</span>. En tal caso, <span class="math inline">\(I-P\)</span> también es una proyección. Además, <span class="math inline">\(P(X)={\rm ker}\,(I-P)\)</span>, luego <span class="math inline">\(P\)</span> restringido a <span class="math inline">\(P(X)\)</span> es la identidad. Análogamente, <span class="math inline">\({\rm ker}\,P=(I-P)(X)\)</span>. Es evidente que si <span class="math inline">\(P\)</span> es una proyección no trivial (<span class="math inline">\(P\neq 0\)</span> y <span class="math inline">\(P\neq I\)</span>), entonces <span class="math inline">\(\|P\|\geq 1\)</span> y <span class="math inline">\(\|I-P\|\geq 1\)</span>.</p>
 </div>
-<div class="proof">
+<div class="proof" data-collapse="true">
 <p><span class="proof-title"><em>Demostración</em>. </span></p>
 <p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
 <ol type="a">
@@ -304,70 +312,67 @@ x=\lim_{n\to\infty}{P_n(x)}=\lim_{n\to\infty}\sum_{i=1}^nP_i(x) - P_{i-1}(x)=  \
 ya que <span class="math inline">\(\dim\,P_i(X)/P_{i-1}(X)=1\)</span>. La unicidad de la sucesión de escalares <span class="math inline">\((a_i)_i\)</span> exigida en la definición de base de Schauder es consecuencia de que <span class="math inline">\(a_ie_i=P_i(x)-P_{i-1}(x)\)</span> para cada <span class="math inline">\(i\in\mathbb{N}\)</span>.</p>
 </div>
 <p>El lector podrá notar que la idea detrás de esta caracterización es muy interesante —y bella—: para construir las bases del espacio total se parte de un espacio de dimensión finita y se va haciendo más grande hasta que, en una especie de convergencia espacial, se construye una sucesión de espacios que se aproxima cada vez más al espacio total. Nos gustaría incidir en esta idea porque guarda una estrecha relación con la filosofía del Análisis Matemático: estudiar aquello que no comprendemos fraccionándolo primero en aquello que sí conocemos y extrapolando luego mediante el uso de límites sus propiedades.</p>
-<p>Además, remarca de nuevo la idea principal de este Trabajo Fin de Grado: las bases de Schauder pretenden ser bases de Hamel que admiten sumas infinitas, es decir, de bases de Hamel.</p>
-<p>Veamos ahora un resultado que abre las puertas a lo que será nuestro ámbito de estudio: los espacios completos.</p>
-<!--
-\begin{proposition}[Condición suficiente para ser base de Schauder de la compleción $\hat{X}$ de $X$]\label{P:1.4}\hspace*{1mm}\\
+<p>Además, remarca de nuevo la idea principal de este Trabajo Fin de Grado: las bases de Schauder pretenden ser bases de Hamel que admiten sumas infinitas, es decir, <em>límites</em> de bases de Hamel.</p>
+<p>Veamos ahora un resultado que abre las puertas a lo que será nuestro ámbito de estudio: los espacios <em>completos</em>.</p>
+<!-- \begin{proposition}[Condición suficiente para ser base de Schauder de la compleción $\widehat{X}$ de $X$]\label{P:1.4}\hspace*{1mm}\\
 Si
 \begin{equation}\label{eq:acotacion}
     \sup_{n\in\mathbb{N}}\|P_n\|<\infty
 \end{equation}
-la sucesión $(e_i)_i$ también es una base de Schauder de la compleción $\hat{X}$ de $X$.
-
-\begin{proof}\hspace*{1cm}
-
-Consideremos, para cada $n\in\mathbb{N}$, la extensión continua de $P_n$ a $\hat{X}$; es decir, para cada $\hat{x}\in\hat{X}$, definimos $\hat{P}_n(\hat{x})= \lim_{k\to\infty}P_n(x_k)$, siendo $(x_k)_k\subset X$ cualquier\footnote{Las proyecciones canónicas $P_n$ son continuas. Por tanto, si $(x_k)_k$ e $(y_k)_k$ son dos sucesiones convergentes a $\hat{x}$, entonces $\hat{P}_n(x_k-y_k)\to 0$ cuando $k\to\infty$ y equivalentemente $\lim_{k\to\infty}P_n(x_k)=\lim_{k\to\infty}P_n(y_k)$.} sucesión convergente a $\hat{x}$.
-
-Veamos que se cumplen las propiedades $(a)$, $(b)$ y $(c)$ del enunciado del Teorema \ref{proyections}.
-
-\begin{itemize}
-    \item[$(a)$]{Atendiendo a la definición de $\hat{P}_n$, resulta evidente que 
-    $\hat{P}_n(\hat{X})\subset\overline{P_n(X)}$. Además, como ---por hipótesis--- $P_n(X)$ es un subespacio vectorial de dimensión finita, en particular es cerrado, luego $P_n(X)=\overline{P_n(X)}$. Por tanto $\hat{P}_n(\hat{X})\subset P_n(X)$.
-    
-    Por otra parte, dado que $P_n(X)=\hat{P}_n(X)\subset\hat{P}_n(\hat{X})$, concluimos finalmente que $P_n(\hat{X})$ es un espacio vectorial de dimensión $n$, ya que ---por hipótesis--- ${\rm dim}\,P_n(X)=n$.}
-    
-    \item[$(b)$]{Dado $\hat{x}\in \hat{X}$ arbitrario pero fijado, existe $(x_k)_k\subset X$ tal que $x_k\to\hat{x}$ cuando $k\to\infty$. Así pues, para $m$, $n\in\mathbb{N}$ cualesquiera,
-    \begin{align*}
-    \hat{P}_n\hat{P}_mx & = \lim_{k \to\infty}{\hat{P}_n\hat{P}_mx_k} = \lim_{k \rightarrow\infty}{\hat{P}_nP_mx_k} = \lim_{k \rightarrow\infty}{P_nP_mx_k}\\ & =  \lim_{k \rightarrow\infty}{P_mP_nx_k} = \lim_{k \rightarrow\infty}{\hat{P}_m\hat{P}_nx_k} = \hat{P}_m\hat{P}_nx,
-    \end{align*}
-    por lo que $\hat{P}_n\hat{P}_m=\hat{P}_m\hat{P}_n$. La igualdad $\hat{P}_n\hat{P}_m=\hat{P}_{\min\{n,m\}}$} es consecuencia evidente de lo anterior y de la hipótesis $P_nP_m=P_{\min\{n,m\}}$.
-    \item[$(c)$]{Conviene observar inicialmente que, para cada $n\in\mathbb{N}$, se tiene que $\|\hat{P}_n\|\leq\|P_n\|$. En efecto, pues para cualquier $\hat{x}\in\hat{X}$ se tiene que
-    \[\|\hat{P}_n(\hat{x})\| = \|\lim_{k \to \infty}P_n(x_k)\| = \lim_{k\to \infty}\|P_n(x_k)\| \leq \lim_{k \to \infty}\|P_n\|\|x_k\| = \|P_n\|\|\hat{x}\|,\]
-    siendo $(x_k)_k\subset X$ una sucesión tal que $x_k\to \hat{x}$ cuando $k\to\infty$.
-
-    Así pues, dado $\hat{x}\in\hat{X}$ arbitrario pero fijado, considerando $(x_k)_k\subset X$ tal que $x_k\to \hat{x}$ cuando $k\to\infty$, tenemos que
-    \begin{align*}   
-        \|\hat{x}-\hat{P}_n\hat{x}\|&=\|\hat{x}-x_{k}+x_{k}-\hat{P}_nx_{k}+\hat{P}_nx_{k}-\hat{P}_n\hat{x}\|\\ 
-        &\leq\|\hat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\|\hat{P}_nx_{k}-\hat{P}_n\hat{x}\|\\ 
-        &\leq\|\hat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\|\hat{P}_n\|\,\|x_{k}-\hat{x}\|\\
-        &\leq\|\hat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\sup_{n\in\mathbb{N}}\|\hat{P}_n\|\,\|x_{k}-\hat{x}\|\\
-        &\leq \|\hat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\sup_{n\in\mathbb{N}}\|P_n\|\,\|x_{k}-\hat{x}\|.
-    \end{align*}
-    La condición $x_k\to \hat{x}$ cuando $k\to\infty$ asegura la existencia de $k_\varepsilon\in\mathbb{N}$ de modo que si $k\geq k_\varepsilon$, entonces
-    \[\|\hat{x}-x_{k}\|<\dfrac{\varepsilon}{3}\quad\text{y}\quad \sup_{n\in\mathbb{N}}\|P_n\|\,\|x_{k}-\hat{x}\|<\dfrac{\varepsilon}{3}.\]
-    Por otra parte, dado que $(P_n)_n$ es una sucesión de proyecciones canónicas, las sucesión $(P_n)_n$ satisface la propiedad $(b)$ del enunciado de la Proposición \ref{proyections}, luego existe $N_{k_\varepsilon}\in\mathbb{N}$ de modo que si $n\geq N_{k_\varepsilon}$ entonces
-    \[\|x_{k}-P_nx_{k}\|<\dfrac{\varepsilon}{3}.\]
-    
-    Por tanto, $\|\hat{x}-\hat{P}_n\hat{x}\|<\varepsilon$ si $n\geq N_{k_\varepsilon}$; es decir, $\|\hat{x}-\hat{P}_n\hat{x}\|\to 0$ cuando $n\to\infty$.\qedhere}
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{remarkimp*}\hspace*{1cm}\\
-    La condición (\ref{eq:acotacion}) sugiere definir
-    \[\vertiii{x}=\sup_n\|P_nx\|\quad\text{para cada $x\in X$.}\]
-    Comprobar que $\vertiii{\cdot}$ define una norma en $X$ es muy sencillo:
-    \begin{itemize}
-        \item[(N1)]{$\vertiii{x}\geq 0$ trivialmente y $0=\vertiii{x}=\sup_{n}{\|P_nx\|}$ implica que  $\|P_nx\|=0$ para todo $n\in\N$, pero como $\|\!\cdot\!\|$ es una norma, podemos deducir que $P_nx=0$ para todo $n$, de donde se sigue finalmente que $x=0$ por ser $(e_i)_i$ una base de Schauder.}
-        \item[(N2)]{$\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}$.}
-        \item[(N3)]{dado que $\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|$,
-        \begin{align*}
-            \vertiii{x+y}&=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\ 
-            &\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
-        \end{align*}}
-    \end{itemize}
-\end{remarkimp*}
-
+la sucesión $(e_i)_i$ también es una base de Schauder de la compleción $\widehat{X}$ de $X$. -->
+<div id="prp-1.4" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 1.2 (Condición suficiente para ser base de Schauder de la compleción de <span class="math inline">\(X\)</span>, <span class="math inline">\(\ \widehat X\)</span>)</strong></span> &nbsp;</p>
+<p>Si se verifica <span id="eq-acotacion"><span class="math display">\[
+\sup_{n\in\mathbb{N}}\|P_n\|&lt;\infty
+\tag{1.2}\]</span></span> la sucesión <span class="math inline">\((e_i)_i\)</span> también es una base de Schauder de la compleción <span class="math inline">\(\widehat{X}\)</span> de <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Demostración</em>. </span></p>
+<p>Consideremos, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, la extensión continua de <span class="math inline">\(P_n\)</span> a <span class="math inline">\(\widehat{X}\)</span>; es decir, para cada <span class="math inline">\(\widehat{x}\in\widehat{X}\)</span>, definimos <span class="math inline">\(\widehat{P}_n(\widehat{x})= \lim_{k\to\infty}P_n(x_k)\)</span>, siendo <span class="math inline">\((x_k)_k\subset X\)</span> cualquier sucesión convergente a <span class="math inline">\(\widehat{x}\)</span>.</p>
+<p>Veamos que se cumplen las propiedades <span class="math inline">\((a)\)</span>, <span class="math inline">\((b)\)</span> y <span class="math inline">\((c)\)</span> del enunciado de la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a>.</p>
+<ol type="a">
+<li><p>Atendiendo a la definición de <span class="math inline">\(\widehat{P}_n\)</span>, resulta evidente que <span class="math inline">\(\widehat{P}_n(\widehat{X})\subset\overline{P_n(X)}\)</span>. Además, como —por hipótesis— <span class="math inline">\(P_n(X)\)</span> es un subespacio vectorial de dimensión finita, en particular es cerrado, luego <span class="math inline">\(P_n(X)=\overline{P_n(X)}\)</span>. Por tanto <span class="math inline">\(\widehat{P}_n(\widehat{X})\subset P_n(X)\)</span>.</p>
+<p>Por otra parte, dado que <span class="math inline">\(P_n(X)=\widehat{P}_n(X)\subset\widehat{P}_n(\widehat{X})\)</span>, concluimos finalmente que <span class="math inline">\(P_n(\widehat{X})\)</span> es un espacio vectorial de dimensión <span class="math inline">\(n\)</span>, ya que —por hipótesis— <span class="math inline">\({\rm dim}\,P_n(X)=n\)</span>.</p></li>
+<li><p>Dado <span class="math inline">\(\widehat{x}\in \widehat{X}\)</span> arbitrario pero fijado, existe <span class="math inline">\((x_k)_k\subset X\)</span> tal que <span class="math inline">\(x_k\to\widehat{x}\)</span> cuando <span class="math inline">\(k\to\infty\)</span>. Así pues, para <span class="math inline">\(m\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span> cualesquiera, <span class="math display">\[
+\begin{align*}
+\widehat{P}_n\widehat{P}_mx &amp; = \lim_{k \to\infty}{\widehat{P}_n\widehat{P}_mx_k} = \lim_{k \rightarrow\infty}{\widehat{P}_nP_mx_k} = \lim_{k \rightarrow\infty}{P_nP_mx_k}\\ &amp; =  \lim_{k \rightarrow\infty}{P_mP_nx_k} = \lim_{k \rightarrow\infty}{\widehat{P}_m\widehat{P}_nx_k} = \widehat{P}_m\widehat{P}_nx,
+\end{align*}
+\]</span><br>
+por lo que <span class="math inline">\(\widehat{P}_n\widehat{P}_m=\widehat{P}_m\widehat{P}_n\)</span>. La igualdad <span class="math inline">\(\widehat{P}_n\widehat{P}_m=\widehat{P}_{\min\{n,m\}}\)</span> es consecuencia evidente de lo anterior y de la hipótesis <span class="math inline">\(P_nP_m=P_{\min\{n,m\}}\)</span>.</p></li>
+<li><p>Conviene observar inicialmente que, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, se tiene que <span class="math inline">\(\|\widehat{P}_n\|\leq\|P_n\|\)</span>. En efecto, pues para cualquier <span class="math inline">\(\widehat{x}\in\widehat{X}\)</span> se tiene que <span class="math display">\[
+\|\widehat{P}_n(\widehat{x})\| = \|\lim_{k \to \infty}P_n(x_k)\| = \lim_{k\to \infty}\|P_n(x_k)\| \leq \lim_{k \to \infty}\|P_n\|\|x_k\| = \|P_n\|\|\widehat{x}\|,
+\]</span> siendo <span class="math inline">\((x_k)_k\subset X\)</span> una sucesión tal que <span class="math inline">\(x_k\to \widehat{x}\)</span> cuando <span class="math inline">\(k\to\infty\)</span>.</p>
+<p>Así pues, dado <span class="math inline">\(\widehat{x}\in\widehat{X}\)</span> arbitrario pero fijado, considerando <span class="math inline">\((x_k)_k\subset X\)</span> tal que <span class="math inline">\(x_k\to \widehat{x}\)</span> cuando <span class="math inline">\(k\to\infty\)</span>, tenemos que <span class="math display">\[
+\begin{align*}   
+    \|\widehat{x}-\widehat{P}_n\widehat{x}\|&amp;=\|\widehat{x}-x_{k}+x_{k}-\widehat{P}_nx_{k}+\widehat{P}_nx_{k}-\widehat{P}_n\widehat{x}\|\\
+    &amp;\leq\|\widehat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\|\widehat{P}_nx_{k}-\widehat{P}_n\widehat{x}\|\\
+    &amp;\leq\|\widehat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\|\widehat{P}_n\|\,\|x_{k}-\widehat{x}\|\\
+    &amp;\leq\|\widehat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\sup_{n\in\mathbb{N}}\|\widehat{P}_n\|\,\|x_{k}-\widehat{x}\|\\
+    &amp;\leq \|\widehat{x}-x_{k}\|+\|x_{k}-P_nx_{k}\|+\sup_{n\in\mathbb{N}}\|P_n\|\,\|x_{k}-\widehat{x}\|.
+\end{align*}
+\]</span> La condición <span class="math inline">\(x_k\to \widehat{x}\)</span> cuando <span class="math inline">\(k\to\infty\)</span> asegura la existencia de <span class="math inline">\(k_\varepsilon\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(k\geq k_\varepsilon\)</span>, entonces <span class="math display">\[
+\|\widehat{x}-x_{k}\|&lt;\dfrac{\varepsilon}{3}\quad\text{y}\quad \sup_{n\in\mathbb{N}}\|P_n\|\,\|x_{k}-\widehat{x}\|&lt;\dfrac{\varepsilon}{3}.
+\]</span> Por otra parte, dado que <span class="math inline">\((P_n)_n\)</span> es una sucesión de proyecciones canónicas, las sucesión <span class="math inline">\((P_n)_n\)</span> satisface la propiedad <span class="math inline">\((b)\)</span> del enunciado de la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a>, luego existe <span class="math inline">\(N_{k_\varepsilon}\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(n\geq N_{k_\varepsilon}\)</span> entonces <span class="math display">\[
+\|x_{k}-P_nx_{k}\|&lt;\dfrac{\varepsilon}{3}.
+\]</span></p>
+<p>Por tanto, <span class="math inline">\(\|\widehat{x}-\widehat{P}_n\widehat{x}\|&lt;\varepsilon\)</span> si <span class="math inline">\(n\geq N_{k_\varepsilon}\)</span>; es decir, <span class="math inline">\(\|\widehat{x}-\widehat{P}_n\widehat{x}\|\to 0\)</span> cuando <span class="math inline">\(n\to\infty\)</span>.</p></li>
+</ol>
+</div>
+<div id="rem-2" class="proof remark">
+<p><span class="proof-title"><em>Observación 1.1</em>. </span></p>
+<p>La condición (<a href="#eq-acotacion" class="quarto-xref"><span>1.2</span></a>) sugiere definir <span class="math display">\[
+\vertiii{x}=\sup_n\|P_nx\|\quad\text{para cada $x\in X$.}
+\]</span> Comprobar que <span class="math inline">\(\vertiii{\cdot}\)</span> define una norma en <span class="math inline">\(X\)</span> es muy sencillo:</p>
+<p>(N1) <span class="math inline">\(\vertiii{x}\geq 0\)</span> trivialmente y <span class="math inline">\(0=\vertiii{x}=\sup_{n}{\|P_nx\|}\)</span> implica que <span class="math inline">\(\|P_nx\|=0\)</span> para todo <span class="math inline">\(n\in\N\)</span>, pero como <span class="math inline">\(\|\!\cdot\!\|\)</span> es una norma, podemos deducir que <span class="math inline">\(P_nx=0\)</span> para todo <span class="math inline">\(n\)</span>, de donde se sigue finalmente que <span class="math inline">\(x=0\)</span> por ser <span class="math inline">\((e_i)_i\)</span> una base de Schauder.</p>
+<p>(N2) <span class="math inline">\(\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}\)</span>.</p>
+<p>(N3) Dado que <span class="math inline">\(\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|\)</span>, <span class="math display">\[
+\begin{align*}
+    \vertiii{x+y}&amp;=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\
+    &amp;\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
+\end{align*}
+\]</span></p>
+</div>
+<!--
 \section{Bases de Schauder en espacios de Banach}
 
 Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que ---tal y como el lector verá con el paso de las páginas---, asegura la convergencia de series, continuidad de aplicaciones  y existencia de espacios que describiremos en los sucesivos capítulos.
@@ -407,10 +412,10 @@ En efecto, pues tal caso, la acotación uniforme en $(X,\|\!\cdot\!\|)$ será in
 
 Si $\left(X,\vertiii{\cdot}\right)$ fuese completo, dado que la aplicación $I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)$ es trivialmente continua (pues $\|x\|\leq\vertiii{x}$ para todo $x\in X$) y biyectiva, el { Teorema \ref{th:ap-abierta} de la aplicación abierta} nos permitiría afirmaría que $I^{-1}$ también es continua, por lo que $\vertiii{\cdot}$ y $\|\!\cdot\!\|$ serían necesariamente normas equivalentes.
     
-Probaremos que es posible proceder de tal modo. Para ello, demostraremos que $\left(X,\vertiii{\cdot}\right)$ es un espacio de Banach mostrando que $\hat{X}\subset X$, siendo ahora $\hat{X}$ la compleción de $X$ respecto de la norma $\vertiii{\cdot}$.
+Probaremos que es posible proceder de tal modo. Para ello, demostraremos que $\left(X,\vertiii{\cdot}\right)$ es un espacio de Banach mostrando que $\widehat{X}\subset X$, siendo ahora $\widehat{X}$ la compleción de $X$ respecto de la norma $\vertiii{\cdot}$.
 
-Dado $x\in\hat{X}$, como $(e_i)_i$ es base de Schauder de $\hat{X}$ (esto es una consecuencia de la Proposición \ref{P:1.4} y la Proposición \ref{P:1.5}), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
-\[x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\hat{X},\vertiii{\cdot})$;}\]
+Dado $x\in\widehat{X}$, como $(e_i)_i$ es base de Schauder de $\widehat{X}$ (esto es una consecuencia de la Proposición \ref{P:1.4} y la Proposición \ref{P:1.5}), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
+\[x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}\]
 luego $(\alpha_1e_1+\cdots+\alpha_n e_n)_n$ es una sucesión de Cauchy en $(X,\vertiii{\cdot})$, y dado que $\|\!\cdot\!\|\leq\vertiii{\cdot}$, también es una sucesión de Cauchy en $(X,\|\!\cdot\!\|)$. Por tanto, por ser $(X,\|\!\cdot\!\|)$ completo, existe $x'\in X$ de modo que
 \[x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}\]
 Es decir, $x'=x\in X$.
@@ -464,15 +469,15 @@ Por otra parte, aún cabe la posibilidad de que todo espacio de Banach separable
     \[P_{\min\{n,m\}}(X)=P_nP_m(X) \subset P_n(X)\quad\text{y}\quad P_{\min\{n,m\}}(X)=P_mP_n(X)\subset P_m(X).\]
     Por tanto, $P_{\min\{n,m\}}(X) \subset P_{\max\{n,m\}}(X)$. Es decir,
     \[P_0(X) \subset P_1(X) \subset \cdots \subset P_n(X) \subset P_{n+1}(X) \subset P_{n+2}(X) \subset \cdots\]
-    Por otra parte, en virtud de $(a)$, $\dim\,P_n(X)-\dim\,P_{n-1}(X)=1$. Por tanto, para cada $n\in\mathbb{N}$, existe un vector no nulo $\hat{e}_n\in P_n(X)\setminus P_{n-1}(X)$. Trivialmente, $\{\hat{e}_i\colon i\in\mathbb{N}\}$ es un conjunto linealmente independiente.
+    Por otra parte, en virtud de $(a)$, $\dim\,P_n(X)-\dim\,P_{n-1}(X)=1$. Por tanto, para cada $n\in\mathbb{N}$, existe un vector no nulo $\widehat{e}_n\in P_n(X)\setminus P_{n-1}(X)$. Trivialmente, $\{\widehat{e}_i\colon i\in\mathbb{N}\}$ es un conjunto linealmente independiente.
     
-    Además, como $X=P_{n-1}(X)\oplus{\ker P_{n-1}}$, tenemos en realidad que $\hat{e}_n\in P_n(X)\cap {\rm ker}P_{n-1}$.
+    Además, como $X=P_{n-1}(X)\oplus{\ker P_{n-1}}$, tenemos en realidad que $\widehat{e}_n\in P_n(X)\cap {\rm ker}P_{n-1}$.
     
-    Sea ahora, para cada $i\in\mathbb{N}$, $e_i=P_i\hat{e_i}$. En tal caso, por la propiedad $(b)$, dado un índice $j>i$, se tiene que $P_je_i=P_jP_i\hat{e}_i=P_i\hat{e}_i=e_i$. Es decir,
+    Sea ahora, para cada $i\in\mathbb{N}$, $e_i=P_i\widehat{e_i}$. En tal caso, por la propiedad $(b)$, dado un índice $j>i$, se tiene que $P_je_i=P_jP_i\widehat{e}_i=P_i\widehat{e}_i=e_i$. Es decir,
     \begin{equation}\label{eq:3}
         P_je_i=e_i\quad\text{para todo $j>i$.}    
     \end{equation}
-    Por otra parte, si $j<i$, nuevamente por la propiedad $(b)$, $P_je_i=P_jP_1\hat{e}_i=P_j0=0$. Es decir,
+    Por otra parte, si $j<i$, nuevamente por la propiedad $(b)$, $P_je_i=P_jP_1\widehat{e}_i=P_j0=0$. Es decir,
     \begin{equation}\label{eq:4}
         P_je_i=0\quad\text{para todo $j<i$.}    
     \end{equation}

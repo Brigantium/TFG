@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 lang: es
 
@@ -19,16 +20,18 @@ csl: ieee.csl
 
 
 crossref:
-  custom:
-    - key: obs
-      kind: float
-      reference-prefix: "Observación"
-      caption-prefix: "Observación"
-      latex-env: remark
+  # custom:
+  #   - key: obs
+  #     kind: float
+  #     reference-prefix: "Observación"
+  #     caption-prefix: "Observación"
+  #     latex-env: remark
   eq-prefix: ""
 
 language: 
   crossref-prp-prefix: ""
+  crossref-cnj-title: "Observación"
+  crossref-cnj-prefix: ""
 
 format:
   html:
@@ -36,9 +39,13 @@ format:
       - cosmo
       - brand
     css: estilos.css
+    include-in-header: macros.tex
   pdf:
     documentclass: scrreprt
-    include-in-header: 0_preambulo.tex
+    include-in-header: 
+      - 0_preambulo.tex
+      - macros.tex
+    latex_engine: xelatex
 
 
 
