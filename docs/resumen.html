@@ -72,6 +72,23 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      // Comandos simples (Conjuntos numéricos)
+      N: '{\\mathbb{N}}',
+      R: '{\\mathbb{R}}',
+      C: '{\\mathbb{C}}',
+      Q: '{\\mathbb{Q}}',
+      K: '{\\mathbb{K}}',
+      
+      // Comando personalizado para la triple barra de norma ||| x |||
+      vertiii: ['{\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert}', 1]
+    }
+  }
+};
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>

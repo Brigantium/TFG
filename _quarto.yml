@@ -39,7 +39,7 @@ format:
       - cosmo
       - brand
     css: estilos.css
-    # include-in-header: macros.tex
+    include-in-header: macros-mathjax.html
   pdf:
     documentclass: scrreprt
     include-in-header: 
