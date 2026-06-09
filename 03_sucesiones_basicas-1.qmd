@@ -1,4 +1,4 @@
-# Sucesiones básicas: Definición
+# Sucesiones básicas: Definición {#sec-sucesiones-basicas}
 
 Sea $(X,\|\!\cdot\!\|)$ un espacio de Banach y $(e_i)_i\subset X$ una sucesión.
 

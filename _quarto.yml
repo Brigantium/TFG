@@ -30,6 +30,10 @@ book:
         - 03_sucesiones_basicas-2.qmd
         - 03_sucesiones_basicas-3.qmd
         - 03_sucesiones_basicas-4.qmd
+    - part: 04_bases_incondicionales_intro.qmd
+      chapters:
+        - 04_bases_incondicionales-1.qmd
+        - 04_bases_incondicionales-2.qmd
     - Bibliografia.qmd
 
 bibliography: referencias.bib
@@ -44,6 +48,7 @@ crossref:
   #     caption-prefix: "Observación"
   #     latex-env: remark
   eq-prefix: ""
+  sec-prefix: ""
 
 language: 
   crossref-prp-prefix: ""

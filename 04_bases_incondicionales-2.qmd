@@ -1,0 +1,202 @@
+## Espacios de Banach reflexivos con base de Schauder incondicional
+
+$c_0$ y $\ell_1$ son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de $\ell_1$ y bounedly complete en el caso de $c_0$--- remitimos al lector al Capítulo @sec-ejemplos para las pruebas---. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:
+
+
+::: {#thm-c-0-bc}
+\hspace*{1mm}
+
+Sea $X$ un espacio de Banach con base de Schauder incondicional $(e_i)_i$. Si $(e_i)_i$ no es boundedly complete, entonces $X$ tiene un subespacio isomorfo a $c_0$.
+
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+
+\hspace*{1cm}
+
+Probaremos que si $(e_i)_i$ no es *boundedly complete*, entonces existe una sucesión básica bloque ---formada a partir de $(e_i)_i$--- que es equivalente a la base de Schauder natural de $c_0$. Por tanto, el resultado enunciado será una consecuencia del Teorema @thm-SucBasEqu $(b)$.
+
+Si $(e_i)_i$ no es *boundedly complete*, existe una sucesión de escalares $(a_i)_i$ de forma que
+$$
+    \sup_{n\in\N}\big\|\sum_{i=1}^n{a_ie_i}\big\|\leq 1\qquad\text{y}\qquad \sum_{i=1}^\infty a_i e_i \text{ no es convergente.}
+$$ {#eq-4.5}
+Por tanto, como dicha serie no es convergente, el criterio de Cauchy asegura la existencia de cierto $\varepsilon>0$ de modo que para cada $i\in\mathbb{N}$ existen $p_i$, $q_i\in\mathbb{N}$ satisfaciendo que si
+$$
+u_i:=\sum_{i=p_i}^{q_i}a_ie_i,
+$$
+entonces $\|u_i\|\geq \varepsilon$. Por otra parte, como $(e_i)_i$ es incondicional, en virtud del Teorema @thm-eqv-sbi $(b)$, para cualquier $m\in\mathbb{N}$ se tiene que
+$$
+    \big\|\sum_{i=1}^m u_i\big\|\leq K\big\|\sum_{i=1}^{q_m} a_ie_i\big\|\leq K,\quad\text{siendo $K={\rm ubc}\,(e_i)_i$,}
+$$ {#eq-4.6}
+donde en la última desigualdad hemos empleado la cota que aparece en (@eq-4.5).
+
+A continuación veremos que la sucesión básica bloque $(u_i)_i$ es equivalente a la base de Schauder natural de $c_0$. Para ello emplearemos el Teorema @thm-SucBasEqu $(c)$. Es decir, probaremos que existen constantes $C_1$ y $C_2>0$ de forma que para cualesquiera escalares $\lambda_i$, con $1\leq i\leq m$, se tiene que
+$$
+{C_1}^{-1}\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{c_0} \leq \big\|\sum_{i=1}^{m}\lambda_iu_i\big\|_X \leq C_2\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{c_0}.
+$$
+
+Dada la incondicionalidad de $(e_i)_i$, el Teorema @thm-eqv-sbi $(b)$ nos permite afirmar que si $\{j\}$ es un subconjunto de $\{1,\dots,m\}$, entonces
+$$
+|\lambda_j|\varepsilon\leq\|\lambda_ju_j\|\leq K\big\|\sum_{i=1}^m\lambda_iu_i\big\|,
+$$
+es decir, como la cota anterior es válida para cualquier $j$, concluimos en realidad que
+$$\|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K}\leq\big\|\sum_{j=1}^m\lambda_ju_j\big\|.
+$$
+
+  
+Por otra parte, por el Teorema @thm-Hahn-Banach-funcionales de extensión de Hahn-Banach aplicado a funcionales existe un funcional $f\in S_{X^\ast}$ de modo que 
+$$
+f\Big(\sum_{i=1}^m\lambda_iu_i\Big)=\big\|\sum_{i=1}^m\lambda_iu_i\big\|.
+$$
+Consideremos signos $\varepsilon_i=\pm1$ de forma que $\varepsilon_if(u_i)\geq0$ para cada $i$. En tal caso,
+$$ 
+\begin{align*}
+    \big\|\sum_{i=1}^m\lambda_iu_i\big\|&=f\Big(\sum_{i=1}^m\lambda_iu_i\Big)\leq\sum_{i= 1}^m|\lambda_i||f(u_i)|\leq \|(\lambda_i)_i\|_\infty\sum_{i=1}^m\varepsilon_if(u_i)\\
+    &=\|(\lambda_i)\|_\infty f\Big(\sum_{i = 1}^m\varepsilon_iu_i\Big)\leq\|(\lambda_i)_i\|_\infty \big\|\sum_{i = 1}^m\varepsilon_iu_i\big\|\\
+    &\leq \|(\lambda_i)\|_\infty K\big\|\sum_{i=1}^mu_i\big\|\leq \|(\lambda_i)\|_\infty\,K^2,
+\end{align*}
+$$
+donde en la segunda línea hemos empleado que $\|f\|=1$ y en la tercera línea hemos invocado el carácter incondicional de $(e_i)_i$ (más exactamente el Teorema @thm:eqv-sbi $(c)$) y (@eq-4.6).
+
+Así pues, tenemos que 
+$$
+\|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K} \leq \Big\|\sum_{i = 1}^m\lambda_iu_i\Big\| \leq K^2\|(\lambda_i)_i\|_\infty,
+$$
+por lo que el Teorema @thm-SucBasEqu nos permite afirmar que $\overline{\rm span}(u_i)_i$ es isomorfo a $c_0$.
+
+:::
+
+
+
+
+
+::: {#thm-ell-1-shr}
+\hspace*{1mm}
+
+Sea $X$ un espacio de Banach con base de Schauder incondicional $(e_i)_i$. Si $(e_i)_i$ no es shrinking, entonces $X$ tiene un subespacio isomorfo a $\ell_1$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+
+\hspace*{1mm}
+
+Probaremos que si $(e_i)_i$ no es *shrinking*, entonces existe una sucesión básica bloque ---formada a partir de $(e_i)_i$--- que es equivalente a la base de Schauder natural de $\ell_1$. Por tanto, el resultado enunciado será una consecuencia del Teorema @thm-SucBasEqu $(b)$.
+
+Si $(e_i)_i$ no es *shrinking*, $\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\}$ es un subespacio cerrado propio de $X^*$, por lo que ---en virtud del Lema @lem-riesz de Riesz--- dado $1>\varepsilon>0$ existe $f\in S_{X^*}$ tal que
+$$
+{\rm dist}\,(f,\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\})\equiv\inf\big\{\|f-g\|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}>\varepsilon.
+$$
+Es decir, para cada $n\in\mathbb{N}$, existe $z_n\in B_X$ de modo que
+$$
+\inf\big\{\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}>\varepsilon.
+$$
+No obstante, si $z_n\in\overline{{\rm span}}\{e_i\colon 1\leq i\leq n\}\cap B_X$, entonces (trivialmente)
+$$
+\inf\big\{\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon 1\leq i\leq n\}\big\}=0.
+$$
+Por tanto, concluimos que $z_n\in\overline{{\rm span}}\{e_i\colon i>n\}\cap B_X$ y
+$$
+\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|=|f(z_n)|>\varepsilon.
+$$
+Así pues,
+$$
+\lim_{n\to\infty}\sup\{|f(z)|\colon z\in\overline{{\rm span}}\{e_i\colon i>n\}\cap B_X\}\neq 0
+$$
+o, equivalentemente, existe una sucesión estrictamente creciente $(n_k)_k\subset\mathbb{N}$ de modo que para cualquier $k\in\mathbb{N}$,
+$$
+    \sup\{|f(z)|\colon z\in {\rm span}\,\{e_{n_k},e_{n_k+1},e_{n_k+2},...\}\}\geq\varepsilon.
+$$ {#eq-4.7}
+
+Empleando (@eq-4.7) podemos construir, por inducción, una sucesión básica bloque normalizada $(u_i)_i$ (formada a partir de $(e_i)_i$) de modo que $|f(u_j)|\geq\varepsilon$ para todo $j\in\mathbb{N}$.
+
+A continuación veremos que la sucesión básica bloque normalizada $(u_i)_i$ es equivalente a la base de Schauder natural de $\ell_1$. Para ello emplearemos el Teorema @thm-SucBasEqu $(c)$. Es decir, probaremos que existen constantes $C_1$ y $C_2>0$ de forma que para cualesquiera escalares $\lambda_i$, con $1\leq i\leq m$, se tiene que
+$${C_1}^{-1}\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{\ell_1} \leq \big\|\sum_{i=1}^{m}\lambda_iu_i\big\|_X \leq C_2\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{\ell_1}.
+$$
+
+Puesto que la sucesión $(u_i)_i$ es normalizada,
+$$
+\big\|\sum_{i=1}^m\lambda_iu_i\big\|\leq\sum_{i=1}^m|\lambda_i|\|u_i\|= \sum_{i=1}^m|\lambda_i| = \|(\lambda_i)_i\|_{\ell_1}.
+$$
+
+Por otro lado, la incondicionalidad de $(u_i)_i$ (que se deduce trivialmente de la incondicionalidad de $(e_i)_i$) nos permite afirmar que (véase el Teorema @thm-eqv-sbi $(b)$)
+$$
+\big\|\sum_{\lambda_i\geq0}\lambda_iu_i\big\|\leq K\big\|\sum_{i=1}^m\lambda_iu_i\big\|,
+$$
+donde $K$ es la constante básica incondicional de $(e_i)_i$. Por tanto,
+$$
+\begin{align*}
+    2\big\|\sum_{i=1}^m\lambda_iu_i\big\|&\geq\frac{2}{K}\big\|\sum_{\lambda_i\geq0}\lambda_iu_i\big\|\geq \frac{2}{K}f\Big(\sum_{\lambda_i\geq0}\lambda_iu_i\Big)=\frac{2}{K}\sum_{\lambda_i\geq0}\lambda_if(u_i)\\
+    &\geq \frac{2\varepsilon}{K}\sum_{\lambda_i\geq0}\lambda_i=\frac{\varepsilon}{K}\Big(\sum_{\lambda_i\geq0}\lambda_i+\sum_{\lambda_i\geq0}\lambda_i\Big)\\
+    &\geq\frac{\varepsilon}{K}\Big(\sum_{\lambda_i\geq0}\lambda_i+ \sum_{\lambda_i<0}-\lambda_i\Big)\\
+    &=\frac{\varepsilon}{K}\sum_{i=1}^m|\lambda_i|=\frac{\varepsilon}{K}\|(\lambda_i)_i\|_{\ell_1},
+\end{align*}
+$$
+donde en la segunda desigualdad hemos empleado que $f\in S_{X^\ast}$ y en la tercera línea hemos supuesto que
+$$
+\sum_{\lambda_i\geq0}\lambda_i \geq\sum_{\lambda_i<0}{-\lambda_i},
+$$
+el caso complementario es completamente análogo.
+
+:::
+
+
+
+Partiendo de la intuición que teníamos antes, y que resultó ser verdadera, podemos ahora pensar un poco más allá y sugerir una nueva caracterización de la reflexividad en base a los espacios $c_0$ y $\ell_1$ para espacios con bases de Schauder incondicionales:
+
+::: {#thm-James}
+
+## [{\color{blue}Robert C. James}](https://en.wikipedia.org/wiki/Robert_C._James)
+\hspace*{1mm}
+
+Sea $X$ un espacio de Banach con base de Schauder incondicional $(e_i)_i$. En tal caso, $X$ es reflexivo si y sólo si no existe ningún subespacio de $X$ que sea isométrico a $c_0$ o a $\ell_1$.
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración del Teorema @thm-James
+\hspace*{1mm}
+
+"$\Longleftarrow$"
+
+Probamos el contrarecíproco. Si $X$ es un espacio no reflexivo con base de Schauder incondicional $(e_i)_i$, el Teorema @thm-James1 asegura que: o bien $(e_i)_i$ no es *shrinking*, y por tanto $X$ tiene una copia isomorfa de $\ell_1$ por el Teorema @thm-ell-1-shr, o bien no es *boundedly complete*, y por tanto $X$ tiene una copia isomorfa de $c_0$ por el Teorema @thm-c-0-bc.
+
+"$\Longrightarrow$"
+
+Si $X$ es reflexivo, de tener un subespacio isomorfo a $c_0$, concluiríamos que 
+$X^\ast\subset c_0^\ast\equiv\ell_1$, lo cual a su vez implicaría que $\ell_1^\ast\equiv\ell_\infty \subset X^{\ast\ast}\equiv X$, pero esto no es posible porque $X$ es separable y $\ell_\infty$ no.
+
+Por otro lado, si $X$ tuviese por subespacio a $\ell_1$, entonces $X^\ast\subset\ell_1^\ast\equiv \ell_\infty$, lo cual su vez implicaría que $\ell_\infty^\ast\subset X^{\ast\ast}\equiv X$, pero esto no es posible porque $\ell_\infty^\ast$ no es separable.
+
+
+Supongamos que $\ell_\infty^*$ es separable. En ese caso existe un conjunto $\{f_n\,\colon n \in \N \}$ denso. Como
+$$
+\|f_n\| = \sup_{\|x\|=1}|f_n(x)|>0
+$$
+tenemos que existe un conjunto $\{x_n\,\colon n \in \N\}$ con $\|x_n\|=1$ para todo $n$ natural de forma que 
+$$
+\frac{1}{2}\|f_n\|\leq f_n(x_n)
+$$
+
+Veamos que $(x_n)_n$ es un conjunto denso en $\ell_\infty$. Para ello veremos que, de existir un funcional $f\in \ell_\infty^*$ que se anule en $\overline{\rm span}(x_n)_n$ entonces $f = 0$---este es un corolario de Hahn-Banach, sería bueno incluírlo? (más por el espacio que por el tiempo)--- 
+
+en efecto, primeramente
+$$
+\frac{1}{2}\|f_n\| \leq f_n(x_n) - f(x_n) = (f_n-f)(x_n) \leq \|f_n-f\|
+$$
+por tanto, como $f\in\ell_\infty^* = \overline{\rm span}\{f_n\,\colon n \in \N\}$ existe $(f_{n_i})_i$ tal que $f_{n_i} \xrightarrow{i \to \infty}f$, i.e., $\|f_{n_i}-f\| \xrightarrow{i \to \infty}0$. Lo que implica, por la anterior desigualdad, que $\|f_{n_i}\|\xrightarrow{i \to \infty}0$ Por tanto
+$$
+\|f\|\leq \|f-f_{n_i}\|+\|f_{n_i}\| \xrightarrow{i \to \infty}0
+$$
+Ergo, $f=0$. 
+
+Pero sabemos que $\ell_\infty$ no es separable, contradicción. @separabilidaddualellinfinio
+
+
+:::

@@ -1,0 +1,269 @@
+## Bases de Schauder incondicionales
+
+Volvemos de nuevo a intentar encontrar similitudes entre las bases de Hamel en espacios finitos y las de Schauder que estamos estudiando. Las primeras no les afecta una reordenación de los vectores de la base: si un elemento tiene unas coordenadas entonces al cambiar de orden seguiremos teniendo el mismo elemento. Pero como el lector podrá intuir, no sucede lo mismo cuando añadimos una topología al espacio. Recordemos que existen series que no convergen si alteramos el orden de los términos sumados y es lo que motivó la siguiente definición para diferenciar a las series que sí lo hacen---y que es equivalente a esta idea de reordenación por el Lema @lem-incondicionalidad-reordenacion---:
+
+Sea $(X,\|\cdot\|)$ un espacio vectorial normado. 
+
+::: {#def-conv-incond}
+
+## Convergencia incondicional
+\hspace*{1mm}
+
+Se dice que la serie convergente en $(X,\|\!\cdot\!\|)$
+$$
+\sum_{i=1}^\infty x_i=x\in X
+$$
+es *incondicionalmente convergente* si para todo $\varepsilon>0$ existe un conjunto finito $F_\varepsilon\subset\mathbb{N}$ de modo que para cualquier conjunto finito $F'\subset \N$ tal que $F\subset F'$ se tiene que 
+$$
+\big\|x-\sum_{i \in F'}x_i\big\|<\varepsilon.
+$$
+
+:::
+
+Como dijimos, se puede intuir que existen casos en los que la reordenación de los vectores de la base no convergen, y esto lo podemos ver en el espacio $c_0$ con la conocida como *base sumante* ---que el lector puede ver al final de la Sección @sec-c_0---. Por tanto, es necesario hacer una distinción entre bases que al reordenar siguen convergiendo y bases que no. Es así como surge de forma natural la siguiente definición:
+
+::: {#def-bsi}
+
+## Base de Schauder incondicional & Sucesión básica incondicional
+\hspace*{1cm}
+
+
+(a) Una base de Schauder $(e_i)_i$ de $X$ se dice *incondicional* si para cada $x\in X$ la serie (que coincide con $x$)
+$$
+x=\sum_{i=1}^\infty x_ie_i
+$$
+es incondicionalmente convergente en $(X,\|\!\cdot\!\|)$.
+
+(b) Se dice que una sucesión $(e_i)_i\subset X$ es una *sucesión básica incondicional* si es una base de Schauder incondicional de $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$.
+
+:::
+
+
+Algunos casos de bases incondicionales son las bases unitarias de los espacios de sucesiones $c_0$ y los $\ell_p$ o la base de Haar de los espacios $L^p[0,1]$ con $p\in (1,\infty)$, cuya construcción el lector puede revisar en la Sección @sec-haar ---la incondicionalidad de la base de Haar no la probaremos pero puede consultarse en @TopicinBanachSpacesKalton[130]---. Pero cuando tratamos con la base de Haar para $L^1$ o con la base de Faber de $\mathcal{C}[0,1]$ (véase @TopicinBanachSpacesKalton[142] y @TopicinBanachSpacesKalton[69] o @BST[203-204]) nos encontramos con dos perfectos ejemplos de bases de Schauder no incondicionales ---la construcción de la base de Faber se puede consultar en la Sección @sec-faber---.
+
+Pasamos ahora a caracterizar las sucesiones básicas incondicionales.
+
+Sea $(X,\|\cdot\|)$ un espacio de Banach y $(e_i)_i\subset X$ una sucesión de vectores.
+
+::: {#thm-eqv-sbi}
+
+## Caracterización de sucesiones básicas incondicionales
+\hspace*{1cm}
+
+Los siguientes enunciados son equivalentes: 
+
+(a) $(e_i)_i$ es una sucesión básica incondicional;
+
+(b) existe $K>0$ de modo que para cualesquiera escalares $a_1$,..., $a_m$ y todo subconjunto de índices $\sigma\subset\{i\colon 1\leq i\leq m\}$ se tiene que 
+$$
+\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K\big\|\sum_{i=1}^ma_ie_i\big\|;
+$$
+
+(c) existe $K>0$ de modo que para cualesquiera escalares $a_1$,..., $a_m$ y elección de signos $\varepsilon_i=\pm1$ para $1\leq i\leq m$ se tiene que
+$$
+\big\|\sum_{i= 1}^m\varepsilon_ia_ie_i\big\|\leq K\big\|\sum_{i= 1}^m a_ie_i\big\|.
+$$ {#eq-4.1}
+
+:::
+
+::: {#cnj-set}
+
+## Sobre los enunciados $(b)$ y $(c)$ del Teorema @thm-eqv-sbi
+\hspace*{1mm}
+
+Si $\sum a_i e_i$ es convergente los enunciados $(b)$ y $(c)$ son equivalentes, respectivamente, a
+
+::: {style="padding-left: 2.5em; text-indent: -2.5em; margin-bottom: 1.5em;"}
+(b') existe $K>0$ de modo que para cualquier sucesión de escalares $(a_i)_i$ y todo subconjunto de índices $\sigma\subset\mathbb{N}$ se tiene que 
+
+$$
+\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K\big\|\sum_{i=1}^\infty a_ie_i\big\|;
+$$
+:::
+
+::: {style="padding-left: 2.5em; text-indent: -2.5em; margin-bottom: 1.5em;"}
+(c') existe $K>0$ de modo que para cualquier sucesión de escalares $(a_i)_i$ y elección de signos $(\varepsilon_i)_i=(\pm1)_i$ se tiene que
+:::
+$$
+\big\|\sum_{i= 1}^\infty\varepsilon_ia_ie_i\big\|\leq K\big\|\sum_{i= 1}^\infty a_ie_i\big\|.
+$$
+
+
+Las implicaciones $(b')\Longrightarrow (b)$ y $(c')\Longrightarrow (c)$ son triviales. Veamos entonces la validez de sus recíprocos.
+
+El carácter convergente de $\sum a_ie_i$ implica que tal serie es de Cauchy. Es decir, dado $\varepsilon>0$ existe $N_\varepsilon\in\mathbb{N}$ de modo que si $p$, $q\geq N_\varepsilon$, entonces
+$$
+\Big\|\sum_{i = p}^qa_ie_i\Big\|<\frac{\varepsilon}{K}.
+$$
+
+"$(b)\Longrightarrow (b')$"
+
+Así pues, dado un subconjunto arbitrario $\sigma \subset \N$, tenemos que, si $\sigma'=\{i\in\sigma\colon p\leq i\leq q\}$, la hipótesis $(b)$ nos permite afirmar que
+$$\Big\|\sum_{i\in \sigma'}a_ie_i\Big\|\leq K\Big\| \sum_{i = 1}^q b_ie_i \Big\| = K\Big\| \sum_{i = p}^q a_ie_i \Big\|<\varepsilon,$$
+siendo $b_i=0$ para $i<p$ y $b_i=a_i$ para $p\leq i\leq q$.
+
+Por tanto, la serie $\sum_{i\in\sigma}a_ie_i$ es de Cauchy en $X$, luego convergente. La desigualdad de $(b')$ se deduce ahora a partir de la de $(b)$ tomando límites.
+
+"$(c)\Longrightarrow (c')$"
+
+En virtud de $(c)$ tenemos que 
+$$
+\Big\|\sum_{i = p}^q\varepsilon_ia_ie_i\Big\|\leq K\Big\| \sum_{i = 1}^q b_ie_i \Big\| = K\Big\| \sum_{i = p}^q a_ie_i \Big\|<\varepsilon,
+$$
+siendo $b_i=0$ para $i<p$ y $b_i=a_i$ para $p\leq i\leq q$.
+
+Por tanto, la serie $\sum_{i\in\sigma}a_ie_i$ es de Cauchy en $X$, luego convergente. La desigualdad de $(c')$ se deduce ahora a partir de la de $(c)$ tomando límites.
+
+:::
+
+::: {#def-cbi}
+
+## Constante básica incondicional
+\hspace*{1mm}
+
+La constante $K$ óptima en $(\ref{eq:4.1})$ recibe el nombre de \emph{constante básica incondicional} de la sucesión básica incondicional $(e_i)_i$ y será denotada por ${\rm ubc}\,(e_i)_i$.
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración del Teorema @thm-eqv-sbi
+\hspace*{1cm}
+
+Las demostraciones se realizarán para el caso $m = \infty$, pues este implicará el caso finito tomando todos los $a_i = 0$ a partir de $i>m$.
+
+$(a)\Longrightarrow(b)$
+
+Dado $\sigma\subset\N$, consideraremos la aplicación $P_{\sigma}\colon \overline{\rm span}\,\{e_i\colon i\in\N\}\longrightarrow\overline{\rm span}\,\{e_i\colon i\in\N\}$ definida como 
+$$
+P\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum_{i \in \sigma}a_ie_i,\quad\text{para cada }\sum_{i = 1}^\infty a_ie_i\in \overline{\rm span}\,\{e_i\colon i\in\N\}.
+$$
+Veremos que la familia $\{P_\sigma\colon \sigma\subset\N\}\subset \mathcal{B}(X)$ está uniformemente acotada por una constante $K$. En tal caso, para cualquier $\sigma\subset\N$ se tendrá que
+$$
+\big\|\sum_{i \in \sigma}a_ie_i\big\|=\big\|P\Big(\sum_{i = 1}^\infty a_ie_i\Big)\big\| \leq K\big\|\sum_{i=1}^\infty a_ie_i\big\|,
+$$
+de donde se deduce $(b)$ considerando $a_i=0$ si $i>m$.
+
+Deduciremos la acotación uniforme de la familia $(P_\sigma)_\sigma$ a partir del Principio de acotación uniforme de Banach-Steinhaus @thm-acotacion-uniforme-banach-steinhaus, por lo que bastará ver que el conjunto $\{P_\sigma(x)\colon \sigma\subset\N\}$ es acotado para cada $x\in  \overline{\rm span}\,\{e_i\colon i\in\N\}$.
+
+Veamos pues que dado
+$$
+x=\sum_{i=1}^\infty a_ie_i\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\},
+$$ {#eq-4.2}
+el conjunto $\{P_\sigma(x)\colon \sigma\subset \N\}$ es acotado. Por hipótesis, como la serie que aparece en (@eq-4.2) es incondicionalmente convergente, en virtud del Lema @lem-incon-cauchy, dado $\varepsilon>0$ existe un conjunto finito $F\subset \N$ de modo que para cualquier $F'\subset \N$ disjunto con $F$ se tiene que
+$$
+\big\|\sum_{i\in F'} a_ie_i\big\|< \varepsilon.
+$$
+En tal caso, dado $\sigma\subset\N$, si consideramos $F'=\sigma\setminus F$ tenemos que 
+$$
+\|P_\sigma x\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|=\big\|\sum_{i\in\sigma\cap F}a_ie_i+\sum_{i\in\sigma\setminus F}a_ie_i\big\|\leq\big\|\sum_{i\in\sigma\cap F}a_ie_i\big\|+\big\|\sum_{i\in\sigma\setminus F}a_ie_i\big\|.
+$$
+Ahora bien, como $F$ es finito, $\sigma\cap F$ también. Por tanto, 
+$$
+\big\|\sum_{i \in \sigma\cap F}a_ie_i\big\|\leq\max_{\sigma'\subset \N}\big\|\sum_{i \in \sigma'\cap F}a_ie_i\big\|=:M,
+$$ 
+por lo que
+$$
+\|P_\sigma x\|\leq\big\|\sum_{i\in\sigma\cap F}a_ie_i\big\|+\big\|\sum_{i\in\sigma \setminus F}a_ie_i\big\|< M+\varepsilon.
+$$
+
+Para que la prueba esté completa es necesario justificar algunos detalles menores. Más exactamente, es necesario ver que $P_\sigma$ es una aplicación lineal y continua en $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$.
+
+
+- Veamos inicialmente que $P_\sigma$ está bien definida.
+
+  ::: {style = "margin-left: 1em"}
+    La incondicionalidad de $(e_i)_i$ y el Lema @lem-inc-conv-conv-subset aseguran que si
+    $$
+    \sum_{i=1}^\infty a_i e_i\text{ es convergente, entonces }\sum_{i\in\sigma}a_i e_i\text{ también.}
+    $$
+  :::
+
+- La linealidad de $P_\sigma$ es trivial.
+
+- Veamos finalmente que $P_\sigma$ es continua empleando el { Teorema \ref{th:grafo-cerrado} del grafo cerrado.
+
+  ::: {style = "margin-left: 1em"}
+    Sea $(x^k)_{k}\subset\overline{\rm span}\{e_i\colon i\in\N\}$ tal que
+    $$
+    x^k=\sum a_i^ke_i\text{ para cada $k\in\N$ y }x_k\to x=\sum_{i=1}^\infty a_ie_i\in \overline{\rm span}\{e_i\colon i\in\N\}\text{ cuando $k\to\infty$.}
+    $$
+    y supongamos que
+    $$
+    P_\sigma x^k\to \sum_{i=1}^\infty b_ie_i\in \overline{\rm span}\{e_i\colon i\in\N\}\text{ cuando $k\to\infty$}.
+    $$
+    En tal caso, la continuidad de los funcionales biortogonales $e_i^*$ nos permite afirmar que
+    $$
+    e_i^*\Big(\sum_{i = 1}^\infty a_i^ke_i\Big)=a_i^k\to e_i^*(x)=a_i\text{ cuando $k\to\infty$.}
+    $$
+    Y por la misma razón,
+    $$
+    e_i^*\Big(P_\sigma\Big(\sum_{i = 1}^\infty a_i^ke_i\Big)\Big)=e_i^*\Big(\sum_{i \in \sigma}a_i^ke_i\Big) = a_i^k \to e_i^*\Big(\sum b_ie_i\Big)=b_i\text{ cuando $k\to\infty$.}
+    $$
+    Por tanto, por unicidad de límites, $a_i=b_i$ para todo $i$, por lo que el grafo de $P_\sigma$ es cerrado.
+  :::
+
+    
+
+$(b)\Longrightarrow(a)$
+
+Conviene observar que, bajo la hipótesis $(b)$, la sucesión $(e_i)_i$ es una sucesión básica en $X$. En efecto, pues si en $(b)$ consideramos como $\sigma=\{i\colon 1\leq i\leq n\}$, entonces para cualquier elemento de ${\rm span}\,\{e_i\colon 1\leq i\leq m\}$, con $m>n$, se tiene ---por hipótesis--- que
+$$
+\big\|\sum_{i=1}^n a_ie_i\big\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K \big\|\sum_{i=1}^m a_ie_i\big\|.
+$$
+Por tanto, en virtud del Teorema @thm-SucBasica, $(e_i)_i$ es una sucesión básica.
+
+Veamos ahora el carácter incondicional de $(e_i)_i$. Sea $(a_i)_i$ una sucesión de escalares tal que
+$$
+\sum_{i=1}^\infty a_ie_i\quad\text{es convergente en $(X,\|\!\cdot\!\|)$.}
+$$
+En tal caso, dado $\varepsilon>0$, existe $N_\varepsilon\in\mathbb{N}$ de modo que si $n>N_\varepsilon$ entonces
+$$
+\big\|\sum_{i=n}^\infty a_ie_i\big\|<\dfrac{\varepsilon}{K}.
+$$ {#eq-4.3}
+A continuación justificaremos que para cualquier conjunto finito de números naturales $F$ tal que $\{1,\dots,N_\varepsilon\}\subset F$ se tiene que
+$$
+\big\|x-\sum_{i\in F}a_ie_i\big\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K\Big\|\sum_{i=N_\varepsilon}^\infty a_ie_i\big\|<\varepsilon;
+$$ {#eq-4.4}
+es decir, que $(e_i)_i$ es una sucesión básica incondicional.
+
+En efecto, para obtener la primera igualdad de (@eq-4.4) basta considerar $\sigma=\N\setminus F$. La desigualdad que sigue es consecuencia de aplicar la hipótesis $(b)$ a
+$$
+\sum_{i=1}^\infty b_i e_i,\quad\text{siendo $b_i=a_i$ para todo $i>N_\varepsilon$ y $b_i= 0$ en otro caso.}
+$$
+La última desigualdad es consecuencia de (@eq-4.3).
+
+
+$(b)\Longleftrightarrow (c)$
+
+Supongamos $(b)$. Sea $(a_i)_i$ una sucesión de escalares y $(\varepsilon_i)_i$ una sucesión de signos y consideremos $\sigma_1=\{i\colon \varepsilon_i=1\}$ y $\sigma_2 = \{i\colon\varepsilon_i=-1\}$. Aplicando $(b)$ tenemos que
+$$
+\begin{align*}
+\big\|\sum_{i=1}^\infty \varepsilon_ia_ie_i\big\|&=\big\|\sum_{i\in\sigma_1} \varepsilon_ia_ie_i-\sum_{i\in\sigma_2}\varepsilon_ia_ie_i\big\|\leq\big\|\sum_{i \in \sigma_1}a_ie_i\big\|+\big\|\sum_{i \in \sigma_2}a_ie_i\big\|\\
+&\leq K\big\|\sum_{i =1}^\infty a_ie_i\big\|+K\big\|\sum_{i =1}^\infty a_ie_i\big\|= 2K\big\|\sum_{i =1}^\infty a_ie_i\big\|.
+\end{align*}
+$$
+
+Supongamos $(c)$. Dados cualesquiera escalares $a_1$,..., $a_m$ y un subconjunto $\sigma\subset\{i\colon 1\leq i\leq m\}$, consideramos la sucesión de signos $(\varepsilon_i)_i$ definida como $\varepsilon_i=1$ si $i\in\sigma$ y $\varepsilon_i=-1$ en otro caso. En tal caso, en virtud de $(c)$,
+$$
+\begin{align*}
+\big\|\sum_{i\in\sigma}a_ie_i\big\|&=\big\|\sum_{i=1}^m\dfrac{\varepsilon_ia_ie_i+ a_ie_i}{2}\big\|\leq\dfrac{1}{2}\big\|\sum_{i=1}^m\varepsilon_ia_ie_i\big\|+\dfrac{1}{2}\big\|\sum_{i=1}^ma_ie_i\big\|\\
+&\leq\dfrac{K}{2}\big\|\sum_{i=1}^ma_ie_i\big\|+\dfrac{K}{2}\big\|\sum_{i= 1}^ma_ie_i\big\|=K\|\sum_{i= 1}^ma_ie_i\big\|.
+\end{align*}
+$$
+
+:::
+
+Para terminar con esta sección, aunque introdujimos el concepto de las bases incondicionales con la siguiente sección como objetivo vamos a pararnos un segundo a completar una pregunta que nos hicimos en el capítulo anterior. Nos habíamos preguntado si las bases de Schauder son únicas ---en el sentido de ser todas equivalentes entre si--- para un espacio dado y no solo habíamos respondido con una negativa sino que, de hecho, vimos que no existían espacios con todas sus bases de Schauder equivalentes en general. Podemos ahora volver a hacernos las mismas preguntas de nuevo: ¿Todo espacio con base de schauder tiene una base incondicional?¿Es dicha base única?¿Tiene todo espacio un subespacio de dimensión infinita con base de Schauder incondicional?
+
+La primera de esas preguntas tiene respuesta negativa: ni $L^1[0,1]$ ni $\mathcal{C}[0,1]$ tienen bases incondicionales (véase @BST[203]). La segunda, sin embargo, guarda una respuesta mucho más interesante. Se ha demostrado (véase @Lindenstrauss[71]) que los espacios $c_0$, $\ell_1$ y $\ell_2$ tienen de hecho una base incondicional normalizada única ---cualquier otra es equivalente a la base unitaria---. Pero no sólo eso, se ha demostrado un resultado incluso más fuerte (Véase @Lindenstrauss[73]):
+
+::: {#thm-bsiu}
+
+\hspace*{1mm}
+
+Un espacio de Banach con base de Schauder incondicional única, salvo equivalencia de sucesiones, es isomorfo a $c_0$, $\ell_1$ o $\ell_2$.
+
+:::
+
+Quedan así caracterizados los espacios con bases tan únicas. 
+
+En cuanto a la última de estas preguntas su respuesta no es tan positiva como la que se dio en el capítulo -@sec-sucesiones-basicas. En $1993$ Gowers y Maurey construyeron un espacio que no tenía ningún subespacio con base de Schauder incondicional (véase @gowers1992unconditionalbasicsequenceproblem)---o lo que es lo mismo, sin sucesiones básicas incondicionales---.

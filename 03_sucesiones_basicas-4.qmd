@@ -126,9 +126,11 @@ Lo que implica que $(x_{n_k})_k$ es una sucesión básica equivalente a una suce
 
 :::
 
+---
+
 :::: {.columns}
 
-::: {.column .text-center width="35%"} 
+::: {.column .text-center width="35%"}
 ![](figuras/krein.png){height="4cm"}
 
 [\color{blue}Mark Krein](https://mathshistory.st-andrews.ac.uk/Biographies/Krein/)  
@@ -148,3 +150,5 @@ Fundó una de las escuelas de análisis funcional más importantes de la época 
 :::
 
 ::::
+
+---

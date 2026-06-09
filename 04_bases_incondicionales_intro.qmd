@@ -1,0 +1,7 @@
+# Bases de Schauder y espacios reflexivos II. Bases incondicionales
+
+<br>
+
+En este capítulo introduciremos una nueva propiedad que pueden tener las bases de Schauder: converger incondicionalmente. Primero la caracterizaremos y luego veremos su importancia para el tema que nos ocupa: las propiedades que podemos extraer de espacios con bases de este tipo. 
+
+En este caso, veremos que la inclusión de la incondicionalidad nos permite caracterizar los espacios reflexivos, pero ahora viendo su estructura interna. A mayores daremos algunas propiedades de espacios con bases incondicionales y responderemos preguntas similares a las formuladas en anteriores epígrafes.

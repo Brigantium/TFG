@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Sucesiones básicas equivalentes – Bases de Schauder en espacios de Banach</title>
+<title>10&nbsp; Espacios de Banach reflexivos con base de Schauder incondicional – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -53,8 +53,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03_sucesiones_basicas-3.html" rel="next">
-<link href="./03_sucesiones_basicas-1.html" rel="prev">
+<link href="./Bibliografia.html" rel="next">
+<link href="./04_bases_incondicionales-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_bases_incondicionales_intro.html">Bases de Schauder y espacios reflexivos II. Bases incondicionales</a></li><li class="breadcrumb-item"><a href="./04_bases_incondicionales-2.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -258,7 +258,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_sucesiones_basicas-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./03_sucesiones_basicas-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></span></a>
   </div>
 </li>
@@ -293,7 +293,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_bases_incondicionales-2.html" class="sidebar-item-text sidebar-link">
+  <a href="./04_bases_incondicionales-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></span></a>
   </div>
 </li>
@@ -316,9 +316,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_bases_incondicionales_intro.html">Bases de Schauder y espacios reflexivos II. Bases incondicionales</a></li><li class="breadcrumb-item"><a href="./04_bases_incondicionales-2.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></h1>
 </div>
 
 
@@ -335,26 +335,10 @@ window.Quarto = {
 </header>
 
 
-<p>A continuación introduciremos un concepto que, careciendo sentido en el caso de dimensión finita, es de capital importancia en dimensión infinita.</p>
-<div id="def-SucBasEq" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.1 (Sucesiones básicas equivalentes)</strong></span> &nbsp;</p>
-<p>Dos sucesiones <span class="math inline">\((e_i)_i\)</span> y <span class="math inline">\((x_i)_i\)</span> se dicen <em>equivalentes</em> si la convergencia de <span class="math display">\[
-\sum_{i=1}^\infty a_ie_i\text{ equivale a la convergencia de }\sum_{i=1}^\infty a_ix_i.
-\]</span></p>
-</div>
-<p>En esencia, lo que estamos haciendo es definir una relación de equivalencia entre sucesiones que se comportan igual: si unos coeficientes definen un elemento para una de las bases, entonces también definen otro para la segunda sucesión. Recordemos que, ahora que tratamos con la convergencia de series para definir los coeficientes de un elemento, no gozamos de la misma libertad para decir que unas coordenadas definen algo o no.</p>
-<p>El siguiente teorema nos ayudará a comprender mejor la idea que acabamos de mencionar.</p>
-<p>Sean <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> dos espacios de Banach, <span class="math inline">\((e_i)_i\)</span> una sucesión básica en <span class="math inline">\(X\)</span> y <span class="math inline">\((\varepsilon_i)_i\)</span> una sucesión básica en <span class="math inline">\(Y\)</span>.</p>
-<div id="thm-SucBasEqu" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 6.1 (Caracterización e interés de las sucesiones básicas equivalentes)</strong></span> &nbsp;</p>
-<p>Los siguientes enunciados son equivalentes:</p>
-<ol type="a">
-<li><p>Las sucesiones básicas <span class="math inline">\((e_i)_i\)</span> y <span class="math inline">\((\varepsilon_i)_i\)</span> son equivalentes.</p></li>
-<li><p>La aplicación <span class="math inline">\(T\colon X \longrightarrow Y\)</span> dada por <span class="math inline">\(Te_i=\varepsilon_i\)</span> para cada <span class="math inline">\(i\in\mathbb{N}\)</span> define un isomorfismo entre <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span> y <span class="math inline">\(\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}\)</span>.</p></li>
-<li><p>Existen dos constantes <span class="math inline">\(C_1\)</span>, <span class="math inline">\(C_2&gt;0\)</span> de forma que para cualesquiera escalares <span class="math inline">\(a_i\)</span>, con <span class="math inline">\(1\leq i\leq n\)</span>, se tiene que <span class="math display">\[
-{C_1}^{-1}\big\|\sum_{i=1}^{n}{a_i\varepsilon_i}\big\|_X \leq \big\|\sum_{i=1}^{n}{a_ie_i}\big\|_Y \leq C_2\big\|\sum_{i=1}^{n}{a_i\varepsilon_i}\big\|_X.
-\]</span></p></li>
-</ol>
+<p><span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_1\)</span> son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de <span class="math inline">\(\ell_1\)</span> y bounedly complete en el caso de <span class="math inline">\(c_0\)</span>— remitimos al lector al Capítulo <span class="quarto-unresolved-ref">?sec-ejemplos</span> para las pruebas—. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:</p>
+<div id="thm-c-0-bc" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 10.1</strong></span> &nbsp;</p>
+<p>Sea <span class="math inline">\(X\)</span> un espacio de Banach con base de Schauder incondicional <span class="math inline">\((e_i)_i\)</span>. Si <span class="math inline">\((e_i)_i\)</span> no es boundedly complete, entonces <span class="math inline">\(X\)</span> tiene un subespacio isomorfo a <span class="math inline">\(c_0\)</span>.</p>
 </div>
 <div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -368,75 +352,129 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\((a)\Longrightarrow(b)\)</span></p>
-<p>Primero introducimos la aplicación <span class="math inline">\(T\colon\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}\)</span> dada por <span class="math display">\[
-T\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum_{i=1}^\infty a_i\varepsilon_i.
+<p>Probaremos que si <span class="math inline">\((e_i)_i\)</span> no es <em>boundedly complete</em>, entonces existe una sucesión básica bloque —formada a partir de <span class="math inline">\((e_i)_i\)</span>— que es equivalente a la base de Schauder natural de <span class="math inline">\(c_0\)</span>. Por tanto, el resultado enunciado será una consecuencia del Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> <span class="math inline">\((b)\)</span>.</p>
+<p>Si <span class="math inline">\((e_i)_i\)</span> no es <em>boundedly complete</em>, existe una sucesión de escalares <span class="math inline">\((a_i)_i\)</span> de forma que <span id="eq-4.5"><span class="math display">\[
+    \sup_{n\in\N}\big\|\sum_{i=1}^n{a_ie_i}\big\|\leq 1\qquad\text{y}\qquad \sum_{i=1}^\infty a_i e_i \text{ no es convergente.}
+\tag{10.1}\]</span></span> Por tanto, como dicha serie no es convergente, el criterio de Cauchy asegura la existencia de cierto <span class="math inline">\(\varepsilon&gt;0\)</span> de modo que para cada <span class="math inline">\(i\in\mathbb{N}\)</span> existen <span class="math inline">\(p_i\)</span>, <span class="math inline">\(q_i\in\mathbb{N}\)</span> satisfaciendo que si <span class="math display">\[
+u_i:=\sum_{i=p_i}^{q_i}a_ie_i,
+\]</span> entonces <span class="math inline">\(\|u_i\|\geq \varepsilon\)</span>. Por otra parte, como <span class="math inline">\((e_i)_i\)</span> es incondicional, en virtud del Teorema <a href="04_bases_incondicionales-1.html#thm-eqv-sbi" class="quarto-xref">&nbsp;<span>9.1</span></a> <span class="math inline">\((b)\)</span>, para cualquier <span class="math inline">\(m\in\mathbb{N}\)</span> se tiene que <span id="eq-4.6"><span class="math display">\[
+    \big\|\sum_{i=1}^m u_i\big\|\leq K\big\|\sum_{i=1}^{q_m} a_ie_i\big\|\leq K,\quad\text{siendo $K={\rm ubc}\,(e_i)_i$,}
+\tag{10.2}\]</span></span> donde en la última desigualdad hemos empleado la cota que aparece en (<a href="#eq-4.5" class="quarto-xref"><span>10.1</span></a>).</p>
+<p>A continuación veremos que la sucesión básica bloque <span class="math inline">\((u_i)_i\)</span> es equivalente a la base de Schauder natural de <span class="math inline">\(c_0\)</span>. Para ello emplearemos el Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> <span class="math inline">\((c)\)</span>. Es decir, probaremos que existen constantes <span class="math inline">\(C_1\)</span> y <span class="math inline">\(C_2&gt;0\)</span> de forma que para cualesquiera escalares <span class="math inline">\(\lambda_i\)</span>, con <span class="math inline">\(1\leq i\leq m\)</span>, se tiene que <span class="math display">\[
+{C_1}^{-1}\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{c_0} \leq \big\|\sum_{i=1}^{m}\lambda_iu_i\big\|_X \leq C_2\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{c_0}.
 \]</span></p>
-<p>Veamos que <span class="math inline">\(T\)</span> es un isomorfismo entre <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span> y <span class="math inline">\(\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}\)</span>.</p>
-<ul>
-<li><p>La aplicación <span class="math inline">\(T\)</span> está bien definida por ser <span class="math inline">\((e_i)_i\)</span> y <span class="math inline">\((\varepsilon_i)_i\)</span> sucesiones básicas equivalentes.</p></li>
-<li><p>Es evidente que <span class="math inline">\(T\)</span> es una aplicación lineal.</p></li>
-<li><p>El carácter biyectivo de <span class="math inline">\(T\)</span> es resulta fácil de probar.</p>
-<div style="margin-left: 2em">
-<p>Dado <span class="math display">\[
-  \sum_{i=1}^\infty a_i\varepsilon_i\in \overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\},
-  \]</span> existe —en virtud de la equivalencia de sucesiones—, <span class="math display">\[
-  \sum_{i=1}^\infty a_ie_i\in \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}
-  \]</span> tal que <span class="math display">\[
-  T\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum a_i\varepsilon_i;
-  \]</span> luego <span class="math inline">\(T\)</span> es sobreyectiva.</p>
-<p>Puesto que <span class="math inline">\(T\)</span> es lineal, para demostrar que es inyectiva basta ver que <span class="math inline">\(Tx=0\)</span> implica <span class="math inline">\(x=0\)</span>. No obstante, dado que <span class="math inline">\((\varepsilon_i)_{i}\)</span> es una sucesión básica, <span class="math inline">\(\{\varepsilon_i\colon i\in\mathbb{N}\}\)</span> es un conjunto linealmente independiente, luego <span class="math display">\[
-  \begin{align*}
-  T\Big(\sum_{i=1}^\infty a_ie_i\Big)=0 &amp;\Longleftrightarrow \sum_{i=1}^\infty a_i\varepsilon_i = 0 \Longleftrightarrow  a_i=0\text{ para todo $i\in\mathbb{N}$ }\\
-  &amp;\Longleftrightarrow \sum_{i=1}^\infty a_ie_i=0.
-  \end{align*}
-  \]</span></p>
-</div></li>
-<li><p>Deduciremos la continuidad de <span class="math inline">\(T\)</span> a partir del Teorema <span class="quarto-unresolved-ref">?thm-grafo-cerrado</span> del grafo cerrado.</p>
-<div style="margin-left: 2em">
-<p>Sea <span class="math inline">\((x^k)_k\subset X\)</span> una sucesión tal que <span class="math display">\[
-  x^k=\sum_{i=1}^\infty a_i^ke_i\quad\text{para cada $k\in\mathbb{N}$}
-  \]</span> y satisface que, cuando <span class="math inline">\(k\to\infty\)</span>, <span class="math display">\[
-  x^k\to x=\sum_{i=1}^\infty a_ie_i\in X\quad\text{ y }\quad T(x^k) = \sum a_i^k\varepsilon_i\to \sum_{i=1}^\infty c_i\varepsilon_i.
-  \]</span></p>
-<p>Como los funcionales biortogonales de ambas sucesiones básicas son aplicaciones continuas, y por tanto secuencialmente continuas, tenemos que, para cualquier <span class="math inline">\(i\)</span>, cuando <span class="math inline">\(k\to\infty\)</span>, <span class="math display">\[
-  e_i^*(x^k)=a_i^k\to a_i\quad\text{ y }\quad \varepsilon_i^*(x^k)=a_i^k\to c_i.
-  \]</span> Por tanto, por unicidad de límites, <span class="math inline">\(a_i=c_i\)</span>. Y entonces <span class="math inline">\(Tx=\lim_{k \to \infty}Tx^k\)</span>, ergo el grafo de <span class="math inline">\(T\)</span> es cerrado.</p>
-</div></li>
-</ul>
-<p>Finalmente, dado que <span class="math inline">\(T\)</span> es continua y sobreyectiva, el Teorema <span class="quarto-unresolved-ref">?thm-ApAbierta</span> de la aplicación abierta asegura que <span class="math inline">\(T\)</span> es un isomorfismo.</p>
-<p><span class="math inline">\((b)\Longrightarrow(c)\)</span></p>
-<p>Dado que <span class="math inline">\(T\)</span> es un isomorfismo que satisface <span class="math inline">\(Te_i=\varepsilon_i\)</span> para todo <span class="math inline">\(i\in\mathbb{N}\)</span>, para cualesquiera escalares <span class="math inline">\(a_1\)</span>,…, <span class="math inline">\(a_n\)</span> se tiene que <span class="math display">\[
-\big\|\sum_{i = 1}^n a_i\varepsilon_i\big\|=\big\|T\Big(\sum_{i=1}^\infty a_ie_i\Big)\big\|\leq \|T\|\,\big\|\sum_{i = 1}^na_ie_i\big\|.
-\]</span> Por otra parte, razonando de forma análoga con <span class="math inline">\(T^{-1}\)</span>, concluimos que <span class="math display">\[
-\big\|\sum_{i = 1}^n a_ie_i\big\|=\big\|T^{-1}\Big(\sum_{i=1}^\infty a_i\varepsilon_i\Big)\big\|\leq \|T^{-1}\|\,\big\|\sum_{i = 1}^na_i\varepsilon_i\big\|
-\]</span> Por tanto, basta tomar <span class="math inline">\(C_1=\|T\|\)</span> y <span class="math inline">\(C_2=\|T^{-1}\|\)</span>.</p>
-<p><span class="math inline">\((c)\Longrightarrow(a)\)</span></p>
-<p>Probaremos que para cualesquiera escalares <span class="math inline">\((a_i)_i\subset\mathbb{K}\)</span>, la serie <span id="eq-3.1"><span class="math display">\[
-\sum_{i=1}^\infty a_ie_i\text{ es de Cauchy en $X$ si y solo si }\sum_{i=1}^\infty a_i\varepsilon_i\text{ es de Cauchy en $X$.}
-\tag{6.1}\]</span></span></p>
-<p>Si la primera serie en (<a href="#eq-3.1" class="quarto-xref"><span>6.1</span></a>) es de Cauchy en <span class="math inline">\(X\)</span>, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(N_\varepsilon\in\mathbb{N}\)</span> de modo que para par <span class="math inline">\(p\)</span>, <span class="math inline">\(q\geq N_\varepsilon\)</span> se tiene que <span class="math display">\[
-\big\|\sum_{i=p}^q a_ie_i \big\|&lt;\dfrac{\varepsilon}{C_2}.
-\]</span> Por tanto, para <span class="math inline">\(p\)</span>, <span class="math inline">\(q&gt;N_\varepsilon\)</span>, también tenemos que <span class="math display">\[
-\big\|\sum _{i = p}^qa_i\varepsilon_i\big\|\leq C_2\big\|\sum _{i=p}^qa_ie_i\big\|&lt;\varepsilon,
-\]</span> por lo que la segunda serie de (<a href="#eq-3.1" class="quarto-xref"><span>6.1</span></a>) es de Cauchy en <span class="math inline">\(Y\)</span>.</p>
-<p>El recíproco se prueba de forma completamente análoga cambiando <span class="math inline">\(C_2\)</span> por <span class="math inline">\(C_1\)</span>.</p>
+<p>Dada la incondicionalidad de <span class="math inline">\((e_i)_i\)</span>, el Teorema <a href="04_bases_incondicionales-1.html#thm-eqv-sbi" class="quarto-xref">&nbsp;<span>9.1</span></a> <span class="math inline">\((b)\)</span> nos permite afirmar que si <span class="math inline">\(\{j\}\)</span> es un subconjunto de <span class="math inline">\(\{1,\dots,m\}\)</span>, entonces <span class="math display">\[
+|\lambda_j|\varepsilon\leq\|\lambda_ju_j\|\leq K\big\|\sum_{i=1}^m\lambda_iu_i\big\|,
+\]</span> es decir, como la cota anterior es válida para cualquier <span class="math inline">\(j\)</span>, concluimos en realidad que <span class="math display">\[\|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K}\leq\big\|\sum_{j=1}^m\lambda_ju_j\big\|.
+\]</span></p>
+<p>Por otra parte, por el Teorema <span class="quarto-unresolved-ref">?thm-Hahn-Banach-funcionales</span> de extensión de Hahn-Banach aplicado a funcionales existe un funcional <span class="math inline">\(f\in S_{X^\ast}\)</span> de modo que <span class="math display">\[
+f\Big(\sum_{i=1}^m\lambda_iu_i\Big)=\big\|\sum_{i=1}^m\lambda_iu_i\big\|.
+\]</span> Consideremos signos <span class="math inline">\(\varepsilon_i=\pm1\)</span> de forma que <span class="math inline">\(\varepsilon_if(u_i)\geq0\)</span> para cada <span class="math inline">\(i\)</span>. En tal caso, <span class="math display">\[
+\begin{align*}
+    \big\|\sum_{i=1}^m\lambda_iu_i\big\|&amp;=f\Big(\sum_{i=1}^m\lambda_iu_i\Big)\leq\sum_{i= 1}^m|\lambda_i||f(u_i)|\leq \|(\lambda_i)_i\|_\infty\sum_{i=1}^m\varepsilon_if(u_i)\\
+    &amp;=\|(\lambda_i)\|_\infty f\Big(\sum_{i = 1}^m\varepsilon_iu_i\Big)\leq\|(\lambda_i)_i\|_\infty \big\|\sum_{i = 1}^m\varepsilon_iu_i\big\|\\
+    &amp;\leq \|(\lambda_i)\|_\infty K\big\|\sum_{i=1}^mu_i\big\|\leq \|(\lambda_i)\|_\infty\,K^2,
+\end{align*}
+\]</span> donde en la segunda línea hemos empleado que <span class="math inline">\(\|f\|=1\)</span> y en la tercera línea hemos invocado el carácter incondicional de <span class="math inline">\((e_i)_i\)</span> (más exactamente el Teorema <span class="citation" data-cites="thm:eqv-sbi"><a href="Bibliografia.html#ref-thm:eqv-sbi" role="doc-biblioref"><strong>thm:eqv-sbi?</strong></a></span> <span class="math inline">\((c)\)</span>) y (<a href="#eq-4.6" class="quarto-xref"><span>10.2</span></a>).</p>
+<p>Así pues, tenemos que <span class="math display">\[
+\|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K} \leq \Big\|\sum_{i = 1}^m\lambda_iu_i\Big\| \leq K^2\|(\lambda_i)_i\|_\infty,
+\]</span> por lo que el Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> nos permite afirmar que <span class="math inline">\(\overline{\rm span}(u_i)_i\)</span> es isomorfo a <span class="math inline">\(c_0\)</span>.</p>
 </div>
 </div>
 </div>
-<p>Si definiésemos <em>sucesiones básicas equivalentes</em> como en el punto <span class="math inline">\((b)\)</span> del anterior teorema estaríamos tentados a pensar que se resume a que dos sucesiones básicas son equivalentes si los espacios que generan son isomorfos, lo cual no es del todo correcto. Existen espacios isomorfos con bases no equivalentes; puede verse un ejemplo en el ejemplo <span class="quarto-unresolved-ref">?sec-c_0</span>.</p>
-<p>Esta distinción nos lleva a preguntarnos si un mismo espacio de Banach puede tener dos bases de Schauder distintas —en el sentido de no ser equivalentes—; es decir, si una base de Schauder es o no única. La respuesta a esta cuestión la encontramos en el siguiente teorema <span class="citation" data-cites="Lindenstrauss"><a href="Bibliografia.html#ref-Lindenstrauss" role="doc-biblioref">[1, p. 5]</a></span>:</p>
-<div id="thm-porlomenosdos" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 6.2</strong></span> &nbsp;</p>
-<p>Todo espacio de Banach de dimensión infinita con base de Schauder tiene, por lo menos, dos bases de Schauder normalizadas no equivalentes.</p>
+<div id="thm-ell-1-shr" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 10.2</strong></span> &nbsp;</p>
+<p>Sea <span class="math inline">\(X\)</span> un espacio de Banach con base de Schauder incondicional <span class="math inline">\((e_i)_i\)</span>. Si <span class="math inline">\((e_i)_i\)</span> no es shrinking, entonces <span class="math inline">\(X\)</span> tiene un subespacio isomorfo a <span class="math inline">\(\ell_1\)</span>.</p>
 </div>
-<p>Hay que señalar el poder de esta respuesta: no solo es que existan espacios de Banach con más de una base de Schauder, es que cualquier espacio de Banach tiene como mínimo dos. Es más, se puede probar que el número de bases de Schauder no equivalentes en un mismo espacio es no numerable.</p>
-<p>Nótese que en dimensión finita esta pregunta no tiene sentido porque, dadas dos bases <span class="math inline">\((e_i)_{i=1}^n\)</span> y <span class="math inline">\((\varepsilon_i)_{i=1}^n\)</span> cualesquiera de un espacio podemos definir un isomorfismo de una en la otra como <span class="math inline">\(Te_i = \varepsilon_i\)</span> sin ningún problema.</p>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Probaremos que si <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, entonces existe una sucesión básica bloque —formada a partir de <span class="math inline">\((e_i)_i\)</span>— que es equivalente a la base de Schauder natural de <span class="math inline">\(\ell_1\)</span>. Por tanto, el resultado enunciado será una consecuencia del Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> <span class="math inline">\((b)\)</span>.</p>
+<p>Si <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, <span class="math inline">\(\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\}\)</span> es un subespacio cerrado propio de <span class="math inline">\(X^*\)</span>, por lo que —en virtud del Lema <span class="quarto-unresolved-ref">?lem-riesz</span> de Riesz— dado <span class="math inline">\(1&gt;\varepsilon&gt;0\)</span> existe <span class="math inline">\(f\in S_{X^*}\)</span> tal que <span class="math display">\[
+{\rm dist}\,(f,\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\})\equiv\inf\big\{\|f-g\|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}&gt;\varepsilon.
+\]</span> Es decir, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, existe <span class="math inline">\(z_n\in B_X\)</span> de modo que <span class="math display">\[
+\inf\big\{\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}&gt;\varepsilon.
+\]</span> No obstante, si <span class="math inline">\(z_n\in\overline{{\rm span}}\{e_i\colon 1\leq i\leq n\}\cap B_X\)</span>, entonces (trivialmente) <span class="math display">\[
+\inf\big\{\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon 1\leq i\leq n\}\big\}=0.
+\]</span> Por tanto, concluimos que <span class="math inline">\(z_n\in\overline{{\rm span}}\{e_i\colon i&gt;n\}\cap B_X\)</span> y <span class="math display">\[
+\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|=|f(z_n)|&gt;\varepsilon.
+\]</span> Así pues, <span class="math display">\[
+\lim_{n\to\infty}\sup\{|f(z)|\colon z\in\overline{{\rm span}}\{e_i\colon i&gt;n\}\cap B_X\}\neq 0
+\]</span> o, equivalentemente, existe una sucesión estrictamente creciente <span class="math inline">\((n_k)_k\subset\mathbb{N}\)</span> de modo que para cualquier <span class="math inline">\(k\in\mathbb{N}\)</span>, <span id="eq-4.7"><span class="math display">\[
+    \sup\{|f(z)|\colon z\in {\rm span}\,\{e_{n_k},e_{n_k+1},e_{n_k+2},...\}\}\geq\varepsilon.
+\tag{10.3}\]</span></span></p>
+<p>Empleando (<a href="#eq-4.7" class="quarto-xref"><span>10.3</span></a>) podemos construir, por inducción, una sucesión básica bloque normalizada <span class="math inline">\((u_i)_i\)</span> (formada a partir de <span class="math inline">\((e_i)_i\)</span>) de modo que <span class="math inline">\(|f(u_j)|\geq\varepsilon\)</span> para todo <span class="math inline">\(j\in\mathbb{N}\)</span>.</p>
+<p>A continuación veremos que la sucesión básica bloque normalizada <span class="math inline">\((u_i)_i\)</span> es equivalente a la base de Schauder natural de <span class="math inline">\(\ell_1\)</span>. Para ello emplearemos el Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> <span class="math inline">\((c)\)</span>. Es decir, probaremos que existen constantes <span class="math inline">\(C_1\)</span> y <span class="math inline">\(C_2&gt;0\)</span> de forma que para cualesquiera escalares <span class="math inline">\(\lambda_i\)</span>, con <span class="math inline">\(1\leq i\leq m\)</span>, se tiene que <span class="math display">\[{C_1}^{-1}\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{\ell_1} \leq \big\|\sum_{i=1}^{m}\lambda_iu_i\big\|_X \leq C_2\|(\lambda_1,\lambda_2,\dots,\lambda_m,0,\dots)\|_{\ell_1}.
+\]</span></p>
+<p>Puesto que la sucesión <span class="math inline">\((u_i)_i\)</span> es normalizada, <span class="math display">\[
+\big\|\sum_{i=1}^m\lambda_iu_i\big\|\leq\sum_{i=1}^m|\lambda_i|\|u_i\|= \sum_{i=1}^m|\lambda_i| = \|(\lambda_i)_i\|_{\ell_1}.
+\]</span></p>
+<p>Por otro lado, la incondicionalidad de <span class="math inline">\((u_i)_i\)</span> (que se deduce trivialmente de la incondicionalidad de <span class="math inline">\((e_i)_i\)</span>) nos permite afirmar que (véase el Teorema <a href="04_bases_incondicionales-1.html#thm-eqv-sbi" class="quarto-xref">&nbsp;<span>9.1</span></a> <span class="math inline">\((b)\)</span>) <span class="math display">\[
+\big\|\sum_{\lambda_i\geq0}\lambda_iu_i\big\|\leq K\big\|\sum_{i=1}^m\lambda_iu_i\big\|,
+\]</span> donde <span class="math inline">\(K\)</span> es la constante básica incondicional de <span class="math inline">\((e_i)_i\)</span>. Por tanto, <span class="math display">\[
+\begin{align*}
+    2\big\|\sum_{i=1}^m\lambda_iu_i\big\|&amp;\geq\frac{2}{K}\big\|\sum_{\lambda_i\geq0}\lambda_iu_i\big\|\geq \frac{2}{K}f\Big(\sum_{\lambda_i\geq0}\lambda_iu_i\Big)=\frac{2}{K}\sum_{\lambda_i\geq0}\lambda_if(u_i)\\
+    &amp;\geq \frac{2\varepsilon}{K}\sum_{\lambda_i\geq0}\lambda_i=\frac{\varepsilon}{K}\Big(\sum_{\lambda_i\geq0}\lambda_i+\sum_{\lambda_i\geq0}\lambda_i\Big)\\
+    &amp;\geq\frac{\varepsilon}{K}\Big(\sum_{\lambda_i\geq0}\lambda_i+ \sum_{\lambda_i&lt;0}-\lambda_i\Big)\\
+    &amp;=\frac{\varepsilon}{K}\sum_{i=1}^m|\lambda_i|=\frac{\varepsilon}{K}\|(\lambda_i)_i\|_{\ell_1},
+\end{align*}
+\]</span> donde en la segunda desigualdad hemos empleado que <span class="math inline">\(f\in S_{X^\ast}\)</span> y en la tercera línea hemos supuesto que <span class="math display">\[
+\sum_{\lambda_i\geq0}\lambda_i \geq\sum_{\lambda_i&lt;0}{-\lambda_i},
+\]</span> el caso complementario es completamente análogo.</p>
+</div>
+</div>
+</div>
+<p>Partiendo de la intuición que teníamos antes, y que resultó ser verdadera, podemos ahora pensar un poco más allá y sugerir una nueva caracterización de la reflexividad en base a los espacios <span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_1\)</span> para espacios con bases de Schauder incondicionales:</p>
+<div id="thm-James" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 10.3 (<a href="https://en.wikipedia.org/wiki/Robert_C._James">{Robert C. James}</a>)</strong></span> &nbsp;</p>
+<p>Sea <span class="math inline">\(X\)</span> un espacio de Banach con base de Schauder incondicional <span class="math inline">\((e_i)_i\)</span>. En tal caso, <span class="math inline">\(X\)</span> es reflexivo si y sólo si no existe ningún subespacio de <span class="math inline">\(X\)</span> que sea isométrico a <span class="math inline">\(c_0\)</span> o a <span class="math inline">\(\ell_1\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración del Teorema <a href="#thm-James" class="quarto-xref">&nbsp;<span>10.3</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
+<p>Probamos el contrarecíproco. Si <span class="math inline">\(X\)</span> es un espacio no reflexivo con base de Schauder incondicional <span class="math inline">\((e_i)_i\)</span>, el Teorema <a href="02_reflexivos-2.html#thm-James1" class="quarto-xref">&nbsp;<span>4.1</span></a> asegura que: o bien <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, y por tanto <span class="math inline">\(X\)</span> tiene una copia isomorfa de <span class="math inline">\(\ell_1\)</span> por el Teorema <a href="#thm-ell-1-shr" class="quarto-xref">&nbsp;<span>10.2</span></a>, o bien no es <em>boundedly complete</em>, y por tanto <span class="math inline">\(X\)</span> tiene una copia isomorfa de <span class="math inline">\(c_0\)</span> por el Teorema <a href="#thm-c-0-bc" class="quarto-xref">&nbsp;<span>10.1</span></a>.</p>
+<p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
+<p>Si <span class="math inline">\(X\)</span> es reflexivo, de tener un subespacio isomorfo a <span class="math inline">\(c_0\)</span>, concluiríamos que <span class="math inline">\(X^\ast\subset c_0^\ast\equiv\ell_1\)</span>, lo cual a su vez implicaría que <span class="math inline">\(\ell_1^\ast\equiv\ell_\infty \subset X^{\ast\ast}\equiv X\)</span>, pero esto no es posible porque <span class="math inline">\(X\)</span> es separable y <span class="math inline">\(\ell_\infty\)</span> no.</p>
+<p>Por otro lado, si <span class="math inline">\(X\)</span> tuviese por subespacio a <span class="math inline">\(\ell_1\)</span>, entonces <span class="math inline">\(X^\ast\subset\ell_1^\ast\equiv \ell_\infty\)</span>, lo cual su vez implicaría que <span class="math inline">\(\ell_\infty^\ast\subset X^{\ast\ast}\equiv X\)</span>, pero esto no es posible porque <span class="math inline">\(\ell_\infty^\ast\)</span> no es separable.</p>
+<p>Supongamos que <span class="math inline">\(\ell_\infty^*\)</span> es separable. En ese caso existe un conjunto <span class="math inline">\(\{f_n\,\colon n \in \N \}\)</span> denso. Como <span class="math display">\[
+\|f_n\| = \sup_{\|x\|=1}|f_n(x)|&gt;0
+\]</span> tenemos que existe un conjunto <span class="math inline">\(\{x_n\,\colon n \in \N\}\)</span> con <span class="math inline">\(\|x_n\|=1\)</span> para todo <span class="math inline">\(n\)</span> natural de forma que <span class="math display">\[
+\frac{1}{2}\|f_n\|\leq f_n(x_n)
+\]</span></p>
+<p>Veamos que <span class="math inline">\((x_n)_n\)</span> es un conjunto denso en <span class="math inline">\(\ell_\infty\)</span>. Para ello veremos que, de existir un funcional <span class="math inline">\(f\in \ell_\infty^*\)</span> que se anule en <span class="math inline">\(\overline{\rm span}(x_n)_n\)</span> entonces <span class="math inline">\(f = 0\)</span>—este es un corolario de Hahn-Banach, sería bueno incluírlo? (más por el espacio que por el tiempo)—</p>
+<p>en efecto, primeramente <span class="math display">\[
+\frac{1}{2}\|f_n\| \leq f_n(x_n) - f(x_n) = (f_n-f)(x_n) \leq \|f_n-f\|
+\]</span> por tanto, como <span class="math inline">\(f\in\ell_\infty^* = \overline{\rm span}\{f_n\,\colon n \in \N\}\)</span> existe <span class="math inline">\((f_{n_i})_i\)</span> tal que <span class="math inline">\(f_{n_i} \xrightarrow{i \to \infty}f\)</span>, i.e., <span class="math inline">\(\|f_{n_i}-f\| \xrightarrow{i \to \infty}0\)</span>. Lo que implica, por la anterior desigualdad, que <span class="math inline">\(\|f_{n_i}\|\xrightarrow{i \to \infty}0\)</span> Por tanto <span class="math display">\[
+\|f\|\leq \|f-f_{n_i}\|+\|f_{n_i}\| \xrightarrow{i \to \infty}0
+\]</span> Ergo, <span class="math inline">\(f=0\)</span>.</p>
+<p>Pero sabemos que <span class="math inline">\(\ell_\infty\)</span> no es separable, contradicción. <span class="citation" data-cites="separabilidaddualellinfinio"><a href="Bibliografia.html#ref-separabilidaddualellinfinio" role="doc-biblioref">[1]</a></span></p>
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-Lindenstrauss" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Lindenstrauss y L. Tzafriri, <em>Classical Banach spaces I and II</em>. Springer, 1996 - 1977.</div>
+<div id="ref-separabilidaddualellinfinio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="nocase">user24367</span>, <span>«Separability of Banach Spaces»</span>. Disponible en: <a href="https://math.stackexchange.com/q/106961">https://math.stackexchange.com/q/106961</a></div>
 </div>
 </div>
 
@@ -843,13 +881,13 @@ T\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum_{i=1}^\infty a_i\varepsilon_i.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03_sucesiones_basicas-1.html" class="pagination-link" aria-label="Sucesiones básicas: Definición">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></span>
+      <a href="./04_bases_incondicionales-1.html" class="pagination-link" aria-label="Bases de Schauder incondicionales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bases de Schauder incondicionales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03_sucesiones_basicas-3.html" class="pagination-link" aria-label="Perturbación de sucesiones básicas">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Perturbación de sucesiones básicas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Bibliografia.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
