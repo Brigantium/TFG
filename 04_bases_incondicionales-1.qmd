@@ -121,7 +121,7 @@ Por tanto, la serie $\sum_{i\in\sigma}a_ie_i$ es de Cauchy en $X$, luego converg
 ## Constante básica incondicional
 \hspace*{1mm}
 
-La constante $K$ óptima en $(\ref{eq:4.1})$ recibe el nombre de \emph{constante básica incondicional} de la sucesión básica incondicional $(e_i)_i$ y será denotada por ${\rm ubc}\,(e_i)_i$.
+La constante $K$ óptima en (@eq-4.1) recibe el nombre de *constante básica incondicional* de la sucesión básica incondicional $(e_i)_i$ y será denotada por ${\rm ubc}\,(e_i)_i$.
 :::
 
 ::: {.callout-note collapse="true" icon="false" class="proof-callout"}
@@ -179,7 +179,7 @@ Para que la prueba esté completa es necesario justificar algunos detalles menor
 
 - La linealidad de $P_\sigma$ es trivial.
 
-- Veamos finalmente que $P_\sigma$ es continua empleando el { Teorema \ref{th:grafo-cerrado} del grafo cerrado.
+- Veamos finalmente que $P_\sigma$ es continua empleando el Teorema @thm-grafo-cerrado del grafo cerrado.
 
   ::: {style = "margin-left: 1em"}
     Sea $(x^k)_{k}\subset\overline{\rm span}\{e_i\colon i\in\N\}$ tal que
