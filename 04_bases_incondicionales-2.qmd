@@ -151,7 +151,7 @@ Partiendo de la intuición que teníamos antes, y que resultó ser verdadera, po
 
 ::: {#thm-James}
 
-## [{\color{blue}Robert C. James}](https://en.wikipedia.org/wiki/Robert_C._James)
+## [\color{blue}Robert C. James](https://en.wikipedia.org/wiki/Robert_C._James)
 \hspace*{1mm}
 
 Sea $X$ un espacio de Banach con base de Schauder incondicional $(e_i)_i$. En tal caso, $X$ es reflexivo si y sólo si no existe ningún subespacio de $X$ que sea isométrico a $c_0$ o a $\ell_1$.
