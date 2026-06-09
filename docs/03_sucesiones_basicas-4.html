@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción – Bases de Schauder en espacios de Banach</title>
+<title>8&nbsp; Sucesión básica bloque – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_Conceptos_intro.html" rel="next">
-<link href="./resumen.html" rel="prev">
+<link href="./Bibliografia.html" rel="next">
+<link href="./03_sucesiones_basicas-3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduccion.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-4.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -171,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -250,7 +250,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_sucesiones_basicas-4.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_sucesiones_basicas-4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></span></a>
   </div>
 </li>
@@ -273,9 +273,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-4.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></h1>
 </div>
 
 
@@ -292,20 +292,109 @@ window.Quarto = {
 </header>
 
 
-<p></p>
-<p>Desde el inicio de la matemática moderna, con Descartes, hemos tenido el objetivo de asignar a los objetos de nuestro estudio una secuencia de cifras con las que poder simplificar dichos objetos y embeberlos en el mundo de los números, tratándolos así con todo el poder teórico de las matemáticas. Dio inicio esta tentativa con las primeras coordenadas —así designadas en honor a su promotor— que movilizaron el motor de la producción matemática haciéndolo más fructífero en los últimos <span class="math inline">\(500\)</span> años que en los previos <span class="math inline">\(3\,300\)</span> que hay desde las primeras ternas pitagóricas mesopotámicas conocidas.</p>
-<p>Es con esa filosofía en mente que surge la idea de realizar tal tentativa no ya con objetos físicos o con coordenadas finitas, sino con el poder del infinito. El objetivo es ahora el estudio de objetos mucho más abstractos: las funciones —lo cual trajo consigo el problema de las inifitas dimensiones—.</p>
-<p>Al principio, el estudio se reducía a las funciones de <span class="math inline">\(\mathcal{C}^\infty\)</span> o infinitamente diferenciables —las conocidas como series de Taylor, 1715, que fallaron en generar todo el espacio y se reducían a las funciones analíticas—. Con el tiempo, la idea fue madurando y se quiso ampliar el domino de validez a todas las funciones continuas, aún cuando no se tenía muy claro qué era una función continua todavía —de aquí surgieron las series de Fourier, conocidas ya a principios del siglo XIX y que resultarían en una base no para las funciones continuas con la norma de la convergencia uniforme, sino para el espacio <span class="math inline">\(L^2\)</span> con la norma <span class="math inline">\(\|\!\cdot\!\|_2\)</span>—.</p>
-<p>Con el final del siglo XIX y la llegada del XX comenzaron a darse los mayores avances en este campo. Hilbert, Schmidt y Riesz—entre muchos otros— comenzaron el estudio del espacio de las funciones de cuadrado integrable y consiguieron extraer ciertas nociones geométricas muy similares a las de los espacios euclidianos de dimensión finita, como por ejemplo la ortogonalidad. El concepto creció y se estableció la abstracción de los espacios de Hilbert —término acuñado por von Neumann—, cuyo principal cometido y éxito es generalizar los espacios euclidianos a dimensión infinita respetando la existencia de sistemas ortonormales que generan la totalidad del espacio. Surgió así el estudio sistemático de la noción de base en dimensión infinita.</p>
-<p>De forma paralela, Haar construyó un sistema —el conocido como sistema de Haar— de funciones que sirven de base no sólo para el espacio <span class="math inline">\(L^2\)</span>, que ya tenía una base dada por las series de Fourier que además funcionaba por ser este un espacio de Hilbert, sino de todos los espacios <span class="math inline">\(L^p\)</span>, con <span class="math inline">\(1\leq p&lt;\infty\)</span> que no son Hilbertianos. Poco después, Georg Faber demostró la existencia de una base para el espacio de las funciones continuas con la norma uniforme.</p>
-<p>Todo este impulso histórico se cristalizó en la tesis de <span class="math inline">\(1923\)</span> de un joven matemático polaco, Juliusz Schauder. Él dio rigor y formalismo a la idea de una generalización de todo lo anterior introduciendo el concepto hoy en día conocido, en su honor, como : un avance más en el entendimiento de la estructura de los espacios de funciones inspirado en el objetivo de Descartes de simplificar el estudio de cualquier ente a un sistema de coordenadas coherente del que se puedan extraer conclusiones.</p>
-<p>Es por querer dar valor a esta idea tan matemática que en el presente Trabajo Fin de Grado queremos dar un repaso a algunos de los resultados que las bases de Schauder han ayudado a probar y comprender.</p>
-<p>En el primer capítulo nos centraremos en la definición de lo que es una base de Schauder y caracterizaremos su existencia; también incluiremos algunos comentarios sobre el problema de la existencia de base para un espacio de Banach.</p>
-<p>En el Capítulo 2 estudiaremos la relación entre las bases de Schauder y el espacio dual, demostrando el primer gran resultado del trabajo: la caracterización de aquellos espacios de Banach que son reflexivos y admiten base de Schauder.</p>
-<p>En el Capítulo 3 estudiaremos las conocidas como sucesiones básicas, que no son más que bases de Schauder del espacio —quizás menor que el total— que generan. También hablaremos sobre la noción equivalencia para bases de Schauder.</p>
-<p>En el Capítulo 4 estudiaremos aquellas bases de Schauder que son incondicionales; es decir, es indiferente el orden que consideremos a la hora de estudiar la convergencia de la serie que define a cada vector del espacio. Caracterizaremos los espacios de Banach reflexivos con base incondicional.</p>
-<p>En el Capítulo 5 daremos por finalizada nuestra tentativa empleando la teoría de las bases de Schauder desarrollada a lo largo del trabajo para estudiar la estructura interna de los espacios de sucesiones <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>, con el objetivo de dar a entender como de distintos son entre sí.</p>
-<p>A mayores, queremos dejar patente que las bases de Schauder no son en absoluto una construcción artificiosa, sino que generalizan muy naturalmente a las bases de Hamel de los espacios de dimensión finita. Es por ello que iremos comparando sus propiedades en algunos capítulos para dejar claro el origen algebraico que tiene detrás esta idea y que tan bien resume la filosofía del Análisis Funcional de fusionar conceptos algebraicos con nociones topológicas para el estudio de las funciones.</p>
+<p>Introducimos a continuación el siguiente concepto también relacionado en cierta forma con la perturbación de las sucesiones básicas, pero ahora producida por extraer una sucesión nueva a partir de ellas.</p>
+<p>Sea <span class="math inline">\((X,\|\cdot\|)\)</span> un espacio de Banach y <span class="math inline">\((e_i)_i\subset X\)</span> una sucesión básica.</p>
+<div id="def-SucBasBloq" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 8.1 (Sucesión básica bloque)</strong></span> &nbsp;</p>
+<p>Dada una sucesión de escalares <span class="math inline">\((a_i)_i\)</span> y una sucesión estrictamente creciente de índices <span class="math inline">\((p_i)_i\subset\mathbb{N}\)</span>, se dice que una sucesión <span class="math inline">\((u_i)_i\subset X\)</span> de vectores no nulos de la forma <span class="math display">\[
+u_i=\sum_{j=p_i+1}^{p_{i+1}}a_je_j,\quad\text{para cada $i\in\mathbb{N}$,}
+\]</span> es <em>sucesión básica bloque</em>.</p>
+</div>
+<p>La propiedad más importante de estas nuevas sucesiones es que siguen siendo básicas, lo que nos ayuda a extraer nuevas sucesiones básicas de una dada.</p>
+<div id="lem-sbbissb" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema 8.1</strong></span> Toda sucesión básica bloque es una sucesión básica.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es una consecuencia directa del Teorema <a href="03_sucesiones_basicas-1.html#thm-suc-basica" class="quarto-xref">&nbsp;<span>5.1</span></a>. En efecto, dado que <span class="math inline">\((e_i)_i\)</span> es una sucesión básica, para cualesquiera escalares <span class="math inline">\(b_1\)</span>,…, <span class="math inline">\(b_m\)</span> y <span class="math inline">\(n&lt;m\)</span> se tiene que <span class="math display">\[
+\begin{align*}
+\Big\|\sum_{i =1}^n b_ju_j\Big\| &amp; = \Big\|\sum_{i =1}^n b_j \sum_{i = p_j+1}^{p_{j+1}}a_ie_i\Big\| = \Big\|\sum_{i =1}^{p_{n+1}}c_ie_i\Big\|\leq K\Big\|\sum_{i = 1}^{p_{m+1}}c_ie_i\Big\|\\
+&amp; = K\Big\|\sum_{i =1}^m b_j \sum_{i = p_j+1}^{p_{j+1}}a_ie_i\Big\|= \Big\|\sum_{j=1}^mb_ju_j\Big\|,
+\end{align*}
+\]</span> donde <span class="math inline">\(c_i=\hat{b}_ia_i\)</span> para cada <span class="math inline">\(1\leq i\leq p_{m+1}\)</span> y siendo <span class="math inline">\(\hat{b}_i=b_j\)</span> si <span class="math inline">\(p_{j}+1\leq i\leq p_{j+1}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Presentamos por último un criterio para saber cuando una subsucesión contiene una sucesión básica. Es importante hacer notar el poder de este lema que nos permite extraer sucesiones básicas de sucesiones que no son convergentes en norma.</p>
+<div id="lem-principio-Bessaga" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema 8.2 (Principio de selección de Bessaga-Pełczyński)</strong></span> &nbsp;</p>
+<p>Dada una base de Schauder <span class="math inline">\((e_i)_i\)</span> para un espacio de Banach <span class="math inline">\(X\)</span>, si una sucesión <span class="math inline">\((x_i)_i\)</span> verifica:</p>
+<ul>
+<li><p><span class="math inline">\(\displaystyle \inf_n \|x_n\| &gt;0\)</span></p></li>
+<li><p><span class="math inline">\(e_i^*(x_n) \xrightarrow{n\to \infty} 0, \quad \forall i \in \N\)</span></p></li>
+</ul>
+<p>entonces contiene una subsucesión equivalente a una sucesión básica bloque de <span class="math inline">\((e_i)_i\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por comodidad definamos <span class="math inline">\(\alpha = \inf_{n\in \N} \|x_n\|\)</span> y <span class="math inline">\(x_n = \sum a_i^ne_i\)</span>. Vamos a construir la sucesión básica bloque y la subsucesión al mismo tiempo por recurrencia, aprovechando la convergencia puntual de las proyecciones de <span class="math inline">\((e_i)_i\)</span>, <span class="math inline">\(P_n\)</span>, a la identidad.</p>
+<p>Para el primer término de la subsucesión tomamos <span class="math inline">\(n_1 = 1\)</span>, por la propiedad <span class="math inline">\((c)\)</span> de <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a> tenemos que existe un cierto <span class="math inline">\(r_i\)</span> tal que <span class="math display">\[
+\|x_{n_1} - P_{r_1}x_{n_1}\| &lt; \frac{\alpha}{4\cdot2K}, \qquad \text{siendo $K$ la constante básica de $(e_i)_i$}
+\]</span></p>
+<p>Así, nuestro primer término de la subsucesión va a ser <span class="math inline">\(x_{n_1}\)</span> y el primer término de la sucesión básica bloque va a ser <span class="math inline">\(u_1 = P_{r_1}x_{n_1}\)</span></p>
+<p>Como <span class="math inline">\(e_i^*(x_n) = a_i^n\xrightarrow{n \to \infty} 0\)</span> para todo <span class="math inline">\(i\)</span>, y <span class="math display">\[
+\|P_{r_1}x_n\| \leq \sum_{i=1}^{r_i}|a_i^n|\|e_i\|
+\]</span> tenemos que existe un cierto <span class="math inline">\(n_2&gt;n_1\)</span> natural de forma que para todo <span class="math inline">\(i\in\{1,\dots, r_1\}\)</span> <span class="math display">\[
+|a_i^{n_2}| &lt; \frac{\alpha}{4²\cdot2Kr_1\sup_i\|e_i\|}
+\]</span> y por tanto <span class="math display">\[
+\|P_{r_1}x_{n_2}\|\leq\sum_{i = 1}^{r_1}|a_i^{n_2}|\|e_i\| \leq \sum_{i = 1}^{r_1}|a_i^{n_2}|\sup_{i}\|e_i\| \leq \frac{\alpha}{4^2\cdot2K}
+\]</span></p>
+<p>asi, de nuevo por la propiedad <span class="math inline">\((c)\)</span> de <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a> tenemos que existe un <span class="math inline">\(r_2&gt;r_1\)</span> de forma que <span class="math display">\[
+\|x_{n_2} - P_{r_2}x_{n_2}\| &lt; \frac{\alpha}{4^2\cdot2K}
+\]</span> por lo que definimos <span class="math inline">\(u_2 = P_{r_2}x_{n_2} - P_{r_1}x_{n_2}\)</span>. Es evidente que <span class="math display">\[
+\|u_2-x_{n_2}\| = \|P_{r_2}x_{n_2} - P_{r_1}x_{n_2} - x_{n_2}\| \leq \|P_{r_1}x_{n_2}\| +\| P_{r_2}x_{n_2} - x_{n_2}\| &lt; \frac{\alpha}{4^2K}
+\]</span></p>
+<p>En general, dado <span class="math inline">\(r_{k-1}\)</span> y el término <span class="math inline">\(x_{n_{k-1}}\)</span> sabemos por el mismo razonamiento de antes que, como <span class="math inline">\(e_i^*(x_n) = a_i^n \xrightarrow{n \to \infty} 0\)</span> existe un cierto <span class="math inline">\(n_k&gt; n_{k-1}\)</span> de forma que <span class="math display">\[
+\|P_{r_{k-1}}x_{n_k}\|&lt; \frac{\alpha}{4^k\cdot 2K}
+\]</span> Además, sabemos que existe un cierto <span class="math inline">\(r_k &gt; r_{k-1}\)</span> de forma que <span class="math display">\[
+\|x_{n_{k}} - P_{r_{k}}x_{n_k}\| &lt; \frac{\alpha}{4^k\cdot2K}
+\]</span> por tanto, definimos <span class="math inline">\(u_k = P_{r_k}x_{n_k} - P_{r_{k-1}}x_{n_k}\)</span>, que verifica <span class="math display">\[
+\|u_k-x_{n_k}\| = \|P_{r_k}x_{n_k} - P_{r_{k-1}}x_{n_k} - x_{n_k}\| \leq \|P_{r_{k-1}}x_{n_k}\| +\| P_{r_k}x_{n_k} - x_{n_k}\| &lt; \frac{\alpha}{4^kK}.
+\]</span></p>
+<p>Ahora comprobaremos que ambas sucesiones están en las hipótesis del Teorema <a href="03_sucesiones_basicas-3.html#thm-KMR" class="quarto-xref">&nbsp;<span>7.1</span></a>. <span class="math display">\[
+\|x_{n_k}\|-\|u_k\|\leq\|u_k- x_{n_k}\| &lt; \frac{\alpha}{4^kK} &lt; \frac{\alpha}{4} \implies\|x_{n_k}\| - \frac{\alpha}{4} &lt; \|u_k\|
+\]</span> y como <span class="math inline">\(\alpha = \inf_{i\in \N}\|x_i\|\)</span> <span class="math display">\[
+\|u_k\|&gt; \alpha - \frac{\alpha}{4} =\frac{3\alpha}{4 }&gt;0 \qquad\text{para todo $k\in \N$}
+\]</span></p>
+<p>Así, tenemos una subsucesión <span class="math inline">\((x_{n_k})_k\)</span> que verifica <span class="math display">\[
+\sum_{k = 1}^\infty\frac{\|u_k-x_{n_k}\|}{\|u_k\|} &lt; \sum_{k = 1}^\infty \frac{4}{3\alpha}\frac{\alpha}{4^kK} = \frac{4}{3K}\frac{1}{4(1- \frac{1}{4})} = \frac{4}{9K}&lt; \frac{1}{2K}
+\]</span></p>
+<p>Lo que implica que <span class="math inline">\((x_{n_k})_k\)</span> es una sucesión básica equivalente a una sucesión básica bloque de <span class="math inline">\((e_i)_i\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column text-center" style="width:35%;">
+<p><img src="figuras/krein.png" style="height:4cm"></p>
+<p><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Krein/">Mark Krein</a><br>
+<small>Kiev, 1907 – Odessa, 1989</small></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<p>Mark Grigorievich Krein fue un importante matemático soviético. Sufrió persecución por judío a lo largo de su vida, lo cual le generó importantes dificultades, tanto en el plano personal como profesional.</p>
+<p>Fundó una de las escuelas de análisis funcional más importantes de la época en Odessa. Dicha escuela fue disuelta por la ocupación nazi, momento en el que Krein fue destituido (y jamás readmitido).</p>
+</div>
+</div>
 
 
 
@@ -712,13 +801,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
+      <a href="./03_sucesiones_basicas-3.html" class="pagination-link" aria-label="Perturbación de sucesiones básicas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Perturbación de sucesiones básicas</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_Conceptos_intro.html" class="pagination-link" aria-label="Bases de Schauder">
-        <span class="nav-page-text">Bases de Schauder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Bibliografia.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

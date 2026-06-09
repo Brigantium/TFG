@@ -1,0 +1,155 @@
+## Sucesiones básicas equivalentes
+
+A continuación introduciremos un concepto que, careciendo sentido en el caso de dimensión finita, es de capital importancia en dimensión infinita.
+
+::: {#def-SucBasEq}
+## Sucesiones básicas equivalentes
+\hspace*{1cm}
+
+Dos sucesiones $(e_i)_i$ y $(x_i)_i$ se dicen *equivalentes* si la convergencia de
+$$
+\sum_{i=1}^\infty a_ie_i\text{ equivale a la convergencia de }\sum_{i=1}^\infty a_ix_i.
+$$
+
+:::
+
+En esencia, lo que estamos haciendo es definir una relación de equivalencia entre sucesiones que se comportan igual: si unos coeficientes definen un elemento para una de las bases, entonces también definen otro para la segunda sucesión. Recordemos que, ahora que tratamos con la convergencia de series para definir los coeficientes de un elemento, no gozamos de la misma libertad para decir que unas coordenadas definen algo o no.
+
+El siguiente teorema nos ayudará a comprender mejor la idea que acabamos de mencionar.
+
+Sean $X$ e $Y$ dos espacios de Banach, $(e_i)_i$ una sucesión básica en $X$ y $(\varepsilon_i)_i$ una sucesión básica en $Y$. 
+
+::: {#thm-SucBasEqu}
+
+## Caracterización e interés de las sucesiones básicas equivalentes
+\hspace*{1mm}
+
+Los siguientes enunciados son equivalentes: 
+
+(a) Las sucesiones básicas $(e_i)_i$ y $(\varepsilon_i)_i$ son equivalentes.
+
+(b) La aplicación $T\colon X \longrightarrow Y$ dada por $Te_i=\varepsilon_i$ para cada $i\in\mathbb{N}$ define un isomorfismo entre $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ y $\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}$.
+
+(c) Existen dos constantes $C_1$, $C_2>0$ de forma que para cualesquiera escalares $a_i$, con $1\leq i\leq n$, se tiene que
+$$
+{C_1}^{-1}\big\|\sum_{i=1}^{n}{a_i\varepsilon_i}\big\|_X \leq \big\|\sum_{i=1}^{n}{a_ie_i}\big\|_Y \leq C_2\big\|\sum_{i=1}^{n}{a_i\varepsilon_i}\big\|_X.
+$$
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1cm}
+
+$(a)\Longrightarrow(b)$
+
+Primero introducimos la aplicación $T\colon\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}$ dada por
+$$
+T\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum_{i=1}^\infty a_i\varepsilon_i.
+$$
+
+Veamos que $T$ es un isomorfismo entre $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ y $\overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\}$.
+
+- La aplicación $T$ está bien definida por ser $(e_i)_i$ y $(\varepsilon_i)_i$ sucesiones básicas equivalentes.
+
+- Es evidente que $T$ es una aplicación lineal.
+
+- El carácter biyectivo de $T$ es resulta fácil de probar. 
+
+  ::: {style = "margin-left: 2em"}
+
+    Dado
+    $$
+    \sum_{i=1}^\infty a_i\varepsilon_i\in \overline{\rm span}\,\{\varepsilon_i\colon i\in\mathbb{N}\},
+    $$
+    existe ---en virtud de la equivalencia de sucesiones---,
+    $$
+    \sum_{i=1}^\infty a_ie_i\in \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}
+    $$ 
+    tal que
+    $$
+    T\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum a_i\varepsilon_i;
+    $$
+    luego $T$ es sobreyectiva.
+
+    Puesto que $T$ es lineal, para demostrar que es inyectiva basta ver que $Tx=0$ implica $x=0$. No obstante, dado que $(\varepsilon_i)_{i}$ es una sucesión básica, $\{\varepsilon_i\colon i\in\mathbb{N}\}$ es un conjunto linealmente independiente, luego
+    $$
+    \begin{align*}
+    T\Big(\sum_{i=1}^\infty a_ie_i\Big)=0 &\Longleftrightarrow \sum_{i=1}^\infty a_i\varepsilon_i = 0 \Longleftrightarrow  a_i=0\text{ para todo $i\in\mathbb{N}$ }\\
+    &\Longleftrightarrow \sum_{i=1}^\infty a_ie_i=0.
+    \end{align*}
+    $$
+
+  :::
+    
+- Deduciremos la continuidad de $T$ a partir del Teorema @thm-grafo-cerrado del grafo cerrado.
+
+  ::: {style = "margin-left: 2em"}
+
+    Sea $(x^k)_k\subset X$ una sucesión tal que
+    $$
+    x^k=\sum_{i=1}^\infty a_i^ke_i\quad\text{para cada $k\in\mathbb{N}$}
+    $$
+    y satisface que, cuando $k\to\infty$,
+    $$
+    x^k\to x=\sum_{i=1}^\infty a_ie_i\in X\quad\text{ y }\quad T(x^k) = \sum a_i^k\varepsilon_i\to \sum_{i=1}^\infty c_i\varepsilon_i.
+    $$
+
+    Como los funcionales biortogonales de ambas sucesiones básicas son aplicaciones continuas, y por tanto secuencialmente continuas, tenemos que, para cualquier $i$, cuando $k\to\infty$,
+    $$
+    e_i^*(x^k)=a_i^k\to a_i\quad\text{ y }\quad \varepsilon_i^*(x^k)=a_i^k\to c_i.
+    $$
+    Por tanto, por unicidad de límites, $a_i=c_i$. Y entonces $Tx=\lim_{k \to \infty}Tx^k$,
+    ergo el grafo de $T$ es cerrado.
+  :::
+
+Finalmente, dado que $T$ es continua y sobreyectiva, el Teorema @thm-ApAbierta de la aplicación abierta asegura que $T$ es un isomorfismo.
+    
+$(b)\Longrightarrow(c)$
+
+Dado que $T$ es un isomorfismo que satisface $Te_i=\varepsilon_i$ para todo $i\in\mathbb{N}$, para cualesquiera escalares $a_1$,..., $a_n$ se tiene que
+$$
+\big\|\sum_{i = 1}^n a_i\varepsilon_i\big\|=\big\|T\Big(\sum_{i=1}^\infty a_ie_i\Big)\big\|\leq \|T\|\,\big\|\sum_{i = 1}^na_ie_i\big\|.
+$$
+Por otra parte, razonando de forma análoga con $T^{-1}$, concluimos que
+$$
+\big\|\sum_{i = 1}^n a_ie_i\big\|=\big\|T^{-1}\Big(\sum_{i=1}^\infty a_i\varepsilon_i\Big)\big\|\leq \|T^{-1}\|\,\big\|\sum_{i = 1}^na_i\varepsilon_i\big\|
+$$
+Por tanto, basta tomar $C_1=\|T\|$ y $C_2=\|T^{-1}\|$.
+    
+$(c)\Longrightarrow(a)$
+
+Probaremos que para cualesquiera escalares $(a_i)_i\subset\mathbb{K}$, la serie
+$$
+\sum_{i=1}^\infty a_ie_i\text{ es de Cauchy en $X$ si y solo si }\sum_{i=1}^\infty a_i\varepsilon_i\text{ es de Cauchy en $X$.}
+$$ {#eq-3.1}
+
+Si la primera serie en (@eq-3.1) es de Cauchy en $X$, dado $\varepsilon>0$ existe $N_\varepsilon\in\mathbb{N}$ de modo que para par $p$, $q\geq N_\varepsilon$ se tiene que
+$$
+\big\|\sum_{i=p}^q a_ie_i \big\|<\dfrac{\varepsilon}{C_2}.
+$$
+Por tanto, para $p$, $q>N_\varepsilon$, también tenemos que
+$$
+\big\|\sum _{i = p}^qa_i\varepsilon_i\big\|\leq C_2\big\|\sum _{i=p}^qa_ie_i\big\|<\varepsilon,
+$$
+por lo que la segunda serie de (@eq-3.1) es de Cauchy en $Y$.
+    
+El recíproco se prueba de forma completamente análoga cambiando $C_2$ por $C_1$.
+
+:::
+
+Si definiésemos *sucesiones básicas equivalentes* como en el punto $(b)$ del anterior teorema estaríamos tentados a pensar que se resume a que dos sucesiones básicas son equivalentes si los espacios que generan son isomorfos, lo cual no es del todo correcto. Existen espacios isomorfos con bases no equivalentes; puede verse un ejemplo en el ejemplo @sec-c_0.
+
+Esta distinción nos lleva a preguntarnos si un mismo espacio de Banach puede tener dos bases de Schauder distintas ---en el sentido de no ser equivalentes---; es decir, si una base de Schauder es o no única. La respuesta a esta cuestión la encontramos en el siguiente teorema @Lindenstrauss[5]:
+
+::: {#thm-porlomenosdos}
+\hspace*{1mm}
+
+Todo espacio de Banach de dimensión infinita con base de Schauder tiene, por lo menos, dos bases de Schauder normalizadas no equivalentes. 
+
+:::
+
+Hay que señalar el poder de esta respuesta: no solo es que existan espacios de Banach con más de una base de Schauder, es que cualquier espacio de Banach tiene como mínimo dos. Es más, se puede probar que el número de bases de Schauder no equivalentes en un mismo espacio es no numerable.
+
+Nótese que en dimensión finita esta pregunta no tiene sentido porque, dadas dos bases $(e_i)_{i=1}^n$ y $(\varepsilon_i)_{i=1}^n$ cualesquiera de un espacio podemos definir un isomorfismo de una en la otra como $Te_i = \varepsilon_i$ sin ningún problema.

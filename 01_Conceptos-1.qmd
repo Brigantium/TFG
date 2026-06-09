@@ -1,12 +1,4 @@
-# Bases de Schauder
-
-En este capítulo presentaremos algunos conceptos básicos: introduciremos la noción de base de Schauder para un espacio vectorial normado, caracterizaremos su construcción y existencia y más adelante, ya en la segunda sección del capítulo, veremos que la hipótesis de completitud es fundamental para obtener los resultados más importantes de este Trabajo Fin de Grado.
-
-También hablaremos, aunque de manera más superficial, del *problema de existencia de base de Schauder* para espacios de Banach separables.
-
-<!-- \section{Bases de Schauder en espacios vectoriales normados} -->
-
-## Bases de Schauder en espacios vectoriales normados.
+# Bases de Schauder en espacios vectoriales normados.
 
 Es bien conocido que todo espacio vectorial tiene base de Hamel. Es decir, en todo espacio vectorial podemos encontrar un conjunto de vectores linealmente independientes cuyas combinaciones lineales (¡finitas!) generan el espacio. Además, todas las bases de Hamel de un mismo espacio vectorial tienen algo en común: su cardinal. Por tanto, es posible definir la _dimensión_ de cualquier espacio vectorial.
 
@@ -79,7 +71,7 @@ Sea $(X,\|\!\cdot\!\|)$ un espacio vectorial normado con base de Schauder $(e_i)
 
 <!-- \begin{proposition}[Caracterización de las proyecciones canónicas]\label{proyections}\hspace*{1mm}\\ -->
 
-::: {#prp-proyeciones}
+::: {#thm-proyecciones}
 
 ## Caracterización de las proyecciones canónicas
 \hspace*{1mm}
@@ -98,15 +90,13 @@ La sucesión de proyecciones canónicas asociada a $(e_i)_i$ satisface las sigui
 Además, dada una sucesión de operadores $(P_n)_n\subset\mathcal{B}(X)$ satisfaciendo $(a)$, $(b)$ y $(c)$, existe una base de Schauder de $X$ que tiene a $(P_n)_n$ como sucesión de proyecciones canónicas asociada.
 :::
 
-
-
-
-
-::: {.proof collapse="true"}
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+<!-- ::: {.proof} -->
 \hspace*{1mm}
 
 ::: {#cnj-1}
-Antes de ver la demostración de la Proposición @prp-proyeciones conviene recordar que se dice que un operador $P\in\mathcal{B}(X)$ es una *proyección* (lineal y continua) si $P^2\equiv PP=P$. En tal caso, $I-P$ también es una proyección. Además, $P(X)={\rm ker}\,(I-P)$, luego $P$ restringido a $P(X)$ es la identidad. Análogamente, ${\rm ker}\,P=(I-P)(X)$. Es evidente que si $P$ es una proyección no trivial ($P\neq 0$ y $P\neq I$), entonces $\|P\|\geq 1$ y $\|I-P\|\geq 1$.
+Antes de ver la demostración del Teorema @thm-proyecciones conviene recordar que se dice que un operador $P\in\mathcal{B}(X)$ es una *proyección* (lineal y continua) si $P^2\equiv PP=P$. En tal caso, $I-P$ también es una proyección. Además, $P(X)={\rm ker}\,(I-P)$, luego $P$ restringido a $P(X)$ es la identidad. Análogamente, ${\rm ker}\,P=(I-P)(X)$. Es evidente que si $P$ es una proyección no trivial ($P\neq 0$ y $P\neq I$), entonces $\|P\|\geq 1$ y $\|I-P\|\geq 1$.
 :::
 
 \noindent "$\Longrightarrow$"
@@ -133,6 +123,7 @@ x=\lim_{n\to\infty}{P_n(x)}=\lim_{n\to\infty}\sum_{i=1}^nP_i(x) - P_{i-1}(x)=  \
 $$  
 ya que $\dim\,P_i(X)/P_{i-1}(X)=1$. La unicidad de la sucesión de escalares $(a_i)_i$ exigida en la definición de base de Schauder es consecuencia de que $a_ie_i=P_i(x)-P_{i-1}(x)$ para cada $i\in\mathbb{N}$.
 
+<!-- ::: -->
 :::
 
 El lector podrá notar que la idea detrás de esta caracterización es muy interesante ---y bella---: para construir las bases del espacio total se parte de un espacio de dimensión finita y se va haciendo más grande hasta que, en una especie de convergencia espacial, se construye una sucesión de espacios que se aproxima cada vez más al espacio total. Nos gustaría incidir en esta idea porque guarda una estrecha relación con la filosofía del Análisis Matemático: estudiar aquello que no comprendemos fraccionándolo primero en aquello que sí conocemos y extrapolando luego mediante el uso de límites sus propiedades.
@@ -162,13 +153,14 @@ la sucesión $(e_i)_i$ también es una base de Schauder de la compleción $\wide
 :::
 
 
-::: {.proof}
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
 
 \hspace*{1cm}
 
 Consideremos, para cada $n\in\mathbb{N}$, la extensión continua de $P_n$ a $\widehat{X}$; es decir, para cada $\widehat{x}\in\widehat{X}$, definimos $\widehat{P}_n(\widehat{x})= \lim_{k\to\infty}P_n(x_k)$, siendo $(x_k)_k\subset X$ cualquier\footnote{Las proyecciones canónicas $P_n$ son continuas. Por tanto, si $(x_k)_k$ e $(y_k)_k$ son dos sucesiones convergentes a $\widehat{x}$, entonces $\widehat{P}_n(x_k-y_k)\to 0$ cuando $k\to\infty$ y equivalentemente $\lim_{k\to\infty}P_n(x_k)=\lim_{k\to\infty}P_n(y_k)$.} sucesión convergente a $\widehat{x}$.
 
-Veamos que se cumplen las propiedades $(a)$, $(b)$ y $(c)$ del enunciado de la Proposición @prp-proyeciones.
+Veamos que se cumplen las propiedades $(a)$, $(b)$ y $(c)$ del enunciado del Teorema @thm-proyecciones.
 
 
 (a) Atendiendo a la definición de $\widehat{P}_n$, resulta evidente que 
@@ -205,7 +197,7 @@ siendo $(x_k)_k\subset X$ una sucesión tal que $x_k\to \widehat{x}$ cuando $k\t
     $$
     \|\widehat{x}-x_{k}\|<\dfrac{\varepsilon}{3}\quad\text{y}\quad \sup_{n\in\mathbb{N}}\|P_n\|\,\|x_{k}-\widehat{x}\|<\dfrac{\varepsilon}{3}.
     $$
-    Por otra parte, dado que $(P_n)_n$ es una sucesión de proyecciones canónicas, las sucesión $(P_n)_n$ satisface la propiedad $(b)$ del enunciado de la Proposición @prp-proyeciones, luego existe $N_{k_\varepsilon}\in\mathbb{N}$ de modo que si $n\geq N_{k_\varepsilon}$ entonces
+    Por otra parte, dado que $(P_n)_n$ es una sucesión de proyecciones canónicas, las sucesión $(P_n)_n$ satisface la propiedad $(b)$ del enunciado del Teorema @thm-proyecciones, luego existe $N_{k_\varepsilon}\in\mathbb{N}$ de modo que si $n\geq N_{k_\varepsilon}$ entonces
     $$
     \|x_{k}-P_nx_{k}\|<\dfrac{\varepsilon}{3}.
     $$
@@ -242,212 +234,3 @@ $$
 
 :::
 
-
-## Bases de Schauder en espacios de Banach
-<!-- \section{Bases de Schauder en espacios de Banach} -->
-
-Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que ---tal y como el lector verá con el paso de las páginas---, asegura la convergencia de series, continuidad de aplicaciones  y existencia de espacios que describiremos en los sucesivos capítulos.
-
-Sea $(X,\|\!\cdot\!\|)$ un espacio de Banach con base de Schauder $(e_i)_i$.
-
-::: {#prp-1.5}
-
-## Auxiliar para el Teorema @thm-banach siguiente
-\hspace*{1mm}
-
-La sucesión $(e_i)_i$ es base de Schauder de $(X,\vertiii{\cdot})$.
-
-
-::: {.proof}
-\hspace*{1cm}
-
-Probaremos que la sucesión de proyecciones canónicas $(P_n)_n$ satisface las condiciones enunciadas en la Proposición @prp-proyeciones.
-
-Las propiedades $(a)$ y $(b)$ no dependen de la norma, por lo que se satisfacen automáticamente. Por otra parte, la propiedad $(c)$ es sencilla de probar, pues para cada $x\in X$ se tiene que
-$$
-\begin{align*}\label{eq:unicidad}  
-        \vertiii{x-P_nx} &=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
-\end{align*}
-$$
-
-porque, para cualquier $y\in X$, por ser $(e_i)_i$ base de Schauder de $(X,\|\!\cdot\!\|)$, tenemos que $P_ny \to y$ cuando $n\to\infty$ en $(X,\|\!\cdot\!\|)$.
-:::
-:::
-
-
-::: {#thm-banach}
-
-## Stefan Banach: «Completitud $\Longrightarrow$ Acotación de las proyecciones canónicas»
-\hspace*{1mm}
-
-La sucesión de proyecciones canónicas $(P_n)_n$ es (uniformemente) acotada en $(\mathcal{B}(X),\|\!\cdot\!\|)$.
-
-
-::: {.proof}
-
-\hspace*{1cm}
-
-Conviene observar que
-$$
-\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,
-$$
-por lo que la sucesión $(P_n)_n$ es (uniformemente) acotada en $\mathcal{B}(X)$ si consideramos a $X$ dotado de la norma $\vertiii{\cdot}$ y basta entonces demostrar que $\vertiii{\cdot}$ es equivalente a $\|\!\cdot\!\|$, es decir, que existen constantes $M_1$, $M_2>0$ de modo que $\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}$ para todo $x\in X$.
-
-En efecto, pues tal caso, la acotación uniforme en $(X,\|\!\cdot\!\|)$ será inmediata:
-$$
-\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.
-$$
-
-
-Si $\left(X,\vertiii{\cdot}\right)$ fuese completo, dado que la aplicación $I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)$ es trivialmente continua (pues $\|x\|\leq\vertiii{x}$ para todo $x\in X$) y biyectiva, el Teorema @thm-ap-abierta de la aplicación abierta nos permitiría afirmaría que $I^{-1}$ también es continua, por lo que $\vertiii{\cdot}$ y $\|\!\cdot\!\|$ serían necesariamente normas equivalentes.
-    
-Probaremos que es posible proceder de tal modo. Para ello, demostraremos que $\left(X,\vertiii{\cdot}\right)$ es un espacio de Banach mostrando que $\widehat{X}\subset X$, siendo ahora $\widehat{X}$ la compleción de $X$ respecto de la norma $\vertiii{\cdot}$.
-
-Dado $x\in\widehat{X}$, como $(e_i)_i$ es base de Schauder de $\widehat{X}$ (esto es una consecuencia de la Proposición @prp-1.4 y la Proposición @prp-1.5), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
-$$
-x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}
-$$
-luego $(\alpha_1e_1+\cdots+\alpha_n e_n)_n$ es una sucesión de Cauchy en $(X,\vertiii{\cdot})$, y dado que $\|\!\cdot\!\|\leq\vertiii{\cdot}$, también es una sucesión de Cauchy en $(X,\|\!\cdot\!\|)$. Por tanto, por ser $(X,\|\!\cdot\!\|)$ completo, existe $x'\in X$ de modo que
-$$
-x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}
-$$
-Es decir, $x'=x\in X$.
-:::
-
-:::
-
-En vista de este teorema podemos introducir la siguiente definición:
-
-::: {#def-ConstanteBasica}
-
-## Constante básica
-\hspace*{1mm}
-
-El número real $\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|$ recibe el nombre de *constante básica* de $(e_i)_i$.
-
-:::
-
-Como pequeño complemento a la definición anterior, tenemos el concepto de base *monótona*, que es aquella para la que $\text{bc}\,(e_i)_i = 1$. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares $(a_i)_i$, la sucesión de números reales
-$$
-\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n
-$$
-es monótona creciente, lo cual es evidente pues, tomando $n>m$,
-$$
-\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.
-$$
-
-<!--
-
-\begin{center}
-\begin{minipage}{0.35\textwidth}\centering\small
-    \includegraphics[height=4cm]{figuras/schauder.png}\\[2mm]
-    \href{https://mathshistory.st-andrews.ac.uk/Biographies/Schauder/}{\color{blue}Juliusz Schauder}\\
-    Leópolis, 1899 – Leópolis, 1943
-\end{minipage}
-\begin{minipage}{0.60\textwidth}
-
-    Schauder fue un matemático polaco--judío con una corta pero relevante trayectoria investigadora en los campos del análisis funcional, EDP's y física matemática.\smallskip
-    
-    Participó en la Primera Guerra Mundial. Fue alumno de Banach y Steinhaus en Leópolis, donde se doctoró en $1923$.\smallskip
-    
-    Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.
-\end{minipage}
-\end{center}\medskip
-
--->
-
----
-
-:::: {.columns}
-
-::: {.column .text-center width="35%"}
-![](figuras/schauder.png){height="4cm"}
-
-[Juliusz Schauder](https://mathshistory.st-andrews.ac.uk/Biographies/Schauder/)  
-<small>Leópolis, 1899 – Leópolis, 1943</small>
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="60%"}
-Schauder fue un matemático polaco-judío con una corta pero relevante trayectoria investigadora en los campos del análisis funcional, EDPs y física matemática.
-
-Participó en la Primera Guerra Mundial. Fue alumno de Banach y Steinhaus en Leópolis, donde se doctoró en 1923.
-
-Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.
-:::
-
-::::
-
----
-
-<!-- ## Sobre el problema de la existencia de base. -->
-
-Para finalizar esta sección incluimos una breve mención al conocido problema de la existencia de base.
-
-Con el nacimiento de la idea de las bases de Schauder surgió también una cuestión natural:
-
-::: {.text-center}
-¿Todo espacio de Banach separable admite base de Schauder?
-:::
-
-Es una pregunta que surge del teorema con el que dimos inicio a este capítulo. Tendríamos la esperanza de que la respuesta fuese afirmativa y entonces podríamos añadir otra analogía entre las bases de Hamel y las de Schauder. Pero el interrogante se aclaró en $1973$, cuando el matemático sueco Per Enflo @Enflo1973 proporcionó un ejemplo de espacio de Banach separable que no admite base de Schauder. En cualquier caso, todos los espacios clásicos sí admiten bases de Schauder ---como el lector podrá ver en el Capítulo @cap-ejemplos de este Trabajo Fin de Grado---.
-
-Por otra parte, aún cabe la posibilidad de que todo espacio de Banach separable tenga algún subespacio con base de Schauder (ignorando evidentemente por triviales a los subespacios de dimensión finita). El lector puede esperar al Capítulo @cap-SucesionesBasicas donde se ahondará más en esta cuestión.
-
-
-\renewcommand*{\proofname}{Demostración detallada de la Proposición \ref{proyections}}
-::: {.proof}
-
-## Demostración detallada de la Proposición @prp-proyeciones
-
-\hspace*{1cm}
-
-*Existencia de los vectores $e_i$ satisfaciendo las condiciones requeridas*.
-
-::: {style="margin-left: 2em"}
-En virtud de $(b)$ sabemos que
-$$
-P_{\min\{n,m\}}(X)=P_nP_m(X) \subset P_n(X)\quad\text{y}\quad P_{\min\{n,m\}}(X)=P_mP_n(X)\subset P_m(X).
-$$
-Por tanto, $P_{\min\{n,m\}}(X) \subset P_{\max\{n,m\}}(X)$. Es decir,
-$$P_0(X) \subset P_1(X) \subset \cdots \subset P_n(X) \subset P_{n+1}(X) \subset P_{n+2}(X) \subset \cdots
-$$
-Por otra parte, en virtud de $(a)$, $\dim\,P_n(X)-\dim\,P_{n-1}(X)=1$. Por tanto, para cada $n\in\mathbb{N}$, existe un vector no nulo $\widehat{e}_n\in P_n(X)\setminus P_{n-1}(X)$. Trivialmente, $\{\widehat{e}_i\colon i\in\mathbb{N}\}$ es un conjunto linealmente independiente.
-
-Además, como $X=P_{n-1}(X)\oplus{\ker P_{n-1}}$, tenemos en realidad que $\widehat{e}_n\in P_n(X)\cap {\rm ker}P_{n-1}$.
-
-Sea ahora, para cada $i\in\mathbb{N}$, $e_i=P_i\widehat{e_i}$. En tal caso, por la propiedad $(b)$, dado un índice $j>i$, se tiene que $P_je_i=P_jP_i\widehat{e}_i=P_i\widehat{e}_i=e_i$. Es decir,
-$$
-    P_je_i=e_i\quad\text{para todo $j>i$.}    
-$$ {#eq-3}
-
-Por otra parte, si $j<i$, nuevamente por la propiedad $(b)$, $P_je_i=P_jP_1\widehat{e}_i=P_j0=0$. Es decir,  
-$$
-    P_je_i=0\quad\text{para todo $j<i$.}    
-$$ {#eq-4}
-
-Además, ahora es sencillo comprobar que $\{e_i\colon i\in\mathbb{N}\}$ sigue siendo un conjunto linealmente independiente.
-:::
-
-*Para cada $x\in X$, los coeficientes $(a_i)_i$ son únicos*.
-
-::: {style = "margin-left: 2em"}
-En principio, para cada $k\in\mathbb{N}$, puesto que $P_kx\in{\rm span}\,\{e_i\, \colon 1\leq i\leq k\}$, sabemos que existen escalares $a^k_i$ con $1\leq i\leq k$ tales que $P_kx=a_1^ke_1+\cdots +a_k^k e_n$. 
-
-Ahora bien, en realidad, $a_i^m=a_i^n\equiv a_i$ para cualesquiera $m$, $n$ e $i\in\mathbb{N}$. En efecto, pues en virtud de (@eq-3), la linealidad de las proyecciones, (@eq-4) y la propiedad $(b)$, tenemos que (si $n<m$):
-$$
-\begin{align*}
-    \sum_{i=1}^na_i^m e_i&=\sum_{i=1}^na_i^mP_ne_i=P_n\Big(\sum_{i=1}^n a_i^me_i\Big)+P_n\Big(\sum_{i=n+1}^m a_i^me_i\Big)=P_n\Big(\sum_{i=1}^m a_i^me_i\Big)\\
-    &=P_nP_mx=P_mP_nx=P_m\Big(\sum_{i=1}^n a_i^ne_i\Big)=\sum_{i = 1}^n{a_i^nP_me_i}.
-\end{align*}
-$$
-
-Por tanto, dado que ---de nuevo en virtud de (@eq-3)--- $P_me_i=e_i$ para todo $1\leq i\leq n(<m)$, la independencia lineal del conjunto $\{e_i\colon i\in\mathbb{N}\}$ asegura la coincidencia de las coordenadas. Así pues,
-$$
-P_ix-P_{i-1}x=\sum_{j=1}^i a^i_je_j-\sum_{j=1}^{i-1}a^{i-1}_je_j=a_ie_i.
-$$
-
-:::
-:::

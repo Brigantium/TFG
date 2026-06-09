@@ -1,0 +1,107 @@
+# Sucesiones básicas: Definición
+
+Sea $(X,\|\!\cdot\!\|)$ un espacio de Banach y $(e_i)_i\subset X$ una sucesión.
+
+::: {#def-SucesionBasica}
+
+## Sucesión básica
+\hspace*{1cm}
+
+Se dice que $(e_i)_i$ es una *sucesión básica* si es una base de Schauder de $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$.    
+
+:::
+ 
+<!-- %Al exigir que la sucesión sea base de Schauder del espacio que generan, y cómo los escalares deben ser únicos para cada vector, una serie de la forma 
+%\[\sum_{i = 1}^{\infty}{a_ie_i}\]
+%no se anula a menos que todos los $a_i$ sean $0$. Es fácil ver la importancia del concepto de sucesiones básicas al pensarlas de esta forma, como la generalización a espacios de dimensión infinita de los conjuntos de vectores linealmente independientes, porque al igual que estos nos dan la misma caracterización que en dimensión finita: un conjunto de vectores linealmente independientes (en este caso que conforman una sucesión básica) que genera todo el espacio es una base (respectivamente de Schauder).
+
+%El siguiente teorema nos da una caracterización de las sucesiones básicas que nos resultará muy útil en lo sucesivo. -->
+
+::: {#thm-suc-basica}
+
+## Criterio de Banach-Grumblum
+\hspace*{1cm}
+
+Una sucesión $(e_i)_i$ es una sucesión básica si y sólo si existe $K>0$ tal que para cualesquiera índices $n<m$ y escalares $a_i$, con $1\leq i\leq m$, se tiene que 
+$$
+\big\|\sum_{i=1}^na_ie_i\big\|\leq K \big\|\sum_{i=1}^ma_ie_i\big\|.
+$$
+
+Además, el valor óptimo de $K$ es la constante básica ${\rm bc}\,(e_i)_i$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+"$\Longrightarrow$"
+
+Si la sucesión $(e_i)_i$ es sucesión básica, entonces es base de Schauder de $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ y por lo tanto, sus las proyecciones canónicas asociadas a $(e_i)_i$ están uniformemente acotadas por la constante básica ${\rm bc}\,(e_i)=:K$. Por tanto, para cualquier
+$$
+x=\sum_{i=1}^ma_i e_i\in X
+$$
+se tiene que
+$$
+\big\|\sum_{i=1}^na_ie_i\big\|=\|P_n(x)\|=\|P_n\|\,\|x\|\leq K\|x\|= K\big\|\sum_{i= 1}^ma_ie_i\big\|.
+$$
+
+"$\Longleftarrow$"
+
+Para cada $n\in\mathbb{N}$, sea $P_n\colon {\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow{\rm span}\,\{e_i\colon 1\leq i\leq n\}$ la proyección definida por
+$$
+P_n\Big(\sum_{i=1}^me_ia_i\Big)=\sum_{i=1}^ne_ia_i.
+$$
+
+Es evidente que $P_n$ es una aplicación lineal. Por otra parte, la hipótesis asegura la continuidad de $P_n$ en ${\rm span}\,\{e_i\colon i\in\mathbb{N}\}$. No obstante, como ${\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ es denso en $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$, es posible extender de forma única y continua la aplicación $P_n$ al espacio $\overline{{\rm span}}\{e_i\colon i\in\mathbb{N}\}$; y obtendremos así, para cada $n\in\mathbb{N}$, una proyección (que seguiremos denotando igual) 
+$$
+P_n\colon \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow\overline{\rm span}\,\{e_i\colon 1\leq i\leq n\}.
+$$
+
+Veamos que estas proyecciones satisfacen las hipótesis de la primera parte del Teorema @thm-proyecciones.
+
+(a) Para cualquier $n<m$ tenemos que $P_m({\rm span}\,\{e_i\colon 1\leq i\leq n\})={\rm span}\,\{e_i\colon 1\leq i\leq n\}$. Por tanto, dado que todo subespacio finito dimensional es cerrado,
+$$
+{\rm dim}\,P_n(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})={\rm dim}\,({\rm span}\,\{e_i\colon 1\leq i\leq n\}).
+$$
+
+    Es decir, basta probar que el conjunto $\{e_i\colon i\in\mathbb{N}\}$ es linealmente independiente. No obstante, dada una combinación lineal $a_1e_1+a_2e_2+\cdots+a_ne_n=0$, por hipótesis,
+    $$
+    \|a_1e_1\| \leq K\big\|\sum_{i=1}^na_ie_i\big\|=0;
+    $$
+    luego $a_1=0$. Y procediendo por inducción, si suponemos que $a_1$,..., $a_{n-1}$ son nulos,
+    $$
+    \|a_ne_n\| \leq K\|\sum_{i=1}^na_ie_i\|=0;
+    $$
+    luego $a_n=0$, quedando así demostrado que que $\{e_i\colon i\in\mathbb{N}\}$ es un conjunto linealmente independiente.
+
+(b) Evidente a partir de la definición de las proyecciones $P_n$ en ${\rm span}\,\{e_i\colon i\in\mathbb{N}\}$.
+
+(c) Sea $x\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$. Dado $\varepsilon>0$, por densidad, existe $y\in {\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ que se puede expresar como
+$$
+y=\sum_{i=1}^na_ie_i,
+$$
+y es tal que $\|x-y\| \leq \varepsilon$. Entonces, tomando $m>n$ (y por tanto $P_my =y$), concluimos que
+$$
+\begin{align*}
+\|x-P_m(x)\|&\leq \|x-y\|+\|P_my-P_mx\|=\|x-y\|+\|P_m(x-y)\|\\
+& \leq \|x-y\|+K\|x-y\|< (1+K)\varepsilon;
+\end{align*}
+$$
+es decir, $\|P_nx-x\|\to 0$ cuando $n\to\infty$.
+ 
+:::
+
+
+Conviene recordar lo dicho al final del primer capítulo sobre la existencia de subespacios con base de Schauder: habíamos dicho que no todo espacio de Banach separable admite base de Schauder, resultado nefasto para esta teoría, pero quedaba abierta la existencia de al menos una sucesión básica.
+
+La solución a esta cuestión fue resuelta con el siguiente teorema (véase @SequencesSeriesDiestel[39] y @Lindenstrauss[4]):
+
+::: {#thm-z}
+
+Todo espacio de Banach de dimensión infinita contiene una sucesión básica.
+
+:::
+
+La pregunta había permanecido sin respuesta hasta $1958$, año en el que aparecieron tres demostraciones simultáneamente: una de M. ,M. Day @MMDay, otra de B. Gelbaum @Gelbaum y una más por parte de C. Bessaga y A. Pełczyński @Bessaga1958.
+

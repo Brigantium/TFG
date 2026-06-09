@@ -1,0 +1,150 @@
+
+## Sucesión básica bloque
+
+Introducimos a continuación el siguiente concepto también relacionado en cierta forma con la perturbación de las sucesiones básicas, pero ahora producida por extraer una sucesión nueva a partir de ellas.
+
+Sea $(X,\|\cdot\|)$ un espacio de Banach y $(e_i)_i\subset X$ una sucesión básica.
+
+::: {#def-SucBasBloq}
+
+## Sucesión básica bloque
+\hspace*{1mm}
+
+Dada una sucesión de escalares $(a_i)_i$ y una sucesión estrictamente creciente de índices $(p_i)_i\subset\mathbb{N}$, se dice que una sucesión $(u_i)_i\subset X$ de vectores no nulos de la forma
+$$
+u_i=\sum_{j=p_i+1}^{p_{i+1}}a_je_j,\quad\text{para cada $i\in\mathbb{N}$,}
+$$
+es *sucesión básica bloque*.
+
+:::
+
+La propiedad más importante de estas nuevas sucesiones es que siguen siendo básicas, lo que nos ayuda a extraer nuevas sucesiones básicas de una dada.
+
+
+::: {#lem-sbbissb}
+
+Toda sucesión básica bloque es una sucesión básica.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+Es una consecuencia directa del Teorema @thm-suc-basica. En efecto, dado que $(e_i)_i$ es una sucesión básica, para cualesquiera escalares $b_1$,..., $b_m$ y $n<m$ se tiene que 
+$$
+\begin{align*}
+\Big\|\sum_{i =1}^n b_ju_j\Big\| & = \Big\|\sum_{i =1}^n b_j \sum_{i = p_j+1}^{p_{j+1}}a_ie_i\Big\| = \Big\|\sum_{i =1}^{p_{n+1}}c_ie_i\Big\|\leq K\Big\|\sum_{i = 1}^{p_{m+1}}c_ie_i\Big\|\\
+& = K\Big\|\sum_{i =1}^m b_j \sum_{i = p_j+1}^{p_{j+1}}a_ie_i\Big\|= \Big\|\sum_{j=1}^mb_ju_j\Big\|,
+\end{align*}
+$$
+donde $c_i=\hat{b}_ia_i$ para cada $1\leq i\leq p_{m+1}$ y siendo $\hat{b}_i=b_j$ si $p_{j}+1\leq i\leq p_{j+1}$.
+
+:::
+
+
+Presentamos por último un criterio para saber cuando una subsucesión contiene una sucesión básica. Es importante hacer notar el poder de este lema que nos permite extraer sucesiones básicas de sucesiones que no son convergentes en norma.
+
+::: {#lem-principio-Bessaga}
+
+## Principio de selección de Bessaga-Pełczyński
+\hspace*{1cm}
+
+Dada una base de Schauder $(e_i)_i$ para un espacio de Banach $X$, si una sucesión $(x_i)_i$ verifica:
+
+- $\displaystyle \inf_n \|x_n\| >0$
+
+- $e_i^*(x_n) \xrightarrow{n\to \infty} 0, \quad \forall i \in \N$    
+
+entonces contiene una subsucesión equivalente a una sucesión básica bloque de $(e_i)_i$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1cm}
+    
+Por comodidad definamos $\alpha = \inf_{n\in \N} \|x_n\|$ y $x_n = \sum a_i^ne_i$. Vamos a construir la sucesión básica bloque y la subsucesión al mismo tiempo por recurrencia, aprovechando la convergencia puntual de las proyecciones de $(e_i)_i$, $P_n$, a la identidad.
+
+Para el primer término de la subsucesión tomamos $n_1 = 1$, por la propiedad $(c)$ de @thm-proyecciones tenemos que existe un cierto $r_i$ tal que 
+$$
+\|x_{n_1} - P_{r_1}x_{n_1}\| < \frac{\alpha}{4\cdot2K}, \qquad \text{siendo $K$ la constante básica de $(e_i)_i$}
+$$
+
+Así, nuestro primer término de la subsucesión va a ser $x_{n_1}$ y el primer término de la sucesión básica bloque va a ser $u_1 = P_{r_1}x_{n_1}$
+
+Como $e_i^*(x_n) = a_i^n\xrightarrow{n \to \infty} 0$ para todo $i$, y 
+$$
+\|P_{r_1}x_n\| \leq \sum_{i=1}^{r_i}|a_i^n|\|e_i\|
+$$
+tenemos que existe un cierto $n_2>n_1$ natural de forma que para todo $i\in\{1,\dots, r_1\}$
+$$
+|a_i^{n_2}| < \frac{\alpha}{4²\cdot2Kr_1\sup_i\|e_i\|}
+$$
+y por tanto
+$$
+\|P_{r_1}x_{n_2}\|\leq\sum_{i = 1}^{r_1}|a_i^{n_2}|\|e_i\| \leq \sum_{i = 1}^{r_1}|a_i^{n_2}|\sup_{i}\|e_i\| \leq \frac{\alpha}{4^2\cdot2K}
+$$
+
+asi, de nuevo por la propiedad $(c)$ de @thm-proyecciones tenemos que existe un $r_2>r_1$ de forma que 
+$$
+\|x_{n_2} - P_{r_2}x_{n_2}\| < \frac{\alpha}{4^2\cdot2K}
+$$
+por lo que definimos $u_2 = P_{r_2}x_{n_2} - P_{r_1}x_{n_2}$. Es evidente que 
+$$
+\|u_2-x_{n_2}\| = \|P_{r_2}x_{n_2} - P_{r_1}x_{n_2} - x_{n_2}\| \leq \|P_{r_1}x_{n_2}\| +\| P_{r_2}x_{n_2} - x_{n_2}\| < \frac{\alpha}{4^2K}
+$$
+
+En general, dado $r_{k-1}$ y el término $x_{n_{k-1}}$ sabemos por el mismo razonamiento de antes que, como $e_i^*(x_n) = a_i^n \xrightarrow{n \to \infty} 0$ existe un cierto $n_k> n_{k-1}$ de forma que 
+$$
+\|P_{r_{k-1}}x_{n_k}\|< \frac{\alpha}{4^k\cdot 2K}
+$$
+Además, sabemos que existe un cierto $r_k > r_{k-1}$ de forma que 
+$$
+\|x_{n_{k}} - P_{r_{k}}x_{n_k}\| < \frac{\alpha}{4^k\cdot2K}
+$$
+por tanto, definimos $u_k = P_{r_k}x_{n_k} - P_{r_{k-1}}x_{n_k}$, que verifica
+$$
+\|u_k-x_{n_k}\| = \|P_{r_k}x_{n_k} - P_{r_{k-1}}x_{n_k} - x_{n_k}\| \leq \|P_{r_{k-1}}x_{n_k}\| +\| P_{r_k}x_{n_k} - x_{n_k}\| < \frac{\alpha}{4^kK}.
+$$
+
+Ahora comprobaremos que ambas sucesiones están en las hipótesis del Teorema @thm-KMR. 
+$$
+\|x_{n_k}\|-\|u_k\|\leq\|u_k- x_{n_k}\| < \frac{\alpha}{4^kK} < \frac{\alpha}{4} \implies\|x_{n_k}\| - \frac{\alpha}{4} < \|u_k\|
+$$
+y como $\alpha = \inf_{i\in \N}\|x_i\|$
+$$
+\|u_k\|> \alpha - \frac{\alpha}{4} =\frac{3\alpha}{4 }>0 \qquad\text{para todo $k\in \N$}
+$$
+
+Así, tenemos una subsucesión $(x_{n_k})_k$ que verifica 
+$$
+\sum_{k = 1}^\infty\frac{\|u_k-x_{n_k}\|}{\|u_k\|} < \sum_{k = 1}^\infty \frac{4}{3\alpha}\frac{\alpha}{4^kK} = \frac{4}{3K}\frac{1}{4(1- \frac{1}{4})} = \frac{4}{9K}< \frac{1}{2K}
+$$
+
+Lo que implica que $(x_{n_k})_k$ es una sucesión básica equivalente a una sucesión básica bloque de $(e_i)_i$.     
+
+:::
+
+:::: {.columns}
+
+::: {.column .text-center width="35%"} 
+![](figuras/krein.png){height="4cm"}
+
+[\color{blue}Mark Krein](https://mathshistory.st-andrews.ac.uk/Biographies/Krein/)  
+<small>Kiev, 1907 – Odessa, 1989</small>
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+
+Mark Grigorievich Krein fue un importante matemático soviético. Sufrió persecución por judío a lo largo de su vida, lo cual le generó importantes dificultades, tanto en el plano personal como profesional.\smallskip
+
+Fundó una de las escuelas de análisis funcional más importantes de la época en Odessa. Dicha escuela fue disuelta por la ocupación nazi, momento en el que Krein fue destituido (y jamás readmitido).
+
+:::
+
+::::

@@ -332,8 +332,21 @@
 
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
     \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+
+% Definimos el entorno para el PDF (LaTeX)
+% Cambiamos las viñetas por un contador numérico con el prefijo "N"
+\newenvironment{lista-n}%
+  {\begin{itemize}[label=\textbf{(N\arabic*)}, ref=(N\arabic*), leftmargin=2.5em]\setcounter{enumi}{0}}%
+  {\end{itemize}}
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
     \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+\def\N{\ensuremath{\mathbb{N}}} %-- la N de los naturales
+\def\R{\ensuremath{\mathbb{R}}} %-- La R de los reales.
+\def\C{\ensuremath{\mathbb{C}}} %-- La C de los complejos.
+\def\Q{\ensuremath{\mathbb{Q}}}
+\def\K{\ensuremath{\mathbb{K}}}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -374,13 +387,13 @@
 \newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
 \usepackage{amsthm}
 \theoremstyle{plain}
-\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{conjecture}{Observación}[chapter]
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposición}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definición}[chapter]
 \theoremstyle{plain}
-\newtheorem{proposition}{Proposición}[chapter]
-\theoremstyle{plain}
-\newtheorem{conjecture}{Observación}[chapter]
+\newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{Demostración}}
 \newtheorem*{remark}{Observación}
@@ -720,6 +733,11 @@ asociada.
 
 \end{proposition}
 
+\begin{proof}
+\leavevmode
+
+\hspace*{1mm}
+
 \begin{conjecture}[]\protect\hypertarget{cnj-1}{}\label{cnj-1}
 
 Antes de ver la demostración de la Proposición ~\ref{prp-proyeciones}
@@ -732,11 +750,6 @@ identidad. Análogamente, \({\rm ker}\,P=(I-P)(X)\). Es evidente que si
 \(\|P\|\geq 1\) y \(\|I-P\|\geq 1\).
 
 \end{conjecture}
-
-\begin{proof}
-\leavevmode
-
-\hspace*{1mm}
 
 \noindent ``\(\Longrightarrow\)''
 
@@ -892,29 +905,276 @@ enunciado de la Proposición ~\ref{prp-proyeciones}.
 
 \end{proof}
 
-\begin{refremark}
+\begin{conjecture}[]\protect\hypertarget{cnj-2}{}\label{cnj-2}
+
+~
+
+\hspace*{1cm}
+
+La condición (\ref{eq-acotacion}) sugiere definir \[
+\vertiii{x}=\sup_n\|P_nx\|\quad\text{para cada $x\in X$.}
+\] Comprobar que \(\vertiii{\cdot}\) define una norma en \(X\) es muy
+sencillo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\vertiii{x}\geq 0\) trivialmente y
+  \(0=\vertiii{x}=\sup_{n}{\|P_nx\|}\) implica que \(\|P_nx\|=0\) para
+  todo \(n\in\N\), pero como \(\|\!\cdot\!\|\) es una norma, podemos
+  deducir que \(P_nx=0\) para todo \(n\), de donde se sigue finalmente
+  que \(x=0\) por ser \((e_i)_i\) una base de Schauder.
+\item
+  \(\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}\).
+\item
+  Dado que \(\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|\),
+  \begin{align*}
+   \vertiii{x+y}&=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\ 
+   &\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
+  \end{align*}
+\end{enumerate}
+
+\end{conjecture}
+
+\section{Bases de Schauder en espacios de
+Banach}\label{bases-de-schauder-en-espacios-de-banach}
+
+Añadamos pues la hipótesis de completitud de la que jamás nos
+desharemos, pues resulta imprescindible para la acotación uniforme de
+las proyecciones, hecho que ---tal y como el lector verá con el paso de
+las páginas---, asegura la convergencia de series, continuidad de
+aplicaciones y existencia de espacios que describiremos en los sucesivos
+capítulos.
+
+Sea \((X,\|\!\cdot\!\|)\) un espacio de Banach con base de Schauder
+\((e_i)_i\).
+
+\begin{proposition}[Auxiliar para el Teorema ~\ref{thm-banach}
+siguiente]\protect\hypertarget{prp-1.5}{}\label{prp-1.5}
+
+~
+
+\hspace*{1mm}
+
+La sucesión \((e_i)_i\) es base de Schauder de \((X,\vertiii{\cdot})\).
+
+\begin{proof}
 \leavevmode
 
 \hspace*{1cm}
 
-\textbackslash{} La condición (\ref{eq-acotacion}) sugiere definir \[
-    \vertiii{x}=\sup_n\|P_nx\|\quad\text{para cada $x\in X$.}
-    \] Comprobar que \(\vertiii{\cdot}\) define una norma en \(X\) es
-muy sencillo:
+Probaremos que la sucesión de proyecciones canónicas \((P_n)_n\)
+satisface las condiciones enunciadas en la Proposición
+~\ref{prp-proyeciones}.
 
-\begin{itemize}
-        \item[(N1)]{$\vertiii{x}\geq 0$ trivialmente y $0=\vertiii{x}=\sup_{n}{\|P_nx\|}$ implica que  $\|P_nx\|=0$ para todo $n\in\N$, pero como $\|\!\cdot\!\|$ es una norma, podemos deducir que $P_nx=0$ para todo $n$, de donde se sigue finalmente que $x=0$ por ser $(e_i)_i$ una base de Schauder.}
-        \item[(N2)]{$\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}$.}
-        \item[(N3)]{dado que $\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|$,
-        \begin{align*}
-            \vertiii{x+y}&=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\ 
-            &\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
-        \end{align*}}
-    \end{itemize}
+Las propiedades \((a)\) y \((b)\) no dependen de la norma, por lo que se
+satisfacen automáticamente. Por otra parte, la propiedad \((c)\) es
+sencilla de probar, pues para cada \(x\in X\) se tiene que
+\begin{align*}\label{eq:unicidad}  
+        \vertiii{x-P_nx} &=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
+\end{align*}
 
-\label{rem-2}
+porque, para cualquier \(y\in X\), por ser \((e_i)_i\) base de Schauder
+de \((X,\|\!\cdot\!\|)\), tenemos que \(P_ny \to y\) cuando
+\(n\to\infty\) en \((X,\|\!\cdot\!\|)\).
+\end{proof}
 
-\end{refremark}
+\end{proposition}
+
+\begin{theorem}[Stefan Banach: «Completitud \(\Longrightarrow\)
+Acotación de las proyecciones
+canónicas»]\protect\hypertarget{thm-banach}{}\label{thm-banach}
+
+~
+
+\hspace*{1mm}
+
+La sucesión de proyecciones canónicas \((P_n)_n\) es (uniformemente)
+acotada en \((\mathcal{B}(X),\|\!\cdot\!\|)\).
+
+\begin{proof}
+\leavevmode
+
+\hspace*{1cm}
+
+Conviene observar que \[
+\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,
+\] por lo que la sucesión \((P_n)_n\) es (uniformemente) acotada en
+\(\mathcal{B}(X)\) si consideramos a \(X\) dotado de la norma
+\(\vertiii{\cdot}\) y basta entonces demostrar que \(\vertiii{\cdot}\)
+es equivalente a \(\|\!\cdot\!\|\), es decir, que existen constantes
+\(M_1\), \(M_2>0\) de modo que
+\(\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}\) para todo \(x\in X\).
+
+En efecto, pues tal caso, la acotación uniforme en \((X,\|\!\cdot\!\|)\)
+será inmediata: \[
+\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.
+\]
+
+Si \(\left(X,\vertiii{\cdot}\right)\) fuese completo, dado que la
+aplicación
+\(I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)\)
+es trivialmente continua (pues \(\|x\|\leq\vertiii{x}\) para todo
+\(x\in X\)) y biyectiva, el Teorema \textbf{?@thm-ap-abierta} de la
+aplicación abierta nos permitiría afirmaría que \(I^{-1}\) también es
+continua, por lo que \(\vertiii{\cdot}\) y \(\|\!\cdot\!\|\) serían
+necesariamente normas equivalentes.
+
+Probaremos que es posible proceder de tal modo. Para ello, demostraremos
+que \(\left(X,\vertiii{\cdot}\right)\) es un espacio de Banach mostrando
+que \(\widehat{X}\subset X\), siendo ahora \(\widehat{X}\) la compleción
+de \(X\) respecto de la norma \(\vertiii{\cdot}\).
+
+Dado \(x\in\widehat{X}\), como \((e_i)_i\) es base de Schauder de
+\(\widehat{X}\) (esto es una consecuencia de la Proposición
+~\ref{prp-1.4} y la Proposición ~\ref{prp-1.5}), existe una única
+sucesión de escalares \((\alpha_i)_i\) de modo que \[
+x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}
+\] luego \((\alpha_1e_1+\cdots+\alpha_n e_n)_n\) es una sucesión de
+Cauchy en \((X,\vertiii{\cdot})\), y dado que
+\(\|\!\cdot\!\|\leq\vertiii{\cdot}\), también es una sucesión de Cauchy
+en \((X,\|\!\cdot\!\|)\). Por tanto, por ser \((X,\|\!\cdot\!\|)\)
+completo, existe \(x'\in X\) de modo que \[
+x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}
+\] Es decir, \(x'=x\in X\).
+\end{proof}
+
+\end{theorem}
+
+En vista de este teorema podemos introducir la siguiente definición:
+
+\begin{definition}[Constante
+básica]\protect\hypertarget{def-ConstanteBasica}{}\label{def-ConstanteBasica}
+
+~
+
+\hspace*{1mm}
+
+El número real \(\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|\) recibe el
+nombre de \emph{constante básica} de \((e_i)_i\).
+
+\end{definition}
+
+Como pequeño complemento a la definición anterior, tenemos el concepto
+de base \emph{monótona}, que es aquella para la que
+\(\text{bc}\,(e_i)_i = 1\). La denominación es explicativa, pues refleja
+que en dicha base, para cualquier selección de escalares \((a_i)_i\), la
+sucesión de números reales \[
+\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n
+\] es monótona creciente, lo cual es evidente pues, tomando \(n>m\), \[
+\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\includegraphics[width=\linewidth,height=4cm,keepaspectratio]{figuras/schauder.png}
+
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Schauder/}{Juliusz
+Schauder}\\
+Leópolis, 1899 -- Leópolis, 1943
+
+Schauder fue un matemático polaco-judío con una corta pero relevante
+trayectoria investigadora en los campos del análisis funcional, EDPs y
+física matemática.
+
+Participó en la Primera Guerra Mundial. Fue alumno de Banach y Steinhaus
+en Leópolis, donde se doctoró en 1923.
+
+Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o
+Leray, con quien llegó incluso a compartir un premio.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Para finalizar esta sección incluimos una breve mención al conocido
+problema de la existencia de base.
+
+Con el nacimiento de la idea de las bases de Schauder surgió también una
+cuestión natural:
+
+¿Todo espacio de Banach separable admite base de Schauder?
+
+Es una pregunta que surge del teorema con el que dimos inicio a este
+capítulo. Tendríamos la esperanza de que la respuesta fuese afirmativa y
+entonces podríamos añadir otra analogía entre las bases de Hamel y las
+de Schauder. Pero el interrogante se aclaró en \(1973\), cuando el
+matemático sueco Per Enflo {[}2{]} proporcionó un ejemplo de espacio de
+Banach separable que no admite base de Schauder. En cualquier caso,
+todos los espacios clásicos sí admiten bases de Schauder ---como el
+lector podrá ver en el Capítulo \textbf{cap-ejemplos?} de este Trabajo
+Fin de Grado---.
+
+Por otra parte, aún cabe la posibilidad de que todo espacio de Banach
+separable tenga algún subespacio con base de Schauder (ignorando
+evidentemente por triviales a los subespacios de dimensión finita). El
+lector puede esperar al Capítulo \textbf{cap-SucesionesBasicas?} donde
+se ahondará más en esta cuestión.
+
+\renewcommand*{\proofname}{Demostración detallada de la Proposición \ref{proyections}}
+
+\begin{proof}[Demostración detallada de la Proposición
+~\ref{prp-proyeciones}]
+\leavevmode
+
+\hspace*{1cm}
+
+\emph{Existencia de los vectores \(e_i\) satisfaciendo las condiciones
+requeridas}.
+
+En virtud de \((b)\) sabemos que \[
+P_{\min\{n,m\}}(X)=P_nP_m(X) \subset P_n(X)\quad\text{y}\quad P_{\min\{n,m\}}(X)=P_mP_n(X)\subset P_m(X).
+\] Por tanto, \(P_{\min\{n,m\}}(X) \subset P_{\max\{n,m\}}(X)\). Es
+decir,
+\[P_0(X) \subset P_1(X) \subset \cdots \subset P_n(X) \subset P_{n+1}(X) \subset P_{n+2}(X) \subset \cdots
+\] Por otra parte, en virtud de \((a)\),
+\(\dim\,P_n(X)-\dim\,P_{n-1}(X)=1\). Por tanto, para cada
+\(n\in\mathbb{N}\), existe un vector no nulo
+\(\widehat{e}_n\in P_n(X)\setminus P_{n-1}(X)\). Trivialmente,
+\(\{\widehat{e}_i\colon i\in\mathbb{N}\}\) es un conjunto linealmente
+independiente.
+
+Además, como \(X=P_{n-1}(X)\oplus{\ker P_{n-1}}\), tenemos en realidad
+que \(\widehat{e}_n\in P_n(X)\cap {\rm ker}P_{n-1}\).
+
+Sea ahora, para cada \(i\in\mathbb{N}\), \(e_i=P_i\widehat{e_i}\). En
+tal caso, por la propiedad \((b)\), dado un índice \(j>i\), se tiene que
+\(P_je_i=P_jP_i\widehat{e}_i=P_i\widehat{e}_i=e_i\). Es decir,
+\begin{equation}\protect\phantomsection\label{eq-3}{
+    P_je_i=e_i\quad\text{para todo $j>i$.}    
+}\end{equation}
+
+Por otra parte, si \(j<i\), nuevamente por la propiedad \((b)\),
+\(P_je_i=P_jP_1\widehat{e}_i=P_j0=0\). Es decir,\\
+\begin{equation}\protect\phantomsection\label{eq-4}{
+    P_je_i=0\quad\text{para todo $j<i$.}    
+}\end{equation}
+
+Además, ahora es sencillo comprobar que \(\{e_i\colon i\in\mathbb{N}\}\)
+sigue siendo un conjunto linealmente independiente.
+
+\emph{Para cada \(x\in X\), los coeficientes \((a_i)_i\) son únicos}.
+
+En principio, para cada \(k\in\mathbb{N}\), puesto que
+\(P_kx\in{\rm span}\,\{e_i\, \colon 1\leq i\leq k\}\), sabemos que
+existen escalares \(a^k_i\) con \(1\leq i\leq k\) tales que
+\(P_kx=a_1^ke_1+\cdots +a_k^k e_n\).
+
+Ahora bien, en realidad, \(a_i^m=a_i^n\equiv a_i\) para cualesquiera
+\(m\), \(n\) e \(i\in\mathbb{N}\). En efecto, pues en virtud de
+(\ref{eq-3}), la linealidad de las proyecciones, (\ref{eq-4}) y la
+propiedad \((b)\), tenemos que (si \(n<m\)):
+\begin{align*}
+    \sum_{i=1}^na_i^m e_i&=\sum_{i=1}^na_i^mP_ne_i=P_n\Big(\sum_{i=1}^n a_i^me_i\Big)+P_n\Big(\sum_{i=n+1}^m a_i^me_i\Big)=P_n\Big(\sum_{i=1}^m a_i^me_i\Big)\\
+    &=P_nP_mx=P_mP_nx=P_m\Big(\sum_{i=1}^n a_i^ne_i\Big)=\sum_{i = 1}^n{a_i^nP_me_i}.
+\end{align*}
+
+Por tanto, dado que ---de nuevo en virtud de (\ref{eq-3})---
+\(P_me_i=e_i\) para todo \(1\leq i\leq n(<m)\), la independencia lineal
+del conjunto \(\{e_i\colon i\in\mathbb{N}\}\) asegura la coincidencia de
+las coordenadas. Así pues, \[
+P_ix-P_{i-1}x=\sum_{j=1}^i a^i_je_j-\sum_{j=1}^{i-1}a^{i-1}_je_j=a_ie_i.
+\]
+
+\end{proof}
 
 \bookmarksetup{startatroot}
 
@@ -930,6 +1190,12 @@ muy sencillo:
 \CSLRightInline{Marián. Fabian, Petr. Habala, Petr. Hájek, Vicente.
 Montesinos, y Václav. Zizler, \emph{Banach Space Theory: The Basis for
 Linear and Nonlinear Analysis}. Springer, 2011.}
+
+\bibitem[\citeproctext]{ref-Enflo1973}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{P. Enflo, {«A counterexample to the approximation
+problem in {Banach} spaces»}, \emph{Acta Mathematica}, vol. 130, pp.
+309-317, 1973.}
 
 \end{CSLReferences}
 

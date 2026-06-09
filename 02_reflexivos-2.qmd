@@ -1,0 +1,124 @@
+
+## Espacios de Banach reflexivos con base de Schauder
+
+Introducimos ahora dos adjetivos importantes para una base de Schauder.
+
+::: {#def-}
+
+\hspace*{1cm}
+
+Una base de Schauder $(e_i)_i$ de un espacio de Banach $X$ se dice:
+
+(a) *shrinking* si $\overline{\rm span}\{e_i^\ast\colon i\in\mathbb{N}\}=X^\ast$.
+
+(b) *boundedly complete* si
+$$
+\sup_{n\in\N}\Big\|\sum_{i= 1}^na_ie_i\Big\|<\infty\,\Longrightarrow\,\sum_{i=1}^\infty a_i e_i\in X.
+$$
+
+:::
+
+El lector encontrará en la Capítulo @sec-ejemplos, más exactamente en la sección dedicada a espacios de sucesiones, algunos ejemplos de bases que cumplen y no cumplen estas propiedades. 
+
+La idea detrás de la primera definición, base *shrinking*, es la de restringirnos a aquellas bases que cumplen el objetivo que mencionábamos antes de la Proposición @prp-SpanBaseDual. Si la base es *shrinking*, el espacio dual está generado por las aplicaciones de asignación de coeficientes ---los funcionales biortogonales--- y por tanto, la topología débil del espacio puede ser estudiada restringiéndonos a dichos funcionales---cosa que, como veremos más adelante, será fundamental---.
+
+Por otro lado el segundo adjetivo que definimos es algo más sutil. Tal vez el lector vea su significado más claro si revisa el ejemplo de $c_0$ (véase el ejemplo @sec-c_0), que no verifica esta propiedad, pero para no extendernos demasiado podemos resumirlo diciendo que si una serie tiene norma acotada, entonces dicha serie debe converger a un elemento del espacio.
+
+ 
+Veamos al fin el resultado que nos permite alcanzar el primero de nuestros objetivos: una caracterización del carácter reflexivo de un espacio en base a las propiedades de cualquiera de sus bases de Schauder.
+
+El siguiente resultado fue publicado originalmente en @BasesJames por el matemático estadounidense Robert Clarke James en 1950.  
+
+
+::: {#thm-James1}
+
+## [\color{blue}Robert C. James](https://en.wikipedia.org/wiki/Robert_C._James)
+\hspace*{1mm}
+
+Un espacio de Banach $X$ con base de Schauder $(e_i)_i$ es reflexivo si y sólo si $(e_i)_i$ es shrinking y boundendly complete. 
+
+::: 
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+
+\hspace*{1mm}
+
+"$\Longrightarrow$"
+
+Veamos inicialmente que $(e_i)_i$ es *shrinking*.
+
+::: {style = "margin-left: 2em"}
+Dado $f\in X^\ast$, sabemos que
+$$
+P_n^*f=\sum_{i=1}^n{f(e_i)e_i^*}\to f\quad\text{cuando $n\to\infty$ en $(X^\ast,\text{débil}^\ast)$}.
+$$
+
+Por tanto, también se tiene que $P_n^\ast f\to f$ en $(X^\ast,\text{débil})$, de donde deducimos que todo funcional de $X^\ast$ es un elemento de la clausura en $(X^\ast,\text{débil})$ de ${\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$.
+
+No obstante, por el Teorema @thm-mazur de Mazur, al ser ${\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$ un conjunto convexo, su clausura en $(X^\ast,\text{débil})$ coincide con su clausura en $(X,\|\!\cdot\!\|)$; luego, $\overline{{\rm span}}\,\{e_i^*\colon i\in\mathbb{N}\}=X^\ast$, por lo que queda probado el carácter *shrinking* de $(e_i)_i$.
+:::
+
+Veamos ahora que $(e_i)_i$ es *bonudedly complete*.
+
+::: {style = "margin-left: 2em"}
+
+Consideremos para ello una sucesión de escalares $(a_i)_i$ de modo que 
+$$
+\sup_{n\in\mathbb{N}}\Big\|\sum_{i=1}^{n}a_ie_i\Big\|<\infty.
+$$
+
+Y sea, para cada $n\in\mathbb{N}$,
+$$
+x_n=\sum_{i=1}^n a_ie_i\in X.
+$$
+
+En tal caso, $(x_n)_n$ es una sucesión acotada en $(X,\|\!\cdot\!\|)$, por lo que ---al ser $X$ reflexivo, por el { Teorema @thm-alaoglu de Alaoglu}--- existe una subsucesión $(x_{n_k})_k\subset(x_n)_n$ convergente en $(X,\text{débil})$; sea $x\in X$ tal límite débil.
+
+Ahora bien, fijado un índice $i\in\mathbb{N}$ arbitrario, se tiene que $e_i^\ast(x_n)=a_i$ para todo $n\geq i$, por lo que $e_i^\ast (x)=a_i$. Por tanto, invocando la unicidad de la expansión que proporciona la base de Schauder, concluimos finalmente que
+$$
+x=\sum_{i=1}^\infty a_i e_i,
+$$
+
+por lo que la serie es convergente en $(X,\|\!\cdot\!\|)$, quedando probado así que $(e_i)_i$ es *boundedly complete*.
+:::
+
+"$\Longleftarrow$"
+    
+Sabemos que un espacio de Banach es reflexivo si y sólo si su bola unidad es débilmente compacta. Probaremos que $X$ satisface tal propiedad. No obstante, en virtud del Teorema @thm-EberleinSmulyan} de Eberlein-Smulyan, basta ver que $B_X$ es secuencialmente compacto en $(X, \text{débil})$. 
+        
+Sea pues $(x_n)_n\subset B_X$ una sucesión arbitraria.
+
+Para cualquier índice $i\in\mathbb{N}$ se tiene que, por ser $e_i^*$ una aplicación lineal y continua, $(e_i^*(x_n))_n$ es una sucesión acotada en el cuerpo de escalares $(\mathbb{K},|\!\cdot\!|)$, por lo que admite una subsucesión convergente. Así pues, empleando el argumento diagonal de Cantor, es posible extraer un subsucesión $(x_{n_k})_k\subset (x_n)_n$ de modo que $(e_i^\ast(x_{n_k}))_k$ es convergente para todo $i\in\mathbb{N}$. Supongamos por comodidad que $(x_{n_k})_k\equiv(x_n)_n$ y sea, para cada $i\in\mathbb{N}$,
+$$
+a_i:=\lim_{n\to\infty}e_i^\ast(x_n).
+$$
+
+En tal caso,
+$$
+\begin{align*}
+\sup_{n\in\mathbb{N}}\big\|\sum_{i=1}^na_ie_i\big\|&=\sup_{n\in\mathbb{N}}\big\|\sum_{i=1}^n\lim_{k\to\infty}e_i^*(x_k)e_i\big\|=\sup_{n\in\mathbb{N}}\big\|\lim_{k\to\infty}\sum_{i=1}^ne_i^*(x_k)e_i\big\|\\
+    &=\sup_{n\in\mathbb{N}}\big\|\lim_{k\to\infty}P_nx_k\big\|= \sup_{n\in\mathbb{N}}\lim_{k\to\infty}\|P_nx_k\|\leq\sup_{n\in\mathbb{N}}\lim_{k\to\infty} \|P_n\|\,\|x_k\|\\
+    &\leq\sup_{n\in\mathbb{N}}\|P_n\|=\text{bc}\,(e_i)_i.
+\end{align*}
+$$
+
+Y como ---por hipótesis--- $(e_i)_i$ es *boundedly complete*, la serie
+$$
+\sum_{i=1}^\infty{a_ie_i}\quad\text{es convergente en $(X,\|\!\cdot\!\|)$,}
+$$
+es decir, existe $x\in X$ tal que
+$$
+x=\sum_{i=1}^\infty a_i e_i.
+$$
+
+Veamos finalmente que $x_n\to x$ cuando $n\to\infty$ en $(X,\text{débil})$. En efecto, pues para todo índice $i\in\mathbb{N}$ se tiene que
+$$
+\lim_{n\to\infty}e_i^\ast(x_n)=a_i=e_i^\ast(x)
+$$
+y dado que $(e_i)_i$ es ---por hipótesis--- *shrinking*, $\overline{{\rm span}}\,\{e_i^\ast\colon i\in\mathbb{N}\}=X^\ast$, por lo que $f(x_n)\to f(x)$ cuando $n\to\infty$ para todo funcional $f\in X^\ast$.
+
+:::
+
+

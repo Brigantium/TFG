@@ -1,0 +1,7 @@
+# Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*
+
+<br>
+
+Ahora veremos una primera aproximación a nuestro objetivo de deducir propiedades del espacio mediante propiedades de sus bases de Schauder. 
+
+La meta del presente capítulo es el estudio del dual y el carácter reflexivo de un espacio de Banach en relación con las propiedades de cualquiera de sus bases de Schauder. Para ello será necesario manejar ciertos resultados sobre la topología débil y débil$^*$, por lo que hemos añadido un Anexo con una breve explicación de las mismas junto con todos los resultados que son necesarios.

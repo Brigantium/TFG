@@ -2,6 +2,19 @@
 /* Aplica a Teoremas, Lemas, Proposiciones, Corolarios, Algoritmos, etc. */
 .theorem, .lemma, .proposition, .corollary, .theorem-alg, .theorem-axm, .theorem-cas, .theorem-con, .theorem-cond, .theorem-crit {
   font-style: italic;
+  background-color: #f8f9fa;       /* Un gris muy sutil de fondo */
+  border-left: 4px solid #3a6073;   /* Línea elegante en el margen izquierdo */
+  padding: 1.2em 1.5em;             /* Espacio interno para que respire el texto */
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 6px;               /* Esquinas ligeramente suavizadas */
+  
+  /* Sombra suave y moderna (difusa, no agresiva) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  
+  /* Asegura que la sombra no se corte en algunos navegadores */
+  transition: box-shadow 0.3s ease;
+
 }
 
 /* Forzar que los títulos NO estén en cursiva */
@@ -63,3 +76,38 @@
   left: 0;                               /* Lo pega al margen izquierdo del ítem */
   color: #212529;                        /* Color del texto normal */
 }
+
+
+
+
+/* Quita el fondo de color del callout para que parezca texto normal */
+.proof-callout.callout {
+  background-color: transparent !important;
+  border-left-color: #6c757d !important; /* Línea gris discreta a la izquierda */
+}
+
+/* Cambia el estilo del título "Demostración" */
+.proof-callout .callout-header {
+  font-weight: bold;
+  background-color: transparent !important;
+  padding-left: 0;
+}
+
+/* Añade el cuadrado de fin de demostración dentro del contenido del callout */
+.proof-callout .callout-body > :last-child::after,
+.proof-callout .callout-body > ul:last-child > li:last-child::after,
+.proof-callout .callout-body > ol:last-child > li:last-child::after {
+  content: "\25A1"; /* Cuadrado blanco (□) */
+  float: right;
+  margin-top: 0.2em;
+}
+
+/* Limpieza de flotado */
+.proof-callout .callout-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+

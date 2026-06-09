@@ -1,0 +1,9 @@
+# Sucesiones básicas
+
+<br>
+
+Demos un paso atrás para generalizar el concepto de base de Schauder. Dedicaremos este capítulo a introducir la idea de \emph{sucesión básica} ---que podemos pensar como el análogo de la idea independencia lineal del Álgebra---, así como una caracterización de las mismas para estudiar luego cuando dos sucesiones básicas son esencialmente diferentes.
+
+Aprovecharemos también para responder a la pregunta que quedó inconclusa en el primer capítulo sobre la existencia de subespacios con bases de Schauder.
+
+

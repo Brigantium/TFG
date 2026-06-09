@@ -1,0 +1,159 @@
+## Perturbación de sucesiones básicas
+
+Las bases de Schauder, y por extensión las sucesiones básicas, satisfacen una curiosa propiedad de estabilidad: si son alteradas lo suficientemente poco ---es decir, modificamos cada término sólo mínimamente--- la sucesión resultante es equivalente a la de partida, como bien podemos ver por el siguiente teorema que también se le puede llamar el Principio de Pequeñas Perturbaciones @TopicinBanachSpacesKalton[13].
+
+Sea $(X,\|\cdot\|)$ un espacio de Banach.
+
+::: {#thm-KMR}
+## de Krein-Milman-Rutman
+\hspace*{1cm}
+
+Si $(e_i)_i$ es una sucesión básica y $(x_i)_i\subset X$ es una sucesión tal que
+$$
+\sum_{i=1}^{\infty}{\frac{\left\|e_i-x_i\right\|}{
+\|e_i\|}}<\dfrac{1}{2K},\quad\text{con $K={\rm bc}\,(e_i)_i$,}
+$$ {#eq-3.2}
+entonces $(x_i)_i$ es una sucesión básica equivalente a $(e_i)_i$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+
+\hspace*{1cm}
+
+Veremos que la aplicación $T\colon \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\} \longrightarrow \overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}$ definida como 
+$$
+T\Big(\sum_{i = 1}^\infty a_ie_i\Big)=\sum_{i = 1}^\infty a_ix_i,\quad\text{para cada }x=\sum_{i=1}^\infty a_ie_i\in \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}
+$$
+es un isomorfismo. En tal caso, si demostramos que $(x_i)_i$ es una sucesión básica, el resultado enunciado será una consecuencia del Teorema @thm-SucBasEqu anterior. 
+
+
+- Veamos en primer lugar que $T$ está bien definida.
+  
+  ::: {style = "margin-left: 1em"}
+
+    Para ello conviene recordar ---de (@eq-biortogonales)--- que, para cualquier $i\in\mathbb{N}$, se tiene que $\|e_i^*\|\,\|e_i\| \leq 2{\rm bc}\,(e_i)_i=2K$. 
+    Por tanto, si
+    $$
+    x=\sum_{i=1}^\infty a_ie_i\in X,
+    $$ {#eq-3.3}
+    para $n$, $m\in\mathbb{N}$ arbitrarios, tenemos que
+    $$
+    \begin{align*}
+        \big\|\sum_{i=n}^ma_ix_i\big\|&=\big\|\sum_{i=n}^ma_ix_i-\sum_{i=n}^ma_ie_i+\sum_{i=n}^ma_ie_i\big\|\leq\big\|\sum_{i=n}^ma_i(x_i-e_i)\big\|+ \big\|\sum_{i=n}^ma_ie_i\big\|\\ 
+        &= \big\|\sum_{i = n}^me_i^*(x)(x_i-e_i)\big\|+\big\|\sum_{i=n}^ma_ie_i\big\| \leq \sum_{i = n}^m\|e_i^*\|\|x\|\|x_i-e_i\|+\big\|\sum_{i = n}^ma_ie_i\big\| \\
+        & \leq 2K\,\|x\|\sum_{i =n}^m\frac{\|e_i-x_i\|}{\|e_i\|}+\big\|\sum_{i = n}^ma_ie_i\big\|.
+    \end{align*}
+    $$
+    Ahora bien, como las series que aparecen en (@eq-3.2) y (@eq-3.3) son convergentes, dado $\varepsilon >0$ existen $N_1$, $N_2\in\mathbb{N}$ de modo que
+    $$
+    \big\|\sum_{i = p}^qx_ie_i\big\|<\dfrac{\varepsilon}{2}\quad\text{si $p$, $q\geq N_1$}\qquad \text{ y }\qquad\sum_{j=k}^l\frac{\|e_j-x_j\|}{\|e_j\|}<\dfrac{\varepsilon}{4K\|x\|}\quad\text{si $k$, $l\geq N_2$.}
+    $$
+    Por tanto, si $n$, $m\geq \max\{N_1,N_2\}$, entonces
+    $$
+    \big\|\sum_{i = n}^ma_ix_i\big\|\leq 2K\sum_{i =n}^m\frac{\|e_i-x_i\|}{\|e_i\|}+\big\|\sum_{i = n}^ma_ie_i\big\|<\varepsilon,
+    $$
+    por lo que
+    $$
+    \sum_{i=1}^\infty a_ix_i
+    $$
+    es de Cauchy en $X$, luego convergente a cierto vector de $X$.
+
+  :::
+    
+- La linealidad de $T$ es evidente.
+    
+- Veamos ahora que $T$ es una aplicación continua.
+
+  ::: {style = "margin-left: 1em"}
+    Dado un vector
+    $$x=\sum_{i=1}^\infty a_ie_i\in X,$$
+    tenemos que
+    $$
+    \begin{align}
+        \|Tx\|&=\|Tx-x+x\|\leq\|Tx-x\|+\|x\|\leq\big\|T\Big(\sum_{i=1}^\infty a_ie_i\Big)-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|\\\label{eq:3.4}
+        &=\big\|\sum_{i=1}^\infty a_ix_i-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|=\big\|\sum_{i=1}^\infty e_i^*(x)(e_i-x_i)\big\|+\|x\|\\
+        & \leq 2K\|x\|\sum_{i=1}^\infty \frac{\|e_i-x_i\|}{\|e_i\|}+\|x\|<2\|x\|.
+    \end{align}
+    $$
+    Por tanto, $T$ es una aplicación continua.
+  :::
+
+- Veamos por último la biyectividad de $T$.
+    
+  ::: {style = "margin-left: 1em"}
+    Para probar que $T$ es inyectiva, observemos que para cualquier $x\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$, empleando la acotación obtenida en (@eq-3.4), se tiene que
+    $$
+    \|x\| \leq \|Tx-x\|+\|Tx\|\leq 2K\|x\|\sum_{i=1}^\infty \frac{\|x_i-e_i\|}{\|e_i\|}+ \|Tx\|,
+    $$
+    de donde se sigue que
+    $$
+    \|x\|\Bigg(1- 2K\sum_{i=1}^\infty \frac{\|x_i-e_i\|}{\|e_i\|}\Bigg)\leq\|Tx\|.
+    $$ {#eq-3.5}
+    Por tanto, en virtud de la desigualdad (@eq-3.2) de la hipótesis, el factor que aparece entre paréntesis en el primer miembro de la desigualdad anterior es positivo, por lo que $Tx=0$ implica que $x=0$; es decir, $T$ es inyectiva.
+    
+    Ya hemos probado que $\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ es isomorfo a $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})$, por lo que tan sólo resta justificar que $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})=\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}$.
+    
+    No obstante, dado que $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})$ es un subespacio cerrado de $\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}$ que contiene a ${\rm span}\,\{x_i\colon i\in\mathbb{N}\}$, concluimos que $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})=\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}$; luego $T$ es sobreyectiva.
+    
+    El carácter cerrado de $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})$ es consecuencia de la desigualdad (@eq-3.5). Dada una sucesión $(y_i)_i\subset T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})$, existe $(z_i)_i\subset \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ tal que $Tz_i=y_i$ para cada $i\in\mathbb{N}$. Por tanto, si $(y_i)_i$ es convergente, es de Cauchy y entonces, en virtud de la desigualdad (@eq-3.5), la sucesión $(z_i)_i$ también es convergente, y por la continuidad de $T$, si $z_i\to z$ entonces $y_i\to Tz$, que es un vector de $T(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})$.
+  :::
+
+
+Dado que hemos empleado el Teorema @thm-SucBasEqu, es necesario justificar que $(x_i)_i$ es una sucesión básica. Para ello veremos que si $(P_n)_n$ es la sucesión de proyecciones canónicas de $(e_i)_i$, entonces la sucesión de proyecciones $(\hat{P}_n)_n=(TP_nT^{-1})_n$ verifica las hipótesis del Teorema @thm-proyecciones, por lo que $(x_i)_i$ también es una sucesión básica. 
+
+
+(a) Dado que $T$ es un isomorfismo y $\dim\,{\rm span}\{e_i\colon i \in \N\}=n$ tenemos que 
+$$
+\begin{align*}
+\dim\, \hat{P}_n(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}) &= \dim TP_nT^{-1}(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}) = \dim\, TP_n(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}) \\&= \dim T({\rm span}\{e_i\colon i \in \{1,\dots,n\}\}) = n
+\end{align*}
+$$
+
+(b) $\hat{P}_n\hat{P}_m = TP_nT^{-1}TP_mT^{-1} = TP_nP_mT^{-1} = TP_{\min\{n,m\}}T^{-1} = \hat{P}_{\min\{n,m\}}$.
+
+(c) Empleando que $T$ es continua, dado un $x\in\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}$,
+$$
+\lim_{n\to \infty}\hat{P}_n(x)=\lim_{n \to \infty}TP_nT^{-1}(x) = T\lim_{n \to \infty}P_nT^{-1}(x)=TT^{-1}(x)=x.
+$$
+
+:::
+
+
+Como corolario tenemos el siguiente resultado bastante obvio, pero importante.
+
+::: {#cor-KMR}
+
+## Krein-Milman-Rutman
+\hspace*{1cm}
+
+En las condiciones del Teorema @thm-KMR anterior, si $(e_i)_i$ es base de Schauder de $X$, entonces $(x_i)_i$ es base de Schauder de $X$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+Teniendo en cuenta todo lo anterior, basta ver que $T(X)=X$.
+
+Si $T(X)\subsetneq X$, dado que $T(X)$ es en cualquier caso un subespacio cerrado de $X$, podríamos invocar el Lema @lm-riesz (de elementos casi ortogonales) de Riesz para afirmar la existencia de un vector $x\in X$ tal que
+$$
+\|x\|=1\quad\text{ y }\quad1>\text{dist}\,(x,T(X))>2K\sum_{i=1}^\infty\frac{\|x_i-e_i\|}{\|e_i\|},
+$$
+pero ya habíamos demostrado antes que 
+$$
+\text{dist}\, (x,T(X))\leq\|x-Tx\|\leq  2K\|x\|\sum_{i = 1}^\infty\frac{\|x_i-e_i\|}{\|e_i\|} = 2K\sum_{i=1}^\infty \frac{\|x_i-e_i\|}{\|e_i\|}.
+$$ 
+
+:::
+
+<!-- % Además, si introducimos una restricción más fuerte, se tiene que:
+% \begin{theorem}
+%     En las hipótesis del teorema anterior, si $\overline{span}\{e_i\}$  es complementado en $X$  por una proyección $P$ y  
+% $$\sum_{i=1}^{\infty}{\left\| e_i - x_i\right\|} < \frac{1}{8K\|P\|}$$
+% entonces $\overline{span}\{x_i\}$ también es complementado.
+% \end{theorem}
+
+%Del concepto de sucesiones básicas podemos extraer otro concepto que nos será útil más adelante para nuestro objetivo de probar los teoremas por los cuales caracterizar las propiedades de boundedly complete y shrinking. Este es el de las sucesiones básicas bloque. -->

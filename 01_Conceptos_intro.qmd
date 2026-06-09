@@ -1,0 +1,7 @@
+# Bases de Schauder
+
+<br> 
+
+En este capítulo presentaremos algunos conceptos básicos: introduciremos la noción de base de Schauder para un espacio vectorial normado, caracterizaremos su construcción y existencia y más adelante, ya en la segunda sección del capítulo, veremos que la hipótesis de completitud es fundamental para obtener los resultados más importantes de este Trabajo Fin de Grado.
+
+También hablaremos, aunque de manera más superficial, del *problema de existencia de base de Schauder* para espacios de Banach separables.

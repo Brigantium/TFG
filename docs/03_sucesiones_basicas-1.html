@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción – Bases de Schauder en espacios de Banach</title>
+<title>5&nbsp; Sucesiones básicas: Definición – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,8 +53,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_Conceptos_intro.html" rel="next">
-<link href="./resumen.html" rel="prev">
+<link href="./03_sucesiones_basicas-2.html" rel="next">
+<link href="./03_sucesiones_basicas_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduccion.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -171,7 +191,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -232,7 +252,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_sucesiones_basicas-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_sucesiones_basicas-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></span></a>
   </div>
 </li>
@@ -273,9 +293,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_sucesiones_basicas_intro.html">Sucesiones básicas</a></li><li class="breadcrumb-item"><a href="./03_sucesiones_basicas-1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></h1>
 </div>
 
 
@@ -292,22 +312,96 @@ window.Quarto = {
 </header>
 
 
-<p></p>
-<p>Desde el inicio de la matemática moderna, con Descartes, hemos tenido el objetivo de asignar a los objetos de nuestro estudio una secuencia de cifras con las que poder simplificar dichos objetos y embeberlos en el mundo de los números, tratándolos así con todo el poder teórico de las matemáticas. Dio inicio esta tentativa con las primeras coordenadas —así designadas en honor a su promotor— que movilizaron el motor de la producción matemática haciéndolo más fructífero en los últimos <span class="math inline">\(500\)</span> años que en los previos <span class="math inline">\(3\,300\)</span> que hay desde las primeras ternas pitagóricas mesopotámicas conocidas.</p>
-<p>Es con esa filosofía en mente que surge la idea de realizar tal tentativa no ya con objetos físicos o con coordenadas finitas, sino con el poder del infinito. El objetivo es ahora el estudio de objetos mucho más abstractos: las funciones —lo cual trajo consigo el problema de las inifitas dimensiones—.</p>
-<p>Al principio, el estudio se reducía a las funciones de <span class="math inline">\(\mathcal{C}^\infty\)</span> o infinitamente diferenciables —las conocidas como series de Taylor, 1715, que fallaron en generar todo el espacio y se reducían a las funciones analíticas—. Con el tiempo, la idea fue madurando y se quiso ampliar el domino de validez a todas las funciones continuas, aún cuando no se tenía muy claro qué era una función continua todavía —de aquí surgieron las series de Fourier, conocidas ya a principios del siglo XIX y que resultarían en una base no para las funciones continuas con la norma de la convergencia uniforme, sino para el espacio <span class="math inline">\(L^2\)</span> con la norma <span class="math inline">\(\|\!\cdot\!\|_2\)</span>—.</p>
-<p>Con el final del siglo XIX y la llegada del XX comenzaron a darse los mayores avances en este campo. Hilbert, Schmidt y Riesz—entre muchos otros— comenzaron el estudio del espacio de las funciones de cuadrado integrable y consiguieron extraer ciertas nociones geométricas muy similares a las de los espacios euclidianos de dimensión finita, como por ejemplo la ortogonalidad. El concepto creció y se estableció la abstracción de los espacios de Hilbert —término acuñado por von Neumann—, cuyo principal cometido y éxito es generalizar los espacios euclidianos a dimensión infinita respetando la existencia de sistemas ortonormales que generan la totalidad del espacio. Surgió así el estudio sistemático de la noción de base en dimensión infinita.</p>
-<p>De forma paralela, Haar construyó un sistema —el conocido como sistema de Haar— de funciones que sirven de base no sólo para el espacio <span class="math inline">\(L^2\)</span>, que ya tenía una base dada por las series de Fourier que además funcionaba por ser este un espacio de Hilbert, sino de todos los espacios <span class="math inline">\(L^p\)</span>, con <span class="math inline">\(1\leq p&lt;\infty\)</span> que no son Hilbertianos. Poco después, Georg Faber demostró la existencia de una base para el espacio de las funciones continuas con la norma uniforme.</p>
-<p>Todo este impulso histórico se cristalizó en la tesis de <span class="math inline">\(1923\)</span> de un joven matemático polaco, Juliusz Schauder. Él dio rigor y formalismo a la idea de una generalización de todo lo anterior introduciendo el concepto hoy en día conocido, en su honor, como : un avance más en el entendimiento de la estructura de los espacios de funciones inspirado en el objetivo de Descartes de simplificar el estudio de cualquier ente a un sistema de coordenadas coherente del que se puedan extraer conclusiones.</p>
-<p>Es por querer dar valor a esta idea tan matemática que en el presente Trabajo Fin de Grado queremos dar un repaso a algunos de los resultados que las bases de Schauder han ayudado a probar y comprender.</p>
-<p>En el primer capítulo nos centraremos en la definición de lo que es una base de Schauder y caracterizaremos su existencia; también incluiremos algunos comentarios sobre el problema de la existencia de base para un espacio de Banach.</p>
-<p>En el Capítulo 2 estudiaremos la relación entre las bases de Schauder y el espacio dual, demostrando el primer gran resultado del trabajo: la caracterización de aquellos espacios de Banach que son reflexivos y admiten base de Schauder.</p>
-<p>En el Capítulo 3 estudiaremos las conocidas como sucesiones básicas, que no son más que bases de Schauder del espacio —quizás menor que el total— que generan. También hablaremos sobre la noción equivalencia para bases de Schauder.</p>
-<p>En el Capítulo 4 estudiaremos aquellas bases de Schauder que son incondicionales; es decir, es indiferente el orden que consideremos a la hora de estudiar la convergencia de la serie que define a cada vector del espacio. Caracterizaremos los espacios de Banach reflexivos con base incondicional.</p>
-<p>En el Capítulo 5 daremos por finalizada nuestra tentativa empleando la teoría de las bases de Schauder desarrollada a lo largo del trabajo para estudiar la estructura interna de los espacios de sucesiones <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>, con el objetivo de dar a entender como de distintos son entre sí.</p>
-<p>A mayores, queremos dejar patente que las bases de Schauder no son en absoluto una construcción artificiosa, sino que generalizan muy naturalmente a las bases de Hamel de los espacios de dimensión finita. Es por ello que iremos comparando sus propiedades en algunos capítulos para dejar claro el origen algebraico que tiene detrás esta idea y que tan bien resume la filosofía del Análisis Funcional de fusionar conceptos algebraicos con nociones topológicas para el estudio de las funciones.</p>
+<p>Sea <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> un espacio de Banach y <span class="math inline">\((e_i)_i\subset X\)</span> una sucesión.</p>
+<div id="def-SucesionBasica" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 5.1 (Sucesión básica)</strong></span> &nbsp;</p>
+<p>Se dice que <span class="math inline">\((e_i)_i\)</span> es una <em>sucesión básica</em> si es una base de Schauder de <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>.</p>
+</div>
+<!-- %Al exigir que la sucesión sea base de Schauder del espacio que generan, y cómo los escalares deben ser únicos para cada vector, una serie de la forma 
+%\[\sum_{i = 1}^{\infty}{a_ie_i}\]
+%no se anula a menos que todos los $a_i$ sean $0$. Es fácil ver la importancia del concepto de sucesiones básicas al pensarlas de esta forma, como la generalización a espacios de dimensión infinita de los conjuntos de vectores linealmente independientes, porque al igual que estos nos dan la misma caracterización que en dimensión finita: un conjunto de vectores linealmente independientes (en este caso que conforman una sucesión básica) que genera todo el espacio es una base (respectivamente de Schauder).
+
+%El siguiente teorema nos da una caracterización de las sucesiones básicas que nos resultará muy útil en lo sucesivo. -->
+<div id="thm-suc-basica" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 5.1 (Criterio de Banach-Grumblum)</strong></span> &nbsp;</p>
+<p>Una sucesión <span class="math inline">\((e_i)_i\)</span> es una sucesión básica si y sólo si existe <span class="math inline">\(K&gt;0\)</span> tal que para cualesquiera índices <span class="math inline">\(n&lt;m\)</span> y escalares <span class="math inline">\(a_i\)</span>, con <span class="math inline">\(1\leq i\leq m\)</span>, se tiene que <span class="math display">\[
+\big\|\sum_{i=1}^na_ie_i\big\|\leq K \big\|\sum_{i=1}^ma_ie_i\big\|.
+\]</span></p>
+<p>Además, el valor óptimo de <span class="math inline">\(K\)</span> es la constante básica <span class="math inline">\({\rm bc}\,(e_i)_i\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
+<p>Si la sucesión <span class="math inline">\((e_i)_i\)</span> es sucesión básica, entonces es base de Schauder de <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span> y por lo tanto, sus las proyecciones canónicas asociadas a <span class="math inline">\((e_i)_i\)</span> están uniformemente acotadas por la constante básica <span class="math inline">\({\rm bc}\,(e_i)=:K\)</span>. Por tanto, para cualquier <span class="math display">\[
+x=\sum_{i=1}^ma_i e_i\in X
+\]</span> se tiene que <span class="math display">\[
+\big\|\sum_{i=1}^na_ie_i\big\|=\|P_n(x)\|=\|P_n\|\,\|x\|\leq K\|x\|= K\big\|\sum_{i= 1}^ma_ie_i\big\|.
+\]</span></p>
+<p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
+<p>Para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, sea <span class="math inline">\(P_n\colon {\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow{\rm span}\,\{e_i\colon 1\leq i\leq n\}\)</span> la proyección definida por <span class="math display">\[
+P_n\Big(\sum_{i=1}^me_ia_i\Big)=\sum_{i=1}^ne_ia_i.
+\]</span></p>
+<p>Es evidente que <span class="math inline">\(P_n\)</span> es una aplicación lineal. Por otra parte, la hipótesis asegura la continuidad de <span class="math inline">\(P_n\)</span> en <span class="math inline">\({\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>. No obstante, como <span class="math inline">\({\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span> es denso en <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>, es posible extender de forma única y continua la aplicación <span class="math inline">\(P_n\)</span> al espacio <span class="math inline">\(\overline{{\rm span}}\{e_i\colon i\in\mathbb{N}\}\)</span>; y obtendremos así, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, una proyección (que seguiremos denotando igual) <span class="math display">\[
+P_n\colon \overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\longrightarrow\overline{\rm span}\,\{e_i\colon 1\leq i\leq n\}.
+\]</span></p>
+<p>Veamos que estas proyecciones satisfacen las hipótesis de la primera parte del Teorema <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a>.</p>
+<ol type="a">
+<li><p>Para cualquier <span class="math inline">\(n&lt;m\)</span> tenemos que <span class="math inline">\(P_m({\rm span}\,\{e_i\colon 1\leq i\leq n\})={\rm span}\,\{e_i\colon 1\leq i\leq n\}\)</span>. Por tanto, dado que todo subespacio finito dimensional es cerrado, <span class="math display">\[
+{\rm dim}\,P_n(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\})={\rm dim}\,({\rm span}\,\{e_i\colon 1\leq i\leq n\}).
+\]</span></p>
+<p>Es decir, basta probar que el conjunto <span class="math inline">\(\{e_i\colon i\in\mathbb{N}\}\)</span> es linealmente independiente. No obstante, dada una combinación lineal <span class="math inline">\(a_1e_1+a_2e_2+\cdots+a_ne_n=0\)</span>, por hipótesis, <span class="math display">\[
+\|a_1e_1\| \leq K\big\|\sum_{i=1}^na_ie_i\big\|=0;
+\]</span> luego <span class="math inline">\(a_1=0\)</span>. Y procediendo por inducción, si suponemos que <span class="math inline">\(a_1\)</span>,…, <span class="math inline">\(a_{n-1}\)</span> son nulos, <span class="math display">\[
+\|a_ne_n\| \leq K\|\sum_{i=1}^na_ie_i\|=0;
+\]</span> luego <span class="math inline">\(a_n=0\)</span>, quedando así demostrado que que <span class="math inline">\(\{e_i\colon i\in\mathbb{N}\}\)</span> es un conjunto linealmente independiente.</p></li>
+<li><p>Evidente a partir de la definición de las proyecciones <span class="math inline">\(P_n\)</span> en <span class="math inline">\({\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>.</p></li>
+<li><p>Sea <span class="math inline">\(x\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, por densidad, existe <span class="math inline">\(y\in {\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span> que se puede expresar como <span class="math display">\[
+y=\sum_{i=1}^na_ie_i,
+\]</span> y es tal que <span class="math inline">\(\|x-y\| \leq \varepsilon\)</span>. Entonces, tomando <span class="math inline">\(m&gt;n\)</span> (y por tanto <span class="math inline">\(P_my =y\)</span>), concluimos que <span class="math display">\[
+\begin{align*}
+\|x-P_m(x)\|&amp;\leq \|x-y\|+\|P_my-P_mx\|=\|x-y\|+\|P_m(x-y)\|\\
+&amp; \leq \|x-y\|+K\|x-y\|&lt; (1+K)\varepsilon;
+\end{align*}
+\]</span> es decir, <span class="math inline">\(\|P_nx-x\|\to 0\)</span> cuando <span class="math inline">\(n\to\infty\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Conviene recordar lo dicho al final del primer capítulo sobre la existencia de subespacios con base de Schauder: habíamos dicho que no todo espacio de Banach separable admite base de Schauder, resultado nefasto para esta teoría, pero quedaba abierta la existencia de al menos una sucesión básica.</p>
+<p>La solución a esta cuestión fue resuelta con el siguiente teorema (véase <span class="citation" data-cites="SequencesSeriesDiestel"><a href="Bibliografia.html#ref-SequencesSeriesDiestel" role="doc-biblioref">[1, p. 39]</a></span> y <span class="citation" data-cites="Lindenstrauss"><a href="Bibliografia.html#ref-Lindenstrauss" role="doc-biblioref">[2, p. 4]</a></span>):</p>
+<div id="thm-z" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 5.2</strong></span> Todo espacio de Banach de dimensión infinita contiene una sucesión básica.</p>
+</div>
+<p>La pregunta había permanecido sin respuesta hasta <span class="math inline">\(1958\)</span>, año en el que aparecieron tres demostraciones simultáneamente: una de M. ,M. Day <span class="citation" data-cites="MMDay"><a href="Bibliografia.html#ref-MMDay" role="doc-biblioref">[3]</a></span>, otra de B. Gelbaum <span class="citation" data-cites="Gelbaum"><a href="Bibliografia.html#ref-Gelbaum" role="doc-biblioref">[4]</a></span> y una más por parte de C. Bessaga y A. Pełczyński <span class="citation" data-cites="Bessaga1958"><a href="Bibliografia.html#ref-Bessaga1958" role="doc-biblioref">[5]</a></span>.</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-SequencesSeriesDiestel" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Diestel, <em>Sequences and series in Banach spaces</em>. Springer-Verlag, 1984.</div>
+</div>
+<div id="ref-Lindenstrauss" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. Lindenstrauss y L. Tzafriri, <em>Classical Banach spaces I and II</em>. Springer, 1996 - 1977.</div>
+</div>
+<div id="ref-MMDay" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. M. Day, <span>«On the Basis Problem in Normed Spaces»</span>, <em>Proceedings of the American Mathematical Society</em>, vol. 13, n.º 4, pp. 655-658, 1962.</div>
+</div>
+<div id="ref-Gelbaum" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">B. R. Gelbaum, <span>«Notes on <span>Banach</span> spaces and bases»</span>, <em>Anais Acad. Brasil. Ci.</em>, vol. 30, pp. 29-36, 1958.</div>
+</div>
+<div id="ref-Bessaga1958" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Bessaga y A. Pełczyński, <span>«On bases and unconditional convergence of series in Banach spaces»</span>, <em>Studia Mathematica</em>, vol. 17, n.º 2, pp. 151-164, 1958.</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -712,13 +806,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
+      <a href="./03_sucesiones_basicas_intro.html" class="pagination-link" aria-label="Sucesiones básicas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sucesiones básicas</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_Conceptos_intro.html" class="pagination-link" aria-label="Bases de Schauder">
-        <span class="nav-page-text">Bases de Schauder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03_sucesiones_basicas-2.html" class="pagination-link" aria-label="Sucesiones básicas equivalentes">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

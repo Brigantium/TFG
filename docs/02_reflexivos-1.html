@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción – Bases de Schauder en espacios de Banach</title>
+<title>3&nbsp; Funcionales biortogonales – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,8 +53,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_Conceptos_intro.html" rel="next">
-<link href="./resumen.html" rel="prev">
+<link href="./02_reflexivos-2.html" rel="next">
+<link href="./02_reflexivos_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduccion.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_reflexivos_intro.html">Bases de Schauder y espacios reflexivos I. Bases <em>shrinking</em> y <em>boundedly complete</em></a></li><li class="breadcrumb-item"><a href="./02_reflexivos-1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -171,7 +191,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -209,7 +229,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_reflexivos-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_reflexivos-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></span></a>
   </div>
 </li>
@@ -273,9 +293,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_reflexivos_intro.html">Bases de Schauder y espacios reflexivos I. Bases <em>shrinking</em> y <em>boundedly complete</em></a></li><li class="breadcrumb-item"><a href="./02_reflexivos-1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></h1>
 </div>
 
 
@@ -292,22 +312,100 @@ window.Quarto = {
 </header>
 
 
-<p></p>
-<p>Desde el inicio de la matemática moderna, con Descartes, hemos tenido el objetivo de asignar a los objetos de nuestro estudio una secuencia de cifras con las que poder simplificar dichos objetos y embeberlos en el mundo de los números, tratándolos así con todo el poder teórico de las matemáticas. Dio inicio esta tentativa con las primeras coordenadas —así designadas en honor a su promotor— que movilizaron el motor de la producción matemática haciéndolo más fructífero en los últimos <span class="math inline">\(500\)</span> años que en los previos <span class="math inline">\(3\,300\)</span> que hay desde las primeras ternas pitagóricas mesopotámicas conocidas.</p>
-<p>Es con esa filosofía en mente que surge la idea de realizar tal tentativa no ya con objetos físicos o con coordenadas finitas, sino con el poder del infinito. El objetivo es ahora el estudio de objetos mucho más abstractos: las funciones —lo cual trajo consigo el problema de las inifitas dimensiones—.</p>
-<p>Al principio, el estudio se reducía a las funciones de <span class="math inline">\(\mathcal{C}^\infty\)</span> o infinitamente diferenciables —las conocidas como series de Taylor, 1715, que fallaron en generar todo el espacio y se reducían a las funciones analíticas—. Con el tiempo, la idea fue madurando y se quiso ampliar el domino de validez a todas las funciones continuas, aún cuando no se tenía muy claro qué era una función continua todavía —de aquí surgieron las series de Fourier, conocidas ya a principios del siglo XIX y que resultarían en una base no para las funciones continuas con la norma de la convergencia uniforme, sino para el espacio <span class="math inline">\(L^2\)</span> con la norma <span class="math inline">\(\|\!\cdot\!\|_2\)</span>—.</p>
-<p>Con el final del siglo XIX y la llegada del XX comenzaron a darse los mayores avances en este campo. Hilbert, Schmidt y Riesz—entre muchos otros— comenzaron el estudio del espacio de las funciones de cuadrado integrable y consiguieron extraer ciertas nociones geométricas muy similares a las de los espacios euclidianos de dimensión finita, como por ejemplo la ortogonalidad. El concepto creció y se estableció la abstracción de los espacios de Hilbert —término acuñado por von Neumann—, cuyo principal cometido y éxito es generalizar los espacios euclidianos a dimensión infinita respetando la existencia de sistemas ortonormales que generan la totalidad del espacio. Surgió así el estudio sistemático de la noción de base en dimensión infinita.</p>
-<p>De forma paralela, Haar construyó un sistema —el conocido como sistema de Haar— de funciones que sirven de base no sólo para el espacio <span class="math inline">\(L^2\)</span>, que ya tenía una base dada por las series de Fourier que además funcionaba por ser este un espacio de Hilbert, sino de todos los espacios <span class="math inline">\(L^p\)</span>, con <span class="math inline">\(1\leq p&lt;\infty\)</span> que no son Hilbertianos. Poco después, Georg Faber demostró la existencia de una base para el espacio de las funciones continuas con la norma uniforme.</p>
-<p>Todo este impulso histórico se cristalizó en la tesis de <span class="math inline">\(1923\)</span> de un joven matemático polaco, Juliusz Schauder. Él dio rigor y formalismo a la idea de una generalización de todo lo anterior introduciendo el concepto hoy en día conocido, en su honor, como : un avance más en el entendimiento de la estructura de los espacios de funciones inspirado en el objetivo de Descartes de simplificar el estudio de cualquier ente a un sistema de coordenadas coherente del que se puedan extraer conclusiones.</p>
-<p>Es por querer dar valor a esta idea tan matemática que en el presente Trabajo Fin de Grado queremos dar un repaso a algunos de los resultados que las bases de Schauder han ayudado a probar y comprender.</p>
-<p>En el primer capítulo nos centraremos en la definición de lo que es una base de Schauder y caracterizaremos su existencia; también incluiremos algunos comentarios sobre el problema de la existencia de base para un espacio de Banach.</p>
-<p>En el Capítulo 2 estudiaremos la relación entre las bases de Schauder y el espacio dual, demostrando el primer gran resultado del trabajo: la caracterización de aquellos espacios de Banach que son reflexivos y admiten base de Schauder.</p>
-<p>En el Capítulo 3 estudiaremos las conocidas como sucesiones básicas, que no son más que bases de Schauder del espacio —quizás menor que el total— que generan. También hablaremos sobre la noción equivalencia para bases de Schauder.</p>
-<p>En el Capítulo 4 estudiaremos aquellas bases de Schauder que son incondicionales; es decir, es indiferente el orden que consideremos a la hora de estudiar la convergencia de la serie que define a cada vector del espacio. Caracterizaremos los espacios de Banach reflexivos con base incondicional.</p>
-<p>En el Capítulo 5 daremos por finalizada nuestra tentativa empleando la teoría de las bases de Schauder desarrollada a lo largo del trabajo para estudiar la estructura interna de los espacios de sucesiones <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>, con el objetivo de dar a entender como de distintos son entre sí.</p>
-<p>A mayores, queremos dejar patente que las bases de Schauder no son en absoluto una construcción artificiosa, sino que generalizan muy naturalmente a las bases de Hamel de los espacios de dimensión finita. Es por ello que iremos comparando sus propiedades en algunos capítulos para dejar claro el origen algebraico que tiene detrás esta idea y que tan bien resume la filosofía del Análisis Funcional de fusionar conceptos algebraicos con nociones topológicas para el estudio de las funciones.</p>
+<p>Si <span class="math inline">\((e_i)_i\)</span> es una base de Schauder de un espacio de Banach <span class="math inline">\(X\)</span>, podemos intentar definir —de modo análogo a como hacemos con bases de Hamel— una base de Schauder del espacio dual <span class="math inline">\(X^*\)</span>. Al igual que sucede con sus homólogos puramente algebraicos, estos covectores se anularán en todos los vectores de la base salvo en uno en el que tomarán el valor <span class="math inline">\(1\)</span>.</p>
+<p>Es decir, para cada <span class="math inline">\(n\in\mathbb{N}\)</span> y <span class="math display">\[
+x=\sum_{i= 1}^\infty a_ie_i\in X
+\]</span> definimos el covector <span class="math inline">\(e_n^*\)</span> como <span class="math inline">\(e_n^*(x)=a_n\)</span>.</p>
+<div id="cnj-3" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Observación 3.1</strong></span> &nbsp;</p>
+<p>Cabe destacar que estos covectores son, en realidad, funcionales lineales y continuos; es decir, elementos del espacio dual <span class="math inline">\(X^\ast\)</span>. En efecto, pues:</p>
+<ol type="a">
+<li><p><span class="math inline">\(\displaystyle e_n^*(x+\lambda y)=e_n^*\Big(\sum_{i=1}^\infty{(a_i+\lambda b_i)\,e_i}\Big)=a_n+\lambda b_n=e_n^*(x)+\lambda e_n^*(y)\)</span>;</p></li>
+<li><p>para <span class="math inline">\(x\in X\)</span> se tiene que <span class="math inline">\(|e_n^*(x)|\,\|e_n\|=\|e_n^*(x)e_n\|=\|P_nx-P_{n-1}x\|\)</span>, por lo que <span id="eq-biortogonales"><span class="math display">\[
+\begin{align}
+\|e_n^*\|&amp;=\sup_{\|x\|= 1}|e_n^*(x)|=\|e_n\|^{-1}\sup_{\|x\|= 1}{\|P_nx-P_{n-1}x\|}\\
+&amp;\leq \|e_n\|^{-1}\sup_{\|x\|=1}{\|P_n-P_{n-1}\|\,\|x\|}\leq\|e_n\|^{-1}\,2\,\sup_{n}{\|P_n\|}.
+\end{align}
+\tag{3.1}\]</span></span></p></li>
+</ol>
+</div>
+<div id="def-FuncionalesBiortogonales" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3.1 (Funcionales biortogonales)</strong></span> &nbsp;</p>
+<p>Los funcionales (o covectores) <span class="math inline">\(e_n^\ast\)</span> reciben el nombre de <em>funcionales biortogonales</em> y tenemos que <span class="math display">\[
+x=\sum_{i=1}^\infty e_i^\ast(x)\,e_i\quad\text{para todo $x\in X$.}
+\]</span></p>
+</div>
+<p>Detengámonos un segundo para advertir que en algunas referencias bibliograficas se distingue entre <em>base de un espacio de Banach</em> y <em>base de Schauder</em>; véase por ejemplo <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 2]</a></span>. En esos casos se entiende por <em>base de Schauder</em> lo que hemos establecido en la Definición <a href="01_Conceptos-1.html#def-bs" class="quarto-xref">&nbsp;<span>1.1</span></a> junto con la existencia de la sucesión de funcionales biortogonales. Bajo la hipótesis de completitud, ambas definiciones son equivalentes, pero la distinción se hace teniendo en mente espacios mucho más generales <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 3]</a></span> que no vamos a tratar en este Trabajo Fin de Grado.</p>
+<p>Como decíamos anteriormente, lo <em>idóneo</em> sería que las sucesiones de funcionales biortogonales <span class="math inline">\((e^\ast_i)_i\)</span> formasen una base de Schauder de <span class="math inline">\(X^\ast\)</span>, pero esto —como veremos a continuación— no siempre es posible, pues tan sólo podremos afirmar que:</p>
+<div id="prp-SpanBaseDual" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 3.1</strong></span> &nbsp;</p>
+<p><span class="math inline">\((e_i^\ast)_i\)</span> es una base de Schauder del espacio que genera: <span class="math inline">\(\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span>.</p>
+</div>
+<p>Para probar este resultado veremos que la sucesión dual de la sucesión de proyecciones canónicas asociada a <span class="math inline">\((e_i)_i\)</span> satisface las hipótesis del Teorema <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a>. Más exactamente, si <span class="math inline">\((P_n)_n\)</span> es la sucesión de proyecciones canónicas asociada a <span class="math inline">\((e_i)_i\)</span>, consideraremos la sucesión <span class="math inline">\((P_n^\ast)_n\)</span>, donde para cada <span class="math inline">\(n\in\mathbb{N}\)</span> y <span class="math inline">\(f\in X^\ast\)</span>, la aplicación <span class="math inline">\(P_n^*\colon X^*\longrightarrow  X^*\)</span> viene dada por <span class="math display">\[
+P_n^\ast f(x)=f(P_nx)\quad\text{para cada $x\in X$.}
+\]</span></p>
+<p>Antes de comenzar, conviene observar que <span class="math display">\[
+\|P_n^*\| = \sup_{\|f\|\leq1}\|P_n^*f\| = \sup_{\|f\|\leq1}\|fP_n\| \leq \sup_{\|f\|\leq 1}\|f\|\,\|P_n\|=\|P_n\|.
+\]</span></p>
+<p>Por tanto, <span id="eq-2.1"><span class="math display">\[
+\sup_{n\in\mathbb{N}}\|P_n^*\|\leq{\rm bc}\,(e_i)_i\equiv\sup_{n\in\N}\|P_n\|.
+\tag{3.2}\]</span></span></p>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos ya sin más dilación que la sucesión de proyecciones <span class="math inline">\((P_n^\ast)\)</span> satisface las hipótesis <span class="math inline">\((a)\)</span>, <span class="math inline">\((b)\)</span> y <span class="math inline">\((c)\)</span> del Teorema <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a>.</p>
+<ol type="a">
+<li><p>Sean <span class="math inline">\(f\in X^*\)</span> y <span class="math inline">\(x\in X\)</span> arbitrarios. Si <span class="math display">\[
+\sum_{i=1}^\infty e_i^*(x)e_i,
+\]</span> por linealidad de <span class="math inline">\(f\)</span> se tiene que <span class="math display">\[
+P_n^*f(x)=f(P_nx)=f\Big(\sum_{i = 1}^{n}{e_i^*(x)e_i}\Big)=\sum_{i =1}^{n}f(e_i)e_i^*(x).
+\]</span> Ergo <span class="math inline">\(P_n^*(X^*)\)</span> es una espacio vectorial de dimensión <span class="math inline">\(n\)</span> que tiene por generadores a los funcionales <span class="math inline">\(e_i^*\)</span> con <span class="math inline">\(1\leq i\leq n\)</span>.</p></li>
+<li><p>Sean <span class="math inline">\(f\in X^\ast\)</span> y <span class="math inline">\(x\in X\)</span> arbitrarios. En tal caso, <span class="math display">\[
+P_n^*P_m^*f(x) = f(P_mP_nx) = f(P_{\min\{n,m\}}x)= f(P_nP_mx) = P_m^*P_n^*f(x) = P_{\min\{n.m\}}^*f(x).
+\]</span></p></li>
+<li><p>Probar una condición más débil (en cuanto a tipo de convergencia) que la exigida es sencillo. En efecto, pues para cualquier funcional <span class="math inline">\(f\in X^\ast\)</span> tenemos —por continuidad— que <span class="math display">\[
+f(x)=f\big(\lim_{n\to\infty}P_nx\big)=\lim_{n\to\infty}f(P_nx)= \lim_{n \rightarrow \infty}{P_n^*f(x)}\quad\text{para todo $x\in X$},
+\]</span> por lo que <span class="math inline">\(P_n^*f\to f\)</span> en <span class="math inline">\((X^\ast,\text{débil\(^\ast\)})\)</span>.</p>
+<p>No obstante, si queremos convergencia en norma del espacio dual <span class="math inline">\(X^\ast\)</span>, tendremos que restringirnos a <span class="math inline">\(\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span>. Para <span class="math inline">\(f\in{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span> la convergencia es trivial, pues <span class="math inline">\(P_n^*f=f\)</span> a partir de cierto índice <span class="math inline">\(n\)</span>.</p>
+<p>Dado un funcional <span class="math inline">\(f \in \overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span> arbitrario, por densidad, existe una sucesión <span class="math inline">\((g_k)_{k}\subset {\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span> convergente en norma a <span class="math inline">\(f\)</span>. Por tanto, existe <span class="math inline">\(N_1\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(k&gt;N_1\)</span> entonces <span id="eq-2.2"><span class="math display">\[
+\|g_k-f\|&lt;\frac{\varepsilon}{2(1+{\rm bc}(e_i))}.
+\tag{3.3}\]</span></span></p>
+<p>Por otro lado, gracias a la acotación uniforme de <span class="math inline">\((P_n^*)_n\)</span> que mencionamos en (<span class="math inline">\(\ref{eq:2.1}\)</span>), para cada <span class="math inline">\(k\)</span> existe <span class="math inline">\(N_{2,k}\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(n&gt;N_{2,k}\)</span>, entonces <span id="eq-2.3"><span class="math display">\[
+    \|P_n^*g_k -g_k\|&lt;\frac{\varepsilon}{2}.
+\tag{3.4}\]</span></span></p>
+<p>Así pues, tomando <span class="math inline">\(k&gt;N_1\)</span> y <span class="math inline">\(n&gt;N_{1,k}\)</span> y considerando (<a href="#eq-2.2" class="quarto-xref"><span>3.3</span></a>) y (<a href="#eq-2.3" class="quarto-xref"><span>3.4</span></a>), concluimos que <span class="math display">\[
+\begin{align*}
+\|f - P_n^*f\| = &amp;\|f - g_k + g_k -P_n^*g_k + P_n^*g_k - P_n^*f\| \\
+&amp;\leq \|f -g_k\|+\|g_k - P_n^*g_k\|+\|P_n^*g_k - P_n^*f\| \\
+&amp; \leq \|f -g_k\|+\|g_k - P_n^*g_k\|+\|P_n^*\|\|g_k - f\| \\
+&amp; \leq \|g_k - P_n^*g_k\|+(1+{\rm bc}(e_i))\|g_k - f\|&lt; \varepsilon.
+\end{align*}
+\]</span></p>
+<p>Es decir, <span class="math display">\[
+\lim_{n\to\infty}\|P_n^\ast f-f\|=0\quad\text{para todo $f\in\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$.}
+\]</span></p></li>
+</ol>
+<p>Queda entonces probado que <span class="math inline">\((P_n^*)_n\)</span> es la sucesión de proyecciones canónicas asociada a la sucesión <span class="math inline">\((e_i^\ast)_i\)</span>, por lo que la sucesión de funcionales biortogonales es una base de Schauder de <span class="math inline">\(\overline{{\rm span}}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Como vemos, por desgracia tenemos otra diferencia con las bases de Hamel y es que no podemos asegurar que los funcionales biortogonales —los covectores de nuestra base de Schauder— generen el espacio dual. Pero esto nos trae otra pregunta: ¿qué sucede cuando sí lo generan? Es esa cuestión lo que nos conduce a la última sección de este capítulo.</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-TopicinBanachSpacesKalton" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Fernando. Albiac y N. J. Kalton, <em>Topics in Banach Space Theory</em>. en Graduate Texts en Mathematics, 233. Springer New York, 2006.</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -712,13 +810,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
+      <a href="./02_reflexivos_intro.html" class="pagination-link" aria-label="Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bases de Schauder y espacios reflexivos I. Bases <em>shrinking</em> y <em>boundedly complete</em></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_Conceptos_intro.html" class="pagination-link" aria-label="Bases de Schauder">
-        <span class="nav-page-text">Bases de Schauder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_reflexivos-2.html" class="pagination-link" aria-label="Espacios de Banach reflexivos con base de Schauder">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

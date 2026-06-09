@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción – Bases de Schauder en espacios de Banach</title>
+<title>2&nbsp; Bases de Schauder en espacios de Banach – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,8 +53,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_Conceptos_intro.html" rel="next">
-<link href="./resumen.html" rel="prev">
+<link href="./02_reflexivos_intro.html" rel="next">
+<link href="./01_Conceptos-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduccion.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Conceptos_intro.html">Bases de Schauder</a></li><li class="breadcrumb-item"><a href="./01_Conceptos-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -171,7 +191,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -192,7 +212,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_Conceptos-2.html" class="sidebar-item-text sidebar-link">
+  <a href="./01_Conceptos-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></span></a>
   </div>
 </li>
@@ -273,9 +293,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Conceptos_intro.html">Bases de Schauder</a></li><li class="breadcrumb-item"><a href="./01_Conceptos-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></h1>
 </div>
 
 
@@ -292,22 +312,171 @@ window.Quarto = {
 </header>
 
 
-<p></p>
-<p>Desde el inicio de la matemática moderna, con Descartes, hemos tenido el objetivo de asignar a los objetos de nuestro estudio una secuencia de cifras con las que poder simplificar dichos objetos y embeberlos en el mundo de los números, tratándolos así con todo el poder teórico de las matemáticas. Dio inicio esta tentativa con las primeras coordenadas —así designadas en honor a su promotor— que movilizaron el motor de la producción matemática haciéndolo más fructífero en los últimos <span class="math inline">\(500\)</span> años que en los previos <span class="math inline">\(3\,300\)</span> que hay desde las primeras ternas pitagóricas mesopotámicas conocidas.</p>
-<p>Es con esa filosofía en mente que surge la idea de realizar tal tentativa no ya con objetos físicos o con coordenadas finitas, sino con el poder del infinito. El objetivo es ahora el estudio de objetos mucho más abstractos: las funciones —lo cual trajo consigo el problema de las inifitas dimensiones—.</p>
-<p>Al principio, el estudio se reducía a las funciones de <span class="math inline">\(\mathcal{C}^\infty\)</span> o infinitamente diferenciables —las conocidas como series de Taylor, 1715, que fallaron en generar todo el espacio y se reducían a las funciones analíticas—. Con el tiempo, la idea fue madurando y se quiso ampliar el domino de validez a todas las funciones continuas, aún cuando no se tenía muy claro qué era una función continua todavía —de aquí surgieron las series de Fourier, conocidas ya a principios del siglo XIX y que resultarían en una base no para las funciones continuas con la norma de la convergencia uniforme, sino para el espacio <span class="math inline">\(L^2\)</span> con la norma <span class="math inline">\(\|\!\cdot\!\|_2\)</span>—.</p>
-<p>Con el final del siglo XIX y la llegada del XX comenzaron a darse los mayores avances en este campo. Hilbert, Schmidt y Riesz—entre muchos otros— comenzaron el estudio del espacio de las funciones de cuadrado integrable y consiguieron extraer ciertas nociones geométricas muy similares a las de los espacios euclidianos de dimensión finita, como por ejemplo la ortogonalidad. El concepto creció y se estableció la abstracción de los espacios de Hilbert —término acuñado por von Neumann—, cuyo principal cometido y éxito es generalizar los espacios euclidianos a dimensión infinita respetando la existencia de sistemas ortonormales que generan la totalidad del espacio. Surgió así el estudio sistemático de la noción de base en dimensión infinita.</p>
-<p>De forma paralela, Haar construyó un sistema —el conocido como sistema de Haar— de funciones que sirven de base no sólo para el espacio <span class="math inline">\(L^2\)</span>, que ya tenía una base dada por las series de Fourier que además funcionaba por ser este un espacio de Hilbert, sino de todos los espacios <span class="math inline">\(L^p\)</span>, con <span class="math inline">\(1\leq p&lt;\infty\)</span> que no son Hilbertianos. Poco después, Georg Faber demostró la existencia de una base para el espacio de las funciones continuas con la norma uniforme.</p>
-<p>Todo este impulso histórico se cristalizó en la tesis de <span class="math inline">\(1923\)</span> de un joven matemático polaco, Juliusz Schauder. Él dio rigor y formalismo a la idea de una generalización de todo lo anterior introduciendo el concepto hoy en día conocido, en su honor, como : un avance más en el entendimiento de la estructura de los espacios de funciones inspirado en el objetivo de Descartes de simplificar el estudio de cualquier ente a un sistema de coordenadas coherente del que se puedan extraer conclusiones.</p>
-<p>Es por querer dar valor a esta idea tan matemática que en el presente Trabajo Fin de Grado queremos dar un repaso a algunos de los resultados que las bases de Schauder han ayudado a probar y comprender.</p>
-<p>En el primer capítulo nos centraremos en la definición de lo que es una base de Schauder y caracterizaremos su existencia; también incluiremos algunos comentarios sobre el problema de la existencia de base para un espacio de Banach.</p>
-<p>En el Capítulo 2 estudiaremos la relación entre las bases de Schauder y el espacio dual, demostrando el primer gran resultado del trabajo: la caracterización de aquellos espacios de Banach que son reflexivos y admiten base de Schauder.</p>
-<p>En el Capítulo 3 estudiaremos las conocidas como sucesiones básicas, que no son más que bases de Schauder del espacio —quizás menor que el total— que generan. También hablaremos sobre la noción equivalencia para bases de Schauder.</p>
-<p>En el Capítulo 4 estudiaremos aquellas bases de Schauder que son incondicionales; es decir, es indiferente el orden que consideremos a la hora de estudiar la convergencia de la serie que define a cada vector del espacio. Caracterizaremos los espacios de Banach reflexivos con base incondicional.</p>
-<p>En el Capítulo 5 daremos por finalizada nuestra tentativa empleando la teoría de las bases de Schauder desarrollada a lo largo del trabajo para estudiar la estructura interna de los espacios de sucesiones <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>, con el objetivo de dar a entender como de distintos son entre sí.</p>
-<p>A mayores, queremos dejar patente que las bases de Schauder no son en absoluto una construcción artificiosa, sino que generalizan muy naturalmente a las bases de Hamel de los espacios de dimensión finita. Es por ello que iremos comparando sus propiedades en algunos capítulos para dejar claro el origen algebraico que tiene detrás esta idea y que tan bien resume la filosofía del Análisis Funcional de fusionar conceptos algebraicos con nociones topológicas para el estudio de las funciones.</p>
+<!-- \section{Bases de Schauder en espacios de Banach} -->
+<p>Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que —tal y como el lector verá con el paso de las páginas—, asegura la convergencia de series, continuidad de aplicaciones y existencia de espacios que describiremos en los sucesivos capítulos.</p>
+<p>Sea <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> un espacio de Banach con base de Schauder <span class="math inline">\((e_i)_i\)</span>.</p>
+<div id="prp-1.5" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 2.1 (Auxiliar para el Teorema <a href="#thm-banach" class="quarto-xref">&nbsp;<span>2.1</span></a> siguiente)</strong></span> &nbsp;</p>
+<p>La sucesión <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\((X,\vertiii{\cdot})\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Probaremos que la sucesión de proyecciones canónicas <span class="math inline">\((P_n)_n\)</span> satisface las condiciones enunciadas en el Teorema <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a>.</p>
+<p>Las propiedades <span class="math inline">\((a)\)</span> y <span class="math inline">\((b)\)</span> no dependen de la norma, por lo que se satisfacen automáticamente. Por otra parte, la propiedad <span class="math inline">\((c)\)</span> es sencilla de probar, pues para cada <span class="math inline">\(x\in X\)</span> se tiene que <span class="math display">\[
+\begin{align*}\label{eq:unicidad}  
+        \vertiii{x-P_nx} &amp;=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&amp;=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
+\end{align*}
+\]</span></p>
+<p>porque, para cualquier <span class="math inline">\(y\in X\)</span>, por ser <span class="math inline">\((e_i)_i\)</span> base de Schauder de <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>, tenemos que <span class="math inline">\(P_ny \to y\)</span> cuando <span class="math inline">\(n\to\infty\)</span> en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="thm-banach" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.1 (Stefan Banach: «Completitud <span class="math inline">\(\Longrightarrow\)</span> Acotación de las proyecciones canónicas»)</strong></span> &nbsp;</p>
+<p>La sucesión de proyecciones canónicas <span class="math inline">\((P_n)_n\)</span> es (uniformemente) acotada en <span class="math inline">\((\mathcal{B}(X),\|\!\cdot\!\|)\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Conviene observar que <span class="math display">\[
+\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,
+\]</span> por lo que la sucesión <span class="math inline">\((P_n)_n\)</span> es (uniformemente) acotada en <span class="math inline">\(\mathcal{B}(X)\)</span> si consideramos a <span class="math inline">\(X\)</span> dotado de la norma <span class="math inline">\(\vertiii{\cdot}\)</span> y basta entonces demostrar que <span class="math inline">\(\vertiii{\cdot}\)</span> es equivalente a <span class="math inline">\(\|\!\cdot\!\|\)</span>, es decir, que existen constantes <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_2&gt;0\)</span> de modo que <span class="math inline">\(\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}\)</span> para todo <span class="math inline">\(x\in X\)</span>.</p>
+<p>En efecto, pues tal caso, la acotación uniforme en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> será inmediata: <span class="math display">\[
+\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.
+\]</span></p>
+<p>Si <span class="math inline">\(\left(X,\vertiii{\cdot}\right)\)</span> fuese completo, dado que la aplicación <span class="math inline">\(I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)\)</span> es trivialmente continua (pues <span class="math inline">\(\|x\|\leq\vertiii{x}\)</span> para todo <span class="math inline">\(x\in X\)</span>) y biyectiva, el Teorema <span class="quarto-unresolved-ref">?thm-ap-abierta</span> de la aplicación abierta nos permitiría afirmaría que <span class="math inline">\(I^{-1}\)</span> también es continua, por lo que <span class="math inline">\(\vertiii{\cdot}\)</span> y <span class="math inline">\(\|\!\cdot\!\|\)</span> serían necesariamente normas equivalentes.</p>
+<p>Probaremos que es posible proceder de tal modo. Para ello, demostraremos que <span class="math inline">\(\left(X,\vertiii{\cdot}\right)\)</span> es un espacio de Banach mostrando que <span class="math inline">\(\widehat{X}\subset X\)</span>, siendo ahora <span class="math inline">\(\widehat{X}\)</span> la compleción de <span class="math inline">\(X\)</span> respecto de la norma <span class="math inline">\(\vertiii{\cdot}\)</span>.</p>
+<p>Dado <span class="math inline">\(x\in\widehat{X}\)</span>, como <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\(\widehat{X}\)</span> (esto es una consecuencia de la Proposición <a href="01_Conceptos-1.html#prp-1.4" class="quarto-xref">&nbsp;<span>1.1</span></a> y la Proposición <a href="#prp-1.5" class="quarto-xref">&nbsp;<span>2.1</span></a>), existe una única sucesión de escalares <span class="math inline">\((\alpha_i)_i\)</span> de modo que <span class="math display">\[
+x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}
+\]</span> luego <span class="math inline">\((\alpha_1e_1+\cdots+\alpha_n e_n)_n\)</span> es una sucesión de Cauchy en <span class="math inline">\((X,\vertiii{\cdot})\)</span>, y dado que <span class="math inline">\(\|\!\cdot\!\|\leq\vertiii{\cdot}\)</span>, también es una sucesión de Cauchy en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>. Por tanto, por ser <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> completo, existe <span class="math inline">\(x'\in X\)</span> de modo que <span class="math display">\[
+x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}
+\]</span> Es decir, <span class="math inline">\(x'=x\in X\)</span>.</p>
+</div>
+</div>
+</div>
+<p>En vista de este teorema podemos introducir la siguiente definición:</p>
+<div id="def-ConstanteBasica" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.1 (Constante básica)</strong></span> &nbsp;</p>
+<p>El número real <span class="math inline">\(\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|\)</span> recibe el nombre de <em>constante básica</em> de <span class="math inline">\((e_i)_i\)</span>.</p>
+</div>
+<p>Como pequeño complemento a la definición anterior, tenemos el concepto de base <em>monótona</em>, que es aquella para la que <span class="math inline">\(\text{bc}\,(e_i)_i = 1\)</span>. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares <span class="math inline">\((a_i)_i\)</span>, la sucesión de números reales <span class="math display">\[
+\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n
+\]</span> es monótona creciente, lo cual es evidente pues, tomando <span class="math inline">\(n&gt;m\)</span>, <span class="math display">\[
+\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.
+\]</span></p>
+<!--
+
+\begin{center}
+\begin{minipage}{0.35\textwidth}\centering\small
+    \includegraphics[height=4cm]{figuras/schauder.png}\\[2mm]
+    \href{https://mathshistory.st-andrews.ac.uk/Biographies/Schauder/}{\color{blue}Juliusz Schauder}\\
+    Leópolis, 1899 – Leópolis, 1943
+\end{minipage}
+\begin{minipage}{0.60\textwidth}
+
+    Schauder fue un matemático polaco--judío con una corta pero relevante trayectoria investigadora en los campos del análisis funcional, EDP's y física matemática.\smallskip
+    
+    Participó en la Primera Guerra Mundial. Fue alumno de Banach y Steinhaus en Leópolis, donde se doctoró en $1923$.\smallskip
+    
+    Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.
+\end{minipage}
+\end{center}\medskip
+
+-->
+<hr>
+<div class="columns">
+<div class="column text-center" style="width:35%;">
+<p><img src="figuras/schauder.png" style="height:4cm"></p>
+<p><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Schauder/">Juliusz Schauder</a><br>
+<small>Leópolis, 1899 – Leópolis, 1943</small></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<p>Schauder fue un matemático polaco-judío con una corta pero relevante trayectoria investigadora en los campos del análisis funcional, EDPs y física matemática.</p>
+<p>Participó en la Primera Guerra Mundial. Fue alumno de Banach y Steinhaus en Leópolis, donde se doctoró en 1923.</p>
+<p>Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.</p>
+</div>
+</div>
+<hr>
+<!-- ## Sobre el problema de la existencia de base. -->
+<p>Para finalizar esta sección incluimos una breve mención al conocido problema de la existencia de base.</p>
+<p>Con el nacimiento de la idea de las bases de Schauder surgió también una cuestión natural:</p>
+<div class="text-center">
+<p>¿Todo espacio de Banach separable admite base de Schauder?</p>
+</div>
+<p>Es una pregunta que surge del teorema con el que dimos inicio a este capítulo. Tendríamos la esperanza de que la respuesta fuese afirmativa y entonces podríamos añadir otra analogía entre las bases de Hamel y las de Schauder. Pero el interrogante se aclaró en <span class="math inline">\(1973\)</span>, cuando el matemático sueco Per Enflo <span class="citation" data-cites="Enflo1973"><a href="Bibliografia.html#ref-Enflo1973" role="doc-biblioref">[1]</a></span> proporcionó un ejemplo de espacio de Banach separable que no admite base de Schauder. En cualquier caso, todos los espacios clásicos sí admiten bases de Schauder —como el lector podrá ver en el Capítulo <span class="quarto-unresolved-ref">?sec-ejemplos</span> de este Trabajo Fin de Grado—.</p>
+<p>Por otra parte, aún cabe la posibilidad de que todo espacio de Banach separable tenga algún subespacio con base de Schauder (ignorando evidentemente por triviales a los subespacios de dimensión finita). El lector puede esperar al Capítulo <span class="quarto-unresolved-ref">?sec-SucesionesBasicas</span> donde se ahondará más en esta cuestión.</p>
+<!-- \renewcommand*{\proofname}{Demostración detallada de la Proposición \ref{proyections}} -->
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración detallada del Teorema <a href="01_Conceptos-1.html#thm-proyecciones" class="quarto-xref">&nbsp;<span>1.2</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>Existencia de los vectores <span class="math inline">\(e_i\)</span> satisfaciendo las condiciones requeridas</em>.</p>
+<div style="margin-left: 2em">
+<p>En virtud de <span class="math inline">\((b)\)</span> sabemos que <span class="math display">\[
+P_{\min\{n,m\}}(X)=P_nP_m(X) \subset P_n(X)\quad\text{y}\quad P_{\min\{n,m\}}(X)=P_mP_n(X)\subset P_m(X).
+\]</span> Por tanto, <span class="math inline">\(P_{\min\{n,m\}}(X) \subset P_{\max\{n,m\}}(X)\)</span>. Es decir, <span class="math display">\[P_0(X) \subset P_1(X) \subset \cdots \subset P_n(X) \subset P_{n+1}(X) \subset P_{n+2}(X) \subset \cdots
+\]</span> Por otra parte, en virtud de <span class="math inline">\((a)\)</span>, <span class="math inline">\(\dim\,P_n(X)-\dim\,P_{n-1}(X)=1\)</span>. Por tanto, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, existe un vector no nulo <span class="math inline">\(\widehat{e}_n\in P_n(X)\setminus P_{n-1}(X)\)</span>. Trivialmente, <span class="math inline">\(\{\widehat{e}_i\colon i\in\mathbb{N}\}\)</span> es un conjunto linealmente independiente.</p>
+<p>Además, como <span class="math inline">\(X=P_{n-1}(X)\oplus{\ker P_{n-1}}\)</span>, tenemos en realidad que <span class="math inline">\(\widehat{e}_n\in P_n(X)\cap {\rm ker}P_{n-1}\)</span>.</p>
+<p>Sea ahora, para cada <span class="math inline">\(i\in\mathbb{N}\)</span>, <span class="math inline">\(e_i=P_i\widehat{e_i}\)</span>. En tal caso, por la propiedad <span class="math inline">\((b)\)</span>, dado un índice <span class="math inline">\(j&gt;i\)</span>, se tiene que <span class="math inline">\(P_je_i=P_jP_i\widehat{e}_i=P_i\widehat{e}_i=e_i\)</span>. Es decir, <span id="eq-3"><span class="math display">\[
+    P_je_i=e_i\quad\text{para todo $j&gt;i$.}    
+\tag{2.1}\]</span></span></p>
+<p>Por otra parte, si <span class="math inline">\(j&lt;i\)</span>, nuevamente por la propiedad <span class="math inline">\((b)\)</span>, <span class="math inline">\(P_je_i=P_jP_1\widehat{e}_i=P_j0=0\)</span>. Es decir,<br>
+<span id="eq-4"><span class="math display">\[
+    P_je_i=0\quad\text{para todo $j&lt;i$.}    
+\tag{2.2}\]</span></span></p>
+<p>Además, ahora es sencillo comprobar que <span class="math inline">\(\{e_i\colon i\in\mathbb{N}\}\)</span> sigue siendo un conjunto linealmente independiente.</p>
+</div>
+<p><em>Para cada <span class="math inline">\(x\in X\)</span>, los coeficientes <span class="math inline">\((a_i)_i\)</span> son únicos</em>.</p>
+<div style="margin-left: 2em">
+<p>En principio, para cada <span class="math inline">\(k\in\mathbb{N}\)</span>, puesto que <span class="math inline">\(P_kx\in{\rm span}\,\{e_i\, \colon 1\leq i\leq k\}\)</span>, sabemos que existen escalares <span class="math inline">\(a^k_i\)</span> con <span class="math inline">\(1\leq i\leq k\)</span> tales que <span class="math inline">\(P_kx=a_1^ke_1+\cdots +a_k^k e_n\)</span>.</p>
+<p>Ahora bien, en realidad, <span class="math inline">\(a_i^m=a_i^n\equiv a_i\)</span> para cualesquiera <span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span> e <span class="math inline">\(i\in\mathbb{N}\)</span>. En efecto, pues en virtud de (<a href="#eq-3" class="quarto-xref"><span>2.1</span></a>), la linealidad de las proyecciones, (<a href="#eq-4" class="quarto-xref"><span>2.2</span></a>) y la propiedad <span class="math inline">\((b)\)</span>, tenemos que (si <span class="math inline">\(n&lt;m\)</span>): <span class="math display">\[
+\begin{align*}
+    \sum_{i=1}^na_i^m e_i&amp;=\sum_{i=1}^na_i^mP_ne_i=P_n\Big(\sum_{i=1}^n a_i^me_i\Big)+P_n\Big(\sum_{i=n+1}^m a_i^me_i\Big)=P_n\Big(\sum_{i=1}^m a_i^me_i\Big)\\
+    &amp;=P_nP_mx=P_mP_nx=P_m\Big(\sum_{i=1}^n a_i^ne_i\Big)=\sum_{i = 1}^n{a_i^nP_me_i}.
+\end{align*}
+\]</span></p>
+<p>Por tanto, dado que —de nuevo en virtud de (<a href="#eq-3" class="quarto-xref"><span>2.1</span></a>)— <span class="math inline">\(P_me_i=e_i\)</span> para todo <span class="math inline">\(1\leq i\leq n(&lt;m)\)</span>, la independencia lineal del conjunto <span class="math inline">\(\{e_i\colon i\in\mathbb{N}\}\)</span> asegura la coincidencia de las coordenadas. Así pues, <span class="math display">\[
+P_ix-P_{i-1}x=\sum_{j=1}^i a^i_je_j-\sum_{j=1}^{i-1}a^{i-1}_je_j=a_ie_i.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Enflo1973" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">P. Enflo, <span>«A counterexample to the approximation problem in <span>Banach</span> spaces»</span>, <em>Acta Mathematica</em>, vol. 130, pp. 309-317, 1973.</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -712,13 +881,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
+      <a href="./01_Conceptos-1.html" class="pagination-link" aria-label="Bases de Schauder en espacios vectoriales normados.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios vectoriales normados.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_Conceptos_intro.html" class="pagination-link" aria-label="Bases de Schauder">
-        <span class="nav-page-text">Bases de Schauder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_reflexivos_intro.html" class="pagination-link" aria-label="Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*">
+        <span class="nav-page-text">Bases de Schauder y espacios reflexivos I. Bases <em>shrinking</em> y <em>boundedly complete</em></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

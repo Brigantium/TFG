@@ -1,0 +1,131 @@
+# Funcionales biortogonales
+
+Si $(e_i)_i$ es una base de Schauder de un espacio de Banach $X$, podemos intentar definir ---de modo análogo a como hacemos con bases de Hamel--- una base de Schauder del espacio dual $X^*$. Al igual que sucede con sus homólogos puramente algebraicos, estos covectores se anularán en todos los vectores de la base salvo en uno en el que tomarán el valor $1$.
+
+Es decir, para cada $n\in\mathbb{N}$ y
+$$
+x=\sum_{i= 1}^\infty a_ie_i\in X
+$$
+definimos el covector $e_n^*$ como $e_n^*(x)=a_n$.
+
+::: {#cnj-3}
+
+\hspace*{1cm}
+
+Cabe destacar que estos covectores son, en realidad, funcionales lineales y continuos; es decir, elementos del espacio dual $X^\ast$. En efecto, pues:
+
+(a) $\displaystyle e_n^*(x+\lambda y)=e_n^*\Big(\sum_{i=1}^\infty{(a_i+\lambda b_i)\,e_i}\Big)=a_n+\lambda b_n=e_n^*(x)+\lambda e_n^*(y)$;
+
+(b) para $x\in X$ se tiene que $|e_n^*(x)|\,\|e_n\|=\|e_n^*(x)e_n\|=\|P_nx-P_{n-1}x\|$, por lo que
+$$
+\begin{align}
+\|e_n^*\|&=\sup_{\|x\|= 1}|e_n^*(x)|=\|e_n\|^{-1}\sup_{\|x\|= 1}{\|P_nx-P_{n-1}x\|}\\
+&\leq \|e_n\|^{-1}\sup_{\|x\|=1}{\|P_n-P_{n-1}\|\,\|x\|}\leq\|e_n\|^{-1}\,2\,\sup_{n}{\|P_n\|}.
+\end{align}
+$$ {#eq-biortogonales}
+
+
+:::
+
+::: {#def-FuncionalesBiortogonales}
+
+## Funcionales biortogonales
+\hspace*{1cm}
+
+Los funcionales (o covectores) $e_n^\ast$ reciben el nombre de *funcionales biortogonales* y tenemos que
+$$
+x=\sum_{i=1}^\infty e_i^\ast(x)\,e_i\quad\text{para todo $x\in X$.}
+$$
+
+:::
+
+Detengámonos un segundo para advertir que en algunas referencias bibliograficas se distingue entre *base de un espacio de Banach* y *base de Schauder*; véase por ejemplo @TopicinBanachSpacesKalton[2]. En esos casos se entiende por *base de Schauder* lo que hemos establecido en la Definición @def-bs junto con la existencia de la sucesión de funcionales biortogonales. Bajo la hipótesis de completitud, ambas definiciones son equivalentes, pero la distinción se hace teniendo en mente espacios mucho más generales @TopicinBanachSpacesKalton[3] que no vamos a tratar en este Trabajo Fin de Grado.\medskip
+
+Como decíamos anteriormente, lo *idóneo* sería que las sucesiones de funcionales biortogonales $(e^\ast_i)_i$ formasen una base de Schauder de $X^\ast$, pero esto ---como veremos a continuación--- no siempre es posible, pues tan sólo podremos afirmar que:
+
+
+::: {#prp-SpanBaseDual}
+
+\hspace*{1mm}
+
+$(e_i^\ast)_i$ es una base de Schauder del espacio que genera: $\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$.
+
+:::
+
+Para probar este resultado veremos que la sucesión dual de la sucesión de proyecciones canónicas asociada a $(e_i)_i$ satisface las hipótesis del Teorema @thm-proyecciones. Más exactamente, si $(P_n)_n$ es la sucesión de proyecciones canónicas asociada a $(e_i)_i$, consideraremos la sucesión $(P_n^\ast)_n$, donde para cada $n\in\mathbb{N}$ y $f\in X^\ast$, la aplicación $P_n^*\colon X^*\longrightarrow  X^*$ viene dada por
+$$
+P_n^\ast f(x)=f(P_nx)\quad\text{para cada $x\in X$.}
+$$
+
+Antes de comenzar, conviene observar que 
+$$
+\|P_n^*\| = \sup_{\|f\|\leq1}\|P_n^*f\| = \sup_{\|f\|\leq1}\|fP_n\| \leq \sup_{\|f\|\leq 1}\|f\|\,\|P_n\|=\|P_n\|.
+$$
+
+Por tanto,
+$$
+\sup_{n\in\mathbb{N}}\|P_n^*\|\leq{\rm bc}\,(e_i)_i\equiv\sup_{n\in\N}\|P_n\|.
+$$ {#eq-2.1}
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración  
+\hspace*{1mm}
+
+Veamos ya sin más dilación que la sucesión de proyecciones $(P_n^\ast)$ satisface las hipótesis $(a)$, $(b)$ y $(c)$ del Teorema @thm-proyecciones.
+
+(a) Sean $f\in X^*$ y $x\in X$ arbitrarios. Si
+$$
+\sum_{i=1}^\infty e_i^*(x)e_i,
+$$
+por linealidad de $f$ se tiene que 
+$$
+P_n^*f(x)=f(P_nx)=f\Big(\sum_{i = 1}^{n}{e_i^*(x)e_i}\Big)=\sum_{i =1}^{n}f(e_i)e_i^*(x).
+$$
+Ergo $P_n^*(X^*)$ es una espacio vectorial de dimensión $n$ que tiene por generadores a los funcionales $e_i^*$ con $1\leq i\leq n$.
+
+(b) Sean $f\in X^\ast$ y $x\in X$ arbitrarios. En tal caso,
+$$
+P_n^*P_m^*f(x) = f(P_mP_nx) = f(P_{\min\{n,m\}}x)= f(P_nP_mx) = P_m^*P_n^*f(x) = P_{\min\{n.m\}}^*f(x).
+$$
+
+(c) Probar una condición más débil (en cuanto a tipo de convergencia) que la exigida es sencillo. En efecto, pues para cualquier funcional $f\in X^\ast$ tenemos ---por continuidad--- que 
+$$
+f(x)=f\big(\lim_{n\to\infty}P_nx\big)=\lim_{n\to\infty}f(P_nx)= \lim_{n \rightarrow \infty}{P_n^*f(x)}\quad\text{para todo $x\in X$},
+$$
+por lo que $P_n^*f\to f$ en $(X^\ast,\text{débil\(^\ast\)})$. 
+
+    No obstante, si queremos convergencia en norma del espacio dual $X^\ast$, tendremos que restringirnos a $\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$. Para $f\in{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$ la convergencia es trivial, pues $P_n^*f=f$ a partir de cierto índice $n$.
+
+    Dado un funcional $f \in \overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$ arbitrario, por densidad, existe una sucesión $(g_k)_{k}\subset {\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$ convergente en norma a $f$. Por tanto, existe $N_1\in\mathbb{N}$ de modo que si $k>N_1$ entonces
+    $$
+    \|g_k-f\|<\frac{\varepsilon}{2(1+{\rm bc}(e_i))}.
+    $$ {#eq-2.2}
+
+    Por otro lado, gracias a la acotación uniforme de $(P_n^*)_n$ que mencionamos en (\ref{eq:2.1}), para cada $k$ existe $N_{2,k}\in\mathbb{N}$ de modo que si $n>N_{2,k}$, entonces
+    $$
+        \|P_n^*g_k -g_k\|<\frac{\varepsilon}{2}.
+    $$ {#eq-2.3}
+
+    Así pues, tomando $k>N_1$ y $n>N_{1,k}$ y considerando (@eq-2.2) y (@eq-2.3), concluimos que
+    $$
+    \begin{align*}
+    \|f - P_n^*f\| = &\|f - g_k + g_k -P_n^*g_k + P_n^*g_k - P_n^*f\| \\
+    &\leq \|f -g_k\|+\|g_k - P_n^*g_k\|+\|P_n^*g_k - P_n^*f\| \\
+    & \leq \|f -g_k\|+\|g_k - P_n^*g_k\|+\|P_n^*\|\|g_k - f\| \\
+    & \leq \|g_k - P_n^*g_k\|+(1+{\rm bc}(e_i))\|g_k - f\|< \varepsilon.
+    \end{align*}
+    $$
+
+    Es decir,
+    $$
+    \lim_{n\to\infty}\|P_n^\ast f-f\|=0\quad\text{para todo $f\in\overline{\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}$.}
+    $$
+
+
+Queda entonces probado que $(P_n^*)_n$ es la sucesión de proyecciones canónicas asociada a la sucesión $(e_i^\ast)_i$, por lo que la sucesión de funcionales biortogonales es una base de Schauder de $\overline{{\rm span}}\,\{e_i^*\colon i\in\mathbb{N}\}$.
+
+:::
+
+Como vemos, por desgracia tenemos otra diferencia con las bases de Hamel y es que no podemos asegurar que los funcionales biortogonales ---los covectores de nuestra base de Schauder--- generen el espacio dual. Pero esto nos trae otra pregunta: ¿qué sucede cuando sí lo generan? Es esa cuestión lo que nos conduce a la última sección de este capítulo.
+
