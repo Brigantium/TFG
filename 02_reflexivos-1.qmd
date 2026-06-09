@@ -102,7 +102,7 @@ por lo que $P_n^*f\to f$ en $(X^\ast,\text{débil\(^\ast\)})$.
     \|g_k-f\|<\frac{\varepsilon}{2(1+{\rm bc}(e_i))}.
     $$ {#eq-2.2}
 
-    Por otro lado, gracias a la acotación uniforme de $(P_n^*)_n$ que mencionamos en (\ref{eq:2.1}), para cada $k$ existe $N_{2,k}\in\mathbb{N}$ de modo que si $n>N_{2,k}$, entonces
+    Por otro lado, gracias a la acotación uniforme de $(P_n^*)_n$ que mencionamos en (@eq-2.1), para cada $k$ existe $N_{2,k}\in\mathbb{N}$ de modo que si $n>N_{2,k}$, entonces
     $$
         \|P_n^*g_k -g_k\|<\frac{\varepsilon}{2}.
     $$ {#eq-2.3}
