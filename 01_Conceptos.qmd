@@ -99,14 +99,15 @@ Además, dada una sucesión de operadores $(P_n)_n\subset\mathcal{B}(X)$ satisfa
 :::
 
 
-::: {#cnj-1}
-Antes de ver la demostración de la Proposición @prp-proyeciones conviene recordar que se dice que un operador $P\in\mathcal{B}(X)$ es una *proyección* (lineal y continua) si $P^2\equiv PP=P$. En tal caso, $I-P$ también es una proyección. Además, $P(X)={\rm ker}\,(I-P)$, luego $P$ restringido a $P(X)$ es la identidad. Análogamente, ${\rm ker}\,P=(I-P)(X)$. Es evidente que si $P$ es una proyección no trivial ($P\neq 0$ y $P\neq I$), entonces $\|P\|\geq 1$ y $\|I-P\|\geq 1$.
-:::
 
 
 
 ::: {.proof collapse="true"}
 \hspace*{1mm}
+
+::: {#cnj-1}
+Antes de ver la demostración de la Proposición @prp-proyeciones conviene recordar que se dice que un operador $P\in\mathcal{B}(X)$ es una *proyección* (lineal y continua) si $P^2\equiv PP=P$. En tal caso, $I-P$ también es una proyección. Además, $P(X)={\rm ker}\,(I-P)$, luego $P$ restringido a $P(X)$ es la identidad. Análogamente, ${\rm ker}\,P=(I-P)(X)$. Es evidente que si $P$ es una proyección no trivial ($P\neq 0$ y $P\neq I$), entonces $\|P\|\geq 1$ y $\|I-P\|\geq 1$.
+:::
 
 \noindent "$\Longrightarrow$"
 
@@ -214,7 +215,8 @@ siendo $(x_k)_k\subset X$ una sucesión tal que $x_k\to \widehat{x}$ cuando $k\t
 :::
 
 
-::: {#rem-2}
+
+::: {#cnj-2}
 
 \hspace*{1cm}
 
@@ -224,11 +226,12 @@ $$
 $$
 Comprobar que $\vertiii{\cdot}$ define una norma en $X$ es muy sencillo:
 
-(N1) $\vertiii{x}\geq 0$ trivialmente y $0=\vertiii{x}=\sup_{n}{\|P_nx\|}$ implica que  $\|P_nx\|=0$ para todo $n\in\N$, pero como $\|\!\cdot\!\|$ es una norma, podemos deducir que $P_nx=0$ para todo $n$, de donde se sigue finalmente que $x=0$ por ser $(e_i)_i$ una base de Schauder.
+::: {.lista-n}
+1. $\vertiii{x}\geq 0$ trivialmente y $0=\vertiii{x}=\sup_{n}{\|P_nx\|}$ implica que  $\|P_nx\|=0$ para todo $n\in\N$, pero como $\|\!\cdot\!\|$ es una norma, podemos deducir que $P_nx=0$ para todo $n$, de donde se sigue finalmente que $x=0$ por ser $(e_i)_i$ una base de Schauder.
 
-(N2) $\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}$.
+2. $\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}$.
 
-(N3) Dado que $\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|$,
+3. Dado que $\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|$,
 $$
 \begin{align*}
     \vertiii{x+y}&=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\ 
@@ -237,66 +240,103 @@ $$
 $$
 :::
 
-<!--
-\section{Bases de Schauder en espacios de Banach}
+:::
+
+
+## Bases de Schauder en espacios de Banach
+<!-- \section{Bases de Schauder en espacios de Banach} -->
 
 Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que ---tal y como el lector verá con el paso de las páginas---, asegura la convergencia de series, continuidad de aplicaciones  y existencia de espacios que describiremos en los sucesivos capítulos.
 
 Sea $(X,\|\!\cdot\!\|)$ un espacio de Banach con base de Schauder $(e_i)_i$.
 
-\begin{proposition}[Auxiliar para el Teorema \ref{th:banach} siguiente]\label{P:1.5}\hspace*{1cm}\\
+::: {#prp-1.5}
+
+## Auxiliar para el Teorema @thm-banach siguiente
+\hspace*{1mm}
+
 La sucesión $(e_i)_i$ es base de Schauder de $(X,\vertiii{\cdot})$.
 
-\begin{proof}\hspace*{1cm}\\
-Probaremos que la sucesión de proyecciones canónicas $(P_n)_n$ satisface las condiciones enunciadas en la Proposición \ref{proyections}.
+
+::: {.proof}
+\hspace*{1cm}
+
+Probaremos que la sucesión de proyecciones canónicas $(P_n)_n$ satisface las condiciones enunciadas en la Proposición @prp-proyeciones.
 
 Las propiedades $(a)$ y $(b)$ no dependen de la norma, por lo que se satisfacen automáticamente. Por otra parte, la propiedad $(c)$ es sencilla de probar, pues para cada $x\in X$ se tiene que
+$$
 \begin{align*}\label{eq:unicidad}  
         \vertiii{x-P_nx} &=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
 \end{align*}
-porque, para cualquier $y\in X$, por ser $(e_i)_i$ base de Schauder de $(X,\|\!\cdot\!\|)$, tenemos que $P_ny \to y$ cuando $n\to\infty$ en $(X,\|\!\cdot\!\|)$.
-\end{proof}
-\end{proposition}
+$$
 
-\begin{theorem}[Stefan Banach: «Completitud $\Longrightarrow$ Acotación de las proyecciones canónicas»]\label{th:banach}\hspace*{1mm}\\
+porque, para cualquier $y\in X$, por ser $(e_i)_i$ base de Schauder de $(X,\|\!\cdot\!\|)$, tenemos que $P_ny \to y$ cuando $n\to\infty$ en $(X,\|\!\cdot\!\|)$.
+:::
+:::
+
+
+::: {#thm-banach}
+
+## Stefan Banach: «Completitud $\Longrightarrow$ Acotación de las proyecciones canónicas»
+\hspace*{1mm}
+
 La sucesión de proyecciones canónicas $(P_n)_n$ es (uniformemente) acotada en $(\mathcal{B}(X),\|\!\cdot\!\|)$.
 
-\end{theorem}
 
+::: {.proof}
 
-% incluir 
-\begin{proof}\hspace*{1mm}
+\hspace*{1cm}
 
 Conviene observar que
-\[\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,\]
+$$
+\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,
+$$
 por lo que la sucesión $(P_n)_n$ es (uniformemente) acotada en $\mathcal{B}(X)$ si consideramos a $X$ dotado de la norma $\vertiii{\cdot}$ y basta entonces demostrar que $\vertiii{\cdot}$ es equivalente a $\|\!\cdot\!\|$, es decir, que existen constantes $M_1$, $M_2>0$ de modo que $\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}$ para todo $x\in X$.
 
 En efecto, pues tal caso, la acotación uniforme en $(X,\|\!\cdot\!\|)$ será inmediata:
-\[\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.\]
+$$
+\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.
+$$
 
 
-Si $\left(X,\vertiii{\cdot}\right)$ fuese completo, dado que la aplicación $I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)$ es trivialmente continua (pues $\|x\|\leq\vertiii{x}$ para todo $x\in X$) y biyectiva, el { Teorema \ref{th:ap-abierta} de la aplicación abierta} nos permitiría afirmaría que $I^{-1}$ también es continua, por lo que $\vertiii{\cdot}$ y $\|\!\cdot\!\|$ serían necesariamente normas equivalentes.
+Si $\left(X,\vertiii{\cdot}\right)$ fuese completo, dado que la aplicación $I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)$ es trivialmente continua (pues $\|x\|\leq\vertiii{x}$ para todo $x\in X$) y biyectiva, el Teorema @thm-ap-abierta de la aplicación abierta nos permitiría afirmaría que $I^{-1}$ también es continua, por lo que $\vertiii{\cdot}$ y $\|\!\cdot\!\|$ serían necesariamente normas equivalentes.
     
 Probaremos que es posible proceder de tal modo. Para ello, demostraremos que $\left(X,\vertiii{\cdot}\right)$ es un espacio de Banach mostrando que $\widehat{X}\subset X$, siendo ahora $\widehat{X}$ la compleción de $X$ respecto de la norma $\vertiii{\cdot}$.
 
-Dado $x\in\widehat{X}$, como $(e_i)_i$ es base de Schauder de $\widehat{X}$ (esto es una consecuencia de la Proposición \ref{P:1.4} y la Proposición \ref{P:1.5}), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
-\[x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}\]
+Dado $x\in\widehat{X}$, como $(e_i)_i$ es base de Schauder de $\widehat{X}$ (esto es una consecuencia de la Proposición @prp-1.4 y la Proposición @prp-1.5), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
+$$
+x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}
+$$
 luego $(\alpha_1e_1+\cdots+\alpha_n e_n)_n$ es una sucesión de Cauchy en $(X,\vertiii{\cdot})$, y dado que $\|\!\cdot\!\|\leq\vertiii{\cdot}$, también es una sucesión de Cauchy en $(X,\|\!\cdot\!\|)$. Por tanto, por ser $(X,\|\!\cdot\!\|)$ completo, existe $x'\in X$ de modo que
-\[x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}\]
+$$
+x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}
+$$
 Es decir, $x'=x\in X$.
-\end{proof}
+:::
+
+:::
 
 En vista de este teorema podemos introducir la siguiente definición:
 
-\begin{definition}[Constante básica]\hspace*{1mm}\\
-El número real $\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|$ recibe el nombre de \emph{constante básica} de $(e_i)_i$.
-\end{definition}
+::: {#def-ConstanteBasica}
 
-Como pequeño complemento a la definición anterior, tenemos el concepto de base \textit{monótona}, que es aquella para la que $\text{bc}\,(e_i)_i = 1$. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares $(a_i)_i$, la sucesión de números reales
-\[\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n\]
+## Constante básica
+\hspace*{1mm}
+
+El número real $\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|$ recibe el nombre de *constante básica* de $(e_i)_i$.
+
+:::
+
+Como pequeño complemento a la definición anterior, tenemos el concepto de base *monótona*, que es aquella para la que $\text{bc}\,(e_i)_i = 1$. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares $(a_i)_i$, la sucesión de números reales
+$$
+\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n
+$$
 es monótona creciente, lo cual es evidente pues, tomando $n>m$,
-\[\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.\]
+$$
+\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.
+$$
 
+<!--
 
 \begin{center}
 \begin{minipage}{0.35\textwidth}\centering\small
@@ -313,6 +353,10 @@ es monótona creciente, lo cual es evidente pues, tomando $n>m$,
     Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.
 \end{minipage}
 \end{center}\medskip
+
+-->
+<!--
+## Sobre el problema de la existencia de base.
 
 Para finalizar esta sección incluimos una breve mención al conocido problema de la existencia de base.
 

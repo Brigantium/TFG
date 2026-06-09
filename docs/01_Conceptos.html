@@ -218,6 +218,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#bases-de-schauder-en-espacios-vectoriales-normados." id="toc-bases-de-schauder-en-espacios-vectoriales-normados." class="nav-link active" data-scroll-target="#bases-de-schauder-en-espacios-vectoriales-normados."><span class="header-section-number">1.1</span> Bases de Schauder en espacios vectoriales normados.</a></li>
+  <li><a href="#bases-de-schauder-en-espacios-de-banach" id="toc-bases-de-schauder-en-espacios-de-banach" class="nav-link" data-scroll-target="#bases-de-schauder-en-espacios-de-banach"><span class="header-section-number">1.2</span> Bases de Schauder en espacios de Banach</a></li>
   </ul>
 </nav>
     </div>
@@ -298,11 +299,11 @@ x=\sum_{i=1}^{\infty}{a_ie_i},
 </ol>
 <p>Además, dada una sucesión de operadores <span class="math inline">\((P_n)_n\subset\mathcal{B}(X)\)</span> satisfaciendo <span class="math inline">\((a)\)</span>, <span class="math inline">\((b)\)</span> y <span class="math inline">\((c)\)</span>, existe una base de Schauder de <span class="math inline">\(X\)</span> que tiene a <span class="math inline">\((P_n)_n\)</span> como sucesión de proyecciones canónicas asociada.</p>
 </div>
+<div class="proof" data-collapse="true">
+<p><span class="proof-title"><em>Demostración</em>. </span></p>
 <div id="cnj-1" class="theorem conjecture">
 <p><span class="theorem-title"><strong>Observación 1.1</strong></span> Antes de ver la demostración de la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a> conviene recordar que se dice que un operador <span class="math inline">\(P\in\mathcal{B}(X)\)</span> es una <em>proyección</em> (lineal y continua) si <span class="math inline">\(P^2\equiv PP=P\)</span>. En tal caso, <span class="math inline">\(I-P\)</span> también es una proyección. Además, <span class="math inline">\(P(X)={\rm ker}\,(I-P)\)</span>, luego <span class="math inline">\(P\)</span> restringido a <span class="math inline">\(P(X)\)</span> es la identidad. Análogamente, <span class="math inline">\({\rm ker}\,P=(I-P)(X)\)</span>. Es evidente que si <span class="math inline">\(P\)</span> es una proyección no trivial (<span class="math inline">\(P\neq 0\)</span> y <span class="math inline">\(P\neq I\)</span>), entonces <span class="math inline">\(\|P\|\geq 1\)</span> y <span class="math inline">\(\|I-P\|\geq 1\)</span>.</p>
 </div>
-<div class="proof" data-collapse="true">
-<p><span class="proof-title"><em>Demostración</em>. </span></p>
 <p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
 <ol type="a">
 <li><p>A la vista de (<a href="#eq-ProyCanon" class="quarto-xref"><span>1.1</span></a>) es evidente que <span class="math inline">\({\rm dim}\,P_n(X)\leq n\)</span>. Además, <span class="math inline">\(\{e_i\colon i\in\mathbb{N}\}\)</span> es un conjunto linealmente independiente, pues si <span class="math inline">\(\lambda_1e_1+\lambda_2 e_2+\cdots+\lambda_ne_n=0\)</span>, dado que <span class="math display">\[
@@ -367,80 +368,75 @@ por lo que <span class="math inline">\(\widehat{P}_n\widehat{P}_m=\widehat{P}_m\
 <p>Por tanto, <span class="math inline">\(\|\widehat{x}-\widehat{P}_n\widehat{x}\|&lt;\varepsilon\)</span> si <span class="math inline">\(n\geq N_{k_\varepsilon}\)</span>; es decir, <span class="math inline">\(\|\widehat{x}-\widehat{P}_n\widehat{x}\|\to 0\)</span> cuando <span class="math inline">\(n\to\infty\)</span>.</p></li>
 </ol>
 </div>
-<div id="rem-2" class="proof remark">
-<p><span class="proof-title"><em>Observación 1.1</em>. </span></p>
+<div id="cnj-2" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Observación 1.2</strong></span> &nbsp;</p>
 <p>La condición (<a href="#eq-acotacion" class="quarto-xref"><span>1.2</span></a>) sugiere definir <span class="math display">\[
 \vertiii{x}=\sup_n\|P_nx\|\quad\text{para cada $x\in X$.}
 \]</span> Comprobar que <span class="math inline">\(\vertiii{\cdot}\)</span> define una norma en <span class="math inline">\(X\)</span> es muy sencillo:</p>
-<p>(N1) <span class="math inline">\(\vertiii{x}\geq 0\)</span> trivialmente y <span class="math inline">\(0=\vertiii{x}=\sup_{n}{\|P_nx\|}\)</span> implica que <span class="math inline">\(\|P_nx\|=0\)</span> para todo <span class="math inline">\(n\in\N\)</span>, pero como <span class="math inline">\(\|\!\cdot\!\|\)</span> es una norma, podemos deducir que <span class="math inline">\(P_nx=0\)</span> para todo <span class="math inline">\(n\)</span>, de donde se sigue finalmente que <span class="math inline">\(x=0\)</span> por ser <span class="math inline">\((e_i)_i\)</span> una base de Schauder.</p>
-<p>(N2) <span class="math inline">\(\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}\)</span>.</p>
-<p>(N3) Dado que <span class="math inline">\(\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|\)</span>, <span class="math display">\[
+<div class="lista-n">
+<ol type="1">
+<li><p><span class="math inline">\(\vertiii{x}\geq 0\)</span> trivialmente y <span class="math inline">\(0=\vertiii{x}=\sup_{n}{\|P_nx\|}\)</span> implica que <span class="math inline">\(\|P_nx\|=0\)</span> para todo <span class="math inline">\(n\in\N\)</span>, pero como <span class="math inline">\(\|\!\cdot\!\|\)</span> es una norma, podemos deducir que <span class="math inline">\(P_nx=0\)</span> para todo <span class="math inline">\(n\)</span>, de donde se sigue finalmente que <span class="math inline">\(x=0\)</span> por ser <span class="math inline">\((e_i)_i\)</span> una base de Schauder.</p></li>
+<li><p><span class="math inline">\(\vertiii{\lambda x}=\sup_n\|P_n(\lambda x)\|=\sup_n|\lambda|\,\|P_nx\|=|\lambda|\, \sup_n\|P_nx\|=\lambda\,\vertiii{x}\)</span>.</p></li>
+<li><p>Dado que <span class="math inline">\(\|P_nx+P_ny\|\leq \|P_n\|+\|P_ny\|\)</span>, <span class="math display">\[
 \begin{align*}
-    \vertiii{x+y}&amp;=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\
-    &amp;\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
+\vertiii{x+y}&amp;=\sup_n\|P_n(x+y)\|=\sup_n\|P_nx + P_ny\|\leq\sup_n(\|P_nx\|+\|P_ny\|)\\
+&amp;\leq\sup_n\|P_nx\|+\sup_n\|P_ny\|= \vertiii{x} + \vertiii{y}.
+\end{align*}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="bases-de-schauder-en-espacios-de-banach" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="bases-de-schauder-en-espacios-de-banach"><span class="header-section-number">1.2</span> Bases de Schauder en espacios de Banach</h2>
+<!-- \section{Bases de Schauder en espacios de Banach} -->
+<p>Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que —tal y como el lector verá con el paso de las páginas—, asegura la convergencia de series, continuidad de aplicaciones y existencia de espacios que describiremos en los sucesivos capítulos.</p>
+<p>Sea <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> un espacio de Banach con base de Schauder <span class="math inline">\((e_i)_i\)</span>.</p>
+<div id="prp-1.5" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 1.3 (Auxiliar para el Teorema <a href="#thm-banach" class="quarto-xref">&nbsp;<span>1.2</span></a> siguiente)</strong></span> &nbsp;</p>
+<p>La sucesión <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\((X,\vertiii{\cdot})\)</span>.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Demostración</em>. </span></p>
+<p>Probaremos que la sucesión de proyecciones canónicas <span class="math inline">\((P_n)_n\)</span> satisface las condiciones enunciadas en la Proposición <a href="#prp-proyeciones" class="quarto-xref">&nbsp;<span>1.1</span></a>.</p>
+<p>Las propiedades <span class="math inline">\((a)\)</span> y <span class="math inline">\((b)\)</span> no dependen de la norma, por lo que se satisfacen automáticamente. Por otra parte, la propiedad <span class="math inline">\((c)\)</span> es sencilla de probar, pues para cada <span class="math inline">\(x\in X\)</span> se tiene que <span class="math display">\[
+\begin{align*}\label{eq:unicidad}  
+        \vertiii{x-P_nx} &amp;=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&amp;=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
 \end{align*}
 \]</span></p>
+<p>porque, para cualquier <span class="math inline">\(y\in X\)</span>, por ser <span class="math inline">\((e_i)_i\)</span> base de Schauder de <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>, tenemos que <span class="math inline">\(P_ny \to y\)</span> cuando <span class="math inline">\(n\to\infty\)</span> en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>.</p>
 </div>
+</div>
+<div id="thm-banach" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 1.2 (Stefan Banach: «Completitud <span class="math inline">\(\Longrightarrow\)</span> Acotación de las proyecciones canónicas»)</strong></span> &nbsp;</p>
+<p>La sucesión de proyecciones canónicas <span class="math inline">\((P_n)_n\)</span> es (uniformemente) acotada en <span class="math inline">\((\mathcal{B}(X),\|\!\cdot\!\|)\)</span>.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Demostración</em>. </span></p>
+<p>Conviene observar que <span class="math display">\[
+\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,
+\]</span> por lo que la sucesión <span class="math inline">\((P_n)_n\)</span> es (uniformemente) acotada en <span class="math inline">\(\mathcal{B}(X)\)</span> si consideramos a <span class="math inline">\(X\)</span> dotado de la norma <span class="math inline">\(\vertiii{\cdot}\)</span> y basta entonces demostrar que <span class="math inline">\(\vertiii{\cdot}\)</span> es equivalente a <span class="math inline">\(\|\!\cdot\!\|\)</span>, es decir, que existen constantes <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_2&gt;0\)</span> de modo que <span class="math inline">\(\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}\)</span> para todo <span class="math inline">\(x\in X\)</span>.</p>
+<p>En efecto, pues tal caso, la acotación uniforme en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> será inmediata: <span class="math display">\[
+\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.
+\]</span></p>
+<p>Si <span class="math inline">\(\left(X,\vertiii{\cdot}\right)\)</span> fuese completo, dado que la aplicación <span class="math inline">\(I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)\)</span> es trivialmente continua (pues <span class="math inline">\(\|x\|\leq\vertiii{x}\)</span> para todo <span class="math inline">\(x\in X\)</span>) y biyectiva, el Teorema <span class="quarto-unresolved-ref">?thm-ap-abierta</span> de la aplicación abierta nos permitiría afirmaría que <span class="math inline">\(I^{-1}\)</span> también es continua, por lo que <span class="math inline">\(\vertiii{\cdot}\)</span> y <span class="math inline">\(\|\!\cdot\!\|\)</span> serían necesariamente normas equivalentes.</p>
+<p>Probaremos que es posible proceder de tal modo. Para ello, demostraremos que <span class="math inline">\(\left(X,\vertiii{\cdot}\right)\)</span> es un espacio de Banach mostrando que <span class="math inline">\(\widehat{X}\subset X\)</span>, siendo ahora <span class="math inline">\(\widehat{X}\)</span> la compleción de <span class="math inline">\(X\)</span> respecto de la norma <span class="math inline">\(\vertiii{\cdot}\)</span>.</p>
+<p>Dado <span class="math inline">\(x\in\widehat{X}\)</span>, como <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\(\widehat{X}\)</span> (esto es una consecuencia de la Proposición <a href="#prp-1.4" class="quarto-xref">&nbsp;<span>1.2</span></a> y la Proposición <a href="#prp-1.5" class="quarto-xref">&nbsp;<span>1.3</span></a>), existe una única sucesión de escalares <span class="math inline">\((\alpha_i)_i\)</span> de modo que <span class="math display">\[
+x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}
+\]</span> luego <span class="math inline">\((\alpha_1e_1+\cdots+\alpha_n e_n)_n\)</span> es una sucesión de Cauchy en <span class="math inline">\((X,\vertiii{\cdot})\)</span>, y dado que <span class="math inline">\(\|\!\cdot\!\|\leq\vertiii{\cdot}\)</span>, también es una sucesión de Cauchy en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>. Por tanto, por ser <span class="math inline">\((X,\|\!\cdot\!\|)\)</span> completo, existe <span class="math inline">\(x'\in X\)</span> de modo que <span class="math display">\[
+x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}
+\]</span> Es decir, <span class="math inline">\(x'=x\in X\)</span>.</p>
+</div>
+</div>
+<p>En vista de este teorema podemos introducir la siguiente definición:</p>
+<div id="def-ConstanteBasica" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 1.3 (Constante básica)</strong></span> &nbsp;</p>
+<p>El número real <span class="math inline">\(\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|\)</span> recibe el nombre de <em>constante básica</em> de <span class="math inline">\((e_i)_i\)</span>.</p>
+</div>
+<p>Como pequeño complemento a la definición anterior, tenemos el concepto de base <em>monótona</em>, que es aquella para la que <span class="math inline">\(\text{bc}\,(e_i)_i = 1\)</span>. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares <span class="math inline">\((a_i)_i\)</span>, la sucesión de números reales <span class="math display">\[
+\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n
+\]</span> es monótona creciente, lo cual es evidente pues, tomando <span class="math inline">\(n&gt;m\)</span>, <span class="math display">\[
+\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.
+\]</span></p>
 <!--
-\section{Bases de Schauder en espacios de Banach}
-
-Añadamos pues la hipótesis de completitud de la que jamás nos desharemos, pues resulta imprescindible para la acotación uniforme de las proyecciones, hecho que ---tal y como el lector verá con el paso de las páginas---, asegura la convergencia de series, continuidad de aplicaciones  y existencia de espacios que describiremos en los sucesivos capítulos.
-
-Sea $(X,\|\!\cdot\!\|)$ un espacio de Banach con base de Schauder $(e_i)_i$.
-
-\begin{proposition}[Auxiliar para el Teorema \ref{th:banach} siguiente]\label{P:1.5}\hspace*{1cm}\\
-La sucesión $(e_i)_i$ es base de Schauder de $(X,\vertiii{\cdot})$.
-
-\begin{proof}\hspace*{1cm}\\
-Probaremos que la sucesión de proyecciones canónicas $(P_n)_n$ satisface las condiciones enunciadas en la Proposición \ref{proyections}.
-
-Las propiedades $(a)$ y $(b)$ no dependen de la norma, por lo que se satisfacen automáticamente. Por otra parte, la propiedad $(c)$ es sencilla de probar, pues para cada $x\in X$ se tiene que
-\begin{align*}\label{eq:unicidad}  
-        \vertiii{x-P_nx} &=\sup_{m}{\|P_m(x-P_nx)\|}=\sup_{m}{\|P_mx-P_mP_nx\|}=\sup_{m}{\|P_mx - P_nP_mx\|}\\&=\sup_{n\leq m}{\|P_mx - P_nP_mx\|}=\sup_{n\leq m}{\|P_mx - P_nx\|}\to 0\quad\text{cuando $n\to\infty$}  
-\end{align*}
-porque, para cualquier $y\in X$, por ser $(e_i)_i$ base de Schauder de $(X,\|\!\cdot\!\|)$, tenemos que $P_ny \to y$ cuando $n\to\infty$ en $(X,\|\!\cdot\!\|)$.
-\end{proof}
-\end{proposition}
-
-\begin{theorem}[Stefan Banach: «Completitud $\Longrightarrow$ Acotación de las proyecciones canónicas»]\label{th:banach}\hspace*{1mm}\\
-La sucesión de proyecciones canónicas $(P_n)_n$ es (uniformemente) acotada en $(\mathcal{B}(X),\|\!\cdot\!\|)$.
-
-\end{theorem}
-
-
-% incluir 
-\begin{proof}\hspace*{1mm}
-
-Conviene observar que
-\[\vertiii{P_n}=\sup_{\vertiii{x} \leq 1}{\vertiii{P_nx}}=\sup\,\Big\{\sup_{m \leq n}\|P_mx\| \colon \vertiii{x} = \sup_{k}\| P_kx\| \leq 1\Big\} \leq 1,\]
-por lo que la sucesión $(P_n)_n$ es (uniformemente) acotada en $\mathcal{B}(X)$ si consideramos a $X$ dotado de la norma $\vertiii{\cdot}$ y basta entonces demostrar que $\vertiii{\cdot}$ es equivalente a $\|\!\cdot\!\|$, es decir, que existen constantes $M_1$, $M_2>0$ de modo que $\vertiii{x}\leq M_1\|x\|\leq M_2\vertiii{x}$ para todo $x\in X$.
-
-En efecto, pues tal caso, la acotación uniforme en $(X,\|\!\cdot\!\|)$ será inmediata:
-\[\|P_n\|=\sup_{\|x\|\leq 1}\|P_n x\|\leq\sup_{\vertiii{x}\leq M_1}M_2\vertiii{P_nx}=\dfrac{M_2}{M_1}\sup_{\vertiii{x}\leq 1}\vertiii{P_nx}\leq\dfrac{M_2}{M_1}\quad\text{para todo $n\in\mathbb{N}$}.\]
-
-
-Si $\left(X,\vertiii{\cdot}\right)$ fuese completo, dado que la aplicación $I \colon \left(X, \vertiii{\cdot}\right)\longrightarrow (X, \|\!\cdot\!\|)$ es trivialmente continua (pues $\|x\|\leq\vertiii{x}$ para todo $x\in X$) y biyectiva, el { Teorema \ref{th:ap-abierta} de la aplicación abierta} nos permitiría afirmaría que $I^{-1}$ también es continua, por lo que $\vertiii{\cdot}$ y $\|\!\cdot\!\|$ serían necesariamente normas equivalentes.
-    
-Probaremos que es posible proceder de tal modo. Para ello, demostraremos que $\left(X,\vertiii{\cdot}\right)$ es un espacio de Banach mostrando que $\widehat{X}\subset X$, siendo ahora $\widehat{X}$ la compleción de $X$ respecto de la norma $\vertiii{\cdot}$.
-
-Dado $x\in\widehat{X}$, como $(e_i)_i$ es base de Schauder de $\widehat{X}$ (esto es una consecuencia de la Proposición \ref{P:1.4} y la Proposición \ref{P:1.5}), existe una única sucesión de escalares $(\alpha_i)_i$ de modo que
-\[x=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(\widehat{X},\vertiii{\cdot})$;}\]
-luego $(\alpha_1e_1+\cdots+\alpha_n e_n)_n$ es una sucesión de Cauchy en $(X,\vertiii{\cdot})$, y dado que $\|\!\cdot\!\|\leq\vertiii{\cdot}$, también es una sucesión de Cauchy en $(X,\|\!\cdot\!\|)$. Por tanto, por ser $(X,\|\!\cdot\!\|)$ completo, existe $x'\in X$ de modo que
-\[x'=\lim_{n\to\infty}\sum_{i=1}^n \alpha_i e_i\quad\text{en $(X,\|\!\cdot\!\|)$.}\]
-Es decir, $x'=x\in X$.
-\end{proof}
-
-En vista de este teorema podemos introducir la siguiente definición:
-
-\begin{definition}[Constante básica]\hspace*{1mm}\\
-El número real $\text{bc}\,(e_i)_i:=\sup_{n\in\N}\|P_n\|$ recibe el nombre de \emph{constante básica} de $(e_i)_i$.
-\end{definition}
-
-Como pequeño complemento a la definición anterior, tenemos el concepto de base \textit{monótona}, que es aquella para la que $\text{bc}\,(e_i)_i = 1$. La denominación es explicativa, pues refleja que en dicha base, para cualquier selección de escalares $(a_i)_i$, la sucesión de números reales
-\[\Big(\big\|\sum_{i=1}^na_ie_i\big\|\Big)_n\]
-es monótona creciente, lo cual es evidente pues, tomando $n>m$,
-\[\big\|\sum_{i=1}^m a_ie_i\big\|=\|P_mx\|=\|P_nP_mx\|\leq \|P_nx\|\|P_m\|\leq \|P_nx\|= \big\|\sum_{i=1}^n a_ie_i\big\|.\]
-
 
 \begin{center}
 \begin{minipage}{0.35\textwidth}\centering\small
@@ -457,6 +453,10 @@ es monótona creciente, lo cual es evidente pues, tomando $n>m$,
     Colaboró con eminentes matemáticos, como Bernstein, Sobolev, Lewy o Leray, con quien llegó incluso a compartir un premio.
 \end{minipage}
 \end{center}\medskip
+
+-->
+<!--
+## Sobre el problema de la existencia de base.
 
 Para finalizar esta sección incluimos una breve mención al conocido problema de la existencia de base.
 

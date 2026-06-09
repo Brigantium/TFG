@@ -2,6 +2,9 @@ project:
   type: book
   output-dir: docs
 
+# filters: 
+  # - first-line-indent
+
 lang: es
 
 book:
@@ -30,8 +33,18 @@ crossref:
 
 language: 
   crossref-prp-prefix: ""
+  crossref-thm-prefix: ""
   crossref-cnj-title: "Observación"
   crossref-cnj-prefix: ""
+
+# indent: false
+# first-line-indent:
+#   remove-after-class:
+#     - proof     
+#     - thm       
+#     - obs       
+#     - prp
+
 
 format:
   html:

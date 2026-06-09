@@ -36,18 +36,30 @@
 }
 
 
-
-/* Selecciona el contenedor de la observación personalizada */
-.quarto-layout-panel .quarto-float-obs,
-div[id^="obs-"] {
-  display: flex;
-  flex-direction: column; /* Organiza los elementos en vertical */
+/* Selecciona la lista personalizada */
+.lista-n {
+  list-style: none;     /* Quita CUALQUIER número o punto que ponga Quarto */
+  counter-reset: my-counter; /* Inicializa el contador */
+  padding-left: 0em;
 }
 
-/* Fuerza a que el título (caption) se coloque en primer lugar (arriba) */
-div[id^="obs-"] figcaption {
-  order: -1; 
-  margin-top: 0;
-  margin-bottom: 0.5em; /* Añade un espacio entre el título y el cuerpo */
-  font-weight: bold;    /* Ponemos el título en negrita para que parezca un teorema */
+.lista-n li {
+  counter-increment: my-counter; /* Suma 1 en cada elemento */
+  position: relative;
+  padding-left: 2.5em;           /* Deja espacio para el (N1) */
+  margin-bottom: 0em;          /* Separa un poco los ítems */
+}
+
+/* Fuerza el borrado de los marcadores nativos de lista en navegadores modernos */
+.lista-n li::marker {
+  content: "";
+}
+
+/* Inyecta el texto personalizado antes del contenido */
+.lista-n li::before {
+  content: "(N" counter(my-counter) ")"; /* Genera (N1), (N2)... */
+  /* font-weight: bold;                     Lo pone en negrita */
+  position: absolute;
+  left: 0;                               /* Lo pega al margen izquierdo del ítem */
+  color: #212529;                        /* Color del texto normal */
 }

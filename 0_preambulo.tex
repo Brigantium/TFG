@@ -181,3 +181,10 @@
 
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
     \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+
+% Definimos el entorno para el PDF (LaTeX)
+% Cambiamos las viñetas por un contador numérico con el prefijo "N"
+\newenvironment{lista-n}%
+  {\begin{itemize}[label=\textbf{(N\arabic*)}, ref=(N\arabic*), leftmargin=2.5em]\setcounter{enumi}{0}}%
+  {\end{itemize}}
