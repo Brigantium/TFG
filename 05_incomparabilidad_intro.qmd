@@ -1,0 +1,5 @@
+# Estructura de los espacios $\ell_p$ y $c_0$
+
+
+En este último capítulo estudiaremos más en profundidad los espacios $\ell_p$ y $c_0$. Veremos resultados relativos a sus subespacios, propiedades de las sucesiones básicas de bloques extraídas de sus bases de Schauder naturales y, al final del capítulo, un resultado que nos informa de que estos espacios son totalmente diferentes entre si y no comparten subespacios de dimension infinita.
+

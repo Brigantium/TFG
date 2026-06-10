@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Iker Rodriguez Rodriguez">
 
-<title>Bases de Schauder en espacios de Banach</title>
+<title>12&nbsp; Incomparabilidad – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./resumen.html" rel="next">
+<link href="./Bibliografia.html" rel="next">
+<link href="./05_incomparabilidad-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Prefacio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_incomparabilidad_intro.html">Estructura de los espacios <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(c_0\)</span></a></li><li class="breadcrumb-item"><a href="./05_incomparabilidad-2.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
@@ -296,7 +296,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_incomparabilidad-2.html" class="sidebar-item-text sidebar-link">
+  <a href="./05_incomparabilidad-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></span></a>
   </div>
 </li>
@@ -313,40 +313,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_incomparabilidad_intro.html">Estructura de los espacios <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(c_0\)</span></a></li><li class="breadcrumb-item"><a href="./05_incomparabilidad-2.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bases de Schauder en espacios de Banach</h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Iker Rodriguez Rodriguez </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">1 de junio de 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -356,12 +338,78 @@ window.Quarto = {
 </header>
 
 
-<section id="prefacio" class="level1 unnumbered">
-<h1 class="unnumbered">Prefacio</h1>
-<p>En lo que sigue se expondrá una versión revisada del Trabajo Fin de Grado presentado en Julio de 2025 en la Facultad de Matemáticas.</p>
+<p>Demostremos ahora, por último, que estos espacios son fundamentalmente distintos entre si, no conteniendo espacios isomorfos a subespacios de cualquiera de los otros.</p>
+<p>Para ello, demostraremos primero el siguiente teorema, que nos servirá de base para el resultado del que hablamos.</p>
+<div id="thm-Pitt" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 12.1 (de Pitt)</strong></span> &nbsp;</p>
+<p>Dados <span class="math inline">\(p,r\)</span> de forma que <span class="math inline">\(1\leq p&lt;r&lt;\infty\)</span>, se tiene que para todo <span class="math inline">\(T\,\colon \ell_r \to \ell_p\)</span> operador lineal acotado, <span class="math inline">\(T\)</span> también es compacto. Lo mismo se da con un operador <span class="math inline">\(T\,\colon c_0 \to \ell_p\)</span> con <span class="math inline">\(p\in[1,\infty)\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos la prueba primero para <span class="math inline">\(\ell_r\)</span>. Basta con probar <span class="math inline">\(T(B_{\ell_r})\)</span> es un precompacto, es decir su clausura es compacta.</p>
+<p>Por el Teorema <span class="quarto-unresolved-ref">?thm-alaoglu</span> de Alaoglu tenemos que <span class="math inline">\(B_{\ell_r}\)</span> es compacta con la topología débil (gracias a que <span class="math inline">\(\ell_r\)</span> es reflexivo). Si demostramos que <span class="math inline">\(T\colon (\ell_r,\text{débil}) \to (\ell_p,\|\cdot\|_p)\)</span> es continuo, entonces <span class="math inline">\(T(B_{\ell_r})\)</span> será precompacto. Por el Lema <span class="quarto-unresolved-ref">?lem-metrizable-compact</span> sabemos que la bola unidad <span class="math inline">\(B_{\ell_r}\)</span> es metrizable, y por tanto sólo es necesario probar que <span class="math inline">\(T\)</span> es secuencialmente continua, lo que se traduce gracias a la linealidad de <span class="math inline">\(T\)</span> en que, dada una sucesión <span class="math inline">\((x_n)_n\)</span>, <span class="math display">\[
+\text{si } x_n \xrightarrow{\text{débil}} 0 \text{ entonces } Tx_n \xrightarrow{\|\cdot\|} 0.
+\]</span></p>
+<p>Supongamos que no sucede, que existe una sucesión <span class="math inline">\((x_n)_n\)</span> de forma que <span class="math display">\[
+x_n \xrightarrow{\text{débil}}0 \quad \text{ pero existe un } \varepsilon&gt; 0 \text{ tal que } \|Tx_n\|\geq \varepsilon \quad \forall n \in \N
+\]</span> —podemos suponer <span class="math inline">\(\|x_n\|=1\)</span> pues <span class="math inline">\(\varepsilon&lt;\|Tx_n\|\leq \|T\|\|x_n\|\)</span>, es decir, existe <span class="math inline">\(\displaystyle\inf_{n}\|x_n\| \not = 0\)</span> y por tanto podemos normalizar—.</p>
+<p>Por el Lema <a href="03_sucesiones_basicas-4.html#lem-principio-Bessaga" class="quarto-xref">&nbsp;<span>8.2</span></a>, como <span class="math inline">\(x_n \xrightarrow{\text{débil}}0\)</span> y <span class="math inline">\(\|x_n\|=1\)</span>, sabemos que la sucesión <span class="math inline">\((x_n)_n\)</span> tiene una subsucesión, <span class="math inline">\((x_{n_k})_k\)</span>, equivalente a una sucesión básica bloque de la base unitaria de <span class="math inline">\(\ell_r\)</span> (que, por el Teorema <a href="05_incomparabilidad-1.html#thm-hom-c0-ellp" class="quarto-xref">&nbsp;<span>11.2</span></a>, es equivalente a la base unitaria de <span class="math inline">\(\ell_r\)</span>). Como la convergencia en norma implica la convergencia débil tenemos que <span class="math inline">\(T\colon (\ell_r,\text{débil}) \to (\ell_p,\text{débil})\)</span> es continua y por tanto <span class="math display">\[
+T(x_{n_k})_k \xrightarrow{\text{débil}}0.
+\]</span> Como <span class="math inline">\(\|Tx_{n_k}\|\geq \varepsilon &gt;0\)</span> para todo <span class="math inline">\(k\)</span> natural aplicamos el Lema <a href="03_sucesiones_basicas-4.html#lem-principio-Bessaga" class="quarto-xref">&nbsp;<span>8.2</span></a> y de nuevo el Teorema <a href="05_incomparabilidad-1.html#thm-hom-c0-ellp" class="quarto-xref">&nbsp;<span>11.2</span></a> y tenemos que <span class="math inline">\((Tx_{n_k})_k\)</span> es equivalente a la base unitaria de <span class="math inline">\(\ell_p\)</span>.</p>
+<p>Sea ahora una una sucesión <span class="math inline">\((a_n)_n \in \ell_r\setminus\ell_p\)</span>. Por ser <span class="math inline">\((x_{n_k})_k\)</span> equivalente a la base unitaria de <span class="math inline">\(\ell_r\)</span> tenemos que <span class="math inline">\(\sum a_kx_{n_k}\)</span> converge, y por tanto converge <span class="math display">\[
+T\Big(\sum a_kx_{n_k}\Big) = \sum a_kT(x_{n_k})
+\]</span> que, como es equivalente a la base unitaria de <span class="math inline">\(\ell_p\)</span> implica que <span class="math inline">\(\sum |a_k|^p\)</span> converge, lo cual es una contradicción pues <span class="math inline">\((a_k)_k \not \in \ell_p\)</span>. Por tanto, <span class="math inline">\(T\colon (\ell_r,\text{débil}) \to (\ell_p,\|\cdot\|_p)\)</span> es continua.</p>
+<p>Para la prueba del caso de <span class="math inline">\(c_0\)</span> supongamos que <span class="math inline">\(T\)</span> no es un operador compacto, en ese caso <span class="math inline">\(T(B_{c_0})\)</span> no es precompacto, es decir: existe una sucesión <span class="math inline">\((Tx_i)_i\)</span> que no tiene subsucesiones convergentes. Pero <span class="math inline">\((x_i)_i\)</span> es una sucesión acotada en <span class="math inline">\(c_0\)</span> por lo que, por el Lema <span class="quarto-unresolved-ref">?lem-c_0-wcs</span> (en el Anexo de topologías débiles), tiene una subsucesión <span class="math inline">\((x_{i_n})_n\)</span> de Cauchy en la topología débil. Si probamos que <span class="math display">\[
+T\,\colon (c_0,\text{débil})\to (\ell_p,\|\cdot\|)
+\]</span> es continua, entonces <span class="math inline">\((Tx_{i_n})_n\)</span> es una subsucesión de <span class="math inline">\((Tx_i)_i\)</span> de Cauchy y por tanto, por ser <span class="math inline">\(\ell_p\)</span> espacio de Banach, convergente, lo cual es una contradicción.</p>
+<p>Veamos que, en efecto, <span class="math inline">\(T\,\colon (c_0,\text{débil})\to (\ell_p,\|\cdot\|)\)</span> es continua, problema que se puede reducir a probar que es secuencialmente continua gracias al Lema <span class="quarto-unresolved-ref">?lem-metrizable-bola</span>.</p>
+<p>Supongamos que no sucede, que existe una sucesión <span class="math inline">\((y_n)_n\)</span> de forma que <span class="math inline">\(y_n \xrightarrow{\text{débil}}0\)</span> pero existe un <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\(\|Ty_n\|\geq \varepsilon\)</span> para todo <span class="math inline">\(n\)</span> natural —podemos suponer <span class="math inline">\(\|y_n\|=1\)</span> pues <span class="math inline">\(\varepsilon&lt;\|Ty_n\|\leq \|T\|\|y_n\|\)</span>, es decir, existe <span class="math inline">\(\displaystyle\inf_{n}\|y_n\| \not = 0\)</span> y por tanto podemos normalizar—.</p>
+<p>Por el Lema <a href="03_sucesiones_basicas-4.html#lem-principio-Bessaga" class="quarto-xref">&nbsp;<span>8.2</span></a>, como <span class="math inline">\(y_n \xrightarrow{\text{débil}}0\)</span> y <span class="math inline">\(\|y_n\|=1\)</span>, sabemos que la sucesión <span class="math inline">\((y_n)_n\)</span> tiene una subsucesión, <span class="math inline">\((y_{n_k})_k\)</span>, equivalente a una sucesión básica bloque de la base unitaria de <span class="math inline">\(c_0\)</span> (que, por el Teorema <a href="05_incomparabilidad-1.html#thm-hom-c0-ellp" class="quarto-xref">&nbsp;<span>11.2</span></a>, es equivalente a la base unitaria de <span class="math inline">\(c_0\)</span>). Como la convergencia en norma implica la convergencia débil tenemos que <span class="math display">\[
+T\colon (c_0,\text{débil}) \to (\ell_p,\text{débil})\text{ es continua y por tanto }T(y_{n_k})_k \xrightarrow{\text{débil}}0.
+\]</span> Como <span class="math inline">\(\|Ty_{n_k}\|\geq \varepsilon &gt;0\)</span> para todo <span class="math inline">\(k\)</span> natural aplicamos el Lema <a href="03_sucesiones_basicas-4.html#lem-principio-Bessaga" class="quarto-xref">&nbsp;<span>8.2</span></a> y de nuevo el Teorema <a href="05_incomparabilidad-1.html#thm-hom-c0-ellp" class="quarto-xref">&nbsp;<span>11.2</span></a> y tenemos que <span class="math inline">\((Ty_{n_k})_k\)</span> es equivalente a la base unitaria de <span class="math inline">\(c_0\)</span>.</p>
+<p>Pero llegamos a la contradicción de que la base de <span class="math inline">\(c_0\)</span> es equivalente a la de <span class="math inline">\(\ell_p\)</span>, cosa que no es posible pues, si tomamos <span class="math inline">\((\alpha_i)_i\)</span> una sucesión de <span class="math inline">\(\ell_{p+1}\setminus\ell_p\)</span> tenemos que está en <span class="math inline">\(c_0\)</span> y por tanto <span class="math inline">\(\sum \alpha_ie_i\)</span> converge, pero entonces también converge en el sentido de <span class="math inline">\(\ell_p\)</span>, cosa que no sucede por hipótesis, llegando a una contradicción.</p>
+</div>
+</div>
+</div>
+<div id="thm-incomp" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 12.2</strong></span> &nbsp;</p>
+<p>Dados <span class="math inline">\(p,q \in [1,\infty),\,p\not = q\)</span> se tiene que <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(\ell_q\)</span> no tienen subespacios de dimensión infinita isomorfos. Es decir, no existen <span class="math inline">\(Q\subset\ell_p\)</span> y <span class="math inline">\(K\subset \ell_q\)</span> de forma que <span class="math inline">\(Q \simeq K\)</span></p>
+<p>Mismo resultado se tiene con <span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(p\in [1,\infty)\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suponiendo que sí lo hiciesen existiría un isomorfísmo <span class="math display">\[f\colon K \subset \ell_p \to Q\subset \ell_q\]</span> donde <span class="math inline">\(K\)</span> y <span class="math inline">\(Q\)</span> son subespacios de dimensión infinita y <span class="math inline">\(q&lt;p\)</span>. Como <span class="math inline">\(K\)</span> es un subespacio de dimensión infinita tiene dentro una copia isomorfa a <span class="math inline">\(\ell_p\)</span> con base <span class="math inline">\((u_i)_i\)</span> (en la demostración del Teorema <a href="05_incomparabilidad-1.html#thm-pel-1" class="quarto-xref">&nbsp;<span>11.1</span></a> vemos que tienen norma <span class="math inline">\(1\)</span>). Por ser <span class="math inline">\(f\)</span> un isomorfismo tenemos que <span class="math inline">\((f(u_i))_i\)</span> es una sucesión básica equivalente a <span class="math inline">\((u_i)_i\)</span>.</p>
+<p>Si tomamos <span class="math inline">\(F\)</span> la extensión de <span class="math inline">\(f\)</span> a <span class="math inline">\(\ell_p\)</span> por el Teorema <span class="quarto-unresolved-ref">?thm-ext-hahn-Banach</span> de Hahn-Banach estamos en las hipótesis del Teorema <a href="#thm-Pitt" class="quarto-xref">&nbsp;<span>12.1</span></a> y por tanto <span class="math inline">\(F\)</span> es un operador compacto, lo que implica que, como <span class="math inline">\((u_i)_i \xrightarrow{\text{débil}}0\)</span> por construcción en la demostración del Teorema <a href="05_incomparabilidad-1.html#thm-pel-1" class="quarto-xref">&nbsp;<span>11.1</span></a>, entonces <span class="math inline">\(\|Fu_i\| = \|f(u_i)\| \xrightarrow{i\to \infty}0\)</span>. Pero <span class="math inline">\(f\)</span> es un isomorfismo, por lo que <span class="math inline">\(\|u_i\| \xrightarrow{i \to \infty}0\)</span> lo cual es una contradicción con que <span class="math inline">\(\|u_i\| =1\)</span>. La misma situación se da si en vez de <span class="math inline">\(\ell_p\)</span> tomamos <span class="math inline">\(c_0\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Lo anterior sugiere una definición más general de este fenómeno:</p>
+<div id="def-incomparabilidad" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 12.1</strong></span> &nbsp;</p>
+<p>Dados dos espacios de Banach de dimensión infinita <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> se dicen <em>totalmente incomparables</em> si no existen <span class="math inline">\(Q_1 \subset X\)</span> y <span class="math inline">\(Q_2\subset Y\)</span> subespacios de dimensión infinita isomorfos entre si.</p>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -766,10 +814,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05_incomparabilidad-1.html" class="pagination-link" aria-label="«Primalidad» de los espacios de sucesiones">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <span class="nav-page-text">Resumen</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Bibliografia.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

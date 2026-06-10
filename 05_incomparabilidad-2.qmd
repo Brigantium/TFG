@@ -1,0 +1,95 @@
+## Incomparabilidad 
+
+Demostremos ahora, por último, que estos espacios son fundamentalmente distintos entre si, no conteniendo espacios isomorfos a subespacios de cualquiera de los otros.
+
+Para ello, demostraremos primero el siguiente teorema, que nos servirá de base para el resultado del que hablamos.
+
+
+::: {#thm-Pitt}
+
+## de Pitt
+\hspace*{1mm}
+
+Dados $p,r$ de forma que $1\leq p<r<\infty$, se tiene que para todo $T\,\colon \ell_r \to \ell_p$ operador lineal acotado, $T$ también es compacto. Lo mismo se da con un operador $T\,\colon c_0 \to \ell_p$ con $p\in[1,\infty)$.
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1cm}
+
+Veamos la prueba primero para $\ell_r$. Basta con probar $T(B_{\ell_r})$ es un precompacto, es decir su clausura es compacta.
+
+Por el Teorema @thm-alaoglu de Alaoglu tenemos que $B_{\ell_r}$ es compacta con la topología débil (gracias a que $\ell_r$ es reflexivo). Si demostramos que $T\colon (\ell_r,\text{débil}) \to (\ell_p,\|\cdot\|_p)$ es continuo, entonces $T(B_{\ell_r})$ será precompacto. Por el Lema @lem-metrizable-compact sabemos que la bola unidad $B_{\ell_r}$ es metrizable, y por tanto sólo es necesario probar que $T$ es secuencialmente continua, lo que se traduce gracias a la linealidad de $T$ en que, dada una sucesión $(x_n)_n$,
+$$
+\text{si } x_n \xrightarrow{\text{débil}} 0 \text{ entonces } Tx_n \xrightarrow{\|\cdot\|} 0.
+$$
+
+Supongamos que no sucede, que existe una sucesión $(x_n)_n$ de forma que 
+$$
+x_n \xrightarrow{\text{débil}}0 \quad \text{ pero existe un } \varepsilon> 0 \text{ tal que } \|Tx_n\|\geq \varepsilon \quad \forall n \in \N
+$$ 
+---podemos suponer $\|x_n\|=1$ pues $\varepsilon<\|Tx_n\|\leq \|T\|\|x_n\|$, es decir, existe $\displaystyle\inf_{n}\|x_n\| \not = 0$ y por tanto podemos normalizar---.
+
+Por el Lema @lem-principio-Bessaga, como $x_n \xrightarrow{\text{débil}}0$ y $\|x_n\|=1$, sabemos que la sucesión $(x_n)_n$ tiene una subsucesión, $(x_{n_k})_k$, equivalente a una sucesión básica bloque de la base unitaria de $\ell_r$ (que, por el Teorema @thm-hom-c0-ellp, es equivalente a la base unitaria de $\ell_r$). Como la convergencia en norma implica la convergencia débil tenemos que $T\colon (\ell_r,\text{débil}) \to (\ell_p,\text{débil})$ es continua y por tanto 
+$$
+T(x_{n_k})_k \xrightarrow{\text{débil}}0.
+$$
+Como $\|Tx_{n_k}\|\geq \varepsilon >0$ para todo $k$ natural aplicamos el Lema @lem-principio-Bessaga y de nuevo el Teorema @thm-hom-c0-ellp y tenemos que $(Tx_{n_k})_k$ es equivalente a la base unitaria de $\ell_p$.
+
+Sea ahora una una sucesión $(a_n)_n \in \ell_r\setminus\ell_p$. Por ser $(x_{n_k})_k$ equivalente a la base unitaria de $\ell_r$ tenemos que $\sum a_kx_{n_k}$ converge, y por tanto converge 
+$$
+T\Big(\sum a_kx_{n_k}\Big) = \sum a_kT(x_{n_k})
+$$ 
+que, como es equivalente a la base unitaria de $\ell_p$ implica que $\sum |a_k|^p$ converge, lo cual es una contradicción pues $(a_k)_k \not \in \ell_p$. Por tanto, $T\colon (\ell_r,\text{débil}) \to (\ell_p,\|\cdot\|_p)$ es continua.
+
+Para la prueba del caso de $c_0$ supongamos que $T$ no es un operador compacto, en ese caso $T(B_{c_0})$ no es precompacto, es decir: existe una sucesión $(Tx_i)_i$ que no tiene subsucesiones convergentes. Pero $(x_i)_i$ es una sucesión acotada en $c_0$ por lo que, por el Lema @lem-c_0-wcs (en el Anexo de topologías débiles), tiene una subsucesión $(x_{i_n})_n$ de Cauchy en la topología débil. Si probamos que 
+$$
+T\,\colon (c_0,\text{débil})\to (\ell_p,\|\cdot\|)
+$$
+es continua, entonces $(Tx_{i_n})_n$ es una subsucesión de $(Tx_i)_i$ de Cauchy y por tanto, por ser $\ell_p$ espacio de Banach, convergente, lo cual es una contradicción.
+
+Veamos que, en efecto, $T\,\colon (c_0,\text{débil})\to (\ell_p,\|\cdot\|)$ es continua, problema que se puede reducir a probar que es secuencialmente continua gracias al Lema @lem-metrizable-bola.
+
+Supongamos que no sucede, que existe una sucesión $(y_n)_n$ de forma que $y_n \xrightarrow{\text{débil}}0$ pero existe un $\varepsilon>0$ tal que $\|Ty_n\|\geq \varepsilon$ para todo $n$ natural ---podemos suponer $\|y_n\|=1$ pues $\varepsilon<\|Ty_n\|\leq \|T\|\|y_n\|$, es decir, existe $\displaystyle\inf_{n}\|y_n\| \not = 0$ y por tanto podemos normalizar---.
+
+Por el Lema @lem-principio-Bessaga, como $y_n \xrightarrow{\text{débil}}0$ y $\|y_n\|=1$, sabemos que la sucesión $(y_n)_n$ tiene una subsucesión, $(y_{n_k})_k$, equivalente a una sucesión básica bloque de la base unitaria de $c_0$ (que, por el Teorema @thm-hom-c0-ellp, es equivalente a la base unitaria de $c_0$). Como la convergencia en norma implica la convergencia débil tenemos que 
+$$
+T\colon (c_0,\text{débil}) \to (\ell_p,\text{débil})\text{ es continua y por tanto }T(y_{n_k})_k \xrightarrow{\text{débil}}0.
+$$
+Como $\|Ty_{n_k}\|\geq \varepsilon >0$ para todo $k$ natural aplicamos el Lema @lem-principio-Bessaga y de nuevo el Teorema @thm-hom-c0-ellp y tenemos que $(Ty_{n_k})_k$ es equivalente a la base unitaria de $c_0$.
+
+Pero llegamos a la contradicción de que la base de $c_0$ es equivalente a la de $\ell_p$, cosa que no es posible pues, si tomamos $(\alpha_i)_i$ una sucesión de $\ell_{p+1}\setminus\ell_p$ tenemos que está en $c_0$ y por tanto $\sum \alpha_ie_i$ converge, pero entonces también converge en el sentido de $\ell_p$, cosa que no sucede por hipótesis, llegando a una contradicción.
+
+:::
+
+
+::: {#thm-incomp}
+\hspace*{1mm}
+
+Dados $p,q \in [1,\infty),\,p\not = q$ se tiene que $\ell_p$ y $\ell_q$ no tienen subespacios de dimensión infinita isomorfos. Es decir, no existen $Q\subset\ell_p$ y $K\subset \ell_q$ de forma que $Q \simeq K$
+
+Mismo resultado se tiene con $c_0$ y $\ell_p$ con $p\in [1,\infty)$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace{1cm}
+
+Suponiendo que sí lo hiciesen existiría un isomorfísmo $$f\colon K \subset \ell_p \to Q\subset \ell_q$$
+donde $K$ y $Q$ son subespacios de dimensión infinita y $q<p$. Como $K$ es un subespacio de dimensión infinita tiene dentro una copia isomorfa a $\ell_p$ con base $(u_i)_i$ (en la demostración del Teorema @thm-pel-1 vemos que tienen norma $1$). Por ser $f$ un isomorfismo tenemos que $(f(u_i))_i$ es una sucesión básica equivalente a $(u_i)_i$. 
+
+Si tomamos $F$ la extensión de $f$ a $\ell_p$ por el Teorema @thm-ext-hahn-Banach de Hahn-Banach estamos en las hipótesis del Teorema @thm-Pitt y por tanto $F$ es un operador compacto, lo que implica que, como $(u_i)_i \xrightarrow{\text{débil}}0$ por construcción en la demostración del Teorema @thm-pel-1, entonces $\|Fu_i\| = \|f(u_i)\| \xrightarrow{i\to \infty}0$. Pero $f$ es un isomorfismo, por lo que $\|u_i\| \xrightarrow{i \to \infty}0$ lo cual es una contradicción con que $\|u_i\| =1$. La misma situación se da si en vez de $\ell_p$ tomamos $c_0$.
+
+:::
+
+Lo anterior sugiere una definición más general de este fenómeno:
+
+::: {#def-incomparabilidad}
+\hspace*{1mm}
+Dados dos espacios de Banach de dimensión infinita $X$ e $Y$ se dicen *totalmente incomparables* si no existen $Q_1 \subset X$ y $Q_2\subset Y$ subespacios de dimensión infinita isomorfos entre si.
+
+:::

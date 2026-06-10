@@ -1,0 +1,232 @@
+# «Primalidad» de los espacios de sucesiones
+
+Como decíamos, nuestro último objetivo es emplear la teoría de las bases de Schauder para demostrar que los espacios $c_0,\, \ell_p$ y $\ell_r$ con $p\not = r$ son totalmente distintos entre si. Para ello primero debemos comenzar estudiando las estructuras internas de cada espacio. 
+
+Vamos a demostrar un teorema más general que será fundamental para esta tentativa:
+
+Sea $X$ un espacio de Banach con base de Schauder $(e_i)_i$.
+
+::: {#thm-pel-1}
+
+\hspace*{1mm}
+
+Todo subespacio $Y\subset X$ de dimensión infinita contiene un subespacio $Z\subset Y$ con base de Schauder equivalente a una sucesión básica bloque de $(e_i)_i$.
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1cm}    
+
+Emplearemos el siguiente resultado:
+
+::: {#lem-auxiliar}
+\hspace*{1mm}
+*si $W\subset X$ es un subespacio de codimensión finita (es decir, $\dim\,X/W <\infty$), entonces $W\cap Y$ es un subespacio de dimensión infinita*. 
+:::
+
+
+::: {.callout icon = "false" style = blank class="proof-callout"}
+## Demostración del Lema
+Consideremos la proyección canónica $\pi\colon X\longrightarrow X/W$, que es una aplicación lineal y sobreyectiva y satisface que ${\rm ker}\,\pi= W$. Si consideramos la restricción de $\pi$ al subespacio $Y$, esto es, $\pi|_Y\colon Y\longrightarrow X/W$, entonces ${\rm ker}\,\pi|_Y=Y \cap{\rm ker}\,\pi=Y\cap W$. Y en tal caso, por el primer teorema de isomorfía,
+$$
+Y/(Y \cap W) \simeq \pi(Y) \subset X/W.
+$$
+Y como ---por hipótesis--- ${\rm dim}\,X/W<\infty$, deducimos que ${\rm dim}\,Y/(Y\cap W)< \infty$. No obstante, por hipótesis ${\rm dim}\,Y=\infty$, luego el subespacio $Y\cap W$ no puede ser de dimensión finita.
+
+:::
+
+Consideremos ahora, para cada $p\in\mathbb{N}$, el subespacio de codimensión finita 
+$$
+W_p=\Big\{x\in X\colon x=\sum_{i=p+1}^\infty a_ie_i \Big\}=\overline{\rm span}\,\{e_i\colon i>p\}.
+$$
+Por tanto, dado que ---en virtud de lo visto al inicio de la prueba--- $W_p\cap Y$ es un subespacio vectorial de dimensión infinita, para cada $p\in\mathbb{N}$, existe algún vector unitario $y_p\in W_p$ cuya expansión como serie (empleando la base de Schauder $(e_i)_i$),
+$$
+y_p=\sum_{i=p+1}^\infty a_ie_i,
+$$
+contiene una sucesión de coeficientes $(a_i)_i$ con infinitos términos no nulos.
+
+Ahora ya estamos en condiciones de construir una sucesión básica bloque $(u_i)_i$ que sea equivalente a $(e_i)_i$ y genere un subespacio vectorial $Z$ en las condiciones del enunciado. Veamos cómo proceder.
+
+- Tomemos un vector $y_1\in S_Y$. En tal caso, puesto que $(e_i)_i$ es base de Schauder de $X$ e $y_1\in X$, existe una (única) sucesión de escalares $(a^1_i)_i$ de modo que
+$$
+y_1=\sum_{i=1}^\infty a_i^1e_i.
+$$
+Y como tal serie es convergente, existe un índice $p_1\in\mathbb{N}$ de modo que si
+$$
+u_1=\sum_{i=1}^{p_1}a_i e_i,\text{ entonces }\|y_1-u_1\|=\big\|\sum_{i=p_1+1}^{\infty} a_i^1e_i\big\|<\dfrac{1}{4\,{\rm bc}\,(e_i)_i}.
+$$
+
+- Tomemos ahora $y_2\in S_Y\cap W_{p_1}$. Nuevamente, puesto que $(e_i)_i$ es base de Schauder de $X$ e $y_2\in X$, existe una (única) sucesión de escalares $(a^2_i)_i$ de modo que
+$$
+y_2=\sum_{i=p_1+1}^\infty a_i^2e_i.
+$$
+Y como tal serie es convergente, existe un índice $p_2\in\mathbb{N}$ de modo que si
+$$
+u_2=\sum_{i=p_1+1}^{p_2}a_i e_i,\text{ entonces }\|y_2-u_2\|=\big\|\sum_{i=p_2+1}^{\infty} a_i^1e_i\big\|<\dfrac{1}{4^2\,{\rm bc}\,(e_i)_i}.
+$$
+
+- Continuando de tal modo, suponiendo que ya hemos obtenido $u_i$ para $1\leq i\leq n-1$, tomamos $y_n\in S_Y\cap W_{p_{n-1}}$ y empleamos la serie que nos proporciona la base de Schauder $(e_i)_i$ para afirmar que si
+$$
+y_n=\sum_{i=p_{n-1}+1}^\infty a_i^ne_i,
+$$
+entonces existe un índice $p_n\in\mathbb{N}$ de modo que si
+$$
+u_n=\sum_{i=p_{n-1}+1}^{p_n}a_i e_i,\text{ entonces }\|y_n-u_n\|=\big\|\sum_{i=p_n+1}^{\infty} a_i^1e_i\big\|<\dfrac{1}{4^n\,{\rm bc}\,(e_i)_i}.
+$$
+
+
+Obtenemos así una sucesión $(u_i)_i\subset Y$ que es una sucesión básica bloque a partir de $(e_i)_i$. Además, dado que
+$$
+\sum_{i=1}^\infty\|y_i-u_i\|<\sum_{i=1}^n\frac{1}{4^n\,{\rm bc}\,(e_i)_i}=\frac{1}{{\rm bc}\,(e_i)_i}\frac{1/4}{1-1/4}=\frac{1}{3\,{\rm bc}\,(e_i)_i},
+$$
+el Teorema @thm-KMR nos permite afirmar que $(y_i)_i$ e $(u_i)_i$ son sucesiones básicas equivalentes.
+
+Por tanto, basta considerar $Z=\overline{\rm span}\,\{u_i\colon i\in\mathbb{N}\}$.
+
+:::
+
+Partiendo del anterior teorema, que de por sí nos habla mucho sobre la estructura de los espacios de Banach en general, podemos empezar con nuestro objetivo de explorar el interior de los espacios de sucesiones.
+
+Sea $X$ el espacio $c_0$ (de las sucesiones convergentes a $0$) o el espacio $\ell_p$ para algún $1\leq p<\infty$.
+
+::: {#thm-hom-c0-ellp}
+\hspace*{1mm}
+
+Si $(u_i)_i$ es una sucesión básica bloque normalizada de la base de Schauder natural $(e_i)_i$ de $X$, entonces:
+
+(a) $(u_i)_i$ es equivalente a $(e_i)_i$ y $\overline{\rm span}\,\{u_i\colon i\in\mathbb{N}\}$ es isométrico a $X$;
+
+(b) existe una proyección de norma $1$ de $X$ en $\overline{\rm span}(u_i)_i$ (es decir, es complementado).
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+*Demostración de* $(a)$
+
+Supongamos inicialmente que $X=c_0$. Sea 
+$$
+u_n=\sum_{i=p_n +1}^{p_{n+1}}a_ie_i \quad \text{ con } \sup_{p_n \leq i \leq p_{n+1}}|a_i^n|=1
+$$
+(por ser $(u_i)_i$ normalizada) para cada $n\in\N$. En tal caso, para cualquier $m\in\mathbb{N}$ y cualesquiera escalares $\lambda_i$ con $1\leq i\leq m$, se tiene que
+$$
+\begin{align*}
+    \big\|\sum_{i = 1}^m\lambda_iu_i\big\|_\infty &= \big\|\sum_{i=1}^m\lambda_i\sum_{j=p_i +1}^{p_{i+1}} a_j^ie_j\big\|_\infty=\sup\big\{|a_j^i\lambda_i|\,\colon 1\leq i\leq m,\, p_i+1\leq j\leq p_{i+1}\big\}\\
+    &=\sup_{1\leq i\leq m}\;\sup_{ p_i+1\leq j\leq p_{i+1}}|\lambda_i|\,|a_j^i|=\sup_{1\leq i\leq m}|\lambda_i|=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_\infty.
+\end{align*}
+$$
+Por tanto, el resultado enunciado es consecuencia del Teorema @thm-SucBasEqu.
+
+Para $X=\ell_p$  la demostración es completamente análoga. Sea 
+$$
+u_n=\sum_{i=p_n +1}^{p_{n+1}} a_ie_i \quad \text{ con } \sum_{i=p_n+1}^{p_{n+1}}|a_i|^p=1
+$$
+(de nuevo, por ser $(u_i)_i$ normalizada) para cada $n\in N$. En tal caso,
+\begin{align*}
+    \big\|\sum_{i=1}^m\lambda_iu_i\big\|_p&=\big\|\sum_{i=1}^m\sum_{j=p_i+1}^{p_{i+1}}\lambda_i a_je_j\big\|_p=\Big(\sum_{i=1}^m\sum_{j=p_i +1}^{p_{i+1}} |\lambda_i|^p |a_j|^p\Big)^{1/p}\\
+    &=\Big(\sum_{i=1}^m|\lambda_i|^p\sum_{j=p_i +1}^{p_{i+1}}  |a_j|^p \Big)^{1/p}=\Big(\sum_{i=1}^m |\lambda_i|^p\Big)^{1/p}=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_p.
+\end{align*}
+
+*Demostración de* $(b)$
+
+Primero construimos las aplicaciones duales de la sucesión $(u_i)_i$:
+Para cada $n\in \N$ consideramos $u_n^* \in \overline{\rm span}\,\{e_i^*\colon p_{n-1}+1\leq i\leq {p_n}\}$ tal que $u_n^*(u_n)=1$ y $\|u_n^*\|= 1$ (la existencia de tal funcional está asegurada por el Teorema @thm-ext-hahn-Banach de Hahn-Banach).
+
+Conviene observar que como $u_k\in\overline{\rm span}\,\{e_i\colon  p_{k-1}+1\leq i\leq {p_k}\}$, entonces $u_n^*(u_k)=0$ si $k\neq n$. Por tanto, si definimos $P\, \colon X\longrightarrow \overline{\rm span}\,\{u_i\colon i\in \N\}$ como
+$$
+Px= \sum_{i=1}^\infty u_i^*(x)u_i,\quad\text{para cada $x\in X$,}
+$$
+obtenemos una aplicación lineal que satisface $P(X)=\overline{\rm span}\,\{u_i\colon i\in \N\}$ y $P^2=P$. Tan sólo resta ver que $\|P\|=1$.
+
+Para $X=c_0$, como $\|u_n\|=1$ para todo $n\in\N$, si $x\in c_0$ es tal que $\|x\|_\infty\leq 1$, entonces
+$$
+\begin{align*}
+    \|Px\|_\infty&=\big\|\sum_{i = 1}^\infty u_i^*(x)u_i\big\|_\infty=\big\|\sum_{i=1}^\infty u_i^*(x)\sum_{j =p_{i-1}+1}^{p_i}a_je_j\big\|_\infty\\
+    &=\sup\{|a_j|\,|u_i^*(x)|\,\colon i \in \N,\,p_{i-1}+1\leq j\leq p_{i}\}\\\\
+    &=\sup_{i \in N} |u_i^*(x)| \leq \sup_{i \in \N}\|u_i^*\|\,\|x\|_\infty=\|x\|_\infty,
+\end{align*}
+$$
+por lo que $\|P\|\leq 1$, pero como $Px=x$ para todo $x\in \overline{\rm span}\,\{u_i\colon i\in \N\}$, debe ser necesariamente $\|P\|=1$.
+
+Para $X=\ell_p$ la demostración es completamente análoga. Basta observar que como $\|u_n^\ast\|=1$ para todo $n\in \N$, si $x=(x_1,x_2,\dots)\in \ell_p$ es tal que $\|x\|_p=1$, entonces
+$$
+|u_i^*(x)|^p=\big| u_i^*\Big(\sum_{i = p_{k-1}+1}^{p_k}x_ie_i\Big)\big|^p\leq \Big(\big\|\sum_{i=p_{k-1}+1}^{p_k}x_ie_i\big\|_p\Big)^p = \sum_{i = p_{k-1}+1}^{p_k}|x_i|^p,
+$$
+por lo que
+$$
+\begin{align*}
+    \|Px\|_p&=\big\|\sum_{i = 1}^\infty u_i^*(x)u_i\big\|_p = \big\|\sum_{i = 1}^\infty u_i^*(x)\sum_{j =p_{i-1}+1}^{p_i}a_je_j\big\|_p \\
+    & = \Big(\sum_{i = 1}^\infty |u_i^*(x)|^p\sum_{j =p_{i-1}+1}^{p_i}|a_j|^p\Big)^{1/p} = \Big(\sum_{i = 1}^\infty |u_i^*(x)|^p\Big)^{1/p} \\
+    &=\Big(\sum_{i = 1}^\infty \sum_{i = p_{k-1}+1}^{p_k}|x_i|^p\Big)^{1/p}=\|x\|_p.
+\end{align*}
+$$
+:::
+
+
+::: {#cor-c0-lp-auto-cont}
+
+## Subespacios de $c_0$ o $\ell_p$ con $1\leq p<\infty$
+\hspace*{1cm}
+
+Todo subespacio de dimensión infinita $Y\subset X$ contiene un subespacio $Z$ isomorfo a $X$ y complementado en $X$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1cm}
+
+Para la demostración de este resultado no es necesario otra cosa que aplicar los dos resultados previos. Por el Teorema @thm-pel-1 tenemos que $X$ tiene un subespacio con base de Schauder equivalente a una sucesión básica bloque de la base unitaria. Normalizando dicha sucesión básica bloque y aplicando el Teorema @thm-hom-c0-ellp ya tenemos que dicho espacio es isométrico a $X$ (por $(a)$) y que es complementado (por $(b)$).
+
+:::
+
+Con el anterior teorema ya podemos vislumbrar que la naturaleza de los espacios de sucesiones es casi fractal: siempre encontraremos copias isomorfas del espacio en cualquiera de sus subespacios ---infinitos---. 
+
+El siguiente teorema tiene gran importancia para el Análisis Funcional por su demostración---aunque su enunciado también es relevante y es la principal razón por la que lo hemos incluído--- en la cual se emplea el conocido como proceso de descomposición de Pełczyński. Pero la importancia que más nos debe llamar la atención es cómo se plantea como un recíproco del anterior resultado:
+
+::: {#thm-sub-esp-comp-pelcz}
+
+## Subespacios complementados de $c_0$ o $\ell_p$ con $1\leq p<\infty$, Pełczyński
+\hspace*{1mm}
+
+Todo subespacio $Y\subset X$ complementado y de dimensión infinita es isomorfo a $X$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1cm}
+
+Si $Y\subset X$ es complementado en $X$, entonces ---por definición--- existe un subespacio $X_1\subset X$ de modo que $X\simeq Y \oplus X_1$.
+
+Por otro lado, si $Y$ es de dimensión infinita, el Corolario @cor-c0-lp-auto-cont afirma la existencia de un subespacio $Z\subset Y$ complementado en $X$ y tal que $Z \simeq X$. Sea $X_2\subset X$ el complemento de $Z$ en $X$; es decir, $X \simeq Z\oplus X_2$. En particular, restringiéndonos a $Y$, tendremos que $Y \simeq Z \oplus Y_1$.
+
+Por tanto, empleando que $X\simeq X\oplus X$ (véase el Lema @lem:X-XX), obtenemos que  
+$$
+\begin{align}
+    X\oplus Y & \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\\label{eq:5.1}
+    & \simeq (X\oplus X)\oplus Y_1 \simeq X \oplus Y_1 \simeq Z\oplus Y_1 \simeq Y
+\end{align}
+$$
+
+Por otra parte,
+$$
+X\oplus Y \simeq (Y\oplus X_1)\oplus Y \simeq X_1 \oplus Y \oplus Y \simeq X_1 \oplus Y \simeq X.
+$$ {#eq-5.2}
+
+
+Finalmente, a la vista de (@eq-5.1) y (@eq-5.2), el resultado enunciado es claro.
+
+:::
+
+Sumando el Teorema @cor-c0-lp-auto-cont y el Teorema @thm-sub-esp-compl-pelcz tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores ---o factores--- que el trivial, $1$, y él mismo, lo análogo sucede $c_0$ y $\ell_p$ con la operación de la suma directa de espacios.  
+
+

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Iker Rodriguez Rodriguez">
 
-<title>Bases de Schauder en espacios de Banach</title>
+<title>11&nbsp; «Primalidad» de los espacios de sucesiones – Bases de Schauder en espacios de Banach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./resumen.html" rel="next">
+<link href="./05_incomparabilidad-2.html" rel="next">
+<link href="./05_incomparabilidad_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Prefacio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_incomparabilidad_intro.html">Estructura de los espacios <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(c_0\)</span></a></li><li class="breadcrumb-item"><a href="./05_incomparabilidad-1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
@@ -290,7 +290,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_incomparabilidad-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./05_incomparabilidad-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></span></a>
   </div>
 </li>
@@ -313,40 +313,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_incomparabilidad_intro.html">Estructura de los espacios <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(c_0\)</span></a></li><li class="breadcrumb-item"><a href="./05_incomparabilidad-1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bases de Schauder en espacios de Banach</h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Iker Rodriguez Rodriguez </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">1 de junio de 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -356,12 +338,193 @@ window.Quarto = {
 </header>
 
 
-<section id="prefacio" class="level1 unnumbered">
-<h1 class="unnumbered">Prefacio</h1>
-<p>En lo que sigue se expondrá una versión revisada del Trabajo Fin de Grado presentado en Julio de 2025 en la Facultad de Matemáticas.</p>
+<p>Como decíamos, nuestro último objetivo es emplear la teoría de las bases de Schauder para demostrar que los espacios <span class="math inline">\(c_0,\, \ell_p\)</span> y <span class="math inline">\(\ell_r\)</span> con <span class="math inline">\(p\not = r\)</span> son totalmente distintos entre si. Para ello primero debemos comenzar estudiando las estructuras internas de cada espacio.</p>
+<p>Vamos a demostrar un teorema más general que será fundamental para esta tentativa:</p>
+<p>Sea <span class="math inline">\(X\)</span> un espacio de Banach con base de Schauder <span class="math inline">\((e_i)_i\)</span>.</p>
+<div id="thm-pel-1" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.1</strong></span> &nbsp;</p>
+<p>Todo subespacio <span class="math inline">\(Y\subset X\)</span> de dimensión infinita contiene un subespacio <span class="math inline">\(Z\subset Y\)</span> con base de Schauder equivalente a una sucesión básica bloque de <span class="math inline">\((e_i)_i\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Emplearemos el siguiente resultado:</p>
+<div id="lem-auxiliar" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema 11.1</strong></span> &nbsp;</p>
+<p><em>si <span class="math inline">\(W\subset X\)</span> es un subespacio de codimensión finita (es decir, <span class="math inline">\(\dim\,X/W &lt;\infty\)</span>), entonces <span class="math inline">\(W\cap Y\)</span> es un subespacio de dimensión infinita</em>.</p>
+</div>
+<div class="proof-callout callout callout-style-simple callout-none no-icon callout-titled" style="blank">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Demostración del Lema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consideremos la proyección canónica <span class="math inline">\(\pi\colon X\longrightarrow X/W\)</span>, que es una aplicación lineal y sobreyectiva y satisface que <span class="math inline">\({\rm ker}\,\pi= W\)</span>. Si consideramos la restricción de <span class="math inline">\(\pi\)</span> al subespacio <span class="math inline">\(Y\)</span>, esto es, <span class="math inline">\(\pi|_Y\colon Y\longrightarrow X/W\)</span>, entonces <span class="math inline">\({\rm ker}\,\pi|_Y=Y \cap{\rm ker}\,\pi=Y\cap W\)</span>. Y en tal caso, por el primer teorema de isomorfía, <span class="math display">\[
+Y/(Y \cap W) \simeq \pi(Y) \subset X/W.
+\]</span> Y como —por hipótesis— <span class="math inline">\({\rm dim}\,X/W&lt;\infty\)</span>, deducimos que <span class="math inline">\({\rm dim}\,Y/(Y\cap W)&lt; \infty\)</span>. No obstante, por hipótesis <span class="math inline">\({\rm dim}\,Y=\infty\)</span>, luego el subespacio <span class="math inline">\(Y\cap W\)</span> no puede ser de dimensión finita.</p>
+</div>
+</div>
+<p>Consideremos ahora, para cada <span class="math inline">\(p\in\mathbb{N}\)</span>, el subespacio de codimensión finita <span class="math display">\[
+W_p=\Big\{x\in X\colon x=\sum_{i=p+1}^\infty a_ie_i \Big\}=\overline{\rm span}\,\{e_i\colon i&gt;p\}.
+\]</span> Por tanto, dado que —en virtud de lo visto al inicio de la prueba— <span class="math inline">\(W_p\cap Y\)</span> es un subespacio vectorial de dimensión infinita, para cada <span class="math inline">\(p\in\mathbb{N}\)</span>, existe algún vector unitario <span class="math inline">\(y_p\in W_p\)</span> cuya expansión como serie (empleando la base de Schauder <span class="math inline">\((e_i)_i\)</span>), <span class="math display">\[
+y_p=\sum_{i=p+1}^\infty a_ie_i,
+\]</span> contiene una sucesión de coeficientes <span class="math inline">\((a_i)_i\)</span> con infinitos términos no nulos.</p>
+<p>Ahora ya estamos en condiciones de construir una sucesión básica bloque <span class="math inline">\((u_i)_i\)</span> que sea equivalente a <span class="math inline">\((e_i)_i\)</span> y genere un subespacio vectorial <span class="math inline">\(Z\)</span> en las condiciones del enunciado. Veamos cómo proceder.</p>
+<ul>
+<li><p>Tomemos un vector <span class="math inline">\(y_1\in S_Y\)</span>. En tal caso, puesto que <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\(X\)</span> e <span class="math inline">\(y_1\in X\)</span>, existe una (única) sucesión de escalares <span class="math inline">\((a^1_i)_i\)</span> de modo que <span class="math display">\[
+y_1=\sum_{i=1}^\infty a_i^1e_i.
+\]</span> Y como tal serie es convergente, existe un índice <span class="math inline">\(p_1\in\mathbb{N}\)</span> de modo que si <span class="math display">\[
+u_1=\sum_{i=1}^{p_1}a_i e_i,\text{ entonces }\|y_1-u_1\|=\big\|\sum_{i=p_1+1}^{\infty} a_i^1e_i\big\|&lt;\dfrac{1}{4\,{\rm bc}\,(e_i)_i}.
+\]</span></p></li>
+<li><p>Tomemos ahora <span class="math inline">\(y_2\in S_Y\cap W_{p_1}\)</span>. Nuevamente, puesto que <span class="math inline">\((e_i)_i\)</span> es base de Schauder de <span class="math inline">\(X\)</span> e <span class="math inline">\(y_2\in X\)</span>, existe una (única) sucesión de escalares <span class="math inline">\((a^2_i)_i\)</span> de modo que <span class="math display">\[
+y_2=\sum_{i=p_1+1}^\infty a_i^2e_i.
+\]</span> Y como tal serie es convergente, existe un índice <span class="math inline">\(p_2\in\mathbb{N}\)</span> de modo que si <span class="math display">\[
+u_2=\sum_{i=p_1+1}^{p_2}a_i e_i,\text{ entonces }\|y_2-u_2\|=\big\|\sum_{i=p_2+1}^{\infty} a_i^1e_i\big\|&lt;\dfrac{1}{4^2\,{\rm bc}\,(e_i)_i}.
+\]</span></p></li>
+<li><p>Continuando de tal modo, suponiendo que ya hemos obtenido <span class="math inline">\(u_i\)</span> para <span class="math inline">\(1\leq i\leq n-1\)</span>, tomamos <span class="math inline">\(y_n\in S_Y\cap W_{p_{n-1}}\)</span> y empleamos la serie que nos proporciona la base de Schauder <span class="math inline">\((e_i)_i\)</span> para afirmar que si <span class="math display">\[
+y_n=\sum_{i=p_{n-1}+1}^\infty a_i^ne_i,
+\]</span> entonces existe un índice <span class="math inline">\(p_n\in\mathbb{N}\)</span> de modo que si <span class="math display">\[
+u_n=\sum_{i=p_{n-1}+1}^{p_n}a_i e_i,\text{ entonces }\|y_n-u_n\|=\big\|\sum_{i=p_n+1}^{\infty} a_i^1e_i\big\|&lt;\dfrac{1}{4^n\,{\rm bc}\,(e_i)_i}.
+\]</span></p></li>
+</ul>
+<p>Obtenemos así una sucesión <span class="math inline">\((u_i)_i\subset Y\)</span> que es una sucesión básica bloque a partir de <span class="math inline">\((e_i)_i\)</span>. Además, dado que <span class="math display">\[
+\sum_{i=1}^\infty\|y_i-u_i\|&lt;\sum_{i=1}^n\frac{1}{4^n\,{\rm bc}\,(e_i)_i}=\frac{1}{{\rm bc}\,(e_i)_i}\frac{1/4}{1-1/4}=\frac{1}{3\,{\rm bc}\,(e_i)_i},
+\]</span> el Teorema <a href="03_sucesiones_basicas-3.html#thm-KMR" class="quarto-xref">&nbsp;<span>7.1</span></a> nos permite afirmar que <span class="math inline">\((y_i)_i\)</span> e <span class="math inline">\((u_i)_i\)</span> son sucesiones básicas equivalentes.</p>
+<p>Por tanto, basta considerar <span class="math inline">\(Z=\overline{\rm span}\,\{u_i\colon i\in\mathbb{N}\}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Partiendo del anterior teorema, que de por sí nos habla mucho sobre la estructura de los espacios de Banach en general, podemos empezar con nuestro objetivo de explorar el interior de los espacios de sucesiones.</p>
+<p>Sea <span class="math inline">\(X\)</span> el espacio <span class="math inline">\(c_0\)</span> (de las sucesiones convergentes a <span class="math inline">\(0\)</span>) o el espacio <span class="math inline">\(\ell_p\)</span> para algún <span class="math inline">\(1\leq p&lt;\infty\)</span>.</p>
+<div id="thm-hom-c0-ellp" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.2</strong></span> &nbsp;</p>
+<p>Si <span class="math inline">\((u_i)_i\)</span> es una sucesión básica bloque normalizada de la base de Schauder natural <span class="math inline">\((e_i)_i\)</span> de <span class="math inline">\(X\)</span>, entonces:</p>
+<ol type="a">
+<li><p><span class="math inline">\((u_i)_i\)</span> es equivalente a <span class="math inline">\((e_i)_i\)</span> y <span class="math inline">\(\overline{\rm span}\,\{u_i\colon i\in\mathbb{N}\}\)</span> es isométrico a <span class="math inline">\(X\)</span>;</p></li>
+<li><p>existe una proyección de norma <span class="math inline">\(1\)</span> de <span class="math inline">\(X\)</span> en <span class="math inline">\(\overline{\rm span}(u_i)_i\)</span> (es decir, es complementado).</p></li>
+</ol>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>Demostración de</em> <span class="math inline">\((a)\)</span></p>
+<p>Supongamos inicialmente que <span class="math inline">\(X=c_0\)</span>. Sea <span class="math display">\[
+u_n=\sum_{i=p_n +1}^{p_{n+1}}a_ie_i \quad \text{ con } \sup_{p_n \leq i \leq p_{n+1}}|a_i^n|=1
+\]</span> (por ser <span class="math inline">\((u_i)_i\)</span> normalizada) para cada <span class="math inline">\(n\in\N\)</span>. En tal caso, para cualquier <span class="math inline">\(m\in\mathbb{N}\)</span> y cualesquiera escalares <span class="math inline">\(\lambda_i\)</span> con <span class="math inline">\(1\leq i\leq m\)</span>, se tiene que <span class="math display">\[
+\begin{align*}
+    \big\|\sum_{i = 1}^m\lambda_iu_i\big\|_\infty &amp;= \big\|\sum_{i=1}^m\lambda_i\sum_{j=p_i +1}^{p_{i+1}} a_j^ie_j\big\|_\infty=\sup\big\{|a_j^i\lambda_i|\,\colon 1\leq i\leq m,\, p_i+1\leq j\leq p_{i+1}\big\}\\
+    &amp;=\sup_{1\leq i\leq m}\;\sup_{ p_i+1\leq j\leq p_{i+1}}|\lambda_i|\,|a_j^i|=\sup_{1\leq i\leq m}|\lambda_i|=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_\infty.
+\end{align*}
+\]</span> Por tanto, el resultado enunciado es consecuencia del Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a>.</p>
+<p>Para <span class="math inline">\(X=\ell_p\)</span> la demostración es completamente análoga. Sea <span class="math display">\[
+u_n=\sum_{i=p_n +1}^{p_{n+1}} a_ie_i \quad \text{ con } \sum_{i=p_n+1}^{p_{n+1}}|a_i|^p=1
+\]</span> (de nuevo, por ser <span class="math inline">\((u_i)_i\)</span> normalizada) para cada <span class="math inline">\(n\in N\)</span>. En tal caso, <span class="math display">\[\begin{align*}
+    \big\|\sum_{i=1}^m\lambda_iu_i\big\|_p&amp;=\big\|\sum_{i=1}^m\sum_{j=p_i+1}^{p_{i+1}}\lambda_i a_je_j\big\|_p=\Big(\sum_{i=1}^m\sum_{j=p_i +1}^{p_{i+1}} |\lambda_i|^p |a_j|^p\Big)^{1/p}\\
+    &amp;=\Big(\sum_{i=1}^m|\lambda_i|^p\sum_{j=p_i +1}^{p_{i+1}}  |a_j|^p \Big)^{1/p}=\Big(\sum_{i=1}^m |\lambda_i|^p\Big)^{1/p}=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_p.
+\end{align*}\]</span></p>
+<p><em>Demostración de</em> <span class="math inline">\((b)\)</span></p>
+<p>Primero construimos las aplicaciones duales de la sucesión <span class="math inline">\((u_i)_i\)</span>: Para cada <span class="math inline">\(n\in \N\)</span> consideramos <span class="math inline">\(u_n^* \in \overline{\rm span}\,\{e_i^*\colon p_{n-1}+1\leq i\leq {p_n}\}\)</span> tal que <span class="math inline">\(u_n^*(u_n)=1\)</span> y <span class="math inline">\(\|u_n^*\|= 1\)</span> (la existencia de tal funcional está asegurada por el Teorema <span class="quarto-unresolved-ref">?thm-ext-hahn-Banach</span> de Hahn-Banach).</p>
+<p>Conviene observar que como <span class="math inline">\(u_k\in\overline{\rm span}\,\{e_i\colon  p_{k-1}+1\leq i\leq {p_k}\}\)</span>, entonces <span class="math inline">\(u_n^*(u_k)=0\)</span> si <span class="math inline">\(k\neq n\)</span>. Por tanto, si definimos <span class="math inline">\(P\, \colon X\longrightarrow \overline{\rm span}\,\{u_i\colon i\in \N\}\)</span> como <span class="math display">\[
+Px= \sum_{i=1}^\infty u_i^*(x)u_i,\quad\text{para cada $x\in X$,}
+\]</span> obtenemos una aplicación lineal que satisface <span class="math inline">\(P(X)=\overline{\rm span}\,\{u_i\colon i\in \N\}\)</span> y <span class="math inline">\(P^2=P\)</span>. Tan sólo resta ver que <span class="math inline">\(\|P\|=1\)</span>.</p>
+<p>Para <span class="math inline">\(X=c_0\)</span>, como <span class="math inline">\(\|u_n\|=1\)</span> para todo <span class="math inline">\(n\in\N\)</span>, si <span class="math inline">\(x\in c_0\)</span> es tal que <span class="math inline">\(\|x\|_\infty\leq 1\)</span>, entonces <span class="math display">\[
+\begin{align*}
+    \|Px\|_\infty&amp;=\big\|\sum_{i = 1}^\infty u_i^*(x)u_i\big\|_\infty=\big\|\sum_{i=1}^\infty u_i^*(x)\sum_{j =p_{i-1}+1}^{p_i}a_je_j\big\|_\infty\\
+    &amp;=\sup\{|a_j|\,|u_i^*(x)|\,\colon i \in \N,\,p_{i-1}+1\leq j\leq p_{i}\}\\\\
+    &amp;=\sup_{i \in N} |u_i^*(x)| \leq \sup_{i \in \N}\|u_i^*\|\,\|x\|_\infty=\|x\|_\infty,
+\end{align*}
+\]</span> por lo que <span class="math inline">\(\|P\|\leq 1\)</span>, pero como <span class="math inline">\(Px=x\)</span> para todo <span class="math inline">\(x\in \overline{\rm span}\,\{u_i\colon i\in \N\}\)</span>, debe ser necesariamente <span class="math inline">\(\|P\|=1\)</span>.</p>
+<p>Para <span class="math inline">\(X=\ell_p\)</span> la demostración es completamente análoga. Basta observar que como <span class="math inline">\(\|u_n^\ast\|=1\)</span> para todo <span class="math inline">\(n\in \N\)</span>, si <span class="math inline">\(x=(x_1,x_2,\dots)\in \ell_p\)</span> es tal que <span class="math inline">\(\|x\|_p=1\)</span>, entonces <span class="math display">\[
+|u_i^*(x)|^p=\big| u_i^*\Big(\sum_{i = p_{k-1}+1}^{p_k}x_ie_i\Big)\big|^p\leq \Big(\big\|\sum_{i=p_{k-1}+1}^{p_k}x_ie_i\big\|_p\Big)^p = \sum_{i = p_{k-1}+1}^{p_k}|x_i|^p,
+\]</span> por lo que <span class="math display">\[
+\begin{align*}
+    \|Px\|_p&amp;=\big\|\sum_{i = 1}^\infty u_i^*(x)u_i\big\|_p = \big\|\sum_{i = 1}^\infty u_i^*(x)\sum_{j =p_{i-1}+1}^{p_i}a_je_j\big\|_p \\
+    &amp; = \Big(\sum_{i = 1}^\infty |u_i^*(x)|^p\sum_{j =p_{i-1}+1}^{p_i}|a_j|^p\Big)^{1/p} = \Big(\sum_{i = 1}^\infty |u_i^*(x)|^p\Big)^{1/p} \\
+    &amp;=\Big(\sum_{i = 1}^\infty \sum_{i = p_{k-1}+1}^{p_k}|x_i|^p\Big)^{1/p}=\|x\|_p.
+\end{align*}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="cor-c0-lp-auto-cont" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 11.1 (Subespacios de <span class="math inline">\(c_0\)</span> o <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>)</strong></span> &nbsp;</p>
+<p>Todo subespacio de dimensión infinita <span class="math inline">\(Y\subset X\)</span> contiene un subespacio <span class="math inline">\(Z\)</span> isomorfo a <span class="math inline">\(X\)</span> y complementado en <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para la demostración de este resultado no es necesario otra cosa que aplicar los dos resultados previos. Por el Teorema <a href="#thm-pel-1" class="quarto-xref">&nbsp;<span>11.1</span></a> tenemos que <span class="math inline">\(X\)</span> tiene un subespacio con base de Schauder equivalente a una sucesión básica bloque de la base unitaria. Normalizando dicha sucesión básica bloque y aplicando el Teorema <a href="#thm-hom-c0-ellp" class="quarto-xref">&nbsp;<span>11.2</span></a> ya tenemos que dicho espacio es isométrico a <span class="math inline">\(X\)</span> (por <span class="math inline">\((a)\)</span>) y que es complementado (por <span class="math inline">\((b)\)</span>).</p>
+</div>
+</div>
+</div>
+<p>Con el anterior teorema ya podemos vislumbrar que la naturaleza de los espacios de sucesiones es casi fractal: siempre encontraremos copias isomorfas del espacio en cualquiera de sus subespacios —infinitos—.</p>
+<p>El siguiente teorema tiene gran importancia para el Análisis Funcional por su demostración—aunque su enunciado también es relevante y es la principal razón por la que lo hemos incluído— en la cual se emplea el conocido como proceso de descomposición de Pełczyński. Pero la importancia que más nos debe llamar la atención es cómo se plantea como un recíproco del anterior resultado:</p>
+<div id="thm-sub-esp-comp-pelcz" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.3 (Subespacios complementados de <span class="math inline">\(c_0\)</span> o <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(1\leq p&lt;\infty\)</span>, Pełczyński)</strong></span> &nbsp;</p>
+<p>Todo subespacio <span class="math inline">\(Y\subset X\)</span> complementado y de dimensión infinita es isomorfo a <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(Y\subset X\)</span> es complementado en <span class="math inline">\(X\)</span>, entonces —por definición— existe un subespacio <span class="math inline">\(X_1\subset X\)</span> de modo que <span class="math inline">\(X\simeq Y \oplus X_1\)</span>.</p>
+<p>Por otro lado, si <span class="math inline">\(Y\)</span> es de dimensión infinita, el Corolario <a href="#cor-c0-lp-auto-cont" class="quarto-xref">Corolario&nbsp;<span>11.1</span></a> afirma la existencia de un subespacio <span class="math inline">\(Z\subset Y\)</span> complementado en <span class="math inline">\(X\)</span> y tal que <span class="math inline">\(Z \simeq X\)</span>. Sea <span class="math inline">\(X_2\subset X\)</span> el complemento de <span class="math inline">\(Z\)</span> en <span class="math inline">\(X\)</span>; es decir, <span class="math inline">\(X \simeq Z\oplus X_2\)</span>. En particular, restringiéndonos a <span class="math inline">\(Y\)</span>, tendremos que <span class="math inline">\(Y \simeq Z \oplus Y_1\)</span>.</p>
+<p>Por tanto, empleando que <span class="math inline">\(X\simeq X\oplus X\)</span> (véase el Lema <span class="citation" data-cites="lem:X-XX"><a href="Bibliografia.html#ref-lem:X-XX" role="doc-biblioref"><strong>lem:X-XX?</strong></a></span>), obtenemos que<br>
+<span class="math display">\[
+\begin{align}
+    X\oplus Y &amp; \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\\label{eq:5.1}
+    &amp; \simeq (X\oplus X)\oplus Y_1 \simeq X \oplus Y_1 \simeq Z\oplus Y_1 \simeq Y
+\end{align}
+\]</span></p>
+<p>Por otra parte, <span id="eq-5.2"><span class="math display">\[
+X\oplus Y \simeq (Y\oplus X_1)\oplus Y \simeq X_1 \oplus Y \oplus Y \simeq X_1 \oplus Y \simeq X.
+\tag{11.1}\]</span></span></p>
+<p>Finalmente, a la vista de (<span class="quarto-unresolved-ref">?eq-5.1</span>) y (<a href="#eq-5.2" class="quarto-xref"><span>11.1</span></a>), el resultado enunciado es claro.</p>
+</div>
+</div>
+</div>
+<p>Sumando el Teorema <a href="#cor-c0-lp-auto-cont" class="quarto-xref">Corolario&nbsp;<span>11.1</span></a> y el Teorema <span class="quarto-unresolved-ref">?thm-sub-esp-compl-pelcz</span> tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores —o factores— que el trivial, <span class="math inline">\(1\)</span>, y él mismo, lo análogo sucede <span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_p\)</span> con la operación de la suma directa de espacios.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -766,10 +929,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05_incomparabilidad_intro.html" class="pagination-link" aria-label="Estructura de los espacios $\ell_p$ y $c_0$">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estructura de los espacios <span class="math inline">\(\ell_p\)</span> y <span class="math inline">\(c_0\)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resumen.html" class="pagination-link" aria-label="Resumen">
-        <span class="nav-page-text">Resumen</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_incomparabilidad-2.html" class="pagination-link" aria-label="Incomparabilidad">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
