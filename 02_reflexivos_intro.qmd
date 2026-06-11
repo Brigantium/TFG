@@ -1,4 +1,4 @@
-# Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*
+# Capítulo 2: Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete* {#cap-2}
 
 <br>
 

@@ -45,7 +45,7 @@ $$
 
 Hay que resaltar que la topología débil$^*$ no es más que la topología débil en el dual pero restringiendo los funcionales de su dual, $X^{**}$, que empleamos para construir los abiertos básicos sólo a las evaluaciones.
 
-## Resultados relevantes
+## Resultados relevantes {.unnumbered}
 
 Estas topologías siguen guardando una relación entre ellas y con la topología de la norma, como podemos ver en el siguiente teorema:
 
