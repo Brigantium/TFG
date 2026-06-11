@@ -1,7 +1,7 @@
 
-## Espacios de sucesiones {#sec-ejemplo_sucesiones}
+# Espacios de sucesiones {#sec-ejemplo_sucesiones}
 
-### Espacios $\ell_p$
+## Espacios $\ell_p$
 
 Para $1\leq p<\infty$, el espacio de sucesiones $\ell_p=\big\{x=(x_i)_i \colon \sum|x_i|^p<\infty\big\}$ dotado de la norma 
 $$
@@ -52,7 +52,7 @@ por lo que $x=(a_1,a_2,a_3,\dots)$ es un vector del espacio $\ell_p$.
 
 :::
 
-### Espacio $c_0$ {#sec-c_0}
+## Espacio $c_0$ {#sec-c_0}
 
 El espacio $c_0$ formado por todas las sucesiones convergentes a $0$ dotado de la norma
 $$
