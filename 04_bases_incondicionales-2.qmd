@@ -1,6 +1,6 @@
 ## Espacios de Banach reflexivos con base de Schauder incondicional
 
-$c_0$ y $\ell_1$ son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de $\ell_1$ y bounedly complete en el caso de $c_0$--- remitimos al lector al Capítulo @sec-ejemplos para las pruebas---. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:
+$c_0$ y $\ell_1$ son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de $\ell_1$ y bounedly complete en el caso de $c_0$--- remitimos al lector a la Sección @sec-c_0 para las pruebas---. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:
 
 
 ::: {#thm-c-0-bc}
@@ -60,7 +60,7 @@ $$
     &\leq \|(\lambda_i)\|_\infty K\big\|\sum_{i=1}^mu_i\big\|\leq \|(\lambda_i)\|_\infty\,K^2,
 \end{align*}
 $$
-donde en la segunda línea hemos empleado que $\|f\|=1$ y en la tercera línea hemos invocado el carácter incondicional de $(e_i)_i$ (más exactamente el Teorema @thm:eqv-sbi $(c)$) y (@eq-4.6).
+donde en la segunda línea hemos empleado que $\|f\|=1$ y en la tercera línea hemos invocado el carácter incondicional de $(e_i)_i$ (más exactamente el Teorema @thm-eqv-sbi $(c)$) y (@eq-4.6).
 
 Así pues, tenemos que 
 $$

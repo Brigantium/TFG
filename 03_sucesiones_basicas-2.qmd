@@ -104,7 +104,7 @@ Veamos que $T$ es un isomorfismo entre $\overline{\rm span}\,\{e_i\colon i\in\ma
     ergo el grafo de $T$ es cerrado.
   :::
 
-Finalmente, dado que $T$ es continua y sobreyectiva, el Teorema @thm-ApAbierta de la aplicación abierta asegura que $T$ es un isomorfismo.
+Finalmente, dado que $T$ es continua y sobreyectiva, el Teorema @thm-ap-abierta de la aplicación abierta asegura que $T$ es un isomorfismo.
     
 $(b)\Longrightarrow(c)$
 

@@ -111,3 +111,9 @@
 
 
 
+.quarto-float-itm, 
+.quarto-float-itm .quarto-float-content {
+  display: contents;
+}
+
+

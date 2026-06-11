@@ -322,12 +322,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -369,9 +427,9 @@ window.Quarto = {
 \]</span></p></li>
 </ol>
 </div>
-<p>El lector encontrará en la Capítulo <span class="quarto-unresolved-ref">?sec-ejemplos</span>, más exactamente en la sección dedicada a espacios de sucesiones, algunos ejemplos de bases que cumplen y no cumplen estas propiedades.</p>
+<p>El lector encontrará en la Sección <a href="06_ejemplos-2.html" class="quarto-xref"><span>Capítulo 14</span></a> algunos ejemplos en los espacios de sucesiones de bases que cumplen y no cumplen estas propiedades.</p>
 <p>La idea detrás de la primera definición, base <em>shrinking</em>, es la de restringirnos a aquellas bases que cumplen el objetivo que mencionábamos antes de la Proposición <a href="02_reflexivos-1.html#prp-SpanBaseDual" class="quarto-xref">&nbsp;<span>3.1</span></a>. Si la base es <em>shrinking</em>, el espacio dual está generado por las aplicaciones de asignación de coeficientes —los funcionales biortogonales— y por tanto, la topología débil del espacio puede ser estudiada restringiéndonos a dichos funcionales—cosa que, como veremos más adelante, será fundamental—.</p>
-<p>Por otro lado el segundo adjetivo que definimos es algo más sutil. Tal vez el lector vea su significado más claro si revisa el ejemplo de <span class="math inline">\(c_0\)</span> (véase el ejemplo <span class="quarto-unresolved-ref">?sec-c_0</span>), que no verifica esta propiedad, pero para no extendernos demasiado podemos resumirlo diciendo que si una serie tiene norma acotada, entonces dicha serie debe converger a un elemento del espacio.</p>
+<p>Por otro lado el segundo adjetivo que definimos es algo más sutil. Tal vez el lector vea su significado más claro si revisa el ejemplo de <span class="math inline">\(c_0\)</span> (véase el ejemplo <a href="06_ejemplos-2.html#sec-c_0" class="quarto-xref"><span> 14.0.2</span></a>), que no verifica esta propiedad, pero para no extendernos demasiado podemos resumirlo diciendo que si una serie tiene norma acotada, entonces dicha serie debe converger a un elemento del espacio.</p>
 <p>Veamos al fin el resultado que nos permite alcanzar el primero de nuestros objetivos: una caracterización del carácter reflexivo de un espacio en base a las propiedades de cualquiera de sus bases de Schauder.</p>
 <p>El siguiente resultado fue publicado originalmente en <span class="citation" data-cites="BasesJames"><a href="Bibliografia.html#ref-BasesJames" role="doc-biblioref">[1]</a></span> por el matemático estadounidense Robert Clarke James en 1950.</p>
 <div id="thm-James1" class="theorem">
@@ -397,7 +455,7 @@ window.Quarto = {
 P_n^*f=\sum_{i=1}^n{f(e_i)e_i^*}\to f\quad\text{cuando $n\to\infty$ en $(X^\ast,\text{débil}^\ast)$}.
 \]</span></p>
 <p>Por tanto, también se tiene que <span class="math inline">\(P_n^\ast f\to f\)</span> en <span class="math inline">\((X^\ast,\text{débil})\)</span>, de donde deducimos que todo funcional de <span class="math inline">\(X^\ast\)</span> es un elemento de la clausura en <span class="math inline">\((X^\ast,\text{débil})\)</span> de <span class="math inline">\({\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span>.</p>
-<p>No obstante, por el Teorema <span class="quarto-unresolved-ref">?thm-mazur</span> de Mazur, al ser <span class="math inline">\({\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span> un conjunto convexo, su clausura en <span class="math inline">\((X^\ast,\text{débil})\)</span> coincide con su clausura en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>; luego, <span class="math inline">\(\overline{{\rm span}}\,\{e_i^*\colon i\in\mathbb{N}\}=X^\ast\)</span>, por lo que queda probado el carácter <em>shrinking</em> de <span class="math inline">\((e_i)_i\)</span>.</p>
+<p>No obstante, por el Teorema <a href="10_topologia_debil.html#thm-mazur" class="quarto-xref">&nbsp;<span>A.2</span></a> de Mazur, al ser <span class="math inline">\({\rm span}\,\{e_i^*\colon i\in\mathbb{N}\}\)</span> un conjunto convexo, su clausura en <span class="math inline">\((X^\ast,\text{débil})\)</span> coincide con su clausura en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>; luego, <span class="math inline">\(\overline{{\rm span}}\,\{e_i^*\colon i\in\mathbb{N}\}=X^\ast\)</span>, por lo que queda probado el carácter <em>shrinking</em> de <span class="math inline">\((e_i)_i\)</span>.</p>
 </div>
 <p>Veamos ahora que <span class="math inline">\((e_i)_i\)</span> es <em>bonudedly complete</em>.</p>
 <div style="margin-left: 2em">
@@ -407,14 +465,14 @@ P_n^*f=\sum_{i=1}^n{f(e_i)e_i^*}\to f\quad\text{cuando $n\to\infty$ en $(X^\ast,
 <p>Y sea, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math display">\[
 x_n=\sum_{i=1}^n a_ie_i\in X.
 \]</span></p>
-<p>En tal caso, <span class="math inline">\((x_n)_n\)</span> es una sucesión acotada en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>, por lo que —al ser <span class="math inline">\(X\)</span> reflexivo, por el { Teorema <span class="quarto-unresolved-ref">?thm-alaoglu</span> de Alaoglu}— existe una subsucesión <span class="math inline">\((x_{n_k})_k\subset(x_n)_n\)</span> convergente en <span class="math inline">\((X,\text{débil})\)</span>; sea <span class="math inline">\(x\in X\)</span> tal límite débil.</p>
+<p>En tal caso, <span class="math inline">\((x_n)_n\)</span> es una sucesión acotada en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>, por lo que —al ser <span class="math inline">\(X\)</span> reflexivo, por el { Teorema <a href="10_topologia_debil.html#thm-alaoglu" class="quarto-xref">&nbsp;<span>A.3</span></a> de Alaoglu}— existe una subsucesión <span class="math inline">\((x_{n_k})_k\subset(x_n)_n\)</span> convergente en <span class="math inline">\((X,\text{débil})\)</span>; sea <span class="math inline">\(x\in X\)</span> tal límite débil.</p>
 <p>Ahora bien, fijado un índice <span class="math inline">\(i\in\mathbb{N}\)</span> arbitrario, se tiene que <span class="math inline">\(e_i^\ast(x_n)=a_i\)</span> para todo <span class="math inline">\(n\geq i\)</span>, por lo que <span class="math inline">\(e_i^\ast (x)=a_i\)</span>. Por tanto, invocando la unicidad de la expansión que proporciona la base de Schauder, concluimos finalmente que <span class="math display">\[
 x=\sum_{i=1}^\infty a_i e_i,
 \]</span></p>
 <p>por lo que la serie es convergente en <span class="math inline">\((X,\|\!\cdot\!\|)\)</span>, quedando probado así que <span class="math inline">\((e_i)_i\)</span> es <em>boundedly complete</em>.</p>
 </div>
 <p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
-<p>Sabemos que un espacio de Banach es reflexivo si y sólo si su bola unidad es débilmente compacta. Probaremos que <span class="math inline">\(X\)</span> satisface tal propiedad. No obstante, en virtud del Teorema <span class="quarto-unresolved-ref">?thm-EberleinSmulyan</span>} de Eberlein-Smulyan, basta ver que <span class="math inline">\(B_X\)</span> es secuencialmente compacto en <span class="math inline">\((X, \text{débil})\)</span>.</p>
+<p>Sabemos que un espacio de Banach es reflexivo si y sólo si su bola unidad es débilmente compacta. Probaremos que <span class="math inline">\(X\)</span> satisface tal propiedad. No obstante, en virtud del Teorema <a href="10_topologia_debil.html#thm-eberlein-smulian" class="quarto-xref">&nbsp;<span>A.4</span></a> de Eberlein-Smulyan, basta ver que <span class="math inline">\(B_X\)</span> es secuencialmente compacto en <span class="math inline">\((X, \text{débil})\)</span>.</p>
 <p>Sea pues <span class="math inline">\((x_n)_n\subset B_X\)</span> una sucesión arbitraria.</p>
 <p>Para cualquier índice <span class="math inline">\(i\in\mathbb{N}\)</span> se tiene que, por ser <span class="math inline">\(e_i^*\)</span> una aplicación lineal y continua, <span class="math inline">\((e_i^*(x_n))_n\)</span> es una sucesión acotada en el cuerpo de escalares <span class="math inline">\((\mathbb{K},|\!\cdot\!|)\)</span>, por lo que admite una subsucesión convergente. Así pues, empleando el argumento diagonal de Cantor, es posible extraer un subsucesión <span class="math inline">\((x_{n_k})_k\subset (x_n)_n\)</span> de modo que <span class="math inline">\((e_i^\ast(x_{n_k}))_k\)</span> es convergente para todo <span class="math inline">\(i\in\mathbb{N}\)</span>. Supongamos por comodidad que <span class="math inline">\((x_{n_k})_k\equiv(x_n)_n\)</span> y sea, para cada <span class="math inline">\(i\in\mathbb{N}\)</span>, <span class="math display">\[
 a_i:=\lim_{n\to\infty}e_i^\ast(x_n).

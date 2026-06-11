@@ -20,7 +20,7 @@ $$
 
 :::
 
-Como dijimos, se puede intuir que existen casos en los que la reordenación de los vectores de la base no convergen, y esto lo podemos ver en el espacio $c_0$ con la conocida como *base sumante* ---que el lector puede ver al final de la Sección @sec-c_0---. Por tanto, es necesario hacer una distinción entre bases que al reordenar siguen convergiendo y bases que no. Es así como surge de forma natural la siguiente definición:
+Como dijimos, se puede intuir que existen casos en los que la reordenación de los vectores de la base no convergen, y esto lo podemos ver en el espacio $c_0$ con la conocida como *base sumante* ---que el lector puede ver revisar en la [Sección de Ejemplos](06_ejemplos-2.html#c_0-base-sumante)---. Por tanto, es necesario hacer una distinción entre bases que al reordenar siguen convergiendo y bases que no. Es así como surge de forma natural la siguiente definición:
 
 ::: {#def-bsi}
 
@@ -209,7 +209,7 @@ Conviene observar que, bajo la hipótesis $(b)$, la sucesión $(e_i)_i$ es una s
 $$
 \big\|\sum_{i=1}^n a_ie_i\big\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K \big\|\sum_{i=1}^m a_ie_i\big\|.
 $$
-Por tanto, en virtud del Teorema @thm-SucBasica, $(e_i)_i$ es una sucesión básica.
+Por tanto, en virtud del Teorema @thm-suc-basica, $(e_i)_i$ es una sucesión básica.
 
 Veamos ahora el carácter incondicional de $(e_i)_i$. Sea $(a_i)_i$ una sucesión de escalares tal que
 $$

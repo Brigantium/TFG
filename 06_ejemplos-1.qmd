@@ -1,0 +1,22 @@
+## Ejemplos elementales
+
+### Espacios de dimensión finita
+
+Si $X$ es un espacio vectorial de dimensión $n\in\mathbb{N}$, toda base de Hamel de $X$ es una base de Schauder de $X$.
+
+En efecto, pues una base de Hammel de $X$ es un conjunto de vectores $\{e_i\,\colon 1\leq i\leq n \}$ linealmente independientes cuyas combinaciones lineales generan el espacio $X$. Por tanto, todo vector $x \in X$ puede expresarse como
+$$
+x=\sum_{i=1}^n a_ie_i,
+$$
+donde los $a_i$ son escalares biunívocamente determinados por $x$.
+
+### Espacios de Hilbert
+
+Toda base de Hilbert $(e_i)_i$ de un espacio de Hilbert $H$ (separable) es una base de Schauder de $H$. En efecto, pues si $(e_i)_i$ es base de Hilbert de $H$, entonces ---de *Análisis funcional en espacios de Hilbert*--- sabemos que todo vector $x\in H$ coincide con su serie de Fourier; esto es, 
+$$
+x = \sum_{i = 1}^\infty \langle x, e_i\rangle e_i\quad\text{para todo $x\in H$.}
+$$
+
+Tenemos por tanto una sucesión $(e_i)_i\subset H$ de modo que $H=\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}$ con coeficientes (o coordenadas) únicos.
+
+

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Espacios de sucesiones – Bases de Schauder en espacios de Banach</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06_ejemplos-3.html" rel="next">
+<link href="./06_ejemplos-1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      // Comandos simples (Conjuntos numéricos)
+      N: '{\\mathbb{N}}',
+      R: '{\\mathbb{R}}',
+      C: '{\\mathbb{C}}',
+      Q: '{\\mathbb{Q}}',
+      K: '{\\mathbb{K}}',
+      
+      // Comando personalizado para la triple barra de norma ||| x |||
+      vertiii: ['{\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert}', 1]
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_ejemplos_intro.html">Ejemplos de bases de Schauder</a></li><li class="breadcrumb-item"><a href="./06_ejemplos-2.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Bases de Schauder en espacios de Banach</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resumen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resumen</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01_Conceptos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Conceptos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios vectoriales normados.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Conceptos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02_reflexivos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_reflexivos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_reflexivos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03_sucesiones_basicas_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sucesiones básicas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Perturbación de sucesiones básicas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04_bases_incondicionales_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder y espacios reflexivos II. Bases incondicionales</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_bases_incondicionales-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bases de Schauder incondicionales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_bases_incondicionales-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./05_incomparabilidad_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructura de los espacios $\ell_p$ y $c_0$</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_incomparabilidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_incomparabilidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#espacios-ell_p" id="toc-espacios-ell_p" class="nav-link active" data-scroll-target="#espacios-ell_p"><span class="header-section-number">14.0.1</span> Espacios <span class="math inline">\(\ell_p\)</span></a></li>
+  <li><a href="#sec-c_0" id="toc-sec-c_0" class="nav-link" data-scroll-target="#sec-c_0"><span class="header-section-number">14.0.2</span> Espacio <span class="math inline">\(c_0\)</span></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_ejemplos_intro.html">Ejemplos de bases de Schauder</a></li><li class="breadcrumb-item"><a href="./06_ejemplos-2.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ejemplo_sucesiones" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="espacios-ell_p" class="level3" data-number="14.0.1">
+<h3 data-number="14.0.1" class="anchored" data-anchor-id="espacios-ell_p"><span class="header-section-number">14.0.1</span> Espacios <span class="math inline">\(\ell_p\)</span></h3>
+<p>Para <span class="math inline">\(1\leq p&lt;\infty\)</span>, el espacio de sucesiones <span class="math inline">\(\ell_p=\big\{x=(x_i)_i \colon \sum|x_i|^p&lt;\infty\big\}\)</span> dotado de la norma <span class="math display">\[
+\|x\|_p=\Big(\sum_{i=1}^p|x_i|^p\Big)^{1/p}\quad\text{para cada $x=(x_i)_i\in\ell_p$,}
+\]</span> admite como base de Schauder natural la sucesión (de sucesiones) <span class="math inline">\((e_i)_i\subset \ell_p\)</span> dada, para cada <span class="math inline">\(i\in\mathbb{N}\)</span>, por <span class="math display">\[
+e_i= (0,\dots,0,\underset{\text{posición $i$}}{0,0,1,0,0},\dots).
+\]</span></p>
+<p>A continuación intentaremos dar una justificación detallada.</p>
+<p>Dada una sucesión arbitraria <span class="math inline">\(x=(x_1,x_2,x_3,\dots)\in\ell_p\)</span>, puesto que <span class="math inline">\(\sum|x_i|^p\)</span> es convergente, dado <span class="math inline">\(\varepsilon &gt;0\)</span> existe <span class="math inline">\(N_\varepsilon\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(n&gt;N_\varepsilon\)</span>, entonces <span class="math display">\[
+\sum_{i=n+1}^\infty |x_i|^p&lt;\varepsilon.
+\]</span> Así pues, como la desigualdad anterior es válida para todo <span class="math inline">\(\varepsilon&gt;0\)</span>, <span id="eq-6.2"><span class="math display">\[
+\lim_{n\to\infty}\big\|\sum_{i=1}^n x_ie_i-x\big\|_p=\lim_{n \to \infty}\|(0,\dots,0,x_{n+1},x_{n+2},\dots)\|_p=\lim_{n\to\infty}\sum_{i=n+1}^\infty|x_i|^p=0.
+\tag{14.1}\]</span></span> Por tanto, si para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, consideramos <span class="math display">\[
+x_n=\sum_{i=1}^n x_ie_i,
+\]</span> entonces es evidente que <span class="math inline">\(x_n\in{\rm span}\,\{e_i\colon \in\mathbb{N}\}\)</span> y —a la vista de (<a href="#eq-6.2" class="quarto-xref"><span>14.1</span></a>)— <span class="math inline">\(\|x_n-x\|_p\to 0\)</span> cuando <span class="math inline">\(n\to\infty\)</span>.</p>
+<p>La unicidad de los coeficientes <span class="math inline">\(x_i\)</span> es prácticamente evidente. Si para una misma sucesión de <span class="math inline">\(\ell_p\)</span> tenemos dos sucesiones de coeficientes <span class="math inline">\((x_i)_i\)</span> e <span class="math inline">\((y_i)_i\)</span>, entonces para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se tendrá que <span class="math display">\[
+|x_n-y_n|^p \leq \sum_{n=1}^\infty|x_n-y_n|^p=\lim_{n\to\infty}\big\|\sum_{i =1}^n{x_ie_i}-\sum_{i=1}^n{y_ie_i}\big\|_p=0,
+\]</span> por lo que debe ser <span class="math inline">\(x_n=y_n\)</span> para todo <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<div id="cnj-ellp" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Observación 14.1</strong></span> &nbsp;</p>
+<ol type="a">
+<li><p>Para <span class="math inline">\(1&lt;p&lt;\infty\)</span>, la base natural <span class="math inline">\((e_i)_i\)</span> del espacio <span class="math inline">\(\ell_p\)</span> es shrinking, pues la sucesión de funcionales biortogonales coincide con <span class="math inline">\((e_i)_i\)</span>, que es base de Schauder del espacio dual <span class="math inline">\(\ell_p^\ast=\ell_q\)</span>, siendo <span class="math inline">\(1/p+1/q=1\)</span>. { Tenemos que resaltar que <span class="math inline">\(\ell_1\)</span> no puede tener una base shrinking pues su espacio dual, <span class="math inline">\(\ell_\infty\)</span>, es no separable.}</p></li>
+<li><p>Para <span class="math inline">\(1\leq p&lt;\infty\)</span>, la base natural <span class="math inline">\((e_i)_i\)</span> del espacio <span class="math inline">\(\ell_p\)</span> es boundedly complete, pues si <span class="math inline">\((a_i)_i\)</span> es una sucesión de escalares para la que <span class="math display">\[
+\sup_{n\in \N}\big\|\sum_{i=1}^n{a_ie_i}\big\|&lt;\infty,
+\]</span> entonces <span class="math display">\[
+\sup_{n\in \N}\big\|\sum_{i=1}^n{a_ie_i}\big\|=\sup_{n\in\N}\sum_{i=1}^n{|a_i|^p}=\lim_{n\to\infty}\sum_{i=1}^n{|a_i|^p}=\sum_{i =1}^\infty{|a_i|^p}&lt;\infty,
+\]</span> por lo que <span class="math inline">\(x=(a_1,a_2,a_3,\dots)\)</span> es un vector del espacio <span class="math inline">\(\ell_p\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="sec-c_0" class="level3" data-number="14.0.2">
+<h3 data-number="14.0.2" class="anchored" data-anchor-id="sec-c_0"><span class="header-section-number">14.0.2</span> Espacio <span class="math inline">\(c_0\)</span></h3>
+<p>El espacio <span class="math inline">\(c_0\)</span> formado por todas las sucesiones convergentes a <span class="math inline">\(0\)</span> dotado de la norma <span class="math display">\[
+\|(x_1,x_2,x_3,\dots,x_n,\dots)\|_\infty=\sup_{n\in\N}|x_n|\quad\text{para cada $x=(x_i)_i\in C_0$}
+\]</span> admite como base de Schauder natural la sucesión (de sucesiones) <span class="math inline">\((e_i)_i\subset \ell_p\)</span> dada, para cada <span class="math inline">\(i\in\mathbb{N}\)</span>, por <span class="math display">\[
+e_i= (0,\dots,0,\underset{\text{posición $i$}}{0,0,1,0,0},\dots).
+\]</span></p>
+<p>A continuación intentaremos dar una justificación detallada.</p>
+<p>Dado una sucesión arbitraria <span class="math inline">\(x=(x_1,x_2,x_3,\dots)\in c_0\)</span>, puesto que <span class="math inline">\(x_n\to 0\)</span>, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(N_\varepsilon\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(n&gt;N_\varepsilon\)</span>, entonces <span class="math inline">\(|x_n|&lt;\varepsilon\)</span>. Así pues, tenemos que, <span id="eq-6.3"><span class="math display">\[
+\lim_{n\to\infty}\big\|\sum_{i=1}^nx_ie_i-x\|_\infty=\lim_{n\to\infty}\|(0,\dots,0,x_{n+1},x_{n+2},\dots)\|_\infty=\lim_{n\to\infty}\sup_{i&gt;n}|x_i|=0.
+\tag{14.2}\]</span></span> Por tanto, si para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, consideramos <span class="math display">\[
+x_n=\sum_{i=1}^n x_ie_i,
+\]</span> entonces es evidente que <span class="math inline">\(x_n\in{\rm span}\,\{e_i\colon \in\mathbb{N}\}\)</span> y —a la vista de (<a href="#eq-6.3" class="quarto-xref"><span>14.2</span></a>)— <span class="math inline">\(\|x_n-x\|_p\to 0\)</span> cuando <span class="math inline">\(n\to\infty\)</span>.</p>
+<p>La unicidad de los coeficientes <span class="math inline">\(x_i\)</span> es prácticamente evidente. Si para una misma sucesión de <span class="math inline">\(c_0\)</span> tenemos dos sucesiones de coeficientes <span class="math inline">\((x_i)_i\)</span> e <span class="math inline">\((y_i)_i\)</span>, entonces para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se tendrá que <span class="math display">\[
+\begin{align*}
+0 &amp;=\lim_{n\to\infty}\big\|\sum_{i=1}^nx_ie_i-\sum_{i=1}^ny_ie_i\|\\
+&amp;=\lim_{n\to infty}{\|(x_1-y_1, x_2- y_2, x_3-y_3, \dots, x_n - y_n,0,\dots)\|_{\infty}}=\lim_{n \to \infty}{\sup_{i&lt;n}|x_i-y_i|}
+\end{align*}
+\]</span> por lo que debe ser <span class="math inline">\(x_n=y_n\)</span> para todo <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<div id="cnj-c0" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Observación 14.2</strong></span> &nbsp;</p>
+<ol type="a">
+<li><p>La base natural de <span class="math inline">\(c_0\)</span> no es boundedly complete. En efecto, pues sí consideramos, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, la sucesión de escalares <span class="math inline">\((a_n)_n\)</span> dada por <span class="math inline">\(a_n=1\)</span> para todo <span class="math inline">\(n\in\mathbb{N}\)</span>, entonce se tiene que <span class="math display">\[
+\sup_{n\in\mathbb{N}}\big\|\sum_{i=1}^n a_i e_i\big\|_\infty=\|(1,1,\dots,1,0,0,\dots)\|_\infty,
+\]</span> pero <span class="math display">\[
+\sum_{i=1}^\infty a_i e_i=(1,1,\dots,1,1,\dots)\notin c_0.
+\]</span></p></li>
+<li><p>La base natural de <span class="math inline">\(c_0\)</span> sí es shrinking, pues el dual de <span class="math inline">\(c_0\)</span> es <span class="math inline">\(\ell_1\)</span> y los funcionales biortogonales de la base natural <span class="math inline">\((e_i)_i\)</span> son los mismos vectores unitarios.</p></li>
+</ol>
+<div id="c_0-base-sumante">
+<ol start="3" type="a">
+<li><p>La anterior es una base natural de <span class="math inline">\(c_0\)</span> pero hay otras bases también como la conocida como <strong><em>base sumante</em></strong>: <span class="math display">\[
+f_n = \sum_{i = 1}^ne_i \quad \text{para todo $n$ natural.}
+\]</span> Sus funcionales biortogonales son <span class="math display">\[
+f_n^* = e_n^* - e_{n+1}^\ast
+\]</span> de forma que valen <span class="math inline">\(0\)</span> para todos los <span class="math inline">\(f_i\)</span> con <span class="math inline">\(i&lt;n\)</span>, para <span class="math inline">\(i = n\)</span> entonces <span class="math inline">\(f_n^*(f_n) = 1\)</span> y para <span class="math inline">\(i&gt;n\)</span> <span class="math display">\[
+f_n(f_i) = e_n^*(f_i) - e_{n+1}^*(f_i) = e_n^*\Big(\sum_{k=1}^i e_k\Big) - e_{n+1}^*\Big(\sum_{k = 1}^i e_k\Big) = 1-1 = 0
+\]</span> Por tanto, dado <span class="math inline">\(x = (x_n)_n\)</span> de <span class="math inline">\(c_0\)</span> tenemos, tomando como <span class="math inline">\(f_0 = 0\)</span>, que <span class="math display">\[
+\begin{align*}
+\big\|x -  \sum_{i = 1}^nf_i^*(x)f_i\big\| &amp; = \big\|x - \sum_{i = 1}^n(x_i - x_{i+1})f_i\big\| = \big\|x-  \sum_{i = 1}^nx_{i}f_{i} - \sum_{i = 2}^{n+1} x_{i}f_{i-1}\big\| \\
+&amp;= \big\| \sum_{i = 1}^\infty x_ie_i-  \sum_{i = 1}^nx_i(f_i - f_{i-1}) + x_{n+1}f_{n}\big\| \\
+&amp;= \big\|\sum_{i = n+1}^\infty x_ie_i + x_{n+1}f_n\big\|\\
+&amp; \leq \big\|\sum_{i = n+1}^\infty x_ie_i\big\| + \|f_n\||x_{n+1}| \xrightarrow{n \to \infty}0
+\end{align*}
+\]</span> quedando demostrado que la base sumante es base de <span class="math inline">\(c_0\)</span>.</p>
+<p>Además, dicha base no es incondicional:</p>
+<p>Solo es necesario recordar por el Lema <a href="11_resultados_auxiliares.html#lem-incondicional-epsilon" class="quarto-xref">&nbsp;<span>B.3</span></a> que <span class="math inline">\(\sum\frac{(-1)^n}{n}f_n\)</span>, que es serie convergente, converge incondicionalmente si lo hace <span class="math inline">\(\sum \frac{1}{n}f_n\)</span>. Pero es obvio ver que la segunda serie no puede converger pues <span class="math display">\[
+e_1^*\Big(\sum_{i = 1}^m \frac{1}{n}f_n\Big) = e_1^*\Big(\sum_{i = 1}^m \frac{1}{n}\sum_{k = 1}^ie_k\Big) = \sum_{i = 1}^m\frac{1}{n} \quad \text{ no convergente.}
+\]</span> y como la serie no converge en <span class="math inline">\((c_0,\text{ débil})\)</span> no puede hacerlo en norma por el Teorema <a href="10_topologia_debil.html#thm-implicaciones-topologias" class="quarto-xref">&nbsp;<span>A.1</span></a>.</p>
+<p>Por tanto, es evidente que ambas bases —la unitaria y la sumante— no son equivalentes entre sí.</p></li>
+</ol>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06_ejemplos-1.html" class="pagination-link" aria-label="Ejemplos elementales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06_ejemplos-3.html" class="pagination-link" aria-label="Espacios de funciones">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -41,14 +41,16 @@ es un isomorfismo. En tal caso, si demostramos que $(x_i)_i$ es una sucesión b�
     para $n$, $m\in\mathbb{N}$ arbitrarios, tenemos que
     $$
     \begin{align*}
-        \big\|\sum_{i=n}^ma_ix_i\big\|&=\big\|\sum_{i=n}^ma_ix_i-\sum_{i=n}^ma_ie_i+\sum_{i=n}^ma_ie_i\big\|\leq\big\|\sum_{i=n}^ma_i(x_i-e_i)\big\|+ \big\|\sum_{i=n}^ma_ie_i\big\|\\ 
-        &= \big\|\sum_{i = n}^me_i^*(x)(x_i-e_i)\big\|+\big\|\sum_{i=n}^ma_ie_i\big\| \leq \sum_{i = n}^m\|e_i^*\|\|x\|\|x_i-e_i\|+\big\|\sum_{i = n}^ma_ie_i\big\| \\
+        \big\|\sum_{i=n}^ma_ix_i\big\|&=\big\|\sum_{i=n}^ma_ix_i-\sum_{i=n}^ma_ie_i+\sum_{i=n}^ma_ie_i\big\|\\
+        &\leq\big\|\sum_{i=n}^ma_i(x_i-e_i)\big\|+ \big\|\sum_{i=n}^ma_ie_i\big\|\\ 
+        &= \big\|\sum_{i = n}^me_i^*(x)(x_i-e_i)\big\|+\big\|\sum_{i=n}^ma_ie_i\big\| \\
+        &\leq \sum_{i = n}^m\|e_i^*\|\|x\|\|x_i-e_i\|+\big\|\sum_{i = n}^ma_ie_i\big\| \\
         & \leq 2K\,\|x\|\sum_{i =n}^m\frac{\|e_i-x_i\|}{\|e_i\|}+\big\|\sum_{i = n}^ma_ie_i\big\|.
     \end{align*}
     $$
     Ahora bien, como las series que aparecen en (@eq-3.2) y (@eq-3.3) son convergentes, dado $\varepsilon >0$ existen $N_1$, $N_2\in\mathbb{N}$ de modo que
     $$
-    \big\|\sum_{i = p}^qx_ie_i\big\|<\dfrac{\varepsilon}{2}\quad\text{si $p$, $q\geq N_1$}\qquad \text{ y }\qquad\sum_{j=k}^l\frac{\|e_j-x_j\|}{\|e_j\|}<\dfrac{\varepsilon}{4K\|x\|}\quad\text{si $k$, $l\geq N_2$.}
+    \big\|\sum_{i = p}^qx_ie_i\big\|<\dfrac{\varepsilon}{2}\quad\text{si $p$, $q\geq N_1$}\quad \text{ y }\quad\sum_{j=k}^l\frac{\|e_j-x_j\|}{\|e_j\|}<\dfrac{\varepsilon}{4K\|x\|}\quad\text{si $k$, $l\geq N_2$.}
     $$
     Por tanto, si $n$, $m\geq \max\{N_1,N_2\}$, entonces
     $$
@@ -72,11 +74,13 @@ es un isomorfismo. En tal caso, si demostramos que $(x_i)_i$ es una sucesión b�
     tenemos que
     $$
     \begin{align}
-        \|Tx\|&=\|Tx-x+x\|\leq\|Tx-x\|+\|x\|\leq\big\|T\Big(\sum_{i=1}^\infty a_ie_i\Big)-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|\\\label{eq:3.4}
-        &=\big\|\sum_{i=1}^\infty a_ix_i-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|=\big\|\sum_{i=1}^\infty e_i^*(x)(e_i-x_i)\big\|+\|x\|\\
+        \|Tx\|&=\|Tx-x+x\|\leq\|Tx-x\|+\|x\|\\
+        &\leq\big\|T\Big(\sum_{i=1}^\infty a_ie_i\Big)-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|\\
+        &=\big\|\sum_{i=1}^\infty a_ix_i-\sum_{i=1}^\infty a_ie_i\big\|+\|x\|\\
+        &=\big\|\sum_{i=1}^\infty e_i^*(x)(e_i-x_i)\big\|+\|x\|\\
         & \leq 2K\|x\|\sum_{i=1}^\infty \frac{\|e_i-x_i\|}{\|e_i\|}+\|x\|<2\|x\|.
     \end{align}
-    $$
+    $$ {#eq-3.4}
     Por tanto, $T$ es una aplicación continua.
   :::
 
@@ -107,7 +111,9 @@ Dado que hemos empleado el Teorema @thm-SucBasEqu, es necesario justificar que $
 (a) Dado que $T$ es un isomorfismo y $\dim\,{\rm span}\{e_i\colon i \in \N\}=n$ tenemos que 
 $$
 \begin{align*}
-\dim\, \hat{P}_n(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}) &= \dim TP_nT^{-1}(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}) = \dim\, TP_n(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}) \\&= \dim T({\rm span}\{e_i\colon i \in \{1,\dots,n\}\}) = n
+\dim\, \hat{P}_n(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\}) &= \dim TP_nT^{-1}(\overline{\rm span}\,\{x_i\colon i\in\mathbb{N}\})\\
+& = \dim\, TP_n(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}) \\
+&= \dim T({\rm span}\{e_i\colon i \in \{1,\dots,n\}\}) = n
 \end{align*}
 $$
 
@@ -138,7 +144,7 @@ En las condiciones del Teorema @thm-KMR anterior, si $(e_i)_i$ es base de Schaud
 
 Teniendo en cuenta todo lo anterior, basta ver que $T(X)=X$.
 
-Si $T(X)\subsetneq X$, dado que $T(X)$ es en cualquier caso un subespacio cerrado de $X$, podríamos invocar el Lema @lm-riesz (de elementos casi ortogonales) de Riesz para afirmar la existencia de un vector $x\in X$ tal que
+Si $T(X)\subsetneq X$, dado que $T(X)$ es en cualquier caso un subespacio cerrado de $X$, podríamos invocar el Lema @lem-riesz (de elementos casi ortogonales) de Riesz para afirmar la existencia de un vector $x\in X$ tal que
 $$
 \|x\|=1\quad\text{ y }\quad1>\text{dist}\,(x,T(X))>2K\sum_{i=1}^\infty\frac{\|x_i-e_i\|}{\|e_i\|},
 $$

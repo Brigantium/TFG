@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Apéndice B — Resultados auxiliares – Bases de Schauder en espacios de Banach</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./12_teoremas_relevantes.html" rel="next">
+<link href="./10_topologia_debil.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      // Comandos simples (Conjuntos numéricos)
+      N: '{\\mathbb{N}}',
+      R: '{\\mathbb{R}}',
+      C: '{\\mathbb{C}}',
+      Q: '{\\mathbb{Q}}',
+      K: '{\\mathbb{K}}',
+      
+      // Comando personalizado para la triple barra de norma ||| x |||
+      vertiii: ['{\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert}', 1]
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_topologia_debil.html">Apéndices</a></li><li class="breadcrumb-item"><a href="./11_resultados_auxiliares.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Bases de Schauder en espacios de Banach</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resumen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resumen</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01_Conceptos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Conceptos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios vectoriales normados.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Conceptos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bases de Schauder en espacios de Banach</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02_reflexivos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder y espacios reflexivos I. Bases *shrinking* y *boundedly complete*</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_reflexivos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funcionales biortogonales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_reflexivos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03_sucesiones_basicas_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sucesiones básicas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sucesiones básicas: Definición</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sucesiones básicas equivalentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Perturbación de sucesiones básicas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sucesiones_basicas-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sucesión básica bloque</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04_bases_incondicionales_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Schauder y espacios reflexivos II. Bases incondicionales</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_bases_incondicionales-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bases de Schauder incondicionales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_bases_incondicionales-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Espacios de Banach reflexivos con base de Schauder incondicional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./05_incomparabilidad_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructura de los espacios $\ell_p$ y $c_0$</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_incomparabilidad-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">«Primalidad» de los espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_incomparabilidad-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Incomparabilidad</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_topologia_debil.html">Apéndices</a></li><li class="breadcrumb-item"><a href="./11_resultados_auxiliares.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Apéndice B — Resultados auxiliares</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- % Improtante recordar citar el libro de donde saco estes ejercicios. -->
+<div id="lem-incondicionalidad-reordenacion" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema B.1</strong></span> &nbsp;</p>
+<p>Sea <span class="math inline">\(\sum{x_i}\)</span> una serie en un espacio de Banach <span class="math inline">\(X\)</span> y <span class="math inline">\(x \in X\)</span>. Son equivalentes:</p>
+<ol type="i">
+<li><p>Para todo <span class="math inline">\(\varepsilon &gt; 0\)</span> existe un conjunto finito <span class="math inline">\(F \subset \mathbb{N}\)</span> tal que <span class="math display">\[
+\big\| x - \displaystyle \sum_{i \in F'}{x_i} \big\| &lt; \varepsilon
+\]</span> para cualquier <span class="math inline">\(F'\)</span> conjunto finito de <span class="math inline">\(\mathbb{N}\)</span> tal que <span class="math inline">\(F \subset F'\)</span>;</p></li>
+<li><p>si <span class="math inline">\(\pi\)</span> es una permutación de <span class="math inline">\(\mathbb{N}\)</span> entonces <span class="math display">\[
+    \sum {x_{\pi(i)}}=x.
+    \]</span></p></li>
+</ol>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\((i) \Longrightarrow (ii)\)</span></p>
+<p>Se verá que <span class="math inline">\(F\)</span> está contenido en el subconjunto de las permutaciones de los primeros <span class="math inline">\(m\)</span> números naturales y, aplicando la hipótesis tomando por <span class="math inline">\(F'\)</span> ese subconjunto, se tendrá el resultado.</p>
+<p>Sea <span class="math inline">\(\varepsilon &gt;0\)</span> fijado y considérese el conjunto <span class="math inline">\(F \subset \mathbb{N}\)</span> como el que verifica la hipótesis. Como <span class="math inline">\(\pi\)</span> es una permutación de <span class="math inline">\(\mathbb{N}\)</span>, y por tanto una biyección, y <span class="math inline">\(F\)</span> es un subconjunto finito de <span class="math inline">\(\mathbb{N}\)</span> se tiene que para cada <span class="math inline">\(n \in F\)</span> existe un <span class="math inline">\(m\)</span> tal que <span class="math inline">\(\pi(m) = n\)</span>, y como <span class="math inline">\(F\)</span> es finito existe un cierto <span class="math inline">\(n_0 \in \mathbb{N}\)</span>, que puede ser el máximo de los <span class="math inline">\(m\)</span>, tal que <span class="math inline">\(F \subset \{ \pi(1), \pi(2),\ldots, \pi(n_0) \}\)</span>. Por la hipótesis, se tiene que <span class="math display">\[
+\big\| x -  \sum_{i=1}^{n}{x_{\pi(i)}} \big\| &lt; \varepsilon.
+\]</span></p>
+<p><span class="math inline">\((ii) \Longrightarrow (i)\)</span></p>
+<p>Suponiendo que no sucede <span class="math inline">\((ii)\)</span> pero si <span class="math inline">\((i)\)</span>, se construirá una sucesión de conjuntos finitos <span class="math inline">\(F_k\)</span> para los cuales la suma de sus elementos sea siempre mayor a un cierto valor, después se escogerá una permutación que deja dichos conjuntos fijos fijos y se verá que la serie asociada a esa permutación no converge.</p>
+<p>Por reducción al absurdo, supóngase que existe un <span class="math inline">\(\varepsilon &gt; 0\)</span> para el cual todo conjunto finito <span class="math inline">\(F\)</span> verifica que existe un <span class="math inline">\(F' \supset F\)</span> tal que<br>
+<span class="math display">\[
+\big\| x -  \sum_{i \in F'}{x_i} \big\| &gt; \varepsilon.
+\]</span></p>
+<p>Por hipótesis, y como la identidad es una permutación de <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\sum{x_i} = x\)</span> y por tanto para todo <span class="math inline">\(k \in \mathbb{N}\)</span> existe un <span class="math inline">\(n'_k\)</span> tal que <span class="math display">\[
+\big\| \displaystyle \sum_{i=1}^{n'_k}{x_i} - x \big\| &lt; \frac{1}{k}.
+\]</span></p>
+<p>Sea ahora, para <span class="math inline">\(k = 1\)</span> un subconjunto <span class="math inline">\(F' \subset \mathbb{N}\)</span> que contiene a <span class="math inline">\(\{1,\ldots, n'_1\}\)</span> y que verifica que <span class="math display">\[
+\big\| x - \displaystyle \sum_{i \in F'}{x_i} \big\| &gt; \varepsilon
+\]</span> —y que existe por la hipóteis de reducción al absurdo—. Sea ahora <span class="math inline">\(F_1 = F' \cap \mathbb{N} \backslash \{1, \ldots, n'_0\}\)</span>, <span class="math inline">\(n_1 = n'_1\)</span> y <span class="math inline">\(n_2 = \max\{n'_2, \max(F_1) +1\}\)</span>, así se tiene que <span class="math display">\[
+n_{2} &gt;  \max{F_1} \geq \min{F_1} &gt; n_1.
+\]</span></p>
+<p>Aplicando inducción, se construyen todos los conjuntos <span class="math inline">\(F_k\)</span> y los naturales <span class="math inline">\(n_k\)</span> verificando que <span class="math inline">\(n_{k+1} &gt; \max F_k \geq \min F_k &gt; n_k\)</span> y <span class="math display">\[
+\big\| \sum_{i \in F'}{x_i} - x \big\| = \big\|  \sum_{i=1}^{n_k}{x_i} +  \sum_{i \in F_k}{x_k} - x\big\| &gt; \varepsilon.
+\]</span> Por tanto <span class="math display">\[
+\varepsilon &lt; \big\|\sum_{i=1}^{n_k}{x_i} + \sum_{i \in F_k}{x_i} - x \big\| \leq \big\|  \sum_{i=1}^{n_k}{x_i}  - x\big\| + \big\| \sum_{i \in F_k}{x_i} \big\| &lt; \frac{1}{k} + \big\|  \sum_{i\in F_k}{x_i} \big\|.
+\]</span></p>
+<p>Con <span class="math inline">\(k\)</span> suficientemente grande se tiene que <span class="math inline">\(\big\| \displaystyle \sum_{i \in F_k}{x_i} \big\| &gt; \tilde\varepsilon\)</span> para cierto <span class="math inline">\(\tilde \varepsilon &gt;0\)</span></p>
+<p>Tomando la permutación <span class="math inline">\(\pi\)</span> que deja fijos los elementos de <span class="math inline">\(F_k\)</span> se tiene que, para <span class="math inline">\(k\)</span> suficientemente grande <span class="math display">\[
+\varepsilon &lt; \big\|  \sum_{i=1}^{n_k}{x_{\pi(i)}} + \sum_{i \in F_k}{x_i} - x \big\| \geq   \big\| \sum_{i \in F_k}{x_i} \big\| - \big\| \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\| &gt; \tilde\varepsilon -  \big\|  \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\|.
+\]</span> Lo cual es una contradicción, pues suponiendo que la serie <span class="math inline">\(\sum{x_{\pi(i)}}\)</span> converge entonces el término <span class="math inline">\(\big\| \displaystyle \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\|\)</span> tiende a 0, pero entonces <span class="math display">\[
+\big\| \sum_{i=1}^{n_k}{x_{\pi(i)}} + \sum_{i \in F_k}{x_i} - x \big\| \not\longrightarrow 0
+\]</span> contradiciendo la hipótesis de partida.</p>
+</div>
+</div>
+</div>
+<p>Sea <span class="math inline">\((X,\|\cdot\|)\)</span> un espacio de Banach.</p>
+<div id="lem-incon-cauchy" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema B.2</strong></span> &nbsp;</p>
+<p>Una serie <span class="math inline">\(\sum{x_i}\)</span> es incondicionalmente convergente si y solo si es incondicionalmente de Cauchy, i.e., si dado <span class="math inline">\(\varepsilon &gt; 0\)</span> existe un subconjunto finito <span class="math inline">\(F\)</span> de <span class="math inline">\(\mathbb{N}\)</span> tal que <span class="math display">\[
+\big\| \sum_{i \in F'}{x_i} \big\|&lt; \varepsilon
+\]</span> para cualquier <span class="math inline">\(F'\)</span> conjunto finito disjunto de <span class="math inline">\(F\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Primero es necesario ver que una serie incondicionalmente de Cauchy es una serie de Cauchy.</p>
+<p>Fijado <span class="math inline">\(\varepsilon &gt;0\)</span> y con <span class="math inline">\(F\)</span> un conjunto finito dado por la definición de incondicionalmente de Cauchy basta tomar <span class="math inline">\(N = \max F\)</span> con lo que tiene que para todo par <span class="math inline">\(p,q &gt; N\)</span>, <span class="math display">\[
+\big\| \sum_{i=1}^{p}{x_i} - \sum_{i=1}^{q}{x_i}  \big\| = \big\| \sum_{i=p}^{q}{x_i} \big\| &lt; \varepsilon,
+\]</span> tomando como <span class="math inline">\(F' =\{p,\ldots, q\}\)</span>, el cual es disjunto de <span class="math inline">\(F\)</span>. Y por tanto, se cumple la definición de serie de Cauchy.</p>
+<p>Como estamos en un espacio completo, por ser <span class="math inline">\(X\)</span> de Banach, se tiene que existe un cierto <span class="math inline">\(x \in X\)</span> tal que <span class="math inline">\(x = \sum{x_i}\)</span>.</p>
+<p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
+<p>Fijado un <span class="math inline">\(\varepsilon &gt; 0\)</span>, por ser condicionalmente de Cauchy se tiene que existe un <span class="math inline">\(F^*\)</span> subconjunto finito de <span class="math inline">\(\mathbb{N}\)</span> tal que para todo <span class="math inline">\(F'\)</span> subconjunto finito disjunto de <span class="math inline">\(F^*\)</span> se tiene que <span class="math display">\[
+\big\| \displaystyle \sum_{i \in F'}{x_i} \big\| &lt; \varepsilon.
+\]</span> Por la convergencia de la serie se tiene que existe un cierto <span class="math inline">\(N_1\)</span> natural para el cual, dado un <span class="math inline">\(n&gt;N_1\)</span>, <span class="math display">\[
+\big\| \sum_{i=1}^{n}{x_i} - x \big\| &lt; \varepsilon.
+\]</span></p>
+<p>Si se toma <span class="math inline">\(n_0 = \max \{ \max F^*, N_1\}\)</span> y <span class="math inline">\(F= \{1, \ldots, n_0\}\)</span> se tiene que, para cualquier <span class="math inline">\(F' \supset F\)</span><br>
+<span class="math display">\[
+\big\| \sum_{i \in F'}{x_i} - x \big\| = \big\| \sum_{i=1}^{n_0}{x_i} + \sum_{i \in F', i &gt; n_0}{x_i} - x\big\| \leq \big\| \sum_{i=1}^{n_0}{x_i} -x\big\| + \big\| \sum_{i \in F', i &gt; n_0}{x_i}\big\| &lt; \varepsilon + \varepsilon = 2\varepsilon
+\]</span></p>
+<p>Y por tanto se tiene la convergencia incondicional.</p>
+<p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
+<p>Fijado <span class="math inline">\(\varepsilon &gt;0\)</span>, por la convergencia incondicional se tiene que existe <span class="math inline">\(F\)</span> conjunto finito de <span class="math inline">\(\mathbb{N}\)</span> de forma que dado un conjunto finito <span class="math inline">\(F' \supset F\)</span> se tiene que <span class="math display">\[
+\big\| \sum_{i \in F'}{x_i} - x \big\| &lt; \varepsilon
+\]</span></p>
+<p>de la misma forma, por la convergencia de la serie se tiene que existe un cierto <span class="math inline">\(N_1\)</span> natural para el cual, dado un <span class="math inline">\(n&gt;N_1\)</span> <span class="math display">\[
+\big\| \sum_{i=1}^{n}{x_i} - x \big\| &lt; \varepsilon.
+\]</span> Si se toma <span class="math inline">\(n_0 = \max \{ \max F, N_1\}\)</span>, dado un conjunto finito <span class="math inline">\(F'\)</span> disjunto de <span class="math inline">\(F\)</span> se tiene que <span class="math inline">\(F \subset F' \cup \{1, \ldots, n_0\}\)</span> y por tanto <span class="math display">\[
+\big\| \sum_{i\in F'}{x_i} \big\| = \big\| \sum_{i \in F'}{x_i} + \sum_{i=1}^{n_0}{x_i} - x + x - \sum_{i=1}^{n_0}{x_i} \big\| \leq \big\| \sum_{i \in F' \cup \{1,\ldots,n_0\}}{x_i}  - x \big\| + \big\| x - \sum_{i=1}^{n_0}{x_i} \big\| &lt; \varepsilon + \varepsilon = 2\varepsilon
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="lem-incondicional-epsilon" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema B.3</strong></span> Una serie <span class="math inline">\(\sum{x_i}\)</span> converge incondicionalmente si y solo si converge <span class="math inline">\(\sum{\varepsilon_i x_i}\)</span> con cualquier elección de <span class="math inline">\((\varepsilon_i )_i= (\pm1)_i\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
+<p>Probemos que <span class="math inline">\(\sum \varepsilon_ix_i\)</span> es de Cauchy y, por ser <span class="math inline">\(X\)</span> un espacio completo, convergente.</p>
+<p>Por ser <span class="math inline">\(\sum x_i\)</span> incondicionalmente convergente, por el Lema <a href="#lem-incon-cauchy" class="quarto-xref">&nbsp;<span>B.2</span></a>, fijado <span class="math inline">\(\varepsilon &gt; 0\)</span>, existe un conjunto <span class="math inline">\(F\)</span> finito de <span class="math inline">\(\mathbb{N}\)</span> tal que para cualquier <span class="math inline">\(F'\)</span> disjunto de F que verifica <span class="math display">\[
+\big\|  \sum_{i \in F'}{x_{i}}  \big\| &lt; \varepsilon.
+\]</span> Sea <span class="math inline">\(n_{0} &gt; \max F\)</span>, dados <span class="math inline">\(n,m &gt; n_{0}\)</span>, se tiene que <span class="math inline">\(\{i \in \mathbb{N} : \varepsilon_{i} = 1, m&gt; i &gt; n \} \cap F = \emptyset\)</span> y <span class="math inline">\(\{ i \in \mathbb{N} : \varepsilon_{i} = -1, m&gt;i&gt;n \}  \cap F = \emptyset\)</span>, por tanto: <span class="math display">\[
+\big\|  \sum_{i=n}^{m}{\varepsilon_{i}x_{i}}  \big\| \leq \big\|  \sum_{n \leq i \leq m, \varepsilon_{i}=1}{x_{i}}  \big\|\big\| \sum_{n \leq i \leq m, \varepsilon_{i}=-1}{- x_{i}}  \big\| &lt; \varepsilon + \varepsilon = 2\varepsilon,
+\]</span> y por tanto la serie converge.</p>
+<p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
+<p>Suponiendo que <span class="math inline">\(\sum{x_{i}}\)</span> no es incondicionalmente de Cauchy, entonces existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que para cualquier subconjunto de <span class="math inline">\(\mathbb{N}\)</span> finito <span class="math inline">\(F\)</span> existe otro conjunto finito <span class="math inline">\(F'\)</span> disjunto de <span class="math inline">\(F\)</span> que verifica <span class="math display">\[
+\big\|  \sum_{i \in F'}{x_{i}}  \big\| &gt; \varepsilon.
+\]</span> En particular, si se toma <span class="math inline">\(F^{*} = \{ 1 \}\)</span> finito, existe <span class="math inline">\(F_{1}\)</span> disjunto tal que <span class="math inline">\(\big\| \displaystyle \sum_{i \in F_{1}}{x_{i}}  \big\| &gt; \varepsilon\)</span>. Si ahora se toma <span class="math inline">\(F^{*} = \{ 1, \dots, \max F_{1} \}\)</span> finito se tiene que existe un <span class="math inline">\(F_{2}\)</span> disjunto de <span class="math inline">\(F^*\)</span> verificando que <span class="math display">\[
+\big\|  \displaystyle \sum_{i \in F_{2}}{x_{i}}  \big\| &gt; \varepsilon
+\]</span> y que <span class="math inline">\(\min F_{2} &gt; \max F_{1}\)</span>.</p>
+<p>Por recurrencia se definen todos los <span class="math inline">\(F_{k}\)</span> con <span class="math inline">\(k\)</span> natural de forma que <span class="math inline">\(\big\|  \displaystyle \sum_{i \in F_{k}}{x_{i}}  \big\| &gt; \varepsilon\)</span> y que <span class="math inline">\(\min F_{k+1} &gt; \max F_{k}\)</span>.</p>
+<p>Se definen ahora los conjuntos <span class="math inline">\(E_{k} = \{ \min F_{k}, \dots, \max F_{k} \}\)</span> para todo <span class="math inline">\(k\)</span> natural y los valores <span class="math inline">\(v_i\)</span> como</p>
+<ul>
+<li><p><span class="math inline">\(v_{i} = 1\)</span> si <span class="math inline">\(i \in \bigcup F_{k}\)</span>,</p></li>
+<li><p><span class="math inline">\(v_{i}= -1\)</span> si <span class="math inline">\(i \not\in \bigcup F_{k}\)</span>.</p></li>
+</ul>
+<p>De esta forma, <span class="math display">\[
+\big\|  \sum_{i \in E_{k}}{x_{i}}  \big\| + \big\|  \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| \geq \big\|  \sum_{i \in E_{k}}{x_{i}} + \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| = \big\|  \sum_{i \in F_{k}}{x_{i}}  \big\| &gt; 2 \varepsilon.
+\]</span></p>
+<p>Por tanto, o bien <span class="math inline">\(\big\| \displaystyle \sum_{i \in E_{k}}{x_{i}}  \big\| &gt; \varepsilon\)</span>, y en ese caso se tomará <span class="math inline">\(\varepsilon_{i}=1\)</span> para todo <span class="math inline">\(i \in E_{k}\)</span>, o bien <span class="math inline">\(\big\| \displaystyle \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| &gt; \varepsilon\)</span>, y en ese caso <span class="math inline">\(\varepsilon_{i} = v_{i}\)</span> para todo <span class="math inline">\(i \in E_{k}\)</span>. En cualquier caso, se asegura que <span class="math display">\[
+\big\|  \sum_{i \in E_{k}}{\varepsilon_{i}x_{i}}  \big\| \geq \varepsilon,
+\]</span> y por tanto la serie no es de Cauchy, pues para todo <span class="math inline">\(N\)</span> natural existe un <span class="math inline">\(k\)</span> natural de forma que <span class="math inline">\(p = \min F_{k}, q = \max F_{k} &gt; N\)</span>: <span class="math display">\[
+\big\|  \sum_{i=p}^{q}{\varepsilon_{i}x_{i}}  \big\| = \big\|  \sum_{i \in E_{k}}{\varepsilon_{i}x_{i}}  \big\| &gt; \varepsilon.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="lem-inc-conv-conv-subset" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema B.4</strong></span> &nbsp;</p>
+<p>Una serie <span class="math inline">\(\sum{x_{i}}\)</span> es incondicionalmente convergente si y solo si <span class="math inline">\(\sum{x_{n_{i}}}\)</span> es convergente para cualquier sucesión creciente <span class="math inline">\(\{ n_{i} \}_{i=1}^{\infty}\)</span>.</p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“<span class="math inline">\(\Longrightarrow\)</span>”</p>
+<p>Por ser incondicionalmente convergente (y por tanto incondicionalmente de Cauchy) existe <span class="math inline">\(F\)</span> conjunto finito de <span class="math inline">\(\mathbb{N}\)</span> tal que para cualquier <span class="math inline">\(F'\)</span> conjunto finito disjunto se tiene que <span class="math display">\[
+\big\| \displaystyle \sum_{i \in F'}{x_{i}}  \big\| &lt; \varepsilon.
+\]</span> En particular, si <span class="math inline">\(p,q &gt; \max F\)</span>, entonces <span class="math inline">\(n_{p}, n_{q} &gt; \max F\)</span> y <span class="math display">\[
+\big\|  \sum_{i \in =p}^{q}{x_{n_{i}}}  \big\| &lt; \varepsilon.
+\]</span> Por tanto la serie es de Cauchy, ergo convergente.</p>
+<p>“<span class="math inline">\(\Longleftarrow\)</span>”</p>
+<p>Viendo el contrarrecíproco, supongamos que la serie no es incondicionalmente de Cauchy, entonces existe un <span class="math inline">\(\varepsilon &gt;0\)</span> y una sucesión de conjuntos finitos <span class="math inline">\(F_{k}\)</span> de <span class="math inline">\(\mathbb{N}\)</span> tal que <span class="math inline">\(\max F_{k} &lt; \min F_{k+1}\)</span> y <span class="math display">\[
+\big\| \sum_{i \in F_{k}}{x_{i}}  \big\| \geq \varepsilon.
+\]</span> Tomando por <span class="math inline">\(\{ n_{i} \}_{i=1}^{\infty} = \bigcup F_{k}\)</span>, se tiene que, para cualquier <span class="math inline">\(N\)</span> natural existe un <span class="math inline">\(k\)</span> tal que <span class="math inline">\(\min F_{k}, \max F_{k} &gt; N\)</span>: <span class="math display">\[
+\bigg\| \sum_{i = \min F_{k}}^{\max F_{k}}{x_{n_{i}}}  \bigg\| \geq \varepsilon,
+\]</span> y por tanto la serie no es de Cauchy.</p>
+</div>
+</div>
+</div>
+<div id="lem-X-XX" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lema B.5</strong></span> Denotando por <span class="math inline">\(X\)</span> al espacio <span class="math inline">\(c_0\)</span> o <span class="math inline">\(\ell_p\)</span> con <span class="math inline">\(p\in [1,\infty)\)</span> tenemos que <span class="math display">\[
+X\oplus X \simeq X.
+\]</span></p>
+</div>
+<div class="proof-callout callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Primero hay que dotar al espacio suma de la norma producto: <span class="math display">\[
+\|x+ y\| = \|x\|_X + \|y\|_X \quad \text{donde }\, x,y \in X
+\]</span></p>
+<p>Para probar el isomorfismo veamos que la aplicación <span class="math inline">\(T\colon X\oplus X \to X\)</span> definida como <span class="math display">\[
+T((x_n)_n,(y_n)_n)  = (x_1, y_1,x_2,y_2,x_3,y_3,\dots)
+\]</span> es un isomorfismo. Por completitud, la expresión general sería <span class="math display">\[
+T((x_n)_n,(y_n)_n) = (z_m)_m \quad \text{donde }\, z_m = \left\{\begin{aligned} x_n, &amp;\quad m = 2n \\ y_n, &amp;\quad m = 2n+1\end{aligned}\right.
+\]</span></p>
+<p>La linealidad es fácil de probar.</p>
+<div style="margin-left: 1em">
+<p>dados dos elementos <span class="math inline">\(((x_n)_n,(y_n)_n), ((a_n)_n,(b_n)_n) \in X\oplus X\)</span> y <span class="math inline">\(\lambda \in \R\)</span>: <span class="math display">\[
+T(\lambda((x_n)_n,(y_n)_n) +  ((a_n)_n,(b_n)_n)) = T(((\lambda x_n+ a_n)_n,(\lambda y_n + b_n)_n)) = (z_m)_m
+\]</span> donde, para todo <span class="math inline">\(m\)</span> natural <span class="math display">\[
+z_m = \left\{\begin{aligned} \lambda x_n + a_n, &amp;\quad m = 2n \\ \lambda y_n + b_n, &amp;\quad m = 2n+1\end{aligned}\right.
+\]</span> Por otro lado, <span class="math display">\[
+\lambda T(((x_n)_n,(y_n)_n))  = \lambda (z^1_m)_m \quad \text{donde }\, z_m^1 = \left\{\begin{aligned} x_n, &amp;\quad m = 2n \\ y_n, &amp;\quad m = 2n+1\end{aligned}\right.
+\]</span> <span class="math display">\[
+T(((a_n)_n,(b_n)_n)) = (z^2_m)_m \quad \text{donde }\, z^2_m = \left\{\begin{aligned} a_n, &amp;\quad m = 2n \\ b_n, &amp;\quad m = 2n+1\end{aligned}\right.
+\]</span> Resulta por tanto evidente que <span class="math display">\[
+T(\lambda((x_n)_n,(y_n)_n) +  ((a_n)_n,(b_n)_n))  =\lambda T(((x_n)_n,(y_n)_n)) + T(((a_n)_n,(b_n)_n)).
+\]</span></p>
+</div>
+<p>La biyectividad es sencilla, Para toda sucesión de <span class="math inline">\(X\)</span> su preimagen es coger las subsucesiones de índices pares e índices impares, por tanto <span class="math inline">\(T\)</span> es sobreyectiva (dichas subsucesiones están en <span class="math inline">\(X\)</span> de forma trivial). La inyectividad es trivial.</p>
+<p>Por último, la continuidad.</p>
+<div style="margin-left: 1em">
+<p>Dado un elemento <span class="math inline">\(((x_n)_n,(y_n)_n) \in X\oplus X\)</span>,</p>
+<ul>
+<li><p>Para el caso de <span class="math inline">\(X = c_0\)</span>, <span class="math display">\[
+\begin{align*}
+\|T(((x_n)_n,(y_n)_n))\|_\infty &amp; = \sup_{n \in \N}\{|x_n|,|y_n|\} \leq \sup_{n \in \N}|x_n| + \sup_{n \in \N}|y_n| \\&amp;= \|(x_n)_n\|_\infty+\|(y_n)_n\|_\infty = \|((x_n)_n,(y_n)_n)\|.
+\end{align*}
+\]</span></p></li>
+<li><p>Para el caso de <span class="math inline">\(\ell_p\)</span>, <span class="math display">\[
+  \begin{align*}
+  \|T(((x_n)_n,(y_n)_n))\|_p &amp; = \big(\sum_{n = 1}^\infty |x_n|^p + |y_n|^p\big)^\frac{1}{p} = \big(\sum_{n = 1}^\infty |x_n|^p +\sum_{n =1}^\infty |y_n|^p\big)^\frac{1}{p}\\ &amp;\leq \big(\sum_{n = 1}^\infty |x_n|^p\big)^\frac{1}{p} + \big(\sum_{n = 1}^\infty|y_n|^p\big)^\frac{1}{p} = \|(x_n)_n\|_p+\|(y_n)_n\|_p \\&amp;= \|((x_n)_n,(y_n)_n)\|.
+  \end{align*}
+  \]</span></p></li>
+</ul>
+</div>
+<p>y por tanto se da que <span class="math inline">\(T\)</span> es continua, demostrándose que <span class="math inline">\(T\)</span> es un isomorfismo.</p>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./10_topologia_debil.html" class="pagination-link" aria-label="Topologías débil y débil$^\ast$">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./12_teoremas_relevantes.html" class="pagination-link" aria-label="Teoremas fundamentales del Análisis funcional">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

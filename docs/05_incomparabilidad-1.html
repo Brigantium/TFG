@@ -302,12 +302,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -440,12 +498,14 @@ u_n=\sum_{i=p_n +1}^{p_{n+1}}a_ie_i \quad \text{ con } \sup_{p_n \leq i \leq p_{
 \]</span> Por tanto, el resultado enunciado es consecuencia del Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a>.</p>
 <p>Para <span class="math inline">\(X=\ell_p\)</span> la demostración es completamente análoga. Sea <span class="math display">\[
 u_n=\sum_{i=p_n +1}^{p_{n+1}} a_ie_i \quad \text{ con } \sum_{i=p_n+1}^{p_{n+1}}|a_i|^p=1
-\]</span> (de nuevo, por ser <span class="math inline">\((u_i)_i\)</span> normalizada) para cada <span class="math inline">\(n\in N\)</span>. En tal caso, <span class="math display">\[\begin{align*}
+\]</span> (de nuevo, por ser <span class="math inline">\((u_i)_i\)</span> normalizada) para cada <span class="math inline">\(n\in N\)</span>. En tal caso, <span class="math display">\[
+\begin{align*}
     \big\|\sum_{i=1}^m\lambda_iu_i\big\|_p&amp;=\big\|\sum_{i=1}^m\sum_{j=p_i+1}^{p_{i+1}}\lambda_i a_je_j\big\|_p=\Big(\sum_{i=1}^m\sum_{j=p_i +1}^{p_{i+1}} |\lambda_i|^p |a_j|^p\Big)^{1/p}\\
     &amp;=\Big(\sum_{i=1}^m|\lambda_i|^p\sum_{j=p_i +1}^{p_{i+1}}  |a_j|^p \Big)^{1/p}=\Big(\sum_{i=1}^m |\lambda_i|^p\Big)^{1/p}=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_p.
-\end{align*}\]</span></p>
+\end{align*}
+\]</span></p>
 <p><em>Demostración de</em> <span class="math inline">\((b)\)</span></p>
-<p>Primero construimos las aplicaciones duales de la sucesión <span class="math inline">\((u_i)_i\)</span>: Para cada <span class="math inline">\(n\in \N\)</span> consideramos <span class="math inline">\(u_n^* \in \overline{\rm span}\,\{e_i^*\colon p_{n-1}+1\leq i\leq {p_n}\}\)</span> tal que <span class="math inline">\(u_n^*(u_n)=1\)</span> y <span class="math inline">\(\|u_n^*\|= 1\)</span> (la existencia de tal funcional está asegurada por el Teorema <span class="quarto-unresolved-ref">?thm-ext-hahn-Banach</span> de Hahn-Banach).</p>
+<p>Primero construimos las aplicaciones duales de la sucesión <span class="math inline">\((u_i)_i\)</span>: Para cada <span class="math inline">\(n\in \N\)</span> consideramos <span class="math inline">\(u_n^* \in \overline{\rm span}\,\{e_i^*\colon p_{n-1}+1\leq i\leq {p_n}\}\)</span> tal que <span class="math inline">\(u_n^*(u_n)=1\)</span> y <span class="math inline">\(\|u_n^*\|= 1\)</span> (la existencia de tal funcional está asegurada por el Teorema <a href="12_teoremas_relevantes.html#thm-ext-hahn-Banach" class="quarto-xref">&nbsp;<span>C.3</span></a> de Hahn-Banach).</p>
 <p>Conviene observar que como <span class="math inline">\(u_k\in\overline{\rm span}\,\{e_i\colon  p_{k-1}+1\leq i\leq {p_k}\}\)</span>, entonces <span class="math inline">\(u_n^*(u_k)=0\)</span> si <span class="math inline">\(k\neq n\)</span>. Por tanto, si definimos <span class="math inline">\(P\, \colon X\longrightarrow \overline{\rm span}\,\{u_i\colon i\in \N\}\)</span> como <span class="math display">\[
 Px= \sum_{i=1}^\infty u_i^*(x)u_i,\quad\text{para cada $x\in X$,}
 \]</span> obtenemos una aplicación lineal que satisface <span class="math inline">\(P(X)=\overline{\rm span}\,\{u_i\colon i\in \N\}\)</span> y <span class="math inline">\(P^2=P\)</span>. Tan sólo resta ver que <span class="math inline">\(\|P\|=1\)</span>.</p>
@@ -508,21 +568,21 @@ Px= \sum_{i=1}^\infty u_i^*(x)u_i,\quad\text{para cada $x\in X$,}
 <div class="callout-body-container callout-body">
 <p>Si <span class="math inline">\(Y\subset X\)</span> es complementado en <span class="math inline">\(X\)</span>, entonces —por definición— existe un subespacio <span class="math inline">\(X_1\subset X\)</span> de modo que <span class="math inline">\(X\simeq Y \oplus X_1\)</span>.</p>
 <p>Por otro lado, si <span class="math inline">\(Y\)</span> es de dimensión infinita, el Corolario <a href="#cor-c0-lp-auto-cont" class="quarto-xref">Corolario&nbsp;<span>11.1</span></a> afirma la existencia de un subespacio <span class="math inline">\(Z\subset Y\)</span> complementado en <span class="math inline">\(X\)</span> y tal que <span class="math inline">\(Z \simeq X\)</span>. Sea <span class="math inline">\(X_2\subset X\)</span> el complemento de <span class="math inline">\(Z\)</span> en <span class="math inline">\(X\)</span>; es decir, <span class="math inline">\(X \simeq Z\oplus X_2\)</span>. En particular, restringiéndonos a <span class="math inline">\(Y\)</span>, tendremos que <span class="math inline">\(Y \simeq Z \oplus Y_1\)</span>.</p>
-<p>Por tanto, empleando que <span class="math inline">\(X\simeq X\oplus X\)</span> (véase el Lema <span class="citation" data-cites="lem:X-XX"><a href="Bibliografia.html#ref-lem:X-XX" role="doc-biblioref"><strong>lem:X-XX?</strong></a></span>), obtenemos que<br>
-<span class="math display">\[
+<p>Por tanto, empleando que <span class="math inline">\(X\simeq X\oplus X\)</span> (véase el Lema <a href="11_resultados_auxiliares.html#lem-X-XX" class="quarto-xref">&nbsp;<span>B.5</span></a>), obtenemos que<br>
+<span id="eq-5.1"><span class="math display">\[
 \begin{align}
-    X\oplus Y &amp; \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\\label{eq:5.1}
+    X\oplus Y &amp; \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\
     &amp; \simeq (X\oplus X)\oplus Y_1 \simeq X \oplus Y_1 \simeq Z\oplus Y_1 \simeq Y
 \end{align}
-\]</span></p>
+\tag{11.1}\]</span></span></p>
 <p>Por otra parte, <span id="eq-5.2"><span class="math display">\[
 X\oplus Y \simeq (Y\oplus X_1)\oplus Y \simeq X_1 \oplus Y \oplus Y \simeq X_1 \oplus Y \simeq X.
-\tag{11.1}\]</span></span></p>
-<p>Finalmente, a la vista de (<span class="quarto-unresolved-ref">?eq-5.1</span>) y (<a href="#eq-5.2" class="quarto-xref"><span>11.1</span></a>), el resultado enunciado es claro.</p>
+\tag{11.2}\]</span></span></p>
+<p>Finalmente, a la vista de (<a href="#eq-5.1" class="quarto-xref"><span>11.1</span></a>) y (<a href="#eq-5.2" class="quarto-xref"><span>11.2</span></a>), el resultado enunciado es claro.</p>
 </div>
 </div>
 </div>
-<p>Sumando el Teorema <a href="#cor-c0-lp-auto-cont" class="quarto-xref">Corolario&nbsp;<span>11.1</span></a> y el Teorema <span class="quarto-unresolved-ref">?thm-sub-esp-compl-pelcz</span> tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores —o factores— que el trivial, <span class="math inline">\(1\)</span>, y él mismo, lo análogo sucede <span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_p\)</span> con la operación de la suma directa de espacios.</p>
+<p>Sumando el Teorema <a href="#cor-c0-lp-auto-cont" class="quarto-xref">Corolario&nbsp;<span>11.1</span></a> y el Teorema <a href="#thm-sub-esp-comp-pelcz" class="quarto-xref">&nbsp;<span>11.3</span></a> tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores —o factores— que el trivial, <span class="math inline">\(1\)</span>, y él mismo, lo análogo sucede <span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_p\)</span> con la operación de la suma directa de espacios.</p>
 
 
 

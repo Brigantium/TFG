@@ -38,13 +38,28 @@ book:
       chapters: 
         - 05_incomparabilidad-1.qmd
         - 05_incomparabilidad-2.qmd
+    - part: 06_ejemplos_intro.qmd
+      id: sec-ejemplos
+      chapters: 
+        - 06_ejemplos-1.qmd
+        - 06_ejemplos-2.qmd
+        - 06_ejemplos-3.qmd
     - Bibliografia.qmd
+  appendices: 
+    - 10_topologia_debil.qmd
+    - 11_resultados_auxiliares.qmd
+    - 12_teoremas_relevantes.qmd
 
 bibliography: referencias.bib
 csl: ieee.csl
 
 
 crossref:
+  custom:
+    - kind: float
+      reference-prefix: item
+      key: itm
+
   # custom:
   #   - key: obs
   #     kind: float
@@ -59,6 +74,7 @@ language:
   crossref-thm-prefix: ""
   crossref-def-prefix: ""
   crossref-lem-prefix: ""
+  crossref-sec-prefix: ""
   crossref-cnj-title: "Observación"
   crossref-cnj-prefix: ""
 

@@ -30,6 +30,7 @@ Emplearemos el siguiente resultado:
 
 ::: {.callout icon = "false" style = blank class="proof-callout"}
 ## Demostración del Lema
+\hspace*{1mm}
 Consideremos la proyección canónica $\pi\colon X\longrightarrow X/W$, que es una aplicación lineal y sobreyectiva y satisface que ${\rm ker}\,\pi= W$. Si consideramos la restricción de $\pi$ al subespacio $Y$, esto es, $\pi|_Y\colon Y\longrightarrow X/W$, entonces ${\rm ker}\,\pi|_Y=Y \cap{\rm ker}\,\pi=Y\cap W$. Y en tal caso, por el primer teorema de isomorfía,
 $$
 Y/(Y \cap W) \simeq \pi(Y) \subset X/W.
@@ -128,10 +129,12 @@ $$
 u_n=\sum_{i=p_n +1}^{p_{n+1}} a_ie_i \quad \text{ con } \sum_{i=p_n+1}^{p_{n+1}}|a_i|^p=1
 $$
 (de nuevo, por ser $(u_i)_i$ normalizada) para cada $n\in N$. En tal caso,
+$$
 \begin{align*}
     \big\|\sum_{i=1}^m\lambda_iu_i\big\|_p&=\big\|\sum_{i=1}^m\sum_{j=p_i+1}^{p_{i+1}}\lambda_i a_je_j\big\|_p=\Big(\sum_{i=1}^m\sum_{j=p_i +1}^{p_{i+1}} |\lambda_i|^p |a_j|^p\Big)^{1/p}\\
     &=\Big(\sum_{i=1}^m|\lambda_i|^p\sum_{j=p_i +1}^{p_{i+1}}  |a_j|^p \Big)^{1/p}=\Big(\sum_{i=1}^m |\lambda_i|^p\Big)^{1/p}=\big\|\sum_{i=1}^m\lambda_i e_i\big\|_p.
 \end{align*}
+$$
 
 *Demostración de* $(b)$
 
@@ -209,13 +212,13 @@ Si $Y\subset X$ es complementado en $X$, entonces ---por definición--- existe u
 
 Por otro lado, si $Y$ es de dimensión infinita, el Corolario @cor-c0-lp-auto-cont afirma la existencia de un subespacio $Z\subset Y$ complementado en $X$ y tal que $Z \simeq X$. Sea $X_2\subset X$ el complemento de $Z$ en $X$; es decir, $X \simeq Z\oplus X_2$. En particular, restringiéndonos a $Y$, tendremos que $Y \simeq Z \oplus Y_1$.
 
-Por tanto, empleando que $X\simeq X\oplus X$ (véase el Lema @lem:X-XX), obtenemos que  
+Por tanto, empleando que $X\simeq X\oplus X$ (véase el Lema @lem-X-XX), obtenemos que  
 $$
 \begin{align}
-    X\oplus Y & \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\\label{eq:5.1}
+    X\oplus Y & \simeq X \oplus (Z \oplus Y_1) \simeq (X\oplus Z) \oplus Y_1 \\
     & \simeq (X\oplus X)\oplus Y_1 \simeq X \oplus Y_1 \simeq Z\oplus Y_1 \simeq Y
 \end{align}
-$$
+$$ {#eq-5.1}
 
 Por otra parte,
 $$
@@ -227,6 +230,6 @@ Finalmente, a la vista de (@eq-5.1) y (@eq-5.2), el resultado enunciado es claro
 
 :::
 
-Sumando el Teorema @cor-c0-lp-auto-cont y el Teorema @thm-sub-esp-compl-pelcz tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores ---o factores--- que el trivial, $1$, y él mismo, lo análogo sucede $c_0$ y $\ell_p$ con la operación de la suma directa de espacios.  
+Sumando el Teorema @cor-c0-lp-auto-cont y el Teorema @thm-sub-esp-comp-pelcz tenemos como resultado que los factores de cualquier descomposición de los espacios de sucesiones son el mismo espacio descompuesto, dándonos una idea de «primalidad»: al igual que los números primos son aquellos que no tienen más divisores ---o factores--- que el trivial, $1$, y él mismo, lo análogo sucede $c_0$ y $\ell_p$ con la operación de la suma directa de espacios.  
 
 

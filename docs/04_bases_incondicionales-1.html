@@ -322,12 +322,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -358,7 +416,7 @@ window.Quarto = {
 </header>
 
 
-<p>Volvemos de nuevo a intentar encontrar similitudes entre las bases de Hamel en espacios finitos y las de Schauder que estamos estudiando. Las primeras no les afecta una reordenación de los vectores de la base: si un elemento tiene unas coordenadas entonces al cambiar de orden seguiremos teniendo el mismo elemento. Pero como el lector podrá intuir, no sucede lo mismo cuando añadimos una topología al espacio. Recordemos que existen series que no convergen si alteramos el orden de los términos sumados y es lo que motivó la siguiente definición para diferenciar a las series que sí lo hacen—y que es equivalente a esta idea de reordenación por el Lema <span class="quarto-unresolved-ref">?lem-incondicionalidad-reordenacion</span>—:</p>
+<p>Volvemos de nuevo a intentar encontrar similitudes entre las bases de Hamel en espacios finitos y las de Schauder que estamos estudiando. Las primeras no les afecta una reordenación de los vectores de la base: si un elemento tiene unas coordenadas entonces al cambiar de orden seguiremos teniendo el mismo elemento. Pero como el lector podrá intuir, no sucede lo mismo cuando añadimos una topología al espacio. Recordemos que existen series que no convergen si alteramos el orden de los términos sumados y es lo que motivó la siguiente definición para diferenciar a las series que sí lo hacen—y que es equivalente a esta idea de reordenación por el Lema <a href="11_resultados_auxiliares.html#lem-incondicionalidad-reordenacion" class="quarto-xref">&nbsp;<span>B.1</span></a>—:</p>
 <p>Sea <span class="math inline">\((X,\|\cdot\|)\)</span> un espacio vectorial normado.</p>
 <div id="def-conv-incond" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.1 (Convergencia incondicional)</strong></span> &nbsp;</p>
@@ -368,7 +426,7 @@ window.Quarto = {
 \big\|x-\sum_{i \in F'}x_i\big\|&lt;\varepsilon.
 \]</span></p>
 </div>
-<p>Como dijimos, se puede intuir que existen casos en los que la reordenación de los vectores de la base no convergen, y esto lo podemos ver en el espacio <span class="math inline">\(c_0\)</span> con la conocida como <em>base sumante</em> —que el lector puede ver al final de la Sección <span class="quarto-unresolved-ref">?sec-c_0</span>—. Por tanto, es necesario hacer una distinción entre bases que al reordenar siguen convergiendo y bases que no. Es así como surge de forma natural la siguiente definición:</p>
+<p>Como dijimos, se puede intuir que existen casos en los que la reordenación de los vectores de la base no convergen, y esto lo podemos ver en el espacio <span class="math inline">\(c_0\)</span> con la conocida como <em>base sumante</em> —que el lector puede ver revisar en la <a href="06_ejemplos-2.html#c_0-base-sumante">Sección de Ejemplos</a>—. Por tanto, es necesario hacer una distinción entre bases que al reordenar siguen convergiendo y bases que no. Es así como surge de forma natural la siguiente definición:</p>
 <div id="def-bsi" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.2 (Base de Schauder incondicional &amp; Sucesión básica incondicional)</strong></span> &nbsp;</p>
 <ol type="a">
@@ -378,7 +436,7 @@ x=\sum_{i=1}^\infty x_ie_i
 <li><p>Se dice que una sucesión <span class="math inline">\((e_i)_i\subset X\)</span> es una <em>sucesión básica incondicional</em> si es una base de Schauder incondicional de <span class="math inline">\(\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\}\)</span>.</p></li>
 </ol>
 </div>
-<p>Algunos casos de bases incondicionales son las bases unitarias de los espacios de sucesiones <span class="math inline">\(c_0\)</span> y los <span class="math inline">\(\ell_p\)</span> o la base de Haar de los espacios <span class="math inline">\(L^p[0,1]\)</span> con <span class="math inline">\(p\in (1,\infty)\)</span>, cuya construcción el lector puede revisar en la Sección <span class="quarto-unresolved-ref">?sec-haar</span> —la incondicionalidad de la base de Haar no la probaremos pero puede consultarse en <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 130]</a></span>—. Pero cuando tratamos con la base de Haar para <span class="math inline">\(L^1\)</span> o con la base de Faber de <span class="math inline">\(\mathcal{C}[0,1]\)</span> (véase <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 142]</a></span> y <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 69]</a></span> o <span class="citation" data-cites="BST"><a href="Bibliografia.html#ref-BST" role="doc-biblioref">[2, pp. 203-204]</a></span>) nos encontramos con dos perfectos ejemplos de bases de Schauder no incondicionales —la construcción de la base de Faber se puede consultar en la Sección <span class="quarto-unresolved-ref">?sec-faber</span>—.</p>
+<p>Algunos casos de bases incondicionales son las bases unitarias de los espacios de sucesiones <span class="math inline">\(c_0\)</span> y los <span class="math inline">\(\ell_p\)</span> o la base de Haar de los espacios <span class="math inline">\(L^p[0,1]\)</span> con <span class="math inline">\(p\in (1,\infty)\)</span>, cuya construcción el lector puede revisar en la Sección <a href="06_ejemplos-3.html#sec-haar" class="quarto-xref"><span> 15.1</span></a> —la incondicionalidad de la base de Haar no la probaremos pero puede consultarse en <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 130]</a></span>—. Pero cuando tratamos con la base de Haar para <span class="math inline">\(L^1\)</span> o con la base de Faber de <span class="math inline">\(\mathcal{C}[0,1]\)</span> (véase <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 142]</a></span> y <span class="citation" data-cites="TopicinBanachSpacesKalton"><a href="Bibliografia.html#ref-TopicinBanachSpacesKalton" role="doc-biblioref">[1, p. 69]</a></span> o <span class="citation" data-cites="BST"><a href="Bibliografia.html#ref-BST" role="doc-biblioref">[2, pp. 203-204]</a></span>) nos encontramos con dos perfectos ejemplos de bases de Schauder no incondicionales —la construcción de la base de Faber se puede consultar en la Sección <a href="06_ejemplos-3.html#sec-faber" class="quarto-xref"><span> 15.2</span></a>—.</p>
 <p>Pasamos ahora a caracterizar las sucesiones básicas incondicionales.</p>
 <p>Sea <span class="math inline">\((X,\|\cdot\|)\)</span> un espacio de Banach y <span class="math inline">\((e_i)_i\subset X\)</span> una sucesión de vectores.</p>
 <div id="thm-eqv-sbi" class="theorem">
@@ -445,10 +503,10 @@ P\Big(\sum_{i=1}^\infty a_ie_i\Big)=\sum_{i \in \sigma}a_ie_i,\quad\text{para ca
 \]</span> Veremos que la familia <span class="math inline">\(\{P_\sigma\colon \sigma\subset\N\}\subset \mathcal{B}(X)\)</span> está uniformemente acotada por una constante <span class="math inline">\(K\)</span>. En tal caso, para cualquier <span class="math inline">\(\sigma\subset\N\)</span> se tendrá que <span class="math display">\[
 \big\|\sum_{i \in \sigma}a_ie_i\big\|=\big\|P\Big(\sum_{i = 1}^\infty a_ie_i\Big)\big\| \leq K\big\|\sum_{i=1}^\infty a_ie_i\big\|,
 \]</span> de donde se deduce <span class="math inline">\((b)\)</span> considerando <span class="math inline">\(a_i=0\)</span> si <span class="math inline">\(i&gt;m\)</span>.</p>
-<p>Deduciremos la acotación uniforme de la familia <span class="math inline">\((P_\sigma)_\sigma\)</span> a partir del Principio de acotación uniforme de Banach-Steinhaus <span class="quarto-unresolved-ref">?thm-acotacion-uniforme-banach-steinhaus</span>, por lo que bastará ver que el conjunto <span class="math inline">\(\{P_\sigma(x)\colon \sigma\subset\N\}\)</span> es acotado para cada <span class="math inline">\(x\in  \overline{\rm span}\,\{e_i\colon i\in\N\}\)</span>.</p>
+<p>Deduciremos la acotación uniforme de la familia <span class="math inline">\((P_\sigma)_\sigma\)</span> a partir del Principio de acotación uniforme de Banach-Steinhaus <a href="12_teoremas_relevantes.html#thm-acotacion-uniforme-banach-steinhaus" class="quarto-xref">&nbsp;<span>C.5</span></a>, por lo que bastará ver que el conjunto <span class="math inline">\(\{P_\sigma(x)\colon \sigma\subset\N\}\)</span> es acotado para cada <span class="math inline">\(x\in  \overline{\rm span}\,\{e_i\colon i\in\N\}\)</span>.</p>
 <p>Veamos pues que dado <span id="eq-4.2"><span class="math display">\[
 x=\sum_{i=1}^\infty a_ie_i\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\},
-\tag{9.2}\]</span></span> el conjunto <span class="math inline">\(\{P_\sigma(x)\colon \sigma\subset \N\}\)</span> es acotado. Por hipótesis, como la serie que aparece en (<a href="#eq-4.2" class="quarto-xref"><span>9.2</span></a>) es incondicionalmente convergente, en virtud del Lema <span class="quarto-unresolved-ref">?lem-incon-cauchy</span>, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe un conjunto finito <span class="math inline">\(F\subset \N\)</span> de modo que para cualquier <span class="math inline">\(F'\subset \N\)</span> disjunto con <span class="math inline">\(F\)</span> se tiene que <span class="math display">\[
+\tag{9.2}\]</span></span> el conjunto <span class="math inline">\(\{P_\sigma(x)\colon \sigma\subset \N\}\)</span> es acotado. Por hipótesis, como la serie que aparece en (<a href="#eq-4.2" class="quarto-xref"><span>9.2</span></a>) es incondicionalmente convergente, en virtud del Lema <a href="11_resultados_auxiliares.html#lem-incon-cauchy" class="quarto-xref">&nbsp;<span>B.2</span></a>, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe un conjunto finito <span class="math inline">\(F\subset \N\)</span> de modo que para cualquier <span class="math inline">\(F'\subset \N\)</span> disjunto con <span class="math inline">\(F\)</span> se tiene que <span class="math display">\[
 \big\|\sum_{i\in F'} a_ie_i\big\|&lt; \varepsilon.
 \]</span> En tal caso, dado <span class="math inline">\(\sigma\subset\N\)</span>, si consideramos <span class="math inline">\(F'=\sigma\setminus F\)</span> tenemos que <span class="math display">\[
 \|P_\sigma x\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|=\big\|\sum_{i\in\sigma\cap F}a_ie_i+\sum_{i\in\sigma\setminus F}a_ie_i\big\|\leq\big\|\sum_{i\in\sigma\cap F}a_ie_i\big\|+\big\|\sum_{i\in\sigma\setminus F}a_ie_i\big\|.
@@ -461,12 +519,12 @@ x=\sum_{i=1}^\infty a_ie_i\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\},
 <ul>
 <li><p>Veamos inicialmente que <span class="math inline">\(P_\sigma\)</span> está bien definida.</p>
 <div style="margin-left: 1em">
-<p>La incondicionalidad de <span class="math inline">\((e_i)_i\)</span> y el Lema <span class="quarto-unresolved-ref">?lem-inc-conv-conv-subset</span> aseguran que si <span class="math display">\[
+<p>La incondicionalidad de <span class="math inline">\((e_i)_i\)</span> y el Lema <a href="11_resultados_auxiliares.html#lem-inc-conv-conv-subset" class="quarto-xref">&nbsp;<span>B.4</span></a> aseguran que si <span class="math display">\[
   \sum_{i=1}^\infty a_i e_i\text{ es convergente, entonces }\sum_{i\in\sigma}a_i e_i\text{ también.}
   \]</span></p>
 </div></li>
 <li><p>La linealidad de <span class="math inline">\(P_\sigma\)</span> es trivial.</p></li>
-<li><p>Veamos finalmente que <span class="math inline">\(P_\sigma\)</span> es continua empleando el Teorema <span class="quarto-unresolved-ref">?thm-grafo-cerrado</span> del grafo cerrado.</p>
+<li><p>Veamos finalmente que <span class="math inline">\(P_\sigma\)</span> es continua empleando el Teorema <a href="12_teoremas_relevantes.html#thm-grafo-cerrado" class="quarto-xref">&nbsp;<span>C.2</span></a> del grafo cerrado.</p>
 <div style="margin-left: 1em">
 <p>Sea <span class="math inline">\((x^k)_{k}\subset\overline{\rm span}\{e_i\colon i\in\N\}\)</span> tal que <span class="math display">\[
   x^k=\sum a_i^ke_i\text{ para cada $k\in\N$ y }x_k\to x=\sum_{i=1}^\infty a_ie_i\in \overline{\rm span}\{e_i\colon i\in\N\}\text{ cuando $k\to\infty$.}
@@ -482,7 +540,7 @@ x=\sum_{i=1}^\infty a_ie_i\in\overline{\rm span}\,\{e_i\colon i\in\mathbb{N}\},
 <p><span class="math inline">\((b)\Longrightarrow(a)\)</span></p>
 <p>Conviene observar que, bajo la hipótesis <span class="math inline">\((b)\)</span>, la sucesión <span class="math inline">\((e_i)_i\)</span> es una sucesión básica en <span class="math inline">\(X\)</span>. En efecto, pues si en <span class="math inline">\((b)\)</span> consideramos como <span class="math inline">\(\sigma=\{i\colon 1\leq i\leq n\}\)</span>, entonces para cualquier elemento de <span class="math inline">\({\rm span}\,\{e_i\colon 1\leq i\leq m\}\)</span>, con <span class="math inline">\(m&gt;n\)</span>, se tiene —por hipótesis— que <span class="math display">\[
 \big\|\sum_{i=1}^n a_ie_i\big\|=\big\|\sum_{i\in\sigma}a_ie_i\big\|\leq K \big\|\sum_{i=1}^m a_ie_i\big\|.
-\]</span> Por tanto, en virtud del Teorema <span class="quarto-unresolved-ref">?thm-SucBasica</span>, <span class="math inline">\((e_i)_i\)</span> es una sucesión básica.</p>
+\]</span> Por tanto, en virtud del Teorema <a href="03_sucesiones_basicas-1.html#thm-suc-basica" class="quarto-xref">&nbsp;<span>5.1</span></a>, <span class="math inline">\((e_i)_i\)</span> es una sucesión básica.</p>
 <p>Veamos ahora el carácter incondicional de <span class="math inline">\((e_i)_i\)</span>. Sea <span class="math inline">\((a_i)_i\)</span> una sucesión de escalares tal que <span class="math display">\[
 \sum_{i=1}^\infty a_ie_i\quad\text{es convergente en $(X,\|\!\cdot\!\|)$.}
 \]</span> En tal caso, dado <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(N_\varepsilon\in\mathbb{N}\)</span> de modo que si <span class="math inline">\(n&gt;N_\varepsilon\)</span> entonces <span id="eq-4.3"><span class="math display">\[

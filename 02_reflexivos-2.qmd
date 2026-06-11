@@ -18,7 +18,7 @@ $$
 
 :::
 
-El lector encontrará en la Capítulo @sec-ejemplos, más exactamente en la sección dedicada a espacios de sucesiones, algunos ejemplos de bases que cumplen y no cumplen estas propiedades. 
+El lector encontrará en la Sección @sec-ejemplo_sucesiones algunos ejemplos en los espacios de sucesiones de bases que cumplen y no cumplen estas propiedades. 
 
 La idea detrás de la primera definición, base *shrinking*, es la de restringirnos a aquellas bases que cumplen el objetivo que mencionábamos antes de la Proposición @prp-SpanBaseDual. Si la base es *shrinking*, el espacio dual está generado por las aplicaciones de asignación de coeficientes ---los funcionales biortogonales--- y por tanto, la topología débil del espacio puede ser estudiada restringiéndonos a dichos funcionales---cosa que, como veremos más adelante, será fundamental---.
 
@@ -86,7 +86,7 @@ por lo que la serie es convergente en $(X,\|\!\cdot\!\|)$, quedando probado así
 
 "$\Longleftarrow$"
     
-Sabemos que un espacio de Banach es reflexivo si y sólo si su bola unidad es débilmente compacta. Probaremos que $X$ satisface tal propiedad. No obstante, en virtud del Teorema @thm-EberleinSmulyan} de Eberlein-Smulyan, basta ver que $B_X$ es secuencialmente compacto en $(X, \text{débil})$. 
+Sabemos que un espacio de Banach es reflexivo si y sólo si su bola unidad es débilmente compacta. Probaremos que $X$ satisface tal propiedad. No obstante, en virtud del Teorema @thm-eberlein-smulian de Eberlein-Smulyan, basta ver que $B_X$ es secuencialmente compacto en $(X, \text{débil})$. 
         
 Sea pues $(x_n)_n\subset B_X$ una sucesión arbitraria.
 

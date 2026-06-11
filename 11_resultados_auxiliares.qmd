@@ -1,0 +1,337 @@
+
+# Resultados auxiliares 
+<!-- % Improtante recordar citar el libro de donde saco estes ejercicios. -->
+
+::: {#lem-incondicionalidad-reordenacion}
+\hspace*{1mm}
+
+Sea $\sum{x_i}$ una serie en un espacio de Banach $X$ y $x \in X$. Son equivalentes:
+
+(i) Para todo $\varepsilon > 0$ existe un conjunto finito $F \subset \mathbb{N}$ tal que
+    $$
+    \big\| x - \displaystyle \sum_{i \in F'}{x_i} \big\| < \varepsilon
+    $$
+    para cualquier $F'$ conjunto finito de $\mathbb{N}$ tal que $F \subset F'$;
+
+(ii) si $\pi$ es una permutación de $\mathbb{N}$ entonces
+    $$
+    \sum {x_{\pi(i)}}=x.
+    $$
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1cm}
+
+$(i) \Longrightarrow (ii)$
+    
+Se verá que $F$ está contenido en el subconjunto de las permutaciones de los primeros $m$ números naturales y, aplicando la hipótesis tomando por $F'$ ese subconjunto, se tendrá el resultado.
+
+Sea $\varepsilon >0$ fijado y considérese el conjunto $F \subset \mathbb{N}$ como el que verifica la hipótesis. Como $\pi$ es una permutación de $\mathbb{N}$, y por tanto una biyección, y $F$ es un subconjunto finito de $\mathbb{N}$ se tiene que para cada $n \in F$ existe un $m$ tal que $\pi(m) = n$, y como $F$ es finito existe un cierto $n_0 \in \mathbb{N}$, que puede ser el máximo de los $m$, tal que $F \subset \{ \pi(1), \pi(2),\ldots, \pi(n_0) \}$. Por la hipótesis, se tiene que 
+$$
+\big\| x -  \sum_{i=1}^{n}{x_{\pi(i)}} \big\| < \varepsilon.
+$$
+
+$(ii) \Longrightarrow (i)$
+
+Suponiendo que no sucede $(ii)$ pero si $(i)$, se construirá una sucesión de conjuntos finitos $F_k$ para los cuales la suma de sus elementos sea siempre mayor a un cierto valor, después se escogerá una permutación que deja dichos conjuntos fijos fijos y se verá que la serie asociada a esa permutación no converge.
+
+Por reducción al absurdo, supóngase  que existe un $\varepsilon > 0$ para el cual todo conjunto finito $F$ verifica que existe un $F' \supset F$ tal que  
+$$
+\big\| x -  \sum_{i \in F'}{x_i} \big\| > \varepsilon.
+$$
+
+Por hipótesis, y como la identidad es una permutación de $\mathbb{N}$, $\sum{x_i} = x$ y por tanto para todo $k \in \mathbb{N}$ existe un $n'_k$ tal que 
+$$
+\big\| \displaystyle \sum_{i=1}^{n'_k}{x_i} - x \big\| < \frac{1}{k}.
+$$
+
+Sea ahora, para $k = 1$ un subconjunto $F' \subset \mathbb{N}$   que contiene a $\{1,\ldots, n'_1\}$ y que verifica que 
+$$
+\big\| x - \displaystyle \sum_{i \in F'}{x_i} \big\| > \varepsilon
+$$
+---y que existe por la hipóteis de reducción al absurdo---. Sea ahora $F_1 = F' \cap \mathbb{N} \backslash \{1, \ldots, n'_0\}$, $n_1 = n'_1$ y $n_2 = \max\{n'_2, \max(F_1) +1\}$, así se tiene que
+$$
+n_{2} >  \max{F_1} \geq \min{F_1} > n_1.
+$$
+
+Aplicando inducción, se construyen todos los conjuntos $F_k$ y los naturales $n_k$ verificando que $n_{k+1} > \max F_k \geq \min F_k > n_k$ y 
+$$
+\big\| \sum_{i \in F'}{x_i} - x \big\| = \big\|  \sum_{i=1}^{n_k}{x_i} +  \sum_{i \in F_k}{x_k} - x\big\| > \varepsilon.
+$$
+Por tanto 
+$$
+\varepsilon < \big\|\sum_{i=1}^{n_k}{x_i} + \sum_{i \in F_k}{x_i} - x \big\| \leq \big\|  \sum_{i=1}^{n_k}{x_i}  - x\big\| + \big\| \sum_{i \in F_k}{x_i} \big\| < \frac{1}{k} + \big\|  \sum_{i\in F_k}{x_i} \big\|.
+$$
+
+Con $k$ suficientemente grande se tiene que $\big\| \displaystyle \sum_{i \in F_k}{x_i} \big\| > \tilde\varepsilon$ para cierto $\tilde \varepsilon >0$
+
+Tomando la permutación $\pi$ que deja fijos los elementos de $F_k$ se tiene que, para $k$ suficientemente grande 
+$$
+\varepsilon < \big\|  \sum_{i=1}^{n_k}{x_{\pi(i)}} + \sum_{i \in F_k}{x_i} - x \big\| \geq   \big\| \sum_{i \in F_k}{x_i} \big\| - \big\| \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\| > \tilde\varepsilon -  \big\|  \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\|.
+$$
+Lo cual es una contradicción, pues suponiendo que la serie $\sum{x_{\pi(i)}}$ converge entonces el término $\big\| \displaystyle \sum_{i=1}^{n_k}{x_{\pi(i)}}  - x\big\|$ tiende a 0, pero entonces
+$$
+\big\| \sum_{i=1}^{n_k}{x_{\pi(i)}} + \sum_{i \in F_k}{x_i} - x \big\| \not\longrightarrow 0
+$$
+contradiciendo la hipótesis de partida.
+
+:::
+
+
+Sea $(X,\|\cdot\|)$ un espacio de Banach.
+
+::: {#lem-incon-cauchy}
+\hspace*{1mm}
+
+Una serie $\sum{x_i}$ es incondicionalmente convergente si y solo si es incondicionalmente de Cauchy, i.e., si dado $\varepsilon > 0$ existe un subconjunto finito $F$ de $\mathbb{N}$ tal que 
+$$
+\big\| \sum_{i \in F'}{x_i} \big\|< \varepsilon
+$$
+para cualquier $F'$ conjunto finito disjunto de $F$.
+
+:::
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace{1cm}
+    
+Primero es necesario ver que una serie incondicionalmente de Cauchy es una serie de Cauchy.
+
+Fijado $\varepsilon >0$ y con $F$ un conjunto finito dado por la definición de incondicionalmente de Cauchy basta tomar $N = \max F$ con lo que tiene que para todo par $p,q > N$, 
+$$
+\big\| \sum_{i=1}^{p}{x_i} - \sum_{i=1}^{q}{x_i}  \big\| = \big\| \sum_{i=p}^{q}{x_i} \big\| < \varepsilon,
+$$
+tomando como $F' =\{p,\ldots, q\}$, el cual es disjunto de $F$. Y por tanto, se cumple la definición de serie de Cauchy. 
+
+Como estamos en un espacio completo, por ser $X$ de Banach, se tiene que existe un cierto $x \in X$ tal que $x = \sum{x_i}$. 
+
+"$\Longrightarrow$"
+
+Fijado un $\varepsilon > 0$, por ser condicionalmente de Cauchy se tiene que existe un $F^*$ subconjunto finito de $\mathbb{N}$ tal que para todo $F'$ subconjunto finito disjunto de $F^*$ se tiene que 
+$$
+\big\| \displaystyle \sum_{i \in F'}{x_i} \big\| < \varepsilon.
+$$
+Por la convergencia de la serie se tiene que existe un cierto $N_1$ natural para el cual, dado un $n>N_1$,
+$$
+\big\| \sum_{i=1}^{n}{x_i} - x \big\| < \varepsilon.
+$$
+
+Si se toma $n_0 = \max \{ \max F^*, N_1\}$ y $F= \{1, \ldots, n_0\}$ se tiene que, para cualquier $F' \supset F$  
+$$
+\big\| \sum_{i \in F'}{x_i} - x \big\| = \big\| \sum_{i=1}^{n_0}{x_i} + \sum_{i \in F', i > n_0}{x_i} - x\big\| \leq \big\| \sum_{i=1}^{n_0}{x_i} -x\big\| + \big\| \sum_{i \in F', i > n_0}{x_i}\big\| < \varepsilon + \varepsilon = 2\varepsilon
+$$
+
+Y por tanto se tiene la convergencia incondicional.
+
+"$\Longleftarrow$"
+
+Fijado $\varepsilon >0$, por la convergencia incondicional se tiene que existe $F$ conjunto finito de $\mathbb{N}$ de forma que dado un conjunto finito $F' \supset F$ se tiene que 
+$$
+\big\| \sum_{i \in F'}{x_i} - x \big\| < \varepsilon
+$$
+
+de la misma forma, por la convergencia de la serie se tiene que existe un cierto $N_1$ natural para el cual, dado un $n>N_1$ 
+$$
+\big\| \sum_{i=1}^{n}{x_i} - x \big\| < \varepsilon.
+$$
+Si se toma $n_0 = \max \{ \max F, N_1\}$, dado un conjunto finito $F'$ disjunto de $F$ se tiene que $F \subset F' \cup \{1, \ldots, n_0\}$ y por tanto
+$$
+\big\| \sum_{i\in F'}{x_i} \big\| = \big\| \sum_{i \in F'}{x_i} + \sum_{i=1}^{n_0}{x_i} - x + x - \sum_{i=1}^{n_0}{x_i} \big\| \leq \big\| \sum_{i \in F' \cup \{1,\ldots,n_0\}}{x_i}  - x \big\| + \big\| x - \sum_{i=1}^{n_0}{x_i} \big\| < \varepsilon + \varepsilon = 2\varepsilon
+$$
+
+:::
+
+
+
+::: {#lem-incondicional-epsilon}
+
+Una serie $\sum{x_i}$ converge incondicionalmente si y solo si converge $\sum{\varepsilon_i x_i}$ con cualquier elección de $(\varepsilon_i )_i= (\pm1)_i$.
+
+:::
+
+
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+"$\Longrightarrow$"
+
+Probemos que $\sum \varepsilon_ix_i$ es de Cauchy y, por ser $X$ un espacio completo, convergente.
+
+Por ser $\sum x_i$ incondicionalmente convergente, por el Lema @lem-incon-cauchy, fijado $\varepsilon > 0$, existe un conjunto $F$ finito de $\mathbb{N}$ tal que para cualquier $F'$ disjunto de F que verifica
+$$
+\big\|  \sum_{i \in F'}{x_{i}}  \big\| < \varepsilon.
+$$
+Sea $n_{0} > \max F$, dados $n,m > n_{0}$, se tiene que $\{i \in \mathbb{N} : \varepsilon_{i} = 1, m> i > n \} \cap F = \emptyset$ y $\{ i \in \mathbb{N} : \varepsilon_{i} = -1, m>i>n \}  \cap F = \emptyset$, por tanto:
+$$
+\big\|  \sum_{i=n}^{m}{\varepsilon_{i}x_{i}}  \big\| \leq \big\|  \sum_{n \leq i \leq m, \varepsilon_{i}=1}{x_{i}}  \big\|\big\| \sum_{n \leq i \leq m, \varepsilon_{i}=-1}{- x_{i}}  \big\| < \varepsilon + \varepsilon = 2\varepsilon,
+$$
+y por tanto la serie converge.
+
+
+"$\Longleftarrow$"
+
+Suponiendo que $\sum{x_{i}}$ no es incondicionalmente de Cauchy, entonces existe $\varepsilon>0$ tal que para cualquier subconjunto de $\mathbb{N}$ finito $F$ existe otro conjunto finito $F'$ disjunto de $F$ que verifica 
+$$
+\big\|  \sum_{i \in F'}{x_{i}}  \big\| > \varepsilon.
+$$
+En particular, si se toma $F^{*} = \{ 1 \}$ finito, existe $F_{1}$ disjunto tal que $\big\| \displaystyle \sum_{i \in F_{1}}{x_{i}}  \big\| > \varepsilon$.
+Si ahora se toma $F^{*} = \{ 1, \dots, \max F_{1} \}$ finito se tiene que existe un $F_{2}$ disjunto de $F^*$ verificando que 
+$$
+\big\|  \displaystyle \sum_{i \in F_{2}}{x_{i}}  \big\| > \varepsilon
+$$
+y que $\min F_{2} > \max F_{1}$.
+
+Por recurrencia se definen todos los $F_{k}$ con $k$ natural de forma que $\big\|  \displaystyle \sum_{i \in F_{k}}{x_{i}}  \big\| > \varepsilon$ y que $\min F_{k+1} > \max F_{k}$.
+
+Se definen ahora los conjuntos $E_{k} = \{ \min F_{k}, \dots, \max F_{k} \}$ para todo $k$ natural y los valores $v_i$ como
+
+- $v_{i} = 1$ si $i \in \bigcup F_{k}$,
+
+- $v_{i}= -1$ si $i \not\in \bigcup F_{k}$.
+
+De esta forma,
+$$
+\big\|  \sum_{i \in E_{k}}{x_{i}}  \big\| + \big\|  \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| \geq \big\|  \sum_{i \in E_{k}}{x_{i}} + \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| = \big\|  \sum_{i \in F_{k}}{x_{i}}  \big\| > 2 \varepsilon.
+$$
+
+Por tanto, o bien $\big\| \displaystyle \sum_{i \in E_{k}}{x_{i}}  \big\| > \varepsilon$, y en ese caso se tomará $\varepsilon_{i}=1$ para todo $i \in E_{k}$, o bien $\big\| \displaystyle \sum_{i \in E_{k}}{v_{i}x_{i}}  \big\| > \varepsilon$, y en ese caso $\varepsilon_{i} = v_{i}$ para todo $i \in E_{k}$. En cualquier caso, se asegura que 
+$$
+\big\|  \sum_{i \in E_{k}}{\varepsilon_{i}x_{i}}  \big\| \geq \varepsilon,
+$$
+y por tanto la serie no es de Cauchy, pues para todo $N$ natural existe un $k$ natural de forma que $p = \min F_{k}, q = \max F_{k} > N$:
+$$
+\big\|  \sum_{i=p}^{q}{\varepsilon_{i}x_{i}}  \big\| = \big\|  \sum_{i \in E_{k}}{\varepsilon_{i}x_{i}}  \big\| > \varepsilon.
+$$
+
+:::
+
+
+::: {#lem-inc-conv-conv-subset}
+\hspace*{1mm}
+
+Una serie $\sum{x_{i}}$ es incondicionalmente convergente si y solo si $\sum{x_{n_{i}}}$ es convergente para cualquier sucesión creciente $\{ n_{i} \}_{i=1}^{\infty}$.
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+
+## Demostración
+\hspace*{1mm}
+
+"$\Longrightarrow$"
+
+Por ser incondicionalmente convergente (y por tanto incondicionalmente de Cauchy) existe $F$ conjunto finito de $\mathbb{N}$ tal que para cualquier $F'$ conjunto finito disjunto se tiene que 
+$$
+\big\| \displaystyle \sum_{i \in F'}{x_{i}}  \big\| < \varepsilon.
+$$
+En particular, si $p,q > \max F$, entonces $n_{p}, n_{q} > \max F$ y 
+$$
+\big\|  \sum_{i \in =p}^{q}{x_{n_{i}}}  \big\| < \varepsilon.
+$$
+Por tanto la serie es de Cauchy, ergo convergente.
+
+"$\Longleftarrow$"
+
+Viendo el contrarrecíproco, supongamos que la serie no es incondicionalmente de Cauchy, entonces existe un $\varepsilon >0$ y una sucesión de conjuntos finitos $F_{k}$ de $\mathbb{N}$ tal que $\max F_{k} < \min F_{k+1}$ y 
+$$
+\big\| \sum_{i \in F_{k}}{x_{i}}  \big\| \geq \varepsilon.
+$$
+Tomando por $\{ n_{i} \}_{i=1}^{\infty} = \bigcup F_{k}$, se tiene que, para  cualquier $N$ natural existe un $k$ tal que $\min F_{k}, \max F_{k} > N$:
+$$
+\bigg\| \sum_{i = \min F_{k}}^{\max F_{k}}{x_{n_{i}}}  \bigg\| \geq \varepsilon,
+$$
+y por tanto la serie no es de Cauchy.
+  
+:::
+
+
+
+::: {#lem-X-XX}
+
+Denotando por $X$ al espacio $c_0$ o $\ell_p$ con $p\in [1,\infty)$ tenemos que
+$$
+X\oplus X \simeq X.
+$$
+
+:::
+
+::: {.callout-note collapse="true" icon="false" class="proof-callout"}
+## Demostración
+\hspace*{1mm}
+
+
+Primero hay que dotar al espacio suma de la norma producto:
+$$
+\|x+ y\| = \|x\|_X + \|y\|_X \quad \text{donde }\, x,y \in X
+$$
+
+Para probar el isomorfismo veamos que la aplicación $T\colon X\oplus X \to X$ definida como
+$$
+T((x_n)_n,(y_n)_n)  = (x_1, y_1,x_2,y_2,x_3,y_3,\dots)
+$$
+es un isomorfismo. Por completitud, la expresión general sería
+$$
+T((x_n)_n,(y_n)_n) = (z_m)_m \quad \text{donde }\, z_m = \left\{\begin{aligned} x_n, &\quad m = 2n \\ y_n, &\quad m = 2n+1\end{aligned}\right.
+$$
+
+La linealidad es fácil de probar.
+
+::: {style = "margin-left: 1em"}
+
+dados dos elementos $((x_n)_n,(y_n)_n), ((a_n)_n,(b_n)_n) \in X\oplus X$ y $\lambda \in \R$:
+$$
+T(\lambda((x_n)_n,(y_n)_n) +  ((a_n)_n,(b_n)_n)) = T(((\lambda x_n+ a_n)_n,(\lambda y_n + b_n)_n)) = (z_m)_m
+$$
+donde, para todo $m$ natural
+$$
+z_m = \left\{\begin{aligned} \lambda x_n + a_n, &\quad m = 2n \\ \lambda y_n + b_n, &\quad m = 2n+1\end{aligned}\right.
+$$
+Por otro lado,
+$$
+\lambda T(((x_n)_n,(y_n)_n))  = \lambda (z^1_m)_m \quad \text{donde }\, z_m^1 = \left\{\begin{aligned} x_n, &\quad m = 2n \\ y_n, &\quad m = 2n+1\end{aligned}\right.
+$$
+$$
+T(((a_n)_n,(b_n)_n)) = (z^2_m)_m \quad \text{donde }\, z^2_m = \left\{\begin{aligned} a_n, &\quad m = 2n \\ b_n, &\quad m = 2n+1\end{aligned}\right.
+$$
+Resulta por tanto evidente que
+$$
+T(\lambda((x_n)_n,(y_n)_n) +  ((a_n)_n,(b_n)_n))  =\lambda T(((x_n)_n,(y_n)_n)) + T(((a_n)_n,(b_n)_n)).
+$$
+
+:::
+
+La biyectividad es sencilla, Para toda sucesión de $X$ su preimagen es coger las subsucesiones de índices pares e índices impares, por tanto $T$  es sobreyectiva (dichas subsucesiones están en $X$ de forma trivial). La inyectividad es trivial.
+
+Por último, la continuidad.
+
+::: {style = "margin-left: 1em"}
+
+Dado un elemento $((x_n)_n,(y_n)_n) \in X\oplus X$,
+
+-  Para el caso de $X = c_0$,
+    $$
+    \begin{align*}
+    \|T(((x_n)_n,(y_n)_n))\|_\infty & = \sup_{n \in \N}\{|x_n|,|y_n|\} \leq \sup_{n \in \N}|x_n| + \sup_{n \in \N}|y_n| \\&= \|(x_n)_n\|_\infty+\|(y_n)_n\|_\infty = \|((x_n)_n,(y_n)_n)\|.
+    \end{align*}
+    $$
+
+- Para el caso de $\ell_p$,
+    $$
+    \begin{align*}
+    \|T(((x_n)_n,(y_n)_n))\|_p & = \big(\sum_{n = 1}^\infty |x_n|^p + |y_n|^p\big)^\frac{1}{p} = \big(\sum_{n = 1}^\infty |x_n|^p +\sum_{n =1}^\infty |y_n|^p\big)^\frac{1}{p}\\ &\leq \big(\sum_{n = 1}^\infty |x_n|^p\big)^\frac{1}{p} + \big(\sum_{n = 1}^\infty|y_n|^p\big)^\frac{1}{p} = \|(x_n)_n\|_p+\|(y_n)_n\|_p \\&= \|((x_n)_n,(y_n)_n)\|.
+    \end{align*}
+    $$
+
+:::
+
+y por tanto se da que $T$ es continua, demostrándose que $T$ es un isomorfismo.
+
+:::
+

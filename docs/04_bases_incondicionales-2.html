@@ -322,12 +322,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_ejemplos_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejemplos de bases de Schauder</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ejemplos elementales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Espacios de sucesiones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ejemplos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Espacios de funciones</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Bibliografia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_topologia_debil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Topologías débil y débil<span class="math inline">\(^\ast\)</span></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_resultados_auxiliares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resultados auxiliares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_teoremas_relevantes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Teoremas fundamentales del Análisis funcional</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -358,7 +416,7 @@ window.Quarto = {
 </header>
 
 
-<p><span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_1\)</span> son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de <span class="math inline">\(\ell_1\)</span> y bounedly complete en el caso de <span class="math inline">\(c_0\)</span>— remitimos al lector al Capítulo <span class="quarto-unresolved-ref">?sec-ejemplos</span> para las pruebas—. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:</p>
+<p><span class="math inline">\(c_0\)</span> y <span class="math inline">\(\ell_1\)</span> son dos espacios para los cuales fallan sus bases en verificar una de las dos propiedades antes vistas: shrinking en el caso de <span class="math inline">\(\ell_1\)</span> y bounedly complete en el caso de <span class="math inline">\(c_0\)</span>— remitimos al lector a la Sección <a href="06_ejemplos-2.html#sec-c_0" class="quarto-xref"><span> 14.0.2</span></a> para las pruebas—. Podemos suponer que todo espacio que contenga a alguno de estos dos no tiene bases que cumplan una de las propiedades. Esta intuición resulta cierta si nos restringimos a los espacios con bases de Schauder incondicionales y toma forma en los siguientes dos resultados:</p>
 <div id="thm-c-0-bc" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 10.1</strong></span> &nbsp;</p>
 <p>Sea <span class="math inline">\(X\)</span> un espacio de Banach con base de Schauder incondicional <span class="math inline">\((e_i)_i\)</span>. Si <span class="math inline">\((e_i)_i\)</span> no es boundedly complete, entonces <span class="math inline">\(X\)</span> tiene un subespacio isomorfo a <span class="math inline">\(c_0\)</span>.</p>
@@ -390,7 +448,7 @@ u_i:=\sum_{i=p_i}^{q_i}a_ie_i,
 |\lambda_j|\varepsilon\leq\|\lambda_ju_j\|\leq K\big\|\sum_{i=1}^m\lambda_iu_i\big\|,
 \]</span> es decir, como la cota anterior es válida para cualquier <span class="math inline">\(j\)</span>, concluimos en realidad que <span class="math display">\[\|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K}\leq\big\|\sum_{j=1}^m\lambda_ju_j\big\|.
 \]</span></p>
-<p>Por otra parte, por el Teorema <span class="quarto-unresolved-ref">?thm-Hahn-Banach-funcionales</span> de extensión de Hahn-Banach aplicado a funcionales existe un funcional <span class="math inline">\(f\in S_{X^\ast}\)</span> de modo que <span class="math display">\[
+<p>Por otra parte, por el Teorema <a href="12_teoremas_relevantes.html#thm-Hahn-Banach-funcionales" class="quarto-xref">&nbsp;<span>C.4</span></a> de extensión de Hahn-Banach aplicado a funcionales existe un funcional <span class="math inline">\(f\in S_{X^\ast}\)</span> de modo que <span class="math display">\[
 f\Big(\sum_{i=1}^m\lambda_iu_i\Big)=\big\|\sum_{i=1}^m\lambda_iu_i\big\|.
 \]</span> Consideremos signos <span class="math inline">\(\varepsilon_i=\pm1\)</span> de forma que <span class="math inline">\(\varepsilon_if(u_i)\geq0\)</span> para cada <span class="math inline">\(i\)</span>. En tal caso, <span class="math display">\[
 \begin{align*}
@@ -398,7 +456,7 @@ f\Big(\sum_{i=1}^m\lambda_iu_i\Big)=\big\|\sum_{i=1}^m\lambda_iu_i\big\|.
     &amp;=\|(\lambda_i)\|_\infty f\Big(\sum_{i = 1}^m\varepsilon_iu_i\Big)\leq\|(\lambda_i)_i\|_\infty \big\|\sum_{i = 1}^m\varepsilon_iu_i\big\|\\
     &amp;\leq \|(\lambda_i)\|_\infty K\big\|\sum_{i=1}^mu_i\big\|\leq \|(\lambda_i)\|_\infty\,K^2,
 \end{align*}
-\]</span> donde en la segunda línea hemos empleado que <span class="math inline">\(\|f\|=1\)</span> y en la tercera línea hemos invocado el carácter incondicional de <span class="math inline">\((e_i)_i\)</span> (más exactamente el Teorema <span class="citation" data-cites="thm:eqv-sbi"><a href="Bibliografia.html#ref-thm:eqv-sbi" role="doc-biblioref"><strong>thm:eqv-sbi?</strong></a></span> <span class="math inline">\((c)\)</span>) y (<a href="#eq-4.6" class="quarto-xref"><span>10.2</span></a>).</p>
+\]</span> donde en la segunda línea hemos empleado que <span class="math inline">\(\|f\|=1\)</span> y en la tercera línea hemos invocado el carácter incondicional de <span class="math inline">\((e_i)_i\)</span> (más exactamente el Teorema <a href="04_bases_incondicionales-1.html#thm-eqv-sbi" class="quarto-xref">&nbsp;<span>9.1</span></a> <span class="math inline">\((c)\)</span>) y (<a href="#eq-4.6" class="quarto-xref"><span>10.2</span></a>).</p>
 <p>Así pues, tenemos que <span class="math display">\[
 \|(\lambda_i)_i\|_\infty \frac{\varepsilon}{K} \leq \Big\|\sum_{i = 1}^m\lambda_iu_i\Big\| \leq K^2\|(\lambda_i)_i\|_\infty,
 \]</span> por lo que el Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> nos permite afirmar que <span class="math inline">\(\overline{\rm span}(u_i)_i\)</span> es isomorfo a <span class="math inline">\(c_0\)</span>.</p>
@@ -422,7 +480,7 @@ f\Big(\sum_{i=1}^m\lambda_iu_i\Big)=\big\|\sum_{i=1}^m\lambda_iu_i\big\|.
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Probaremos que si <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, entonces existe una sucesión básica bloque —formada a partir de <span class="math inline">\((e_i)_i\)</span>— que es equivalente a la base de Schauder natural de <span class="math inline">\(\ell_1\)</span>. Por tanto, el resultado enunciado será una consecuencia del Teorema <a href="03_sucesiones_basicas-2.html#thm-SucBasEqu" class="quarto-xref">&nbsp;<span>6.1</span></a> <span class="math inline">\((b)\)</span>.</p>
-<p>Si <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, <span class="math inline">\(\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\}\)</span> es un subespacio cerrado propio de <span class="math inline">\(X^*\)</span>, por lo que —en virtud del Lema <span class="quarto-unresolved-ref">?lem-riesz</span> de Riesz— dado <span class="math inline">\(1&gt;\varepsilon&gt;0\)</span> existe <span class="math inline">\(f\in S_{X^*}\)</span> tal que <span class="math display">\[
+<p>Si <span class="math inline">\((e_i)_i\)</span> no es <em>shrinking</em>, <span class="math inline">\(\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\}\)</span> es un subespacio cerrado propio de <span class="math inline">\(X^*\)</span>, por lo que —en virtud del Lema <a href="12_teoremas_relevantes.html#lem-riesz" class="quarto-xref">&nbsp;<span>C.1</span></a> de Riesz— dado <span class="math inline">\(1&gt;\varepsilon&gt;0\)</span> existe <span class="math inline">\(f\in S_{X^*}\)</span> tal que <span class="math display">\[
 {\rm dist}\,(f,\overline{{\rm span}}\{e_i^*\colon i\in\mathbb{N}\})\equiv\inf\big\{\|f-g\|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}&gt;\varepsilon.
 \]</span> Es decir, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, existe <span class="math inline">\(z_n\in B_X\)</span> de modo que <span class="math display">\[
 \inf\big\{\big|f(z_n)-\sum_{i=1}^ng(e_i)e_i^*(z_n)\big|\colon g\in\overline{{\rm span}}\{e_i^\ast\colon i\in\mathbb{N}\}\big\}&gt;\varepsilon.

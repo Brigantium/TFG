@@ -1,0 +1,145 @@
+# Topologías débil y débil$^\ast$
+
+
+
+::: {#def-debil}
+## Topología débil
+\hspace*{1mm}
+Dado un espacio normado $X$, definimos su *topología débil* como la topología más pequeña que hace que los funcionales lineales sean continuos. También podemos caracterizarla describiendo cómo una sucesión de $X$ converge débilmente: dada una sucesión $(x_n)_{n \in \N}$, esta converge a $x_0$ si y solo si, para cualquier funcional $f \in X^*$,
+$$
+\lim_{n \rightarrow \infty}f(x_n) = f(x_0).
+$$
+
+:::
+
+También podemos describir los abiertos básicos de esta topología: como la topología débil aún mantiene el carácter de espacio vectorial topológico de $X$ la suma y multiplicación por escalares son continuos, y por tanto cualquier abierto puede ser expresado como homeomorfismo de un entorno del 0. Basta ver cómo son estos entornos. Dado cualquier funcional, por ser lineal la imagen del $0$ debe ser el $0$, y si queremos que sea continuo la imagen de valores cercanos al $0$ deberán estar cerca del $0$, por lo tanto los abiertos básicos los podemos describir como, dado un $\varepsilon >0$, 
+$$
+W(0;f,\varepsilon) = \{x \in X \colon |f(x)| < \varepsilon\}
+$$
+y como la convergencia se tiene que dar para todos los funcionales, realmente un abierto básico debe ser, dados $f_1,\dots, f_n \in X^*$ y un $\varepsilon >0$, 
+$$
+W(0;f_1,\dots, f_n,\varepsilon) = \{x \in X \colon |f_1(x)|, \dots, |f_n(x)| < \varepsilon\}.
+$$
+Así, al verificar la condición de continuidad cerca del $0$ para cualquier funcional la imagen inversa de un entorno del $0$ va a estar contenida en alguno de estos abiertos básicos.
+
+
+Cabe destacar que los entornos del $0$ (y por extensión cualquier entorno) son particularmente grandes. Como la dimensión del rango de un funcional $f \in X^*$ es a lo mucho $1$, si su dominio $X$ es de dimensión infinita entonces $ker(f)$ va a tener dimensión infinita, y $ker(f)$ o la intersección finita de núcleos de funcionales están contenidas en los entornos del $0$, ergo dichos entornos contienen espacios de dimensión infinita (son muy grandes). O lo que es lo mismo, los abiertos en $(X,\text{ débil})$ no pueden ser acotados de $X$.
+
+De la misma forma podemos definir una topología aún más pequeña.
+
+::: {#def-debil-star}
+## Topología débil$^\ast$
+\hspace*{1mm}
+
+Dado un espacio normado $X^*$ que sea el dual de otro espacio $X$, definimos su *topología débil estrella* *o débil$^*$* como la topología más pequeña que hace que las aplicaciones evaluación, $T_x \colon f\in X \rightarrow f(x) \in \K$, sean continuas. También podemos caracterizarla de la misma forma que con la topología débil mediante la convergencia de sus sucesiones: dada una sucesión $(f_n)_{n\in \N}$, converge a $f_0$ si y solo si para cualquier $x$ de $X$,
+$$
+\lim_{n \rightarrow \infty}f_n(x) = f_0(x).
+$$
+
+:::
+
+Al igual que con la topología débil podemos describir sus abiertos básicos. Por las mismas razones que expresamos con anterioridad tenemos que cualquier abierto débil$^*$ es homeomorfo a un entorno del $0$ por lo que solo tenemos que estudiar los abiertos en $(X^*,\text{ débil}^*)$ que contengan al $0$. Para ello, como las evaluaciones son lineales por la linealidad de los funcionales de $X^*$ y queremos que sean continuos, si tomamos una conjunto de puntos de $X$, $x_1, \dots, x_n$ queremos que si están cerca del $0$ entonces sus imágenes por cualquier funcional estén cerca del $0$, por tanto dado un $\varepsilon >0$ se tendría por abierto básico
+$$
+W(0;x_1,\dots,x_n,\varepsilon) = \{f\in X^* \colon |f(x_1)|,\dots,|f(x_n)| < \varepsilon\}.
+$$
+
+Hay que resaltar que la topología débil$^*$ no es más que la topología débil en el dual pero restringiendo los funcionales de su dual, $X^{**}$, que empleamos para construir los abiertos básicos sólo a las evaluaciones.
+
+## Resultados relevantes
+
+Estas topologías siguen guardando una relación entre ellas y con la topología de la norma, como podemos ver en el siguiente teorema:
+
+::: {#thm-implicaciones-topologias}
+\hspace*{1mm}
+
+Dado un espacio vectorial noramdo $X$ y una sucesión $(x_n)_n$ en $X$, tenemos las siguientes implicaciones
+
+
+- Si $x_n\xrightarrow{\|\cdot\|}x $ entonces $x_n \xrightarrow{n \to \infty} x$ en $(X,\text{ débil})$
+
+- Si $x_n \xrightarrow{n \to \infty} x$ en $(X,\text{ débil})$ entonces $x_n \xrightarrow{n \to \infty} x$ en $(X,\text{ débil}^*)$
+
+
+Además, si el espacio es reflexivo, es decir $X \simeq X^{**}$, entonces las topologías débil y débil$^*$ coinciden.
+
+:::
+
+Ahora pasamos a enumerar una serie de resultados sobre las topologías débiles que empleamos a lo largo del presente trabajo:
+
+
+::: {#thm-mazur}
+
+## de Mazur, @SequencesSeriesDiestel[11]
+\hspace*{1mm}
+
+Dado un espacio normado $X$ y un subconjunto convexo $K\subset X $, se tiene que
+$$
+\overline{K} = \overline{K}^w,
+$$
+siendo $\overline{K}$ la clausura de K en la norma y $\overline{K}^w$ su clausura en $(X,\text{ débil})$.
+:::
+
+
+
+
+::: {#thm-alaoglu}
+
+## de Alaoglu, @SequencesSeriesDiestel[13]
+\hspace*{1mm}
+
+Para todo espacio normado $X$, la bola unidad de su espacio dual, $B_{X^*}$, es compacta en $(X^*,\text{ débil}^*)$.
+
+En particular, si $X$ es un espacio reflexivo entonces $B_X$ es compacta en $(X,$ débil$)$
+:::
+
+
+
+::: {#thm-eberlein-smulian}
+
+## de Eberlein- Ŝmulian, @SequencesSeriesDiestel[18]
+\hspace*{1mm}
+
+Dado un espacio de Banach $X$, un subconjunto $A$ es relativamente compacto en $(X,\text{ débil})$ si y solo si es relativamente secuencialmente compacto en $(X,\text{ débil})$.
+
+:::
+
+
+
+::: {#lem-metrizable-compact}
+
+## @TopicinBanachSpacesKalton[16]
+\hspace*{1mm}
+
+Dado un espacio de Banach $X$, si $X^*$ contiene una sucesión $(x_n^*)_n$ tal que
+$$
+x_n^*(x) = 0, \forall n \in \N \implies x  =0,
+$$
+entonces todo subconjunto compacto de $(X,$ débil$)$ es metrizable con la topología débil.
+
+:::
+
+
+
+::: {#lem-metrizable-bola}
+
+## @Brezis[74-76]
+\hspace*{1mm}
+
+Dado un espacio de Banach $X$, si $X^*$ es separable entonces $B_X$ es metrizable en $(X,\text{ débil})$
+
+:::
+
+
+<!--
+% \color{red}https://math.stackexchange.com/questions/3835307/bounded-c-0-sequence-has-weakly-cauchy-subsequence
+% ejercicio 3 página 185
+-->
+
+::: {#lem-c_0-wcs}
+
+## @conway1994course[185 ej. 3]
+\hspace*{1mm}
+
+Toda sucesión acotada de $c_0$ tiene una subsucesión de Cauchy en $(c_0,\text{ débil})$.
+
+:::

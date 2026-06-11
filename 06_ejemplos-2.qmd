@@ -1,0 +1,139 @@
+
+## Espacios de sucesiones {#sec-ejemplo_sucesiones}
+
+### Espacios $\ell_p$
+
+Para $1\leq p<\infty$, el espacio de sucesiones $\ell_p=\big\{x=(x_i)_i \colon \sum|x_i|^p<\infty\big\}$ dotado de la norma 
+$$
+\|x\|_p=\Big(\sum_{i=1}^p|x_i|^p\Big)^{1/p}\quad\text{para cada $x=(x_i)_i\in\ell_p$,}
+$$
+admite como base de Schauder natural la sucesión (de sucesiones) $(e_i)_i\subset \ell_p$ dada, para cada $i\in\mathbb{N}$, por
+$$
+e_i= (0,\dots,0,\underset{\text{posición $i$}}{0,0,1,0,0},\dots).
+$$
+
+A continuación intentaremos dar una justificación detallada.
+
+Dada una sucesión arbitraria $x=(x_1,x_2,x_3,\dots)\in\ell_p$, puesto que $\sum|x_i|^p$ es convergente, dado $\varepsilon >0$ existe $N_\varepsilon\in\mathbb{N}$ de modo que si $n>N_\varepsilon$, entonces 
+$$
+\sum_{i=n+1}^\infty |x_i|^p<\varepsilon.
+$$
+Así pues, como la desigualdad anterior es válida para todo $\varepsilon>0$,
+$$
+\lim_{n\to\infty}\big\|\sum_{i=1}^n x_ie_i-x\big\|_p=\lim_{n \to \infty}\|(0,\dots,0,x_{n+1},x_{n+2},\dots)\|_p=\lim_{n\to\infty}\sum_{i=n+1}^\infty|x_i|^p=0.
+$$ {#eq-6.2}
+Por tanto, si para cada $n\in\mathbb{N}$, consideramos
+$$
+x_n=\sum_{i=1}^n x_ie_i,
+$$
+entonces es evidente que $x_n\in{\rm span}\,\{e_i\colon \in\mathbb{N}\}$ y ---a la vista de (@eq-6.2)--- $\|x_n-x\|_p\to 0$ cuando $n\to\infty$.
+
+La unicidad de los coeficientes $x_i$ es prácticamente evidente. Si para una misma sucesión de $\ell_p$ tenemos dos sucesiones de coeficientes $(x_i)_i$ e $(y_i)_i$, entonces para cualquier $n\in\mathbb{N}$ se tendrá que 
+$$
+|x_n-y_n|^p \leq \sum_{n=1}^\infty|x_n-y_n|^p=\lim_{n\to\infty}\big\|\sum_{i =1}^n{x_ie_i}-\sum_{i=1}^n{y_ie_i}\big\|_p=0,
+$$
+por lo que debe ser $x_n=y_n$ para todo $n\in\mathbb{N}$.
+
+
+::: {#cnj-ellp}
+\hspace*{1mm}
+
+(a) Para $1<p<\infty$, la base natural $(e_i)_i$ del espacio $\ell_p$ es shrinking, pues la sucesión de funcionales biortogonales coincide con $(e_i)_i$, que es base de Schauder del espacio dual $\ell_p^\ast=\ell_q$, siendo $1/p+1/q=1$. { Tenemos que resaltar que $\ell_1$ no puede tener una base shrinking pues su espacio dual, $\ell_\infty$, es no separable.}
+
+(b) Para $1\leq p<\infty$, la base natural $(e_i)_i$ del espacio $\ell_p$ es boundedly complete, pues si $(a_i)_i$ es una sucesión de escalares para la que
+$$
+\sup_{n\in \N}\big\|\sum_{i=1}^n{a_ie_i}\big\|<\infty,
+$$
+entonces
+$$
+\sup_{n\in \N}\big\|\sum_{i=1}^n{a_ie_i}\big\|=\sup_{n\in\N}\sum_{i=1}^n{|a_i|^p}=\lim_{n\to\infty}\sum_{i=1}^n{|a_i|^p}=\sum_{i =1}^\infty{|a_i|^p}<\infty,
+$$
+por lo que $x=(a_1,a_2,a_3,\dots)$ es un vector del espacio $\ell_p$.
+
+:::
+
+### Espacio $c_0$ {#sec-c_0}
+
+El espacio $c_0$ formado por todas las sucesiones convergentes a $0$ dotado de la norma
+$$
+\|(x_1,x_2,x_3,\dots,x_n,\dots)\|_\infty=\sup_{n\in\N}|x_n|\quad\text{para cada $x=(x_i)_i\in C_0$}
+$$
+admite como base de Schauder natural la sucesión (de sucesiones) $(e_i)_i\subset \ell_p$ dada, para cada $i\in\mathbb{N}$, por
+$$
+e_i= (0,\dots,0,\underset{\text{posición $i$}}{0,0,1,0,0},\dots).
+$$
+
+A continuación intentaremos dar una justificación detallada.
+
+Dado una sucesión arbitraria $x=(x_1,x_2,x_3,\dots)\in c_0$, puesto que $x_n\to 0$, dado $\varepsilon>0$ existe $N_\varepsilon\in\mathbb{N}$ de modo que si $n>N_\varepsilon$, entonces $|x_n|<\varepsilon$. Así pues, tenemos que,
+$$
+\lim_{n\to\infty}\big\|\sum_{i=1}^nx_ie_i-x\|_\infty=\lim_{n\to\infty}\|(0,\dots,0,x_{n+1},x_{n+2},\dots)\|_\infty=\lim_{n\to\infty}\sup_{i>n}|x_i|=0.
+$$ {#eq-6.3}
+Por tanto, si para cada $n\in\mathbb{N}$, consideramos
+$$
+x_n=\sum_{i=1}^n x_ie_i,
+$$
+entonces es evidente que $x_n\in{\rm span}\,\{e_i\colon \in\mathbb{N}\}$ y ---a la vista de (@eq-6.3)--- $\|x_n-x\|_p\to 0$ cuando $n\to\infty$.
+
+La unicidad de los coeficientes $x_i$ es prácticamente evidente. Si para una misma sucesión de $c_0$ tenemos dos sucesiones de coeficientes $(x_i)_i$ e $(y_i)_i$, entonces para cualquier $n\in\mathbb{N}$ se tendrá que 
+$$
+\begin{align*}
+0 &=\lim_{n\to\infty}\big\|\sum_{i=1}^nx_ie_i-\sum_{i=1}^ny_ie_i\|\\
+&=\lim_{n\to infty}{\|(x_1-y_1, x_2- y_2, x_3-y_3, \dots, x_n - y_n,0,\dots)\|_{\infty}}=\lim_{n \to \infty}{\sup_{i<n}|x_i-y_i|}
+\end{align*}
+$$
+por lo que debe ser $x_n=y_n$ para todo $n\in\mathbb{N}$.
+
+::: {#cnj-c0}
+
+\hspace*{1mm}
+
+ 
+(a) La base natural de $c_0$ no es boundedly complete. En efecto, pues sí consideramos, para cada $n\in\mathbb{N}$, la sucesión de escalares $(a_n)_n$ dada por $a_n=1$ para todo $n\in\mathbb{N}$, entonce se tiene que
+$$
+\sup_{n\in\mathbb{N}}\big\|\sum_{i=1}^n a_i e_i\big\|_\infty=\|(1,1,\dots,1,0,0,\dots)\|_\infty,
+$$
+pero
+$$
+\sum_{i=1}^\infty a_i e_i=(1,1,\dots,1,1,\dots)\notin c_0.
+$$
+
+(b) La base natural de $c_0$ sí es shrinking, pues el dual de $c_0$ es $\ell_1$ y los funcionales biortogonales de la base natural $(e_i)_i$ son los mismos vectores unitarios.
+
+::: {#c_0-base-sumante}
+(c) La anterior es una base natural de $c_0$ pero hay otras bases también como la conocida como ***base sumante***:
+$$
+f_n = \sum_{i = 1}^ne_i \quad \text{para todo $n$ natural.}
+$$
+Sus funcionales biortogonales son
+$$
+f_n^* = e_n^* - e_{n+1}^\ast
+$$
+de forma que valen $0$ para todos los $f_i$ con $i<n$, para $i = n$ entonces $f_n^*(f_n) = 1$ y para $i>n$ 
+$$
+f_n(f_i) = e_n^*(f_i) - e_{n+1}^*(f_i) = e_n^*\Big(\sum_{k=1}^i e_k\Big) - e_{n+1}^*\Big(\sum_{k = 1}^i e_k\Big) = 1-1 = 0
+$$
+Por tanto, dado $x = (x_n)_n$ de $c_0$ tenemos, tomando como $f_0 = 0$, que
+$$
+\begin{align*}
+\big\|x -  \sum_{i = 1}^nf_i^*(x)f_i\big\| & = \big\|x - \sum_{i = 1}^n(x_i - x_{i+1})f_i\big\| = \big\|x-  \sum_{i = 1}^nx_{i}f_{i} - \sum_{i = 2}^{n+1} x_{i}f_{i-1}\big\| \\ 
+&= \big\| \sum_{i = 1}^\infty x_ie_i-  \sum_{i = 1}^nx_i(f_i - f_{i-1}) + x_{n+1}f_{n}\big\| \\
+&= \big\|\sum_{i = n+1}^\infty x_ie_i + x_{n+1}f_n\big\|\\
+& \leq \big\|\sum_{i = n+1}^\infty x_ie_i\big\| + \|f_n\||x_{n+1}| \xrightarrow{n \to \infty}0
+\end{align*}
+$$
+quedando demostrado que la base sumante es base de $c_0$.
+
+    Además, dicha base no es incondicional:
+
+    Solo es necesario recordar por el Lema @lem-incondicional-epsilon que $\sum\frac{(-1)^n}{n}f_n$, que es serie convergente, converge incondicionalmente si lo hace $\sum \frac{1}{n}f_n$. Pero es obvio ver que la segunda serie no puede converger pues 
+    $$
+    e_1^*\Big(\sum_{i = 1}^m \frac{1}{n}f_n\Big) = e_1^*\Big(\sum_{i = 1}^m \frac{1}{n}\sum_{k = 1}^ie_k\Big) = \sum_{i = 1}^m\frac{1}{n} \quad \text{ no convergente.}
+    $$
+    y como la serie no converge en $(c_0,\text{ débil})$ no puede hacerlo en norma por el Teorema @thm-implicaciones-topologias.
+
+    Por tanto, es evidente que ambas bases ---la unitaria y la sumante--- no son equivalentes entre sí.
+:::
+
+:::
+

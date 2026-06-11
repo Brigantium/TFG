@@ -1,0 +1,71 @@
+
+# Teoremas fundamentales del Análisis funcional
+
+
+
+::: {#thm-ap-abierta}
+## de la aplicación abierta, @Brezis[35]
+\hspace*{1mm}
+Dados $X,Y$ dos espacios de Banach y $f:X \rightarrow Y$ un operador lineal continuo y sobreyectivo, entonces $f$ es una aplicación abierta.
+
+:::
+
+
+::: {#thm-grafo-cerrado}
+
+## del grafo cerrado, @Brezis[37]
+\hspace*{1mm}
+
+Sean $X,Y$ dos espacios de Banach y $T\colon X \to Y$ un operador lineal. Si para toda sucesión $(x_n)_n$ de $X$ tal que $x_n\xrightarrow{n\to\infty}x$ se verifica que, si $T(x_n) \xrightarrow{n\to \infty}y$ entonces $y = T(x)$, entonces $T$ es un operador continuo.
+
+:::
+
+
+::: {#thm-ext-hahn-Banach}
+## de extensión de Hahn-Banach
+\hspace*{1mm}
+
+Dados $X$ espacio normado, $Y$ espacio de Banach y $M$ un subespacio denso en $X$. Si $T_0 \colon M \to Y$ es un operador lineal continuo entonces existe un único $T:X \to Y$ operador lineal acotado que verifica
+
+(i) $T|_{M} = T_0$,
+
+(ii) $\|T\| = \|T_0\|$.
+
+:::
+
+
+::: {#thm-Hahn-Banach-funcionales}
+## de extensión de Hahn-Banach aplicado a funcionales
+
+
+Sea $X$ un espacio normado e $Y$ un subespacio de $X$. Si $f_0\in Y^*$, entonces existe un $f\in X^*$ tal que
+
+(i) $\|f_0\| = \|f\|$,
+
+(ii) $f|_Y = f_0$.
+
+
+:::
+
+
+
+::: {#lem-riesz}
+## de Riesz de elementos casi ortogonales, @SequencesSeriesDiestel[2]
+\hspace*{1mm}
+Dado un espacio normado $X$ y un subespacio $Y$ no denso en $X$ entonces para todo $r \in (0,1)$ existe un cierto $x \in X$ con $\|x\| = 1$ de forma que
+$$
+d(x,Y) \geq r.
+$$
+
+:::
+
+
+
+
+::: {#thm-acotacion-uniforme-banach-steinhaus}
+## Principio de acotación uniforme de Banach-Steinhaus, @Brezis[32]
+\hspace*{1mm}
+
+Dados $X,Y$ espacios normados y $\mathcal{F}$ una familia de operadores lineales de $X$ a $Y$. Si $\sup_{T\in\mathcal{F}}\|Tx\|$ para todo $x\in X$, entonces $\sup_{T\in \mathcal{F}}\|T\|<\infty$.
+
+:::

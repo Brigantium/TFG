@@ -1,0 +1,11 @@
+# Ejemplos de bases de Schauder {#sec-ejemplos}
+
+<br>
+
+Incluímos en este último capítulo la construcción de varias bases de Schauder de diferentes espacios clásicos para ejemplificar los conceptos tratados en este trabajo.
+
+
+Si un espacio de Banach $X$ admite base de Schauder $(e_i)_i$, entonces necesariamente $X$ es separable, ésto es porque el conjunto de las combinaciones lineales con coeficientes de racionales generado por $\{e_i\colon i\in\mathbb{N}\}$ es numerable y denso en $X$.
+
+Así pues, por ejemplo, el espacio de las sucesiones acotadas $\ell_\infty$, que no es separable, no admite base de Schauder.
+

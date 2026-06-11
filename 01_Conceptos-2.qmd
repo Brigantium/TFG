@@ -148,9 +148,9 @@ Con el nacimiento de la idea de las bases de Schauder surgió también una cuest
 ¿Todo espacio de Banach separable admite base de Schauder?
 :::
 
-Es una pregunta que surge del teorema con el que dimos inicio a este capítulo. Tendríamos la esperanza de que la respuesta fuese afirmativa y entonces podríamos añadir otra analogía entre las bases de Hamel y las de Schauder. Pero el interrogante se aclaró en $1973$, cuando el matemático sueco Per Enflo @Enflo1973 proporcionó un ejemplo de espacio de Banach separable que no admite base de Schauder. En cualquier caso, todos los espacios clásicos sí admiten bases de Schauder ---como el lector podrá ver en el Capítulo @sec-ejemplos de este Trabajo Fin de Grado---.
+Es una pregunta que surge del teorema con el que dimos inicio a este capítulo. Tendríamos la esperanza de que la respuesta fuese afirmativa y entonces podríamos añadir otra analogía entre las bases de Hamel y las de Schauder. Pero el interrogante se aclaró en $1973$, cuando el matemático sueco Per Enflo @Enflo1973 proporcionó un ejemplo de espacio de Banach separable que no admite base de Schauder. En cualquier caso, todos los espacios clásicos sí admiten bases de Schauder ---como el lector podrá ver en el Capítulo de [Ejemplos](06_ejemplos_intro.html#sec-ejemplos) de este Trabajo Fin de Grado---.
 
-Por otra parte, aún cabe la posibilidad de que todo espacio de Banach separable tenga algún subespacio con base de Schauder (ignorando evidentemente por triviales a los subespacios de dimensión finita). El lector puede esperar al Capítulo @sec-SucesionesBasicas donde se ahondará más en esta cuestión.
+Por otra parte, aún cabe la posibilidad de que todo espacio de Banach separable tenga algún subespacio con base de Schauder (ignorando evidentemente por triviales a los subespacios de dimensión finita). El lector puede esperar al Capítulo de [Sucesiones Básicas](03_sucesiones_basicas_intro.html#sec-SucesionesBasicas) donde se ahondará más en esta cuestión.
 
 
 <!-- \renewcommand*{\proofname}{Demostración detallada de la Proposición \ref{proyections}} -->
