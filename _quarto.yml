@@ -90,8 +90,8 @@ language:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - yeti
+      # - brand
     css: estilos.css
     include-in-header: macros-mathjax.html
   # pdf:

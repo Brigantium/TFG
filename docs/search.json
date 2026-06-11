@@ -51,6 +51,17 @@
     ]
   },
   {
+    "objectID": "01_Conceptos-1.html#footnotes",
+    "href": "01_Conceptos-1.html#footnotes",
+    "title": "1  Bases de Schauder en espacios vectoriales normados.",
+    "section": "",
+    "text": "Las proyecciones canónicas \\(P_n\\) son continuas. Por tanto, si \\((x_k)_k\\) e \\((y_k)_k\\) son dos sucesiones convergentes a \\(\\widehat{x}\\), entonces \\(\\widehat{P}_n(x_k-y_k)\\to 0\\) cuando \\(k\\to\\infty\\) y equivalentemente \\(\\lim_{k\\to\\infty}P_n(x_k)=\\lim_{k\\to\\infty}P_n(y_k)\\).↩︎",
+    "crumbs": [
+      "Capítulo 1: Bases de Schauder",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bases de Schauder en espacios vectoriales normados.</span>"
+    ]
+  },
+  {
     "objectID": "01_Conceptos-2.html",
     "href": "01_Conceptos-2.html",
     "title": "2  Bases de Schauder en espacios de Banach",
@@ -328,17 +339,6 @@
     "crumbs": [
       "Apéndices",
       "<span class='chapter-number'>C</span>  <span class='chapter-title'>Teoremas fundamentales del Análisis funcional</span>"
-    ]
-  },
-  {
-    "objectID": "01_Conceptos-1.html#footnotes",
-    "href": "01_Conceptos-1.html#footnotes",
-    "title": "1  Bases de Schauder en espacios vectoriales normados.",
-    "section": "",
-    "text": "Las proyecciones canónicas \\(P_n\\) son continuas. Por tanto, si \\((x_k)_k\\) e \\((y_k)_k\\) son dos sucesiones convergentes a \\(\\widehat{x}\\), entonces \\(\\widehat{P}_n(x_k-y_k)\\to 0\\) cuando \\(k\\to\\infty\\) y equivalentemente \\(\\lim_{k\\to\\infty}P_n(x_k)=\\lim_{k\\to\\infty}P_n(y_k)\\).↩︎",
-    "crumbs": [
-      "Capítulo 1: Bases de Schauder",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bases de Schauder en espacios vectoriales normados.</span>"
     ]
   }
 ]
