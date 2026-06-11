@@ -13,7 +13,7 @@ Se dice que la serie convergente en $(X,\|\!\cdot\!\|)$
 $$
 \sum_{i=1}^\infty x_i=x\in X
 $$
-es *incondicionalmente convergente* si para todo $\varepsilon>0$ existe un conjunto finito $F_\varepsilon\subset\mathbb{N}$ de modo que para cualquier conjunto finito $F'\subset \N$ tal que $F\subset F'$ se tiene que 
+es *incondicionalmente convergente* si para todo $\varepsilon>0$ existe un conjunto finito $F_\varepsilon\subset\mathbb{N}$ de modo que para cualquier conjunto finito $F'\subset \N$ tal que $F_\varepsilon \subset F'$ se tiene que 
 $$
 \big\|x-\sum_{i \in F'}x_i\big\|<\varepsilon.
 $$

@@ -49,7 +49,7 @@ y_p=\sum_{i=p+1}^\infty a_ie_i,
 $$
 contiene una sucesión de coeficientes $(a_i)_i$ con infinitos términos no nulos.
 
-Ahora ya estamos en condiciones de construir una sucesión básica bloque $(u_i)_i$ que sea equivalente a $(e_i)_i$ y genere un subespacio vectorial $Z$ en las condiciones del enunciado. Veamos cómo proceder.
+Ahora ya estamos en condiciones de construir una sucesión básica bloque $(u_i)_i$ que sea equivalente a otra sucesión $(y_i)_i$ genere un subespacio vectorial $Z$ en las condiciones del enunciado. Veamos cómo proceder.
 
 - Tomemos un vector $y_1\in S_Y$. En tal caso, puesto que $(e_i)_i$ es base de Schauder de $X$ e $y_1\in X$, existe una (única) sucesión de escalares $(a^1_i)_i$ de modo que
 $$
@@ -85,7 +85,7 @@ $$
 $$
 el Teorema @thm-KMR nos permite afirmar que $(y_i)_i$ e $(u_i)_i$ son sucesiones básicas equivalentes.
 
-Por tanto, basta considerar $Z=\overline{\rm span}\,\{u_i\colon i\in\mathbb{N}\}$.
+Por tanto, basta considerar $Z=\overline{\rm span}\,\{y_i\colon i\in\mathbb{N}\}$.
 
 :::
 

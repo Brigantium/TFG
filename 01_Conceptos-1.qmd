@@ -158,7 +158,7 @@ la sucesión $(e_i)_i$ también es una base de Schauder de la compleción $\wide
 
 \hspace*{1cm}
 
-Consideremos, para cada $n\in\mathbb{N}$, la extensión continua de $P_n$ a $\widehat{X}$; es decir, para cada $\widehat{x}\in\widehat{X}$, definimos $\widehat{P}_n(\widehat{x})= \lim_{k\to\infty}P_n(x_k)$, siendo $(x_k)_k\subset X$ cualquier\footnote{Las proyecciones canónicas $P_n$ son continuas. Por tanto, si $(x_k)_k$ e $(y_k)_k$ son dos sucesiones convergentes a $\widehat{x}$, entonces $\widehat{P}_n(x_k-y_k)\to 0$ cuando $k\to\infty$ y equivalentemente $\lim_{k\to\infty}P_n(x_k)=\lim_{k\to\infty}P_n(y_k)$.} sucesión convergente a $\widehat{x}$.
+Consideremos, para cada $n\in\mathbb{N}$, la extensión continua de $P_n$ a $\widehat{X}$; es decir, para cada $\widehat{x}\in\widehat{X}$, definimos $\widehat{P}_n(\widehat{x})= \lim_{k\to\infty}P_n(x_k)$, siendo $(x_k)_k\subset X$ cualquier^[Las proyecciones canónicas $P_n$ son continuas. Por tanto, si $(x_k)_k$ e $(y_k)_k$ son dos sucesiones convergentes a $\widehat{x}$, entonces $\widehat{P}_n(x_k-y_k)\to 0$ cuando $k\to\infty$ y equivalentemente $\lim_{k\to\infty}P_n(x_k)=\lim_{k\to\infty}P_n(y_k)$.] sucesión convergente a $\widehat{x}$.
 
 Veamos que se cumplen las propiedades $(a)$, $(b)$ y $(c)$ del enunciado del Teorema @thm-proyecciones.
 
