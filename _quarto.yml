@@ -68,6 +68,7 @@ crossref:
   #     latex-env: remark
   eq-prefix: ""
   sec-prefix: ""
+  fig-prefix: ""
 
 language: 
   crossref-prp-prefix: ""
@@ -77,6 +78,8 @@ language:
   crossref-sec-prefix: ""
   crossref-cnj-title: "Observación"
   crossref-cnj-prefix: ""
+  crossref-fig-prefix: ""
+
 
 # indent: false
 # first-line-indent:
