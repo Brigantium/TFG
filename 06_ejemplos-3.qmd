@@ -4,8 +4,10 @@
 ## El sistema de Haar {#sec-haar}
 
 Para $1\leq p<\infty$, el espacio $(L^p(0,1),\|\!\cdot\!\|_p)$ de las (clases de equivalencia de) funciones Lebesgue--medibles definidas en casi todo punto del intervalo $(0,1)\subset\mathbb{R}$ y tales que $\int_0^1|f|^p<\infty$ dotado de la norma
-\[\|f\|_p =\Big(\int_0^1|f(t)|^p\,dt\Big)^{1/p}\quad\text{para cada $f\in L^p(0,1)$,}\]
-admite base de Schauder. Un ejemplo es la conocida como sistema de Haar, que viene dado por la sucesión de funciones $(h_n)_n$, cuyas gráficas (para $1\leq i\leq 4$) aparecen en la Figura @fig-haar).
+$$
+\|f\|_p =\Big(\int_0^1|f(t)|^p\,dt\Big)^{1/p}\quad\text{para cada $f\in L^p(0,1)$,}
+$$
+admite base de Schauder. Un ejemplo es la conocida como sistema de Haar, que viene dado por la sucesión de funciones $(h_n)_n$, cuyas gráficas (para $1\leq i\leq 4$) aparecen en la Figura @fig-haar.
 
 <!-- \begin{figure}[h!]
      \begin{subfigure}[b]{0.45\textwidth}
